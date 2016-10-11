@@ -14,7 +14,7 @@ namespace Barroc_IT
     {
         public Frm_Login()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void bt_Login_Click(object sender, EventArgs e)
