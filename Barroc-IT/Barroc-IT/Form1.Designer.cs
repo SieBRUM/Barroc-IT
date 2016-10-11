@@ -72,7 +72,6 @@
             this.txtb_Username.Name = "txtb_Username";
             this.txtb_Username.Size = new System.Drawing.Size(178, 20);
             this.txtb_Username.TabIndex = 4;
-            this.txtb_Username.TextChanged += new System.EventHandler(this.txtb_Username_TextChanged);
             // 
             // txtb_Password
             // 
@@ -80,7 +79,6 @@
             this.txtb_Password.Name = "txtb_Password";
             this.txtb_Password.Size = new System.Drawing.Size(178, 20);
             this.txtb_Password.TabIndex = 5;
-            this.txtb_Password.TextChanged += new System.EventHandler(this.txtb_Password_TextChanged);
             // 
             // cb_Remember
             // 
@@ -91,7 +89,6 @@
             this.cb_Remember.TabIndex = 6;
             this.cb_Remember.Text = "Remember me";
             this.cb_Remember.UseVisualStyleBackColor = true;
-            this.cb_Remember.CheckedChanged += new System.EventHandler(this.cb_Remember_CheckedChanged);
             // 
             // pb_Banner
             // 

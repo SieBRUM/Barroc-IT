@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Barroc_IT
 {
-    public partial class Frm_Login : Form
+    public partial class frm_Development : Form
     {
-        public Frm_Login()
+        public frm_Development()
         {
             InitializeComponent();
-        }
-
-        private void bt_Login_Click(object sender, EventArgs e)
-        {
-            frm_Development Developementform = new frm_Development();
-            Developementform.Show();
-            
         }
     }
 }
