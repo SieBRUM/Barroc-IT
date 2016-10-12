@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace Barroc_IT
 {
-    public partial class Frm_Login : Form
+    public partial class frm_Finance : Form
     {
-        public Frm_Login()
+        public frm_Finance()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
-        private void bt_Login_Click(object sender, EventArgs e)
+        private void Finance_Load(object sender, EventArgs e)
         {
-            frm_Finance financeform = new frm_Finance();
-            financeform.Show();
-            
-            
+
         }
     }
 }
