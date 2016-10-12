@@ -50,18 +50,18 @@
     <Compile Include="Finance.Designer.cs">
       <DependentUpon>Finance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Development.cs">
+    <Compile Include="Development.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataBaseHandler.cs" />
-    <Compile Include="frm_Development.Designer.cs">
-      <DependentUpon>frm_Development.cs</DependentUpon>
+    <Compile Include="Development.Designer.cs">
+      <DependentUpon>Development.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +74,11 @@
     <EmbeddedResource Include="Finance.resx">
       <DependentUpon>Finance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Development.resx">
-      <DependentUpon>frm_Development.cs</DependentUpon>
+    <EmbeddedResource Include="Development.resx">
+      <DependentUpon>Development.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
