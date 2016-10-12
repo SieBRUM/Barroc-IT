@@ -128,10 +128,6 @@ namespace Barroc_IT
             this.mnfltr_Overview_Date.Size = new System.Drawing.Size(124, 19);
             this.mnfltr_Overview_Date.Text = "Date";
             this.mnfltr_Overview_Date.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            DateTimePicker _deadlineDateTimePicker = new DateTimePicker();
-            ToolStripControlHost _deadlineToolStripControlHost = new ToolStripControlHost(_deadlineDateTimePicker);
-            _deadlineDateTimePicker.Width = 140;
-            mnfltr_Overview_Date.DropDownItems.Add(_deadlineToolStripControlHost);
             // 
             // mnitem_Projects
             // 

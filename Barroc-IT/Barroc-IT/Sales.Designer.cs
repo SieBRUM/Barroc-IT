@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace Barroc_IT
+﻿namespace Barroc_IT
 {
-    partial class frm_Finance
+    partial class Sales
     {
         /// <summary>
         /// Required designer variable.

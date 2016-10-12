@@ -19,7 +19,7 @@ namespace Barroc_IT
 
         private void bt_Login_Click(object sender, EventArgs e)
         {
-            frm_Finance financeform = new frm_Finance();
+            frm_Development financeform = new frm_Development();
             financeform.Show();
             
             
