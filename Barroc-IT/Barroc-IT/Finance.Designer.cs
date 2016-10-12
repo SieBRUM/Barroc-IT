@@ -37,6 +37,7 @@ namespace Barroc_IT
             this.mnfltr_Overview_Type = new System.Windows.Forms.ToolStripMenuItem();
             this.tscmb_Overview_Type = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Overview_Date = new System.Windows.Forms.ToolStripMenuItem();
+            this._deadlineToolStripControlHost = new System.Windows.Forms.DateTimePicker();
             this.mnitem_Projects = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Projects_Name = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Projects_PName = new System.Windows.Forms.ToolStripTextBox();
@@ -57,10 +58,6 @@ namespace Barroc_IT
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrp_Menu.SuspendLayout();
             this.SuspendLayout();
-
-
-            
-
             // 
             // mstrp_Menu
             // 
@@ -98,13 +95,6 @@ namespace Barroc_IT
             this.mnitem_Overview.Size = new System.Drawing.Size(135, 25);
             this.mnitem_Overview.Text = "Overview";
             this.mnitem_Overview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            
-            DateTimePicker _deadlineDateTimePicker = new DateTimePicker();
-            ToolStripControlHost _deadlineToolStripControlHost = new ToolStripControlHost(_deadlineDateTimePicker);
-            _deadlineDateTimePicker.Width = 140;
-            mnfltr_Overview_Date.DropDownItems.Add(_deadlineToolStripControlHost);
-
             // 
             // mnfltr_Overview_Department
             // 
@@ -156,6 +146,8 @@ namespace Barroc_IT
             // 
             // mnfltr_Overview_Date
             // 
+            this.mnfltr_Overview_Date.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._deadlineToolStripControlHost});
             this.mnfltr_Overview_Date.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Overview_Date.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnfltr_Overview_Date.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
@@ -163,6 +155,20 @@ namespace Barroc_IT
             this.mnfltr_Overview_Date.Size = new System.Drawing.Size(124, 19);
             this.mnfltr_Overview_Date.Text = "Date";
             this.mnfltr_Overview_Date.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // _deadlineToolStripControlHost
+            // 
+            this._deadlineToolStripControlHost.AccessibleName = "_deadlineToolStripControlHost";
+            this._deadlineToolStripControlHost.Location = new System.Drawing.Point(33, 3);
+            this._deadlineToolStripControlHost.Name = "_deadlineToolStripControlHost";
+            this._deadlineToolStripControlHost.Size = new System.Drawing.Size(140, 23);
+            this._deadlineToolStripControlHost.TabIndex = 2;
+            // 
+            // _deadlineToolStripControlHost
+            // 
+            this._deadlineToolStripControlHost.Name = "_deadlineToolStripControlHost";
+            this._deadlineToolStripControlHost.Size = new System.Drawing.Size(140, 23);
+            this._deadlineToolStripControlHost.Text = "Wednesday, October 12, 2016";
             // 
             // mnitem_Projects
             // 
@@ -323,7 +329,7 @@ namespace Barroc_IT
             this.mnitem_Logout.Text = "Logout";
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Finance
+            // frm_Finance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -331,8 +337,8 @@ namespace Barroc_IT
             this.Controls.Add(this.mstrp_Menu);
             this.HelpButton = true;
             this.MaximizeBox = false;
-            this.Name = "Finance";
-            this.Text = "Barroc-IT - Software for real - Development";
+            this.Name = "frm_Finance";
+            this.Text = "Barroc-IT - Software for real - Finance";
             this.Load += new System.EventHandler(this.Finance_Load);
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
@@ -367,6 +373,7 @@ namespace Barroc_IT
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_Residence;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
+        private ToolStripControlHost _deadlineToolStripControlHost;
 
 
     }
