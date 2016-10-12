@@ -15,6 +15,14 @@ namespace Barroc_IT
         public frm_Development()
         {
             InitializeComponent();
+            MenuItems menuItemHandler = new MenuItems();
+            ToolStripControlHost[] arrayControl = menuItemHandler.DTPGenerator();
+
+            for (int i = 0; i < 4; i++)
+            {
+                mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
+                mnfltr_Appointments_Date.DropDownItems.Add(arrayControl[i]);
+            }
         }
     }
 }
