@@ -19,10 +19,16 @@ namespace Barroc_IT
 
         private void bt_Login_Click(object sender, EventArgs e)
         {
-            frm_Development developmentfrom = new frm_Development();
-            developmentfrom.Show();
+            frm_Finance financefrom = new frm_Finance();
+            financefrom.Show();
+            Frm_Login loginform = new Frm_Login();
+            this.Hide();
             
-            
+        }
+
+        private void Frm_Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

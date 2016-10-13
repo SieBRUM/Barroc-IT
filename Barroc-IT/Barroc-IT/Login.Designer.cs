@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 281);
+            this.ClientSize = new System.Drawing.Size(550, 282);
             this.Controls.Add(this.pb_Banner);
             this.Controls.Add(this.cb_Remember);
             this.Controls.Add(this.txtb_Password);
@@ -115,6 +115,7 @@
             this.MinimumSize = new System.Drawing.Size(566, 320);
             this.Name = "Frm_Login";
             this.Text = "Barroc-IT - Software for real.";
+            this.Load += new System.EventHandler(this.Frm_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Banner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
