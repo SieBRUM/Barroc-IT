@@ -30,6 +30,7 @@ namespace Barroc_IT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Finance));
             this.mstrp_Menu = new System.Windows.Forms.MenuStrip();
             this.mnitem_Overview = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Overview_Department = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,13 +56,10 @@ namespace Barroc_IT
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
             this.close = new System.Windows.Forms.PictureBox();
             this.minimise = new System.Windows.Forms.PictureBox();
             this.help = new System.Windows.Forms.PictureBox();
             this.frm_Finance_Window_Name = new System.Windows.Forms.Label();
-=======
->>>>>>> origin/master
             this.mstrp_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimise)).BeginInit();
@@ -316,18 +314,13 @@ namespace Barroc_IT
             this.mnitem_Logout.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnitem_Logout.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mnitem_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
             this.mnitem_Logout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnitem_Logout.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-=======
             this.mnitem_Logout.Margin = new System.Windows.Forms.Padding(0, 100, 0, 0);
->>>>>>> origin/master
             this.mnitem_Logout.Name = "mnitem_Logout";
             this.mnitem_Logout.Size = new System.Drawing.Size(135, 25);
             this.mnitem_Logout.Text = "Logout";
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-<<<<<<< HEAD
             // close
             // 
             this.close.BackColor = System.Drawing.Color.Transparent;
@@ -373,14 +366,11 @@ namespace Barroc_IT
             this.frm_Finance_Window_Name.TabIndex = 5;
             this.frm_Finance_Window_Name.Text = "Barroc-IT Software for real Finance";
             // 
-=======
->>>>>>> origin/master
             // frm_Finance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(730, 500);
             this.Controls.Add(this.frm_Finance_Window_Name);
@@ -393,11 +383,7 @@ namespace Barroc_IT
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "frm_Finance";
-<<<<<<< HEAD
-            this.Text = "Barroc-IT - Software for real - Development";
-=======
             this.Text = "Barroc-IT - Software for real - Finance";
->>>>>>> origin/master
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();

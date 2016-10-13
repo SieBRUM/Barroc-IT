@@ -22,7 +22,7 @@ namespace Barroc_IT
             frm_Finance financefrom = new frm_Finance();
             financefrom.Show();
             Frm_Login loginform = new Frm_Login();
-            this.Hide();
+            this.Hide(); 
             
         }
 
