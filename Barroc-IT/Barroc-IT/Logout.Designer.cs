@@ -84,12 +84,14 @@
             this.Controls.Add(this.btn_No);
             this.Controls.Add(this.btn_Yes);
             this.Controls.Add(this.lbl_Message);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(400, 210);
             this.MinimumSize = new System.Drawing.Size(400, 210);
             this.Name = "frm_Logout";
             this.Text = "Logout";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Logout_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

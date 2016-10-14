@@ -50,10 +50,12 @@ namespace Barroc_IT
                         frm_Finance finForm = new frm_Finance();
                         finForm.Show();
                         break;
+                    default:
+                        MessageBox.Show("An Error Occured.");
+                        break;
                 }
                 this.Hide();
             }
-
             else
             { 
                 MessageBox.Show("Login Failed! :(");

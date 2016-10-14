@@ -30,8 +30,13 @@ namespace Barroc_IT
 
         private void btn_No_Click(object sender, EventArgs e)
         {
-            form.Enabled = true;
             this.Close();
+        }
+
+        private void frm_Logout_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form.Enabled = true;
+            form.Focus();
         }
     }
 }

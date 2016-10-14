@@ -16,5 +16,11 @@ namespace Barroc_IT
         {
             InitializeComponent();
         }
+
+        private void mnitem_Logout_Click(object sender, EventArgs e)
+        {
+            frm_Logout lgfrm = new frm_Logout(this);
+            lgfrm.Show();
+        }
     }
 }

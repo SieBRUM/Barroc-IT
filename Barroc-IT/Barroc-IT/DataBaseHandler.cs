@@ -102,20 +102,17 @@ namespace Barroc_IT
                     COUNT(*)
                 FROM
                     tbl_users
-                WHERE
+                WHERE BINARY 
                     username = @username
-                AND
+                AND BINARY
                     password = @password", this.GetConnection()))
             {
+                
                 cmd.Parameters.AddWithValue("username", username);
                 cmd.Parameters.AddWithValue("password", password);
                 exist = (Int64)cmd.ExecuteScalar() > 0;
             }
-
-            if (exist)
-                return true;
-            return false;   
-
+            return exist;
         }
     }
 }

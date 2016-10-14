@@ -307,8 +307,9 @@
             this.mnitem_Logout.Margin = new System.Windows.Forms.Padding(0, 100, 0, 0);
             this.mnitem_Logout.Name = "mnitem_Logout";
             this.mnitem_Logout.Size = new System.Drawing.Size(135, 25);
-            this.mnitem_Logout.Text = "frm_Logout";
+            this.mnitem_Logout.Text = "Logout";
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
             // frm_Sales
             // 
