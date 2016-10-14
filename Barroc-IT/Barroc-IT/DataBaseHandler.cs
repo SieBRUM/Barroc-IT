@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Barroc_IT
 {
@@ -10,15 +11,15 @@ namespace Barroc_IT
     /// </summary>
     public class DatabaseHandler
     {
-        private SqlConnection conn;
+        private MySqlConnection conn;
 
         /// <summary>
         /// Default constructor, creates new connection and sets default connectionstring.
         /// </summary>
         public DatabaseHandler()
         {
-            conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Resources\BarrocIT.mdf;Integrated Security=True";
+            conn = new MySqlConnection();
+            conn.ConnectionString = "server=159.253.7.212;user id=bartdke98_sieb;password=test123;persistsecurityinfo=True;database=bartdke98_barrocitsieb";
         }
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace Barroc_IT
         /// <param name="connectionString">The custom connectionstring for the database.</param>
         public DatabaseHandler(string connectionString)
         {
-            conn = new SqlConnection();
+            conn = new MySqlConnection();
             conn.ConnectionString = connectionString;
         }
 
@@ -81,9 +82,40 @@ namespace Barroc_IT
         /// Gets the current connection.
         /// </summary>
         /// <returns>Returns the current sqlconnection.</returns>
-        public SqlConnection GetConnection()
+        public MySqlConnection GetConnection()
         {
             return this.conn;
+        }
+
+        public bool Login(string username, string password)
+        {
+            bool exist = false;
+            //command.CommandText = query;
+            //MySqlDataReader reader = command.ExecuteReader();
+
+            //while (reader.Read())
+            //{
+            //    MessageBox.Show(reader["username"].ToString());
+            //}
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                SELECT 
+                    COUNT(*)
+                FROM
+                    tbl_users
+                WHERE
+                    username = @username
+                AND
+                    password = @password", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("password", password);
+                exist = (Int64)cmd.ExecuteScalar() > 0;
+            }
+
+            if (exist)
+                return true;
+            return false;   
+
         }
     }
 }

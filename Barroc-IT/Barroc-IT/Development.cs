@@ -86,5 +86,11 @@ namespace Barroc_IT
             mnfltr_Appointments_Summary.Visible = appointments;
             mnfltr_Appointments_Date.Visible = appointments;
         }
+
+        private void mnitem_Logout_Click(object sender, EventArgs e)
+        {
+            frm_Logout lgfrm = new frm_Logout(this);
+            lgfrm.Show();
+        }
     }
 }

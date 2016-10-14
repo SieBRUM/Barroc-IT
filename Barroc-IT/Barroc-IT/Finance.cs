@@ -49,5 +49,6 @@ namespace Barroc_IT
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
     }
 }
