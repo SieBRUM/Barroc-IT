@@ -58,7 +58,7 @@ namespace Barroc_IT
             }
             else
             { 
-                MessageBox.Show("Login Failed! :(");
+                MessageBox.Show("Login Failed! :'(");
             }
         }
 

@@ -18,6 +18,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+
         }
 
         #region Windows Form Designer generated code
@@ -56,7 +57,7 @@
             // 
             // btn_No
             // 
-            this.btn_No.Location = new System.Drawing.Point(234, 102);
+            this.btn_No.Location = new System.Drawing.Point(235, 102);
             this.btn_No.Name = "btn_No";
             this.btn_No.Size = new System.Drawing.Size(105, 38);
             this.btn_No.TabIndex = 2;

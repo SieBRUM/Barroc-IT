@@ -91,6 +91,7 @@ namespace Barroc_IT
         {
             frm_Logout lgfrm = new frm_Logout(this);
             lgfrm.Show();
+
         }
     }
 }

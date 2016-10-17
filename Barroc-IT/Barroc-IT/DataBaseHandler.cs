@@ -22,6 +22,7 @@ namespace Barroc_IT
             conn.ConnectionString = "server=159.253.7.212;user id=bartdke98_sieb;password=test123;persistsecurityinfo=True;database=bartdke98_barrocitsieb";
         }
 
+
         /// <summary>
         /// Customer constructor, creates new connection and sets connectionstring from parameter.
         /// </summary>
