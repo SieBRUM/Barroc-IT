@@ -118,6 +118,7 @@
             this.MinimumSize = new System.Drawing.Size(566, 320);
             this.Name = "Frm_Login";
             this.Text = "Barroc-IT - Software for real.";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Banner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

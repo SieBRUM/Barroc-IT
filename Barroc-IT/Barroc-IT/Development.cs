@@ -17,7 +17,6 @@ namespace Barroc_IT
         {
             InitializeComponent();
             dbh = new DatabaseHandler();
-            dbh.OpenConnection();
             
             MenuItems menuItemHandler = new MenuItems();
             ToolStripControlHost[] arrayControl = menuItemHandler.DTPGenerator();
@@ -101,9 +100,16 @@ namespace Barroc_IT
             tc_Main.SelectedIndex = 4;
         }
 
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void AddProject(object sender, EventArgs e)
         {
-            dbh.AddProject(txtb_Customer_Id.Text, txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex + 1, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, txtb_Maintenance_Contract.Text, txtb_Deadline.Text);
+            dbh.OpenConnection();
+
+            if (dbh.AddProject(txtb_Customer_Id.Text, txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex + 1, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, txtb_Maintenance_Contract.Text, txtb_Deadline.Text))
+                MessageBox.Show("Succesfully added a project!");
+            else 
+                MessageBox.Show("An error occcured while adding a project.");
+
+            dbh.CloseConnection();
         }
     }
 }

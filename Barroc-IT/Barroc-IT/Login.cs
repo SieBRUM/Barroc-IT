@@ -85,5 +85,10 @@ namespace Barroc_IT
             if(e.KeyCode == Keys.Return)
                 bt_Login.PerformClick();
         }
+
+        private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

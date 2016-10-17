@@ -376,6 +376,7 @@ namespace Barroc_IT
             this.tc_Main.SelectedIndex = 0;
             this.tc_Main.Size = new System.Drawing.Size(574, 450);
             this.tc_Main.TabIndex = 2;
+            this.tc_Main.TabStop = false;
             // 
             // tcp_Overview
             // 
@@ -417,7 +418,7 @@ namespace Barroc_IT
             this.tcp_Projects.Location = new System.Drawing.Point(4, 22);
             this.tcp_Projects.Name = "tcp_Projects";
             this.tcp_Projects.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Projects.Size = new System.Drawing.Size(566, 446);
+            this.tcp_Projects.Size = new System.Drawing.Size(566, 424);
             this.tcp_Projects.TabIndex = 1;
             this.tcp_Projects.Text = "Projects";
             this.tcp_Projects.UseVisualStyleBackColor = true;
@@ -458,7 +459,7 @@ namespace Barroc_IT
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Appointments.Size = new System.Drawing.Size(566, 446);
+            this.tcp_Appointments.Size = new System.Drawing.Size(566, 424);
             this.tcp_Appointments.TabIndex = 2;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
@@ -489,7 +490,7 @@ namespace Barroc_IT
             this.tcp_Help.Location = new System.Drawing.Point(4, 22);
             this.tcp_Help.Name = "tcp_Help";
             this.tcp_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Help.Size = new System.Drawing.Size(566, 446);
+            this.tcp_Help.Size = new System.Drawing.Size(566, 424);
             this.tcp_Help.TabIndex = 3;
             this.tcp_Help.Text = "Help";
             this.tcp_Help.UseVisualStyleBackColor = true;
@@ -546,10 +547,10 @@ namespace Barroc_IT
             this.btn_Add.Location = new System.Drawing.Point(246, 387);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
-            this.btn_Add.TabIndex = 26;
+            this.btn_Add.TabIndex = 10;
             this.btn_Add.Text = "LETSGOOO";
             this.btn_Add.UseVisualStyleBackColor = true;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            this.btn_Add.Click += new System.EventHandler(this.AddProject);
             // 
             // label15
             // 
@@ -565,7 +566,7 @@ namespace Barroc_IT
             this.txtb_Deadline.Location = new System.Drawing.Point(367, 270);
             this.txtb_Deadline.Name = "txtb_Deadline";
             this.txtb_Deadline.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Deadline.TabIndex = 24;
+            this.txtb_Deadline.TabIndex = 8;
             // 
             // label14
             // 
@@ -581,7 +582,7 @@ namespace Barroc_IT
             this.txtb_Maintenance_Contract.Location = new System.Drawing.Point(370, 222);
             this.txtb_Maintenance_Contract.Name = "txtb_Maintenance_Contract";
             this.txtb_Maintenance_Contract.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Maintenance_Contract.TabIndex = 22;
+            this.txtb_Maintenance_Contract.TabIndex = 6;
             // 
             // label13
             // 
@@ -597,7 +598,7 @@ namespace Barroc_IT
             this.txtb_Contact_Person.Location = new System.Drawing.Point(370, 165);
             this.txtb_Contact_Person.Name = "txtb_Contact_Person";
             this.txtb_Contact_Person.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Contact_Person.TabIndex = 20;
+            this.txtb_Contact_Person.TabIndex = 4;
             // 
             // label12
             // 
@@ -634,7 +635,7 @@ namespace Barroc_IT
             this.cbox_Project_Status.Location = new System.Drawing.Point(25, 165);
             this.cbox_Project_Status.Name = "cbox_Project_Status";
             this.cbox_Project_Status.Size = new System.Drawing.Size(97, 21);
-            this.cbox_Project_Status.TabIndex = 16;
+            this.cbox_Project_Status.TabIndex = 3;
             // 
             // label9
             // 
@@ -668,21 +669,21 @@ namespace Barroc_IT
             this.txtb_Operating_System.Location = new System.Drawing.Point(22, 222);
             this.txtb_Operating_System.Name = "txtb_Operating_System";
             this.txtb_Operating_System.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Operating_System.TabIndex = 10;
+            this.txtb_Operating_System.TabIndex = 5;
             // 
             // txtb_Software
             // 
             this.txtb_Software.Location = new System.Drawing.Point(25, 284);
             this.txtb_Software.Name = "txtb_Software";
             this.txtb_Software.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Software.TabIndex = 8;
+            this.txtb_Software.TabIndex = 7;
             // 
             // txtb_Amount_Invoices
             // 
             this.txtb_Amount_Invoices.Location = new System.Drawing.Point(22, 344);
             this.txtb_Amount_Invoices.Name = "txtb_Amount_Invoices";
             this.txtb_Amount_Invoices.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Amount_Invoices.TabIndex = 6;
+            this.txtb_Amount_Invoices.TabIndex = 9;
             // 
             // txtb_Project_Name
             // 
@@ -690,14 +691,14 @@ namespace Barroc_IT
             this.txtb_Project_Name.MaxLength = 255;
             this.txtb_Project_Name.Name = "txtb_Project_Name";
             this.txtb_Project_Name.Size = new System.Drawing.Size(472, 20);
-            this.txtb_Project_Name.TabIndex = 4;
+            this.txtb_Project_Name.TabIndex = 2;
             // 
             // txtb_Customer_Id
             // 
             this.txtb_Customer_Id.Location = new System.Drawing.Point(22, 62);
             this.txtb_Customer_Id.Name = "txtb_Customer_Id";
             this.txtb_Customer_Id.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Customer_Id.TabIndex = 2;
+            this.txtb_Customer_Id.TabIndex = 1;
             // 
             // frm_Development
             // 
