@@ -456,7 +456,5 @@ namespace Barroc_IT
         private Label frm_Finance_Window_Name;
         private Timer timer1;
         private PictureBox MouseMove;
-
-
     }
 }

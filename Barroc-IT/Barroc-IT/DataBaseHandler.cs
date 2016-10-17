@@ -115,5 +115,26 @@ namespace Barroc_IT
             }
             return exist;
         }
+
+        public void AddProject(string c_Id, string p_Name, int p_Status, string OS, string Software, string Invoices, string c_Person, string m_Contract, string deadline)
+        {
+
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    INSERT INTO
+                        tbl_projects(customer_id,project_name,project_status,operating_system,software,amount_invoice,contact_person,maintenance_contract,deadline_date)
+                        VALUES (@customer_id,@project_name,@project_status,@operating_system,@software,@amount_invoice,@contact_person,@maintenance_contract,@deadline_date)", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("customer_id", c_Id);
+                cmd.Parameters.AddWithValue("project_name", p_Name);
+                cmd.Parameters.AddWithValue("project_status", p_Status);
+                cmd.Parameters.AddWithValue("operating_system", OS);
+                cmd.Parameters.AddWithValue("software", Software);
+                cmd.Parameters.AddWithValue("amount_invoice",Invoices);
+                cmd.Parameters.AddWithValue("contact_person", c_Person);
+                cmd.Parameters.AddWithValue("maintenance_contract", m_Contract);
+                cmd.Parameters.AddWithValue("deadline_date", deadline);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

@@ -95,7 +95,7 @@
             // 
             // pb_Banner
             // 
-            this.pb_Banner.Location = new System.Drawing.Point(25, 13);
+            this.pb_Banner.Location = new System.Drawing.Point(36, 12);
             this.pb_Banner.Name = "pb_Banner";
             this.pb_Banner.Size = new System.Drawing.Size(502, 86);
             this.pb_Banner.TabIndex = 7;

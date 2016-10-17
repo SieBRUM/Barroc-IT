@@ -25,40 +25,47 @@ namespace Barroc_IT
 
         public void Login(object sender, EventArgs e)
         {
-            DatabaseHandler dbh = new DatabaseHandler();
-            dbh.OpenConnection();
-            if (dbh.Login(txtb_Username.Text, txtb_Password.Text))
+            if (txtb_Username.Text == "" || txtb_Password.Text == "")
             {
-                if (cb_Remember.Checked == true)
-                {
-                    Properties.Settings.Default["RememberMe"] = true;
-                    Properties.Settings.Default["Username"] = txtb_Username.Text;
-                    Properties.Settings.Default.Save();
-                }
-
-                switch (txtb_Username.Text.ToLower())
-                { 
-                    case "development":
-                        frm_Development devForm = new frm_Development();
-                        devForm.Show();
-                        break;
-                    case "sales":
-                        frm_Sales salForm = new frm_Sales();
-                        salForm.Show();
-                        break;
-                    case "finance":
-                        frm_Finance finForm = new frm_Finance();
-                        finForm.Show();
-                        break;
-                    default:
-                        MessageBox.Show("An Error Occured.");
-                        break;
-                }
-                this.Hide();
+                MessageBox.Show("Please fill the username and password fields.");
             }
-            else
+            else 
             { 
-                MessageBox.Show("Login Failed! :'(");
+                DatabaseHandler dbh = new DatabaseHandler();
+                dbh.OpenConnection();
+                if (dbh.Login(txtb_Username.Text, txtb_Password.Text))
+                {
+                    if (cb_Remember.Checked == true)
+                    {
+                        Properties.Settings.Default["RememberMe"] = true;
+                        Properties.Settings.Default["Username"] = txtb_Username.Text;
+                        Properties.Settings.Default.Save();
+                    }
+
+                    switch (txtb_Username.Text.ToLower())
+                    { 
+                        case "development":
+                            frm_Development devForm = new frm_Development();
+                            devForm.Show();
+                            break;
+                        case "sales":
+                            frm_Sales salForm = new frm_Sales();
+                            salForm.Show();
+                            break;
+                        case "finance":
+                            frm_Finance finForm = new frm_Finance();
+                            finForm.Show();
+                            break;
+                        default:
+                            MessageBox.Show("An Error Occured.");
+                            break;
+                    }
+                    this.Hide();
+                }
+                else
+                { 
+                    MessageBox.Show("Login Failed! :'(");
+                }
             }
         }
 

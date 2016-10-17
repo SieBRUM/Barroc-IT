@@ -60,6 +60,7 @@ namespace Barroc_IT
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tcp_Projects = new System.Windows.Forms.TabPage();
+            this.btn_Add_Project = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
@@ -68,12 +69,33 @@ namespace Barroc_IT
             this.tcp_Help = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.tcp_Add_Project = new System.Windows.Forms.TabPage();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtb_Deadline = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtb_Maintenance_Contract = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtb_Contact_Person = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbox_Project_Status = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_Project_Name = new System.Windows.Forms.Label();
+            this.lbl_Customer_Id = new System.Windows.Forms.Label();
+            this.txtb_Operating_System = new System.Windows.Forms.TextBox();
+            this.txtb_Software = new System.Windows.Forms.TextBox();
+            this.txtb_Amount_Invoices = new System.Windows.Forms.TextBox();
+            this.txtb_Project_Name = new System.Windows.Forms.TextBox();
+            this.txtb_Customer_Id = new System.Windows.Forms.TextBox();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Projects.SuspendLayout();
             this.tcp_Appointments.SuspendLayout();
             this.tcp_Help.SuspendLayout();
+            this.tcp_Add_Project.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -347,11 +369,12 @@ namespace Barroc_IT
             this.tc_Main.Controls.Add(this.tcp_Projects);
             this.tc_Main.Controls.Add(this.tcp_Appointments);
             this.tc_Main.Controls.Add(this.tcp_Help);
-            this.tc_Main.Location = new System.Drawing.Point(142, -22);
+            this.tc_Main.Controls.Add(this.tcp_Add_Project);
+            this.tc_Main.Location = new System.Drawing.Point(142, 0);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
             this.tc_Main.SelectedIndex = 0;
-            this.tc_Main.Size = new System.Drawing.Size(574, 472);
+            this.tc_Main.Size = new System.Drawing.Size(574, 450);
             this.tc_Main.TabIndex = 2;
             // 
             // tcp_Overview
@@ -362,7 +385,7 @@ namespace Barroc_IT
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Overview.Size = new System.Drawing.Size(566, 446);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 424);
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
@@ -388,6 +411,7 @@ namespace Barroc_IT
             // tcp_Projects
             // 
             this.tcp_Projects.AutoScroll = true;
+            this.tcp_Projects.Controls.Add(this.btn_Add_Project);
             this.tcp_Projects.Controls.Add(this.label4);
             this.tcp_Projects.Controls.Add(this.label1);
             this.tcp_Projects.Location = new System.Drawing.Point(4, 22);
@@ -397,6 +421,16 @@ namespace Barroc_IT
             this.tcp_Projects.TabIndex = 1;
             this.tcp_Projects.Text = "Projects";
             this.tcp_Projects.UseVisualStyleBackColor = true;
+            // 
+            // btn_Add_Project
+            // 
+            this.btn_Add_Project.Location = new System.Drawing.Point(106, 184);
+            this.btn_Add_Project.Name = "btn_Add_Project";
+            this.btn_Add_Project.Size = new System.Drawing.Size(207, 23);
+            this.btn_Add_Project.TabIndex = 2;
+            this.btn_Add_Project.Text = "ADD LE PROJECT EKSDEE LMAO";
+            this.btn_Add_Project.UseVisualStyleBackColor = true;
+            this.btn_Add_Project.Click += new System.EventHandler(this.btn_Add_Project_Click);
             // 
             // label4
             // 
@@ -478,6 +512,193 @@ namespace Barroc_IT
             this.label7.TabIndex = 2;
             this.label7.Text = "Help";
             // 
+            // tcp_Add_Project
+            // 
+            this.tcp_Add_Project.Controls.Add(this.btn_Add);
+            this.tcp_Add_Project.Controls.Add(this.label15);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Deadline);
+            this.tcp_Add_Project.Controls.Add(this.label14);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Maintenance_Contract);
+            this.tcp_Add_Project.Controls.Add(this.label13);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Contact_Person);
+            this.tcp_Add_Project.Controls.Add(this.label12);
+            this.tcp_Add_Project.Controls.Add(this.label11);
+            this.tcp_Add_Project.Controls.Add(this.label10);
+            this.tcp_Add_Project.Controls.Add(this.cbox_Project_Status);
+            this.tcp_Add_Project.Controls.Add(this.label9);
+            this.tcp_Add_Project.Controls.Add(this.lbl_Project_Name);
+            this.tcp_Add_Project.Controls.Add(this.lbl_Customer_Id);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Operating_System);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Software);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Amount_Invoices);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Project_Name);
+            this.tcp_Add_Project.Controls.Add(this.txtb_Customer_Id);
+            this.tcp_Add_Project.Location = new System.Drawing.Point(4, 22);
+            this.tcp_Add_Project.Name = "tcp_Add_Project";
+            this.tcp_Add_Project.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_Add_Project.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Add_Project.TabIndex = 4;
+            this.tcp_Add_Project.Text = "Add Project";
+            this.tcp_Add_Project.UseVisualStyleBackColor = true;
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Location = new System.Drawing.Point(246, 387);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(75, 23);
+            this.btn_Add.TabIndex = 26;
+            this.btn_Add.Text = "LETSGOOO";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(367, 254);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 13);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Deadline date";
+            // 
+            // txtb_Deadline
+            // 
+            this.txtb_Deadline.Location = new System.Drawing.Point(367, 270);
+            this.txtb_Deadline.Name = "txtb_Deadline";
+            this.txtb_Deadline.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Deadline.TabIndex = 24;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(370, 206);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(112, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Maintenance Contract";
+            // 
+            // txtb_Maintenance_Contract
+            // 
+            this.txtb_Maintenance_Contract.Location = new System.Drawing.Point(370, 222);
+            this.txtb_Maintenance_Contract.Name = "txtb_Maintenance_Contract";
+            this.txtb_Maintenance_Contract.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Maintenance_Contract.TabIndex = 22;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(370, 149);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Contact Person";
+            // 
+            // txtb_Contact_Person
+            // 
+            this.txtb_Contact_Person.Location = new System.Drawing.Point(370, 165);
+            this.txtb_Contact_Person.Name = "txtb_Contact_Person";
+            this.txtb_Contact_Person.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Contact_Person.TabIndex = 20;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(22, 328);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 13);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Amount of invoices";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(22, 268);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Software";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 206);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Operating System";
+            // 
+            // cbox_Project_Status
+            // 
+            this.cbox_Project_Status.FormattingEnabled = true;
+            this.cbox_Project_Status.Items.AddRange(new object[] {
+            "Open"});
+            this.cbox_Project_Status.Location = new System.Drawing.Point(25, 165);
+            this.cbox_Project_Status.Name = "cbox_Project_Status";
+            this.cbox_Project_Status.Size = new System.Drawing.Size(97, 21);
+            this.cbox_Project_Status.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Project Status";
+            // 
+            // lbl_Project_Name
+            // 
+            this.lbl_Project_Name.AutoSize = true;
+            this.lbl_Project_Name.Location = new System.Drawing.Point(22, 93);
+            this.lbl_Project_Name.Name = "lbl_Project_Name";
+            this.lbl_Project_Name.Size = new System.Drawing.Size(71, 13);
+            this.lbl_Project_Name.TabIndex = 14;
+            this.lbl_Project_Name.Text = "Project Name";
+            // 
+            // lbl_Customer_Id
+            // 
+            this.lbl_Customer_Id.AutoSize = true;
+            this.lbl_Customer_Id.Location = new System.Drawing.Point(22, 43);
+            this.lbl_Customer_Id.Name = "lbl_Customer_Id";
+            this.lbl_Customer_Id.Size = new System.Drawing.Size(63, 13);
+            this.lbl_Customer_Id.TabIndex = 13;
+            this.lbl_Customer_Id.Text = "Customer Id";
+            // 
+            // txtb_Operating_System
+            // 
+            this.txtb_Operating_System.Location = new System.Drawing.Point(22, 222);
+            this.txtb_Operating_System.Name = "txtb_Operating_System";
+            this.txtb_Operating_System.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Operating_System.TabIndex = 10;
+            // 
+            // txtb_Software
+            // 
+            this.txtb_Software.Location = new System.Drawing.Point(25, 284);
+            this.txtb_Software.Name = "txtb_Software";
+            this.txtb_Software.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Software.TabIndex = 8;
+            // 
+            // txtb_Amount_Invoices
+            // 
+            this.txtb_Amount_Invoices.Location = new System.Drawing.Point(22, 344);
+            this.txtb_Amount_Invoices.Name = "txtb_Amount_Invoices";
+            this.txtb_Amount_Invoices.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Amount_Invoices.TabIndex = 6;
+            // 
+            // txtb_Project_Name
+            // 
+            this.txtb_Project_Name.Location = new System.Drawing.Point(22, 109);
+            this.txtb_Project_Name.MaxLength = 255;
+            this.txtb_Project_Name.Name = "txtb_Project_Name";
+            this.txtb_Project_Name.Size = new System.Drawing.Size(472, 20);
+            this.txtb_Project_Name.TabIndex = 4;
+            // 
+            // txtb_Customer_Id
+            // 
+            this.txtb_Customer_Id.Location = new System.Drawing.Point(22, 62);
+            this.txtb_Customer_Id.Name = "txtb_Customer_Id";
+            this.txtb_Customer_Id.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Customer_Id.TabIndex = 2;
+            // 
             // frm_Development
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,6 +724,8 @@ namespace Barroc_IT
             this.tcp_Appointments.PerformLayout();
             this.tcp_Help.ResumeLayout(false);
             this.tcp_Help.PerformLayout();
+            this.tcp_Add_Project.ResumeLayout(false);
+            this.tcp_Add_Project.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -547,6 +770,27 @@ namespace Barroc_IT
         private Label label6;
         private Label label7;
         private Label label8;
+        private TabPage tcp_Add_Project;
+        private Button btn_Add_Project;
+        private Label lbl_Customer_Id;
+        private TextBox txtb_Operating_System;
+        private TextBox txtb_Software;
+        private TextBox txtb_Amount_Invoices;
+        private TextBox txtb_Project_Name;
+        private TextBox txtb_Customer_Id;
+        private Label lbl_Project_Name;
+        private Label label9;
+        private ComboBox cbox_Project_Status;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private TextBox txtb_Contact_Person;
+        private Label label14;
+        private TextBox txtb_Maintenance_Contract;
+        private Label label15;
+        private TextBox txtb_Deadline;
+        private Button btn_Add;
 
 
 
