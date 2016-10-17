@@ -103,13 +103,41 @@ namespace Barroc_IT
         private void AddProject(object sender, EventArgs e)
         {
             dbh.OpenConnection();
+            string date = getDate(dtp_Deadline);
 
-            if (dbh.AddProject(txtb_Customer_Id.Text, txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex + 1, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, txtb_Maintenance_Contract.Text, txtb_Deadline.Text))
+            if (dbh.AddProject(txtb_Customer_Id.Text, txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex + 1, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, txtb_Maintenance_Contract.Text, date))
                 MessageBox.Show("Succesfully added a project!");
             else 
                 MessageBox.Show("An error occcured while adding a project.");
 
             dbh.CloseConnection();
+        }
+
+        private string getDate(DateTimePicker dtp)
+        {
+            string date = dtp.Value.Year.ToString();
+            int a = dtp.Value.Month;
+
+            if (a < 10)
+            {
+                date += "0" + dtp.Value.Month.ToString();
+            }
+            else 
+            { 
+                date += dtp.Value.Month.ToString();
+            }
+            a = dtp_Deadline.Value.Day;
+
+            if (a < 10)
+            {
+                date += "0" + dtp.Value.Day.ToString();
+            }
+            else 
+            { 
+                date += dtp.Value.Day.ToString();
+            }
+
+            return date;
         }
     }
 }
