@@ -77,6 +77,7 @@ namespace Barroc_IT
             this.WindowState = FormWindowState.Minimized;
         }
 
+<<<<<<< HEAD
         private void timer1_Tick(object sender, EventArgs e)
         {
             int ex = formlock.X - cursorlocation.X + Cursor.Position.X;
@@ -112,5 +113,7 @@ namespace Barroc_IT
         {
 
         }
+=======
+>>>>>>> origin/master
     }
 }
