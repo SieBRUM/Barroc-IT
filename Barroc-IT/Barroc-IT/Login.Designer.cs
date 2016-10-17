@@ -91,6 +91,7 @@
             this.cb_Remember.TabIndex = 6;
             this.cb_Remember.Text = "Remember me";
             this.cb_Remember.UseVisualStyleBackColor = true;
+            this.cb_Remember.CheckedChanged += new System.EventHandler(this.cb_Remember_CheckedChanged);
             // 
             // pb_Banner
             // 

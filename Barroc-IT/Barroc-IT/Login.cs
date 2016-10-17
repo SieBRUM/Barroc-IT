@@ -67,8 +67,8 @@ namespace Barroc_IT
         {
             if(!cb_Remember.Checked)
             {
-                Properties.Settings.Default["RememberMe"] = false;
-                Properties.Settings.Default["Username"] = "";
+                Properties.Settings.Default.RememberMe = false;
+                Properties.Settings.Default.Username = "";
                 Properties.Settings.Default.Save();
             }
         }
