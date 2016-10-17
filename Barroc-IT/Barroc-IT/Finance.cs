@@ -14,14 +14,15 @@ namespace Barroc_IT
     public partial class frm_Finance : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
          private static extern IntPtr CreateRoundRectRgn
         (
-            int nLeftRect,  // x-coordinate of upper-left corner
-            int nTopRect, // y-coordinate of upper-left corner
-            int nRightRect, // x-coordinate of lower-right corner
-            int nBottomRect, // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
+            int nLeftRect,  
+            int nTopRect, 
+            int nRightRect, 
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse 
          );
 
         public frm_Finance()
@@ -30,6 +31,32 @@ namespace Barroc_IT
 
            
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+        }
+
+        const int WS_CLIPCHILDREN = 0x2000000;
+        const int minimisebox = 0x20000;
+        const int sysmen = 0x80000;
+        const int dbblcl = 0x8;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+
+                CreateParams cp = base.CreateParams;
+                cp.Style = WS_CLIPCHILDREN | minimisebox | sysmen;
+                cp.ClassStyle = dbblcl;
+
+                return cp;
+            }
+        }
+
+        Point formlock, cursorlocation = new Point(0, 0);
+
+        private void setpositions()
+        {
+            formlock = this.Location;
+            cursorlocation = Cursor.Position;
         }
 
         private void Finance_Load(object sender, EventArgs e)
@@ -50,5 +77,43 @@ namespace Barroc_IT
             this.WindowState = FormWindowState.Minimized;
         }
 
+<<<<<<< HEAD
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int ex = formlock.X - cursorlocation.X + Cursor.Position.X;
+            int ey = formlock.Y - cursorlocation.Y + Cursor.Position.Y;
+            this.Location = new Point(ex, ey);
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            timer1.Start();
+            setpositions();
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            timer1.Stop();
+            setpositions();
+        }
+
+        private void frm_Finance_Window_Name_MouseDown(object sender, MouseEventArgs e)
+        {
+            timer1.Start();
+            setpositions();
+        }
+
+        private void frm_Finance_Window_Name_MouseUp(object sender, MouseEventArgs e)
+        {
+            timer1.Stop();
+            setpositions();
+        }
+
+        private void frm_Finance_Load(object sender, EventArgs e)
+        {
+
+        }
+=======
+>>>>>>> origin/master
     }
 }

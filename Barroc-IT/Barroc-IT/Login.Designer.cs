@@ -46,7 +46,7 @@
             this.bt_Login.TabIndex = 0;
             this.bt_Login.Text = "Login";
             this.bt_Login.UseVisualStyleBackColor = true;
-            this.bt_Login.Click += new System.EventHandler(this.Login);
+            this.bt_Login.Click += new System.EventHandler(this.bt_Login_Click);
             // 
             // lbl_Username
             // 
@@ -77,10 +77,8 @@
             // 
             this.txtb_Password.Location = new System.Drawing.Point(205, 176);
             this.txtb_Password.Name = "txtb_Password";
-            this.txtb_Password.PasswordChar = '•';
             this.txtb_Password.Size = new System.Drawing.Size(178, 20);
             this.txtb_Password.TabIndex = 5;
-            this.txtb_Password.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtb_Password_KeyUp);
             // 
             // cb_Remember
             // 
@@ -91,7 +89,6 @@
             this.cb_Remember.TabIndex = 6;
             this.cb_Remember.Text = "Remember me";
             this.cb_Remember.UseVisualStyleBackColor = true;
-            this.cb_Remember.CheckedChanged += new System.EventHandler(this.cb_Remember_CheckedChanged);
             // 
             // pb_Banner
             // 
@@ -105,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 281);
+            this.ClientSize = new System.Drawing.Size(550, 282);
             this.Controls.Add(this.pb_Banner);
             this.Controls.Add(this.cb_Remember);
             this.Controls.Add(this.txtb_Password);
@@ -118,6 +115,7 @@
             this.MinimumSize = new System.Drawing.Size(566, 320);
             this.Name = "Frm_Login";
             this.Text = "Barroc-IT - Software for real.";
+            this.Load += new System.EventHandler(this.Frm_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Banner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
