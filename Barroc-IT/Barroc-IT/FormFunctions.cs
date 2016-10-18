@@ -13,10 +13,10 @@ namespace Barroc_IT
     {
         Point formlock, cursorlocation = new Point(0, 0);
 
-        PictureBox btn_close = new PictureBox();
-        PictureBox btn_minimise = new PictureBox();
-        PictureBox btn_help = new PictureBox();
-        PictureBox background = new PictureBox();
+        //PictureBox btn_close = new PictureBox();
+        //PictureBox btn_minimise = new PictureBox();
+        //PictureBox btn_help = new PictureBox();
+        //PictureBox background = new PictureBox();
 
         Image img_backgr = Image.FromFile("BackgroundOverview.png");
         Image img_close = Image.FromFile("Close.png");
@@ -31,21 +31,31 @@ namespace Barroc_IT
         
         public void CreateForm()
         {
-            background.Image = img_backgr;
-            background.Height = 700;
-            background.Width = 900;
+            //background.Image = img_backgr;
+            //background.Height = 700;
+            //background.Width = 900;
+
+            using (Form form = new Form())
+            {
+                form.Text = "About Us";
+
+                // form.Controls.Add(...);
+                this.BackgroundImage = img_backgr;
+
+                form.ShowDialog();
+            }
 
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
 
         }
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
+        //public const int WM_NCLBUTTONDOWN = 0xA1;
+        //public const int HT_CAPTION = 0x2;
 
-        [DllImportAttribute("user32.dll")]
+        //[DllImportAttribute("user32.dll")]
         
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        public static extern bool ReleaseCapture();
+        //public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        //public static extern bool ReleaseCapture();
 
 //private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
 //{     
