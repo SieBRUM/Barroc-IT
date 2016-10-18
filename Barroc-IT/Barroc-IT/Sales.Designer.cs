@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TabControl tc_Main;
             this.mstrp_Menu = new System.Windows.Forms.MenuStrip();
             this.mnitem_Overview = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Overview_Department = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,55 @@
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tcp_Overview = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbl_Customer_firstname = new System.Windows.Forms.Label();
+            this.txtb_customer_firstname = new System.Windows.Forms.TextBox();
+            this.txtb_customer_lastname = new System.Windows.Forms.TextBox();
+            this.lbl_customer_lastname = new System.Windows.Forms.Label();
+            this.txtb_customer_company_name = new System.Windows.Forms.TextBox();
+            this.lbl_customer_company_name = new System.Windows.Forms.Label();
+            this.txtb_customer_streetname_1 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_streetname_1 = new System.Windows.Forms.Label();
+            this.txtb_customer_housenumber_1 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_housenumber_1 = new System.Windows.Forms.Label();
+            this.txtb_customer_residence_1 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_residence_1 = new System.Windows.Forms.Label();
+            this.txtb_customer_zipcode_1 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_zipcode_1 = new System.Windows.Forms.Label();
+            this.txt_customer_zipcode_2 = new System.Windows.Forms.TextBox();
+            this.lbl_customers_zipcode_2 = new System.Windows.Forms.Label();
+            this.txtb_customer_residence_2 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_residence_2 = new System.Windows.Forms.Label();
+            this.txtb_customer_housenumber_2 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_housenumer_2 = new System.Windows.Forms.Label();
+            this.txtb_customer_streetname_2 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_streetname_2 = new System.Windows.Forms.Label();
+            this.txtb_customer_phonenumber_1 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_phonenumber_1 = new System.Windows.Forms.Label();
+            this.txtb_customer_phonenumber_2 = new System.Windows.Forms.TextBox();
+            this.lbl_customer_phonenumber_2 = new System.Windows.Forms.Label();
+            this.txtb_customer_email = new System.Windows.Forms.TextBox();
+            this.lbl_customer_email = new System.Windows.Forms.Label();
+            this.txtb_customer_fax = new System.Windows.Forms.TextBox();
+            this.lbl_customer_fax = new System.Windows.Forms.Label();
+            this.txtb_customer_last_contact = new System.Windows.Forms.TextBox();
+            this.lbl_customer_last_contact = new System.Windows.Forms.Label();
+            this.txtb_customer_last_action = new System.Windows.Forms.TextBox();
+            this.lbl_customer_last_action = new System.Windows.Forms.Label();
+            this.txtb_customer_next_contact = new System.Windows.Forms.TextBox();
+            this.lbl_customer_next_contact = new System.Windows.Forms.Label();
+            this.txtb_customer_next_action = new System.Windows.Forms.TextBox();
+            this.lbl_customer_next_action = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            tc_Main = new System.Windows.Forms.TabControl();
             this.mstrp_Menu.SuspendLayout();
+            tc_Main.SuspendLayout();
+            this.tcp_Overview.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -311,11 +360,446 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
+            // tc_Main
+            // 
+            tc_Main.Anchor = System.Windows.Forms.AnchorStyles.None;
+            tc_Main.Controls.Add(this.tcp_Overview);
+            tc_Main.Controls.Add(this.tabPage1);
+            tc_Main.Controls.Add(this.tabPage2);
+            tc_Main.Location = new System.Drawing.Point(142, 1);
+            tc_Main.Margin = new System.Windows.Forms.Padding(0);
+            tc_Main.Name = "tc_Main";
+            tc_Main.SelectedIndex = 0;
+            tc_Main.Size = new System.Drawing.Size(574, 464);
+            tc_Main.TabIndex = 3;
+            tc_Main.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 466);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 2;
+            // 
+            // tcp_Overview
+            // 
+            this.tcp_Overview.AutoScroll = true;
+            this.tcp_Overview.Controls.Add(this.label3);
+            this.tcp_Overview.Controls.Add(this.label2);
+            this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
+            this.tcp_Overview.Name = "tcp_Overview";
+            this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Overview.TabIndex = 0;
+            this.tcp_Overview.Text = "Overview";
+            this.tcp_Overview.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(566, 438);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Customer";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.txtb_customer_next_action);
+            this.tabPage2.Controls.Add(this.lbl_customer_next_action);
+            this.tabPage2.Controls.Add(this.txtb_customer_next_contact);
+            this.tabPage2.Controls.Add(this.lbl_customer_next_contact);
+            this.tabPage2.Controls.Add(this.txtb_customer_last_action);
+            this.tabPage2.Controls.Add(this.lbl_customer_last_action);
+            this.tabPage2.Controls.Add(this.txtb_customer_last_contact);
+            this.tabPage2.Controls.Add(this.lbl_customer_last_contact);
+            this.tabPage2.Controls.Add(this.txtb_customer_fax);
+            this.tabPage2.Controls.Add(this.lbl_customer_fax);
+            this.tabPage2.Controls.Add(this.txtb_customer_email);
+            this.tabPage2.Controls.Add(this.lbl_customer_email);
+            this.tabPage2.Controls.Add(this.txtb_customer_phonenumber_2);
+            this.tabPage2.Controls.Add(this.lbl_customer_phonenumber_2);
+            this.tabPage2.Controls.Add(this.txtb_customer_phonenumber_1);
+            this.tabPage2.Controls.Add(this.lbl_customer_phonenumber_1);
+            this.tabPage2.Controls.Add(this.txt_customer_zipcode_2);
+            this.tabPage2.Controls.Add(this.lbl_customers_zipcode_2);
+            this.tabPage2.Controls.Add(this.txtb_customer_residence_2);
+            this.tabPage2.Controls.Add(this.lbl_customer_residence_2);
+            this.tabPage2.Controls.Add(this.txtb_customer_housenumber_2);
+            this.tabPage2.Controls.Add(this.lbl_customer_housenumer_2);
+            this.tabPage2.Controls.Add(this.txtb_customer_streetname_2);
+            this.tabPage2.Controls.Add(this.lbl_customer_streetname_2);
+            this.tabPage2.Controls.Add(this.txtb_customer_zipcode_1);
+            this.tabPage2.Controls.Add(this.lbl_customer_zipcode_1);
+            this.tabPage2.Controls.Add(this.txtb_customer_residence_1);
+            this.tabPage2.Controls.Add(this.lbl_customer_residence_1);
+            this.tabPage2.Controls.Add(this.txtb_customer_housenumber_1);
+            this.tabPage2.Controls.Add(this.lbl_customer_housenumber_1);
+            this.tabPage2.Controls.Add(this.txtb_customer_streetname_1);
+            this.tabPage2.Controls.Add(this.lbl_customer_streetname_1);
+            this.tabPage2.Controls.Add(this.txtb_customer_company_name);
+            this.tabPage2.Controls.Add(this.lbl_customer_company_name);
+            this.tabPage2.Controls.Add(this.txtb_customer_lastname);
+            this.tabPage2.Controls.Add(this.lbl_customer_lastname);
+            this.tabPage2.Controls.Add(this.txtb_customer_firstname);
+            this.tabPage2.Controls.Add(this.lbl_Customer_firstname);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(566, 438);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "addCustomer";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Customer_firstname
+            // 
+            this.lbl_Customer_firstname.AutoSize = true;
+            this.lbl_Customer_firstname.Location = new System.Drawing.Point(6, 12);
+            this.lbl_Customer_firstname.Name = "lbl_Customer_firstname";
+            this.lbl_Customer_firstname.Size = new System.Drawing.Size(55, 13);
+            this.lbl_Customer_firstname.TabIndex = 0;
+            this.lbl_Customer_firstname.Text = "First name";
+            // 
+            // txtb_customer_firstname
+            // 
+            this.txtb_customer_firstname.Location = new System.Drawing.Point(9, 28);
+            this.txtb_customer_firstname.MaxLength = 20;
+            this.txtb_customer_firstname.Name = "txtb_customer_firstname";
+            this.txtb_customer_firstname.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_firstname.TabIndex = 1;
+            // 
+            // txtb_customer_lastname
+            // 
+            this.txtb_customer_lastname.Location = new System.Drawing.Point(188, 28);
+            this.txtb_customer_lastname.MaxLength = 30;
+            this.txtb_customer_lastname.Name = "txtb_customer_lastname";
+            this.txtb_customer_lastname.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_lastname.TabIndex = 3;
+            // 
+            // lbl_customer_lastname
+            // 
+            this.lbl_customer_lastname.AutoSize = true;
+            this.lbl_customer_lastname.Location = new System.Drawing.Point(185, 12);
+            this.lbl_customer_lastname.Name = "lbl_customer_lastname";
+            this.lbl_customer_lastname.Size = new System.Drawing.Size(56, 13);
+            this.lbl_customer_lastname.TabIndex = 2;
+            this.lbl_customer_lastname.Text = "Last name";
+            // 
+            // txtb_customer_company_name
+            // 
+            this.txtb_customer_company_name.Location = new System.Drawing.Point(383, 28);
+            this.txtb_customer_company_name.MaxLength = 30;
+            this.txtb_customer_company_name.Name = "txtb_customer_company_name";
+            this.txtb_customer_company_name.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_company_name.TabIndex = 5;
+            // 
+            // lbl_customer_company_name
+            // 
+            this.lbl_customer_company_name.AutoSize = true;
+            this.lbl_customer_company_name.Location = new System.Drawing.Point(380, 12);
+            this.lbl_customer_company_name.Name = "lbl_customer_company_name";
+            this.lbl_customer_company_name.Size = new System.Drawing.Size(80, 13);
+            this.lbl_customer_company_name.TabIndex = 4;
+            this.lbl_customer_company_name.Text = "Company name";
+            // 
+            // txtb_customer_streetname_1
+            // 
+            this.txtb_customer_streetname_1.Location = new System.Drawing.Point(9, 182);
+            this.txtb_customer_streetname_1.MaxLength = 20;
+            this.txtb_customer_streetname_1.Name = "txtb_customer_streetname_1";
+            this.txtb_customer_streetname_1.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_streetname_1.TabIndex = 7;
+            // 
+            // lbl_customer_streetname_1
+            // 
+            this.lbl_customer_streetname_1.AutoSize = true;
+            this.lbl_customer_streetname_1.Location = new System.Drawing.Point(6, 166);
+            this.lbl_customer_streetname_1.Name = "lbl_customer_streetname_1";
+            this.lbl_customer_streetname_1.Size = new System.Drawing.Size(73, 13);
+            this.lbl_customer_streetname_1.TabIndex = 6;
+            this.lbl_customer_streetname_1.Text = "Street name 1";
+            // 
+            // txtb_customer_housenumber_1
+            // 
+            this.txtb_customer_housenumber_1.Location = new System.Drawing.Point(9, 239);
+            this.txtb_customer_housenumber_1.MaxLength = 3;
+            this.txtb_customer_housenumber_1.Name = "txtb_customer_housenumber_1";
+            this.txtb_customer_housenumber_1.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_housenumber_1.TabIndex = 9;
+            // 
+            // lbl_customer_housenumber_1
+            // 
+            this.lbl_customer_housenumber_1.AutoSize = true;
+            this.lbl_customer_housenumber_1.Location = new System.Drawing.Point(6, 223);
+            this.lbl_customer_housenumber_1.Name = "lbl_customer_housenumber_1";
+            this.lbl_customer_housenumber_1.Size = new System.Drawing.Size(82, 13);
+            this.lbl_customer_housenumber_1.TabIndex = 8;
+            this.lbl_customer_housenumber_1.Text = "Housenumber 1";
+            // 
+            // txtb_customer_residence_1
+            // 
+            this.txtb_customer_residence_1.Location = new System.Drawing.Point(9, 298);
+            this.txtb_customer_residence_1.MaxLength = 30;
+            this.txtb_customer_residence_1.Name = "txtb_customer_residence_1";
+            this.txtb_customer_residence_1.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_residence_1.TabIndex = 11;
+            // 
+            // lbl_customer_residence_1
+            // 
+            this.lbl_customer_residence_1.AutoSize = true;
+            this.lbl_customer_residence_1.Location = new System.Drawing.Point(6, 282);
+            this.lbl_customer_residence_1.Name = "lbl_customer_residence_1";
+            this.lbl_customer_residence_1.Size = new System.Drawing.Size(67, 13);
+            this.lbl_customer_residence_1.TabIndex = 10;
+            this.lbl_customer_residence_1.Text = "Residence 1";
+            // 
+            // txtb_customer_zipcode_1
+            // 
+            this.txtb_customer_zipcode_1.Location = new System.Drawing.Point(9, 355);
+            this.txtb_customer_zipcode_1.MaxLength = 6;
+            this.txtb_customer_zipcode_1.Name = "txtb_customer_zipcode_1";
+            this.txtb_customer_zipcode_1.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_zipcode_1.TabIndex = 13;
+            // 
+            // lbl_customer_zipcode_1
+            // 
+            this.lbl_customer_zipcode_1.AutoSize = true;
+            this.lbl_customer_zipcode_1.Location = new System.Drawing.Point(6, 339);
+            this.lbl_customer_zipcode_1.Name = "lbl_customer_zipcode_1";
+            this.lbl_customer_zipcode_1.Size = new System.Drawing.Size(55, 13);
+            this.lbl_customer_zipcode_1.TabIndex = 12;
+            this.lbl_customer_zipcode_1.Text = "Zipcode 1";
+            // 
+            // txt_customer_zipcode_2
+            // 
+            this.txt_customer_zipcode_2.Location = new System.Drawing.Point(188, 355);
+            this.txt_customer_zipcode_2.MaxLength = 6;
+            this.txt_customer_zipcode_2.Name = "txt_customer_zipcode_2";
+            this.txt_customer_zipcode_2.Size = new System.Drawing.Size(100, 20);
+            this.txt_customer_zipcode_2.TabIndex = 21;
+            // 
+            // lbl_customers_zipcode_2
+            // 
+            this.lbl_customers_zipcode_2.AutoSize = true;
+            this.lbl_customers_zipcode_2.Location = new System.Drawing.Point(185, 339);
+            this.lbl_customers_zipcode_2.Name = "lbl_customers_zipcode_2";
+            this.lbl_customers_zipcode_2.Size = new System.Drawing.Size(55, 13);
+            this.lbl_customers_zipcode_2.TabIndex = 20;
+            this.lbl_customers_zipcode_2.Text = "Zipcode 2";
+            // 
+            // txtb_customer_residence_2
+            // 
+            this.txtb_customer_residence_2.Location = new System.Drawing.Point(188, 298);
+            this.txtb_customer_residence_2.MaxLength = 30;
+            this.txtb_customer_residence_2.Name = "txtb_customer_residence_2";
+            this.txtb_customer_residence_2.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_residence_2.TabIndex = 19;
+            // 
+            // lbl_customer_residence_2
+            // 
+            this.lbl_customer_residence_2.AutoSize = true;
+            this.lbl_customer_residence_2.Location = new System.Drawing.Point(185, 282);
+            this.lbl_customer_residence_2.Name = "lbl_customer_residence_2";
+            this.lbl_customer_residence_2.Size = new System.Drawing.Size(67, 13);
+            this.lbl_customer_residence_2.TabIndex = 18;
+            this.lbl_customer_residence_2.Text = "Residence 2";
+            // 
+            // txtb_customer_housenumber_2
+            // 
+            this.txtb_customer_housenumber_2.Location = new System.Drawing.Point(188, 239);
+            this.txtb_customer_housenumber_2.MaxLength = 3;
+            this.txtb_customer_housenumber_2.Name = "txtb_customer_housenumber_2";
+            this.txtb_customer_housenumber_2.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_housenumber_2.TabIndex = 17;
+            // 
+            // lbl_customer_housenumer_2
+            // 
+            this.lbl_customer_housenumer_2.AutoSize = true;
+            this.lbl_customer_housenumer_2.Location = new System.Drawing.Point(185, 223);
+            this.lbl_customer_housenumer_2.Name = "lbl_customer_housenumer_2";
+            this.lbl_customer_housenumer_2.Size = new System.Drawing.Size(82, 13);
+            this.lbl_customer_housenumer_2.TabIndex = 16;
+            this.lbl_customer_housenumer_2.Text = "Housenumber 2";
+            // 
+            // txtb_customer_streetname_2
+            // 
+            this.txtb_customer_streetname_2.Location = new System.Drawing.Point(188, 182);
+            this.txtb_customer_streetname_2.MaxLength = 20;
+            this.txtb_customer_streetname_2.Name = "txtb_customer_streetname_2";
+            this.txtb_customer_streetname_2.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_streetname_2.TabIndex = 15;
+            // 
+            // lbl_customer_streetname_2
+            // 
+            this.lbl_customer_streetname_2.AutoSize = true;
+            this.lbl_customer_streetname_2.Location = new System.Drawing.Point(185, 166);
+            this.lbl_customer_streetname_2.Name = "lbl_customer_streetname_2";
+            this.lbl_customer_streetname_2.Size = new System.Drawing.Size(73, 13);
+            this.lbl_customer_streetname_2.TabIndex = 14;
+            this.lbl_customer_streetname_2.Text = "Street name 2";
+            // 
+            // txtb_customer_phonenumber_1
+            // 
+            this.txtb_customer_phonenumber_1.Location = new System.Drawing.Point(9, 410);
+            this.txtb_customer_phonenumber_1.MaxLength = 10;
+            this.txtb_customer_phonenumber_1.Name = "txtb_customer_phonenumber_1";
+            this.txtb_customer_phonenumber_1.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_phonenumber_1.TabIndex = 23;
+            // 
+            // lbl_customer_phonenumber_1
+            // 
+            this.lbl_customer_phonenumber_1.AutoSize = true;
+            this.lbl_customer_phonenumber_1.Location = new System.Drawing.Point(6, 394);
+            this.lbl_customer_phonenumber_1.Name = "lbl_customer_phonenumber_1";
+            this.lbl_customer_phonenumber_1.Size = new System.Drawing.Size(85, 13);
+            this.lbl_customer_phonenumber_1.TabIndex = 22;
+            this.lbl_customer_phonenumber_1.Text = "Phone number 1";
+            // 
+            // txtb_customer_phonenumber_2
+            // 
+            this.txtb_customer_phonenumber_2.Location = new System.Drawing.Point(188, 410);
+            this.txtb_customer_phonenumber_2.MaxLength = 10;
+            this.txtb_customer_phonenumber_2.Name = "txtb_customer_phonenumber_2";
+            this.txtb_customer_phonenumber_2.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_phonenumber_2.TabIndex = 25;
+            // 
+            // lbl_customer_phonenumber_2
+            // 
+            this.lbl_customer_phonenumber_2.AutoSize = true;
+            this.lbl_customer_phonenumber_2.Location = new System.Drawing.Point(185, 394);
+            this.lbl_customer_phonenumber_2.Name = "lbl_customer_phonenumber_2";
+            this.lbl_customer_phonenumber_2.Size = new System.Drawing.Size(85, 13);
+            this.lbl_customer_phonenumber_2.TabIndex = 24;
+            this.lbl_customer_phonenumber_2.Text = "Phone number 2";
+            // 
+            // txtb_customer_email
+            // 
+            this.txtb_customer_email.Location = new System.Drawing.Point(9, 78);
+            this.txtb_customer_email.MaxLength = 255;
+            this.txtb_customer_email.Name = "txtb_customer_email";
+            this.txtb_customer_email.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_email.TabIndex = 27;
+            // 
+            // lbl_customer_email
+            // 
+            this.lbl_customer_email.AutoSize = true;
+            this.lbl_customer_email.Location = new System.Drawing.Point(6, 62);
+            this.lbl_customer_email.Name = "lbl_customer_email";
+            this.lbl_customer_email.Size = new System.Drawing.Size(32, 13);
+            this.lbl_customer_email.TabIndex = 26;
+            this.lbl_customer_email.Text = "Email";
+            // 
+            // txtb_customer_fax
+            // 
+            this.txtb_customer_fax.Location = new System.Drawing.Point(188, 78);
+            this.txtb_customer_fax.MaxLength = 10;
+            this.txtb_customer_fax.Name = "txtb_customer_fax";
+            this.txtb_customer_fax.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_fax.TabIndex = 29;
+            // 
+            // lbl_customer_fax
+            // 
+            this.lbl_customer_fax.AutoSize = true;
+            this.lbl_customer_fax.Location = new System.Drawing.Point(185, 62);
+            this.lbl_customer_fax.Name = "lbl_customer_fax";
+            this.lbl_customer_fax.Size = new System.Drawing.Size(24, 13);
+            this.lbl_customer_fax.TabIndex = 28;
+            this.lbl_customer_fax.Text = "Fax";
+            // 
+            // txtb_customer_last_contact
+            // 
+            this.txtb_customer_last_contact.Location = new System.Drawing.Point(383, 182);
+            this.txtb_customer_last_contact.MaxLength = 30;
+            this.txtb_customer_last_contact.Name = "txtb_customer_last_contact";
+            this.txtb_customer_last_contact.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_last_contact.TabIndex = 31;
+            // 
+            // lbl_customer_last_contact
+            // 
+            this.lbl_customer_last_contact.AutoSize = true;
+            this.lbl_customer_last_contact.Location = new System.Drawing.Point(380, 166);
+            this.lbl_customer_last_contact.Name = "lbl_customer_last_contact";
+            this.lbl_customer_last_contact.Size = new System.Drawing.Size(66, 13);
+            this.lbl_customer_last_contact.TabIndex = 30;
+            this.lbl_customer_last_contact.Text = "Last contact";
+            // 
+            // txtb_customer_last_action
+            // 
+            this.txtb_customer_last_action.Location = new System.Drawing.Point(383, 239);
+            this.txtb_customer_last_action.MaxLength = 30;
+            this.txtb_customer_last_action.Name = "txtb_customer_last_action";
+            this.txtb_customer_last_action.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_last_action.TabIndex = 33;
+            // 
+            // lbl_customer_last_action
+            // 
+            this.lbl_customer_last_action.AutoSize = true;
+            this.lbl_customer_last_action.Location = new System.Drawing.Point(380, 223);
+            this.lbl_customer_last_action.Name = "lbl_customer_last_action";
+            this.lbl_customer_last_action.Size = new System.Drawing.Size(59, 13);
+            this.lbl_customer_last_action.TabIndex = 32;
+            this.lbl_customer_last_action.Text = "Last action";
+            // 
+            // txtb_customer_next_contact
+            // 
+            this.txtb_customer_next_contact.Location = new System.Drawing.Point(383, 298);
+            this.txtb_customer_next_contact.MaxLength = 30;
+            this.txtb_customer_next_contact.Name = "txtb_customer_next_contact";
+            this.txtb_customer_next_contact.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_next_contact.TabIndex = 35;
+            // 
+            // lbl_customer_next_contact
+            // 
+            this.lbl_customer_next_contact.AutoSize = true;
+            this.lbl_customer_next_contact.Location = new System.Drawing.Point(380, 282);
+            this.lbl_customer_next_contact.Name = "lbl_customer_next_contact";
+            this.lbl_customer_next_contact.Size = new System.Drawing.Size(68, 13);
+            this.lbl_customer_next_contact.TabIndex = 34;
+            this.lbl_customer_next_contact.Text = "Next contact";
+            // 
+            // txtb_customer_next_action
+            // 
+            this.txtb_customer_next_action.Location = new System.Drawing.Point(383, 355);
+            this.txtb_customer_next_action.MaxLength = 30;
+            this.txtb_customer_next_action.Name = "txtb_customer_next_action";
+            this.txtb_customer_next_action.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_next_action.TabIndex = 37;
+            // 
+            // lbl_customer_next_action
+            // 
+            this.lbl_customer_next_action.AutoSize = true;
+            this.lbl_customer_next_action.Location = new System.Drawing.Point(380, 339);
+            this.lbl_customer_next_action.Name = "lbl_customer_next_action";
+            this.lbl_customer_next_action.Size = new System.Drawing.Size(61, 13);
+            this.lbl_customer_next_action.TabIndex = 36;
+            this.lbl_customer_next_action.Text = "Next action";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(383, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "LEGGOOOO";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 461);
+            this.Controls.Add(tc_Main);
             this.Controls.Add(this.mstrp_Menu);
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -323,6 +807,11 @@
             this.Text = "Barroc-IT - Software for real - Sales";
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
+            tc_Main.ResumeLayout(false);
+            this.tcp_Overview.ResumeLayout(false);
+            this.tcp_Overview.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -354,6 +843,50 @@
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_Residence;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
+        private System.Windows.Forms.TabPage tcp_Overview;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label lbl_Customer_firstname;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox txtb_customer_fax;
+        private System.Windows.Forms.Label lbl_customer_fax;
+        private System.Windows.Forms.TextBox txtb_customer_email;
+        private System.Windows.Forms.Label lbl_customer_email;
+        private System.Windows.Forms.TextBox txtb_customer_phonenumber_2;
+        private System.Windows.Forms.Label lbl_customer_phonenumber_2;
+        private System.Windows.Forms.TextBox txtb_customer_phonenumber_1;
+        private System.Windows.Forms.Label lbl_customer_phonenumber_1;
+        private System.Windows.Forms.TextBox txt_customer_zipcode_2;
+        private System.Windows.Forms.Label lbl_customers_zipcode_2;
+        private System.Windows.Forms.TextBox txtb_customer_residence_2;
+        private System.Windows.Forms.Label lbl_customer_residence_2;
+        private System.Windows.Forms.TextBox txtb_customer_housenumber_2;
+        private System.Windows.Forms.Label lbl_customer_housenumer_2;
+        private System.Windows.Forms.TextBox txtb_customer_streetname_2;
+        private System.Windows.Forms.Label lbl_customer_streetname_2;
+        private System.Windows.Forms.TextBox txtb_customer_zipcode_1;
+        private System.Windows.Forms.Label lbl_customer_zipcode_1;
+        private System.Windows.Forms.TextBox txtb_customer_residence_1;
+        private System.Windows.Forms.Label lbl_customer_residence_1;
+        private System.Windows.Forms.TextBox txtb_customer_housenumber_1;
+        private System.Windows.Forms.Label lbl_customer_housenumber_1;
+        private System.Windows.Forms.TextBox txtb_customer_streetname_1;
+        private System.Windows.Forms.Label lbl_customer_streetname_1;
+        private System.Windows.Forms.TextBox txtb_customer_company_name;
+        private System.Windows.Forms.Label lbl_customer_company_name;
+        private System.Windows.Forms.TextBox txtb_customer_lastname;
+        private System.Windows.Forms.Label lbl_customer_lastname;
+        private System.Windows.Forms.TextBox txtb_customer_firstname;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtb_customer_next_action;
+        private System.Windows.Forms.Label lbl_customer_next_action;
+        private System.Windows.Forms.TextBox txtb_customer_next_contact;
+        private System.Windows.Forms.Label lbl_customer_next_contact;
+        private System.Windows.Forms.TextBox txtb_customer_last_action;
+        private System.Windows.Forms.Label lbl_customer_last_action;
+        private System.Windows.Forms.TextBox txtb_customer_last_contact;
+        private System.Windows.Forms.Label lbl_customer_last_contact;
 
 
     }
