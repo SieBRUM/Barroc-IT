@@ -370,11 +370,7 @@ namespace Barroc_IT
             this.frm_Finance_Window_Name.Size = new System.Drawing.Size(172, 13);
             this.frm_Finance_Window_Name.TabIndex = 5;
             this.frm_Finance_Window_Name.Text = "Barroc-IT Software for real Finance";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+
             // 
             // MouseMove
             // 

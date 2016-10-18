@@ -11,21 +11,51 @@ namespace Barroc_IT
 {
     public class FormFunctions : Form
     {
-
-        #region Timer
-
-        Timer timer1 = new Timer();
         Point formlock, cursorlocation = new Point(0, 0);
-        
 
         PictureBox btn_close = new PictureBox();
         PictureBox btn_minimise = new PictureBox();
         PictureBox btn_help = new PictureBox();
-
         PictureBox background = new PictureBox();
+
+        Image img_backgr = Image.FromFile("BackgroundOverview.png");
+        Image img_close = Image.FromFile("Close.png");
+        Image img_minimise = Image.FromFile("Minimise.png");
+        Image img_Help = Image.FromFile("Help.png");
+        Image img_BackgrLogin = Image.FromFile("BackgrLogin.png");
+
         
+        #region Timer
 
+        Timer timer1 = new Timer();
+        
+        public void CreateForm()
+        {
+            background.Image = img_backgr;
+            background.Height = 700;
+            background.Width = 900;
 
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        public static extern bool ReleaseCapture();
+
+//private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+//{     
+//    if (e.Button == MouseButtons.Left)
+//    {
+//        ReleaseCapture();
+//        SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+//    }
+//}
+        
         public void timer_tick()
         {
             int ex = formlock.X - cursorlocation.X + Cursor.Position.X;
