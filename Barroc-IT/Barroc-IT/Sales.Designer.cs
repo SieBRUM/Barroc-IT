@@ -35,11 +35,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtb_customer_next_action = new System.Windows.Forms.TextBox();
             this.lbl_customer_next_action = new System.Windows.Forms.Label();
-            this.txtb_customer_next_contact = new System.Windows.Forms.TextBox();
             this.lbl_customer_next_contact = new System.Windows.Forms.Label();
+            this.txtb_customer_last_action = new System.Windows.Forms.TextBox();
             this.lbl_customer_last_action = new System.Windows.Forms.Label();
-            this.txtb_customer_last_contact = new System.Windows.Forms.TextBox();
             this.lbl_customer_last_contact = new System.Windows.Forms.Label();
             this.txtb_customer_fax = new System.Windows.Forms.TextBox();
             this.lbl_customer_fax = new System.Windows.Forms.Label();
@@ -96,8 +96,8 @@
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtb_customer_last_action = new System.Windows.Forms.TextBox();
-            this.txtb_customer_next_action = new System.Windows.Forms.TextBox();
+            this.dtp_customer_nextcontact = new System.Windows.Forms.DateTimePicker();
+            this.dtp_customer_lastcontact = new System.Windows.Forms.DateTimePicker();
             tc_Main = new System.Windows.Forms.TabControl();
             tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -160,14 +160,14 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dtp_customer_lastcontact);
+            this.tabPage2.Controls.Add(this.dtp_customer_nextcontact);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.txtb_customer_next_action);
             this.tabPage2.Controls.Add(this.lbl_customer_next_action);
-            this.tabPage2.Controls.Add(this.txtb_customer_next_contact);
             this.tabPage2.Controls.Add(this.lbl_customer_next_contact);
             this.tabPage2.Controls.Add(this.txtb_customer_last_action);
             this.tabPage2.Controls.Add(this.lbl_customer_last_action);
-            this.tabPage2.Controls.Add(this.txtb_customer_last_contact);
             this.tabPage2.Controls.Add(this.lbl_customer_last_contact);
             this.tabPage2.Controls.Add(this.txtb_customer_fax);
             this.tabPage2.Controls.Add(this.lbl_customer_fax);
@@ -217,6 +217,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtb_customer_next_action
+            // 
+            this.txtb_customer_next_action.Location = new System.Drawing.Point(383, 355);
+            this.txtb_customer_next_action.MaxLength = 30;
+            this.txtb_customer_next_action.Name = "txtb_customer_next_action";
+            this.txtb_customer_next_action.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_next_action.TabIndex = 37;
+            // 
             // lbl_customer_next_action
             // 
             this.lbl_customer_next_action.AutoSize = true;
@@ -225,14 +233,6 @@
             this.lbl_customer_next_action.Size = new System.Drawing.Size(61, 13);
             this.lbl_customer_next_action.TabIndex = 36;
             this.lbl_customer_next_action.Text = "Next action";
-            // 
-            // txtb_customer_next_contact
-            // 
-            this.txtb_customer_next_contact.Location = new System.Drawing.Point(383, 298);
-            this.txtb_customer_next_contact.MaxLength = 30;
-            this.txtb_customer_next_contact.Name = "txtb_customer_next_contact";
-            this.txtb_customer_next_contact.Size = new System.Drawing.Size(100, 20);
-            this.txtb_customer_next_contact.TabIndex = 35;
             // 
             // lbl_customer_next_contact
             // 
@@ -243,6 +243,14 @@
             this.lbl_customer_next_contact.TabIndex = 34;
             this.lbl_customer_next_contact.Text = "Next contact";
             // 
+            // txtb_customer_last_action
+            // 
+            this.txtb_customer_last_action.Location = new System.Drawing.Point(383, 239);
+            this.txtb_customer_last_action.MaxLength = 30;
+            this.txtb_customer_last_action.Name = "txtb_customer_last_action";
+            this.txtb_customer_last_action.Size = new System.Drawing.Size(100, 20);
+            this.txtb_customer_last_action.TabIndex = 33;
+            // 
             // lbl_customer_last_action
             // 
             this.lbl_customer_last_action.AutoSize = true;
@@ -251,14 +259,6 @@
             this.lbl_customer_last_action.Size = new System.Drawing.Size(59, 13);
             this.lbl_customer_last_action.TabIndex = 32;
             this.lbl_customer_last_action.Text = "Last action";
-            // 
-            // txtb_customer_last_contact
-            // 
-            this.txtb_customer_last_contact.Location = new System.Drawing.Point(383, 182);
-            this.txtb_customer_last_contact.MaxLength = 30;
-            this.txtb_customer_last_contact.Name = "txtb_customer_last_contact";
-            this.txtb_customer_last_contact.Size = new System.Drawing.Size(100, 20);
-            this.txtb_customer_last_contact.TabIndex = 31;
             // 
             // lbl_customer_last_contact
             // 
@@ -779,21 +779,19 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // txtb_customer_last_action
+            // dtp_customer_nextcontact
             // 
-            this.txtb_customer_last_action.Location = new System.Drawing.Point(383, 239);
-            this.txtb_customer_last_action.MaxLength = 30;
-            this.txtb_customer_last_action.Name = "txtb_customer_last_action";
-            this.txtb_customer_last_action.Size = new System.Drawing.Size(100, 20);
-            this.txtb_customer_last_action.TabIndex = 33;
+            this.dtp_customer_nextcontact.Location = new System.Drawing.Point(383, 298);
+            this.dtp_customer_nextcontact.Name = "dtp_customer_nextcontact";
+            this.dtp_customer_nextcontact.Size = new System.Drawing.Size(173, 20);
+            this.dtp_customer_nextcontact.TabIndex = 39;
             // 
-            // txtb_customer_next_action
+            // dtp_customer_lastcontact
             // 
-            this.txtb_customer_next_action.Location = new System.Drawing.Point(383, 355);
-            this.txtb_customer_next_action.MaxLength = 30;
-            this.txtb_customer_next_action.Name = "txtb_customer_next_action";
-            this.txtb_customer_next_action.Size = new System.Drawing.Size(100, 20);
-            this.txtb_customer_next_action.TabIndex = 37;
+            this.dtp_customer_lastcontact.Location = new System.Drawing.Point(383, 182);
+            this.dtp_customer_lastcontact.Name = "dtp_customer_lastcontact";
+            this.dtp_customer_lastcontact.Size = new System.Drawing.Size(173, 20);
+            this.dtp_customer_lastcontact.TabIndex = 40;
             // 
             // frm_Sales
             // 
@@ -882,13 +880,13 @@
         private System.Windows.Forms.TextBox txtb_customer_firstname;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_customer_next_action;
-        private System.Windows.Forms.TextBox txtb_customer_next_contact;
         private System.Windows.Forms.Label lbl_customer_next_contact;
         private System.Windows.Forms.Label lbl_customer_last_action;
-        private System.Windows.Forms.TextBox txtb_customer_last_contact;
         private System.Windows.Forms.Label lbl_customer_last_contact;
         private System.Windows.Forms.TextBox txtb_customer_next_action;
         private System.Windows.Forms.TextBox txtb_customer_last_action;
+        private System.Windows.Forms.DateTimePicker dtp_customer_nextcontact;
+        private System.Windows.Forms.DateTimePicker dtp_customer_lastcontact;
 
 
     }

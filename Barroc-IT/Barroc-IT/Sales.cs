@@ -33,9 +33,12 @@ namespace Barroc_IT
         private void button1_Click(object sender, EventArgs e)
         {
             dbh = new DatabaseHandler();
+            string nextContact = DateHandler.GetDate(dtp_customer_nextcontact);
+            string lastContact = DateHandler.GetDate(dtp_customer_lastcontact);
+
             dbh.OpenConnection();
 
-            if (dbh.AddCustomer(txtb_customer_firstname.Text, txtb_customer_lastname.Text, txtb_customer_company_name.Text, txtb_customer_email.Text, txtb_customer_fax.Text, txtb_customer_streetname_1.Text, txtb_customer_housenumber_1.Text, txtb_customer_residence_1.Text, txtb_customer_zipcode_1.Text, txtb_customer_phonenumber_1.Text, txtb_customer_streetname_2.Text, txtb_customer_housenumber_2.Text, txtb_customer_residence_2.Text, txtb_customer_zipcode_2.Text, txtb_customer_phonenumber_2.Text, txtb_customer_last_contact.Text, txtb_customer_last_action.Text, txtb_customer_next_contact.Text, txtb_customer_next_action.Text))
+            if (dbh.AddCustomer(txtb_customer_firstname.Text, txtb_customer_lastname.Text, txtb_customer_company_name.Text, txtb_customer_email.Text, txtb_customer_fax.Text, txtb_customer_streetname_1.Text, txtb_customer_housenumber_1.Text, txtb_customer_residence_1.Text, txtb_customer_zipcode_1.Text, txtb_customer_phonenumber_1.Text, txtb_customer_streetname_2.Text, txtb_customer_housenumber_2.Text, txtb_customer_residence_2.Text, txtb_customer_zipcode_2.Text, txtb_customer_phonenumber_2.Text, lastContact, txtb_customer_last_action.Text, nextContact, txtb_customer_next_action.Text))
                 MessageBox.Show("Succesfully added a customer!");
             else
                 MessageBox.Show("An error occcured while adding a customer.");
