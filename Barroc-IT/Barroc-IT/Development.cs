@@ -17,6 +17,8 @@ namespace Barroc_IT
         {
             InitializeComponent();
             dbh = new DatabaseHandler();
+            cbox_Project_Status.SelectedIndex = 0;
+            cbox_Maintenance_Contract.SelectedIndex = 0;
             
             MenuItems menuItemHandler = new MenuItems();
             ToolStripControlHost[] arrayControl = menuItemHandler.DTPGenerator();
@@ -27,26 +29,6 @@ namespace Barroc_IT
             {
                 mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
                 mnfltr_Appointments_Date.DropDownItems.Add(arrayControl1[i]);
-            }
-
-            try
-            {
-                dbh.OpenConnection();
-                DataTable dt = dbh.GetCustomers();
-                comboBox1.ValueMember = "customer_id";
-                comboBox1.DisplayMember = "full_name";
-
-                comboBox1.DataSource = dt;
-            }
-
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show("An error occured: \n" + e);
-            //}
-
-            finally
-            {
-                dbh.CloseConnection();
             }
         }
 
@@ -122,15 +104,26 @@ namespace Barroc_IT
 
         private void AddProject(object sender, EventArgs e)
         {
-            dbh.OpenConnection();
-            string date = getDate(dtp_Deadline);
+            if(txtb_Amount_Invoices.Text == "" || txtb_Contact_Person.Text == "" || txtb_Operating_System.Text == "" || txtb_Project_Name.Text == "" || txtb_Software.Text == "")
+            {
+                MessageBox.Show("Please make sure all the fields are filled in.");
+            }
+            else if(dtp_Deadline.Value <= DateTime.Now)
+            {
+                MessageBox.Show("Date cannot be today or in the past.");
+            }
+            else
+            {
+                dbh.OpenConnection();
+                string date = getDate(dtp_Deadline);
 
-            if (dbh.AddProject(txtb_Customer_Id.Text, txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, cbox_Maintenance_Contract.SelectedIndex, date))
-                MessageBox.Show("Succesfully added a project!");
-            else 
-                MessageBox.Show("An error occcured while adding a project.");
+                if (dbh.AddProject(cb_Select_Customer.SelectedValue.ToString(), txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, cbox_Maintenance_Contract.SelectedIndex, date))
+                    MessageBox.Show("Succesfully added a project!");
+                else 
+                    MessageBox.Show("An error occcured while adding a project.");
 
-            dbh.CloseConnection();
+                dbh.CloseConnection();
+            }
         }
 
         private string getDate(DateTimePicker dtp)
@@ -158,6 +151,38 @@ namespace Barroc_IT
             }
 
             return date;
+        }
+
+        private void txtb_Amount_Invoices_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tc_Main.SelectedIndex == 4)
+            {
+                try
+                {
+                    dbh.OpenConnection();
+                    DataTable dt = dbh.GetCustomers();
+                    cb_Select_Customer.ValueMember = "customer_id";
+                    cb_Select_Customer.DisplayMember = "full_name";
+
+                    cb_Select_Customer.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
         }
     }
 }
