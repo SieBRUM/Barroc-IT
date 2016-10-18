@@ -28,6 +28,26 @@ namespace Barroc_IT
                 mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
                 mnfltr_Appointments_Date.DropDownItems.Add(arrayControl1[i]);
             }
+
+            try
+            {
+                dbh.OpenConnection();
+                DataTable dt = dbh.GetCustomers();
+                comboBox1.ValueMember = "customer_id";
+                comboBox1.DisplayMember = "full_name";
+
+                comboBox1.DataSource = dt;
+            }
+
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show("An error occured: \n" + e);
+            //}
+
+            finally
+            {
+                dbh.CloseConnection();
+            }
         }
 
         private void MenuHandler(object sender, EventArgs e)
@@ -105,7 +125,7 @@ namespace Barroc_IT
             dbh.OpenConnection();
             string date = getDate(dtp_Deadline);
 
-            if (dbh.AddProject(txtb_Customer_Id.Text, txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex + 1, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, txtb_Maintenance_Contract.Text, date))
+            if (dbh.AddProject(txtb_Customer_Id.Text, txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, cbox_Maintenance_Contract.SelectedIndex, date))
                 MessageBox.Show("Succesfully added a project!");
             else 
                 MessageBox.Show("An error occcured while adding a project.");

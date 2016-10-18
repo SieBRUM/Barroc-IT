@@ -116,7 +116,7 @@ namespace Barroc_IT
             return exist;
         }
 
-        public bool AddProject(string c_Id, string p_Name, int p_Status, string OS, string Software, string Invoices, string c_Person, string m_Contract, string deadline)
+        public bool AddProject(string c_Id, string p_Name, int p_Status, string OS, string Software, string Invoices, string c_Person, int m_Contract, string deadline)
         {
             bool done;
             using (MySqlCommand cmd = new MySqlCommand(@"
@@ -144,6 +144,21 @@ namespace Barroc_IT
                 }
             }
             return done;
+        }
+
+        public DataTable GetCustomers()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT customer_id, CONCAT (customer_id,':', first_name, ' ', last_name, ',', zip_code) AS full_name FROM tbl_customers",this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("customer_id", typeof(string));
+                dt.Columns.Add("full_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
         }
     }
 }
