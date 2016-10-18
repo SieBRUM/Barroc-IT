@@ -335,7 +335,7 @@ namespace Barroc_IT
             this.close.Size = new System.Drawing.Size(30, 25);
             this.close.TabIndex = 2;
             this.close.TabStop = false;
-            this.close.Click += new System.EventHandler(this.close_Click);
+
             // 
             // minimise
             // 
@@ -347,7 +347,7 @@ namespace Barroc_IT
             this.minimise.Size = new System.Drawing.Size(30, 25);
             this.minimise.TabIndex = 3;
             this.minimise.TabStop = false;
-            this.minimise.Click += new System.EventHandler(this.minimise_Click);
+
             // 
             // help
             // 
@@ -364,19 +364,17 @@ namespace Barroc_IT
             // 
             this.frm_Finance_Window_Name.AutoSize = true;
             this.frm_Finance_Window_Name.BackColor = System.Drawing.Color.Transparent;
-            this.frm_Finance_Window_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frm_Finance_Window_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frm_Finance_Window_Name.Location = new System.Drawing.Point(9, 13);
             this.frm_Finance_Window_Name.Name = "frm_Finance_Window_Name";
-            this.frm_Finance_Window_Name.Size = new System.Drawing.Size(207, 13);
+            this.frm_Finance_Window_Name.Size = new System.Drawing.Size(172, 13);
             this.frm_Finance_Window_Name.TabIndex = 5;
             this.frm_Finance_Window_Name.Text = "Barroc-IT Software for real Finance";
-            this.frm_Finance_Window_Name.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frm_Finance_Window_Name_MouseDown);
-            this.frm_Finance_Window_Name.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frm_Finance_Window_Name_MouseUp);
             // 
             // timer1
             // 
             this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // MouseMove
             // 
@@ -388,8 +386,7 @@ namespace Barroc_IT
             this.MouseMove.Size = new System.Drawing.Size(731, 34);
             this.MouseMove.TabIndex = 6;
             this.MouseMove.TabStop = false;
-            this.MouseMove.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.MouseMove.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+
             // 
             // frm_Finance
             // 
@@ -411,7 +408,6 @@ namespace Barroc_IT
             this.MaximizeBox = false;
             this.Name = "frm_Finance";
             this.Text = "Barroc-IT - Software for real - Finance";
-            this.Load += new System.EventHandler(this.frm_Finance_Load);
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
