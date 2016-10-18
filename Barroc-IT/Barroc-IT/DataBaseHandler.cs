@@ -91,13 +91,7 @@ namespace Barroc_IT
         public bool Login(string username, string password)
         {
             bool exist = false;
-            //command.CommandText = query;
-            //MySqlDataReader reader = command.ExecuteReader();
 
-            //while (reader.Read())
-            //{
-            //    MessageBox.Show(reader["username"].ToString());
-            //}
             using (MySqlCommand cmd = new MySqlCommand(@"
                 SELECT 
                     COUNT(*)
@@ -151,7 +145,13 @@ namespace Barroc_IT
         {
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
-                    SELECT customer_id, CONCAT (customer_id,':', first_name, ' ', last_name, ',', zip_code) AS full_name FROM tbl_customers",this.GetConnection()))
+                    SELECT 
+                        customer_id, CONCAT (customer_id,':', first_name, ' ', last_name, ',', zip_code) AS full_name 
+
+                    FROM 
+                        tbl_customers
+                    WHERE
+                        creditworthy = 1", this.GetConnection()))
             {
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
@@ -201,7 +201,5 @@ namespace Barroc_IT
             }
             return done;
         }
-
-
     }
 }

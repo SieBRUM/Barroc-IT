@@ -79,7 +79,6 @@ namespace Barroc_IT
             mnfltr_Overview_Type.Visible = overview;
             mnfltr_Overview_Date.Visible = overview;
 
-
             mnfltr_Projects_CuName.Visible = projects;
             mnfltr_Projects_ID.Visible = projects;
             mnfltr_Projects_Name.Visible = projects;

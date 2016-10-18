@@ -733,6 +733,7 @@ namespace Barroc_IT
             // txtb_Amount_Invoices
             // 
             this.txtb_Amount_Invoices.Location = new System.Drawing.Point(317, 287);
+            this.txtb_Amount_Invoices.MaxLength = 3;
             this.txtb_Amount_Invoices.Name = "txtb_Amount_Invoices";
             this.txtb_Amount_Invoices.Size = new System.Drawing.Size(100, 20);
             this.txtb_Amount_Invoices.TabIndex = 9;
