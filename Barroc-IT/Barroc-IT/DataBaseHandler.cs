@@ -160,5 +160,45 @@ namespace Barroc_IT
             }
             return dt;
         }
+
+        public bool AddCustomer(string c_Firstname, string c_Lastname, string c_Company, string c_Email, string c_Fax, string c_Streetname1, string c_Housenumber1, string c_Residence1, string c_Zipcode1, string c_Phone1, string c_Streetname2, string c_Housenumber2, string c_Residence2, string c_Zipcode2, string c_Phone2, string c_Lastcontact, string c_Lastaction, string c_Nextcontact, string c_Nextaction)
+        {
+            bool done;
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    INSERT INTO
+                        tbl_customers(first_name, last_name, company_name, street_name, street_name_2, house_number, house_number_2, residence, residence_2, zip_code, zip_code_2, phone_number, phone_number_2, email, fax, last_contact, last_action, next_contact, next_action)
+                        VALUES (@first_name, @last_name, @company_name, @street_name, @street_name_2, @house_number, @house_number_2, @residence, @residence_2, @zip_code, @zip_code_2, @phone_number, @phone_number_2, @email, @fax, @last_contact, @last_action, @next_contact, @next_action)", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("first_name", c_Firstname);
+                cmd.Parameters.AddWithValue("last_name", c_Lastname);
+                cmd.Parameters.AddWithValue("company_name", c_Company);
+                cmd.Parameters.AddWithValue("street_name", c_Streetname1);
+                cmd.Parameters.AddWithValue("street_name_2", c_Streetname2);
+                cmd.Parameters.AddWithValue("house_number", c_Housenumber1);
+                cmd.Parameters.AddWithValue("house_number_2", c_Housenumber2);
+                cmd.Parameters.AddWithValue("residence", c_Residence1);
+                cmd.Parameters.AddWithValue("residence_2", c_Residence2);
+                cmd.Parameters.AddWithValue("zip_code", c_Zipcode1);
+                cmd.Parameters.AddWithValue("zip_code_2", c_Zipcode2);
+                cmd.Parameters.AddWithValue("phone_number", c_Phone1);
+                cmd.Parameters.AddWithValue("phone_number_2", c_Phone2);
+                cmd.Parameters.AddWithValue("email", c_Email);
+                cmd.Parameters.AddWithValue("fax", c_Fax);
+                cmd.Parameters.AddWithValue("last_contact", c_Lastcontact);
+                cmd.Parameters.AddWithValue("last_action", c_Lastaction);
+                cmd.Parameters.AddWithValue("next_contact", c_Nextcontact);
+                cmd.Parameters.AddWithValue("next_action", c_Nextaction);
+                try
+                {
+                    done = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    done = false;
+                    MessageBox.Show("An error occured. Detailes below: \n\n " + e);
+                }
+            }
+            return done;
+        }
     }
 }
