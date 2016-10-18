@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
@@ -122,10 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\BackgroundOverview.png" />
-    <Content Include="resources\Close.png" />
-    <Content Include="resources\Help.png" />
+    <None Include="resources\Backgroundovv.png" />
+    <None Include="resources\login.png" />
+    <None Include="resources\Help.png" />
+    <None Include="resources\Minimise.png" />
+    <None Include="resources\Close.png" />
     <Content Include="resources\BackgrLogin.png" />
-    <Content Include="resources\Minimise.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

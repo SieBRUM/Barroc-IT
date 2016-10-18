@@ -18,6 +18,7 @@ namespace Barroc_IT
         {
             InitializeComponent();
             CreateForm();
+            
         }
 
     }

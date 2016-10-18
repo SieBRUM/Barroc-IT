@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing;
+using Barroc_IT.Properties;
 
 namespace Barroc_IT
 {
@@ -13,39 +14,87 @@ namespace Barroc_IT
     {
         Point formlock, cursorlocation = new Point(0, 0);
 
-        //PictureBox btn_close = new PictureBox();
-        //PictureBox btn_minimise = new PictureBox();
-        //PictureBox btn_help = new PictureBox();
-        //PictureBox background = new PictureBox();
 
-        Image img_backgr = Image.FromFile("BackgroundOverview.png");
-        Image img_close = Image.FromFile("Close.png");
-        Image img_minimise = Image.FromFile("Minimise.png");
-        Image img_Help = Image.FromFile("Help.png");
-        Image img_BackgrLogin = Image.FromFile("BackgrLogin.png");
+        Image img_backgr = Resources.Backgroundovv;
+        Image img_minimise = Resources.Minimise;
+        Image img_Help = Resources.Help;
+        Image img_Backgrlgn = Resources.login;
 
+        PictureBox close = new PictureBox
+        {
+            Name = "Close",
+            Size = new Size(30, 30),
+            Location = new Point(695, 5),
+            BackColor = System.Drawing.Color.Transparent
+        };
+        PictureBox Minimise = new PictureBox
+        {
+            Name = "Closing",
+            Size = new Size(30, 30),
+            Location = new Point(665, 4),
+            BackColor = System.Drawing.Color.Transparent
+        };
+        PictureBox Help = new PictureBox
+        {
+            Name = "Help",
+            Size = new Size(30,30),
+            Location = new Point (635, 4),
+            BackColor = System.Drawing.Color.Transparent
+        };
+        MenuStrip mnstrp_Menu = new MenuStrip()
+            {
+                Name = "Menustrip",
+                Anchor = System.Windows.Forms.AnchorStyles.Left,
+                Location = new Point(9, 38),
+                Size = new System.Drawing.Size(300,700),
+                BackColor = System.Drawing.Color.Silver
+                
+            };
         
         #region Timer
 
         Timer timer1 = new Timer();
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+       (
+           int nLeftRect,
+           int nTopRect,
+           int nRightRect,
+           int nBottomRect,
+           int nWidthEllipse,
+           int nHeightEllipse
+        );
         
+
         public void CreateForm()
         {
-            //background.Image = img_backgr;
-            //background.Height = 700;
-            //background.Width = 900;
+            
 
             using (Form form = new Form())
             {
-                form.Text = "About Us";
+                form.Text = "Barroc-IT - Software for fun";
 
                 // form.Controls.Add(...);
-                this.BackgroundImage = img_backgr;
+                form.BackgroundImage = img_backgr;
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 
+                form.Location = new Point(100,100);
+                form.ClientSize = new System.Drawing.Size(730, 500);
+
+                
+                form.Controls.Add(close);        close.Image = Resources.Close;
+                form.Controls.Add(Minimise);     Minimise.Image = Resources.Minimise;
+                form.Controls.Add(Help);         Help.Image = Resources.Help;
+                form.Controls.Add(mnstrp_Menu);
+
+                Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 10, 10, 30, 30));
                 form.ShowDialog();
+                
             }
 
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+            
 
         }
 
@@ -99,22 +148,9 @@ namespace Barroc_IT
 
 
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        
 
-        private static extern IntPtr CreateRoundRectRgn
-       (
-           int nLeftRect,
-           int nTopRect,
-           int nRightRect,
-           int nBottomRect,
-           int nWidthEllipse,
-           int nHeightEllipse
-        );
-
-        public void setform()
-        {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
-        }
+        
 
         public void closing()
         {
