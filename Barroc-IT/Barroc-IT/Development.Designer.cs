@@ -69,6 +69,9 @@ namespace Barroc_IT
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tcp_Add_Project = new System.Windows.Forms.TabPage();
+            this.txtb_Hardware = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cb_Select_Customer = new System.Windows.Forms.ComboBox();
             this.txtb_Software = new System.Windows.Forms.TextBox();
             this.cbox_Maintenance_Contract = new System.Windows.Forms.ComboBox();
@@ -88,9 +91,6 @@ namespace Barroc_IT
             this.txtb_Operating_System = new System.Windows.Forms.TextBox();
             this.txtb_Amount_Invoices = new System.Windows.Forms.TextBox();
             this.txtb_Project_Name = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtb_Hardware = new System.Windows.Forms.TextBox();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -539,6 +539,33 @@ namespace Barroc_IT
             this.tcp_Add_Project.Text = "Add Project";
             this.tcp_Add_Project.UseVisualStyleBackColor = true;
             // 
+            // txtb_Hardware
+            // 
+            this.txtb_Hardware.Location = new System.Drawing.Point(317, 337);
+            this.txtb_Hardware.MaxLength = 255;
+            this.txtb_Hardware.Multiline = true;
+            this.txtb_Hardware.Name = "txtb_Hardware";
+            this.txtb_Hardware.Size = new System.Drawing.Size(193, 46);
+            this.txtb_Hardware.TabIndex = 11;
+            this.txtb_Hardware.Text = "Laptop i7";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(314, 321);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Hardware";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(24, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // cb_Select_Customer
             // 
             this.cb_Select_Customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -585,7 +612,7 @@ namespace Barroc_IT
             this.btn_Add.Location = new System.Drawing.Point(485, 395);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
-            this.btn_Add.TabIndex = 10;
+            this.btn_Add.TabIndex = 12;
             this.btn_Add.Text = "Add Project";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.AddProject);
@@ -721,33 +748,6 @@ namespace Barroc_IT
             this.txtb_Project_Name.Size = new System.Drawing.Size(219, 41);
             this.txtb_Project_Name.TabIndex = 3;
             this.txtb_Project_Name.Text = "AUTO GENERATED TEST DATA";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(511, 78);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(314, 321);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Hardware";
-            // 
-            // txtb_Hardware
-            // 
-            this.txtb_Hardware.Location = new System.Drawing.Point(317, 337);
-            this.txtb_Hardware.MaxLength = 255;
-            this.txtb_Hardware.Multiline = true;
-            this.txtb_Hardware.Name = "txtb_Hardware";
-            this.txtb_Hardware.Size = new System.Drawing.Size(193, 46);
-            this.txtb_Hardware.TabIndex = 28;
-            this.txtb_Hardware.Text = "Skype, Chrome";
             // 
             // frm_Development
             // 

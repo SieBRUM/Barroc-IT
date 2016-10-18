@@ -104,7 +104,7 @@ namespace Barroc_IT
 
         private void AddProject(object sender, EventArgs e)
         {
-            if(txtb_Amount_Invoices.Text == "" || txtb_Contact_Person.Text == "" || txtb_Operating_System.Text == "" || txtb_Project_Name.Text == "" || txtb_Software.Text == "")
+            if(txtb_Amount_Invoices.Text == "" || txtb_Contact_Person.Text == "" || txtb_Operating_System.Text == "" || txtb_Project_Name.Text == "" || txtb_Software.Text == "" || txtb_Hardware.Text == "")
             {
                 MessageBox.Show("Please make sure all the fields are filled in.");
             }
@@ -117,7 +117,7 @@ namespace Barroc_IT
                 dbh.OpenConnection();
                 string date = getDate(dtp_Deadline);
 
-                if (dbh.AddProject(cb_Select_Customer.SelectedValue.ToString(), txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, cbox_Maintenance_Contract.SelectedIndex, date))
+                if (dbh.AddProject(cb_Select_Customer.SelectedValue.ToString(), txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, cbox_Maintenance_Contract.SelectedIndex, date,txtb_Hardware.Text))
                     MessageBox.Show("Succesfully added a project!");
                 else 
                     MessageBox.Show("An error occcured while adding a project.");
@@ -139,8 +139,7 @@ namespace Barroc_IT
             { 
                 date += dtp.Value.Month.ToString();
             }
-            a = dtp_Deadline.Value.Day;
-
+            a = dtp.Value.Day;
             if (a < 10)
             {
                 date += "0" + dtp.Value.Day.ToString();

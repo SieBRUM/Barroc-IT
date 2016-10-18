@@ -116,13 +116,13 @@ namespace Barroc_IT
             return exist;
         }
 
-        public bool AddProject(string c_Id, string p_Name, int p_Status, string OS, string Software, string Invoices, string c_Person, int m_Contract, string deadline)
+        public bool AddProject(string c_Id, string p_Name, int p_Status, string OS, string Software, string Invoices, string c_Person, int m_Contract, string deadline, string hardware)
         {
             bool done;
             using (MySqlCommand cmd = new MySqlCommand(@"
                     INSERT INTO
-                        tbl_projects(customer_id,project_name,project_status,operating_system,software,amount_invoice,contact_person,maintenance_contract,deadline_date)
-                        VALUES (@customer_id,@project_name,@project_status,@operating_system,@software,@amount_invoice,@contact_person,@maintenance_contract,@deadline_date)", this.GetConnection()))
+                        tbl_projects(customer_id,project_name,project_status,operating_system,software,amount_invoice,contact_person,maintenance_contract,deadline_date,hardware)
+                        VALUES (@customer_id,@project_name,@project_status,@operating_system,@software,@amount_invoice,@contact_person,@maintenance_contract,@deadline_date,@hardware)", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("customer_id", c_Id);
                 cmd.Parameters.AddWithValue("project_name", p_Name);
@@ -133,6 +133,7 @@ namespace Barroc_IT
                 cmd.Parameters.AddWithValue("contact_person", c_Person);
                 cmd.Parameters.AddWithValue("maintenance_contract", m_Contract);
                 cmd.Parameters.AddWithValue("deadline_date", deadline);
+                cmd.Parameters.AddWithValue("hardware", hardware);
                 try
                 {
                     done = (Int64)cmd.ExecuteNonQuery() > 0;
@@ -200,5 +201,7 @@ namespace Barroc_IT
             }
             return done;
         }
+
+
     }
 }
