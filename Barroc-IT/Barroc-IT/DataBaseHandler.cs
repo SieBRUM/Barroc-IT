@@ -201,5 +201,42 @@ namespace Barroc_IT
             }
             return done;
         }
+
+
+        public DataTable GetProject()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT 
+                        project_id, project_name, project_status, maintenance_contract, operating_system, hardware, software, amount_invoice, deadline_date, contact_person, tbl_projects.customer_id, tbl_customers.company_name AS company_name, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
+
+                    FROM 
+                        tbl_projects
+                    INNER JOIN 
+                        tbl_customers
+                    ON
+                        tbl_projects.customer_id = tbl_customers.customer_id
+                    WHERE
+                       project_id = 12", this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("project_id", typeof(string));
+                dt.Columns.Add("project_name", typeof(string));
+                dt.Columns.Add("project_status", typeof(string));
+                dt.Columns.Add("maintenance_contact", typeof(string));
+                dt.Columns.Add("operating_system", typeof(string));
+                dt.Columns.Add("hardware", typeof(string));
+                dt.Columns.Add("software", typeof(string));
+                dt.Columns.Add("amount_invoice", typeof(string));
+                dt.Columns.Add("deadline_date", typeof(string));
+                dt.Columns.Add("contact_person", typeof(string));
+                dt.Columns.Add("customer_id", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
     }
 }

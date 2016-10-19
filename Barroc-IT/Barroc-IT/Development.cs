@@ -20,9 +20,8 @@ namespace Barroc_IT
             cbox_Project_Status.SelectedIndex = 0;
             cbox_Maintenance_Contract.SelectedIndex = 0;
             
-            MenuItems menuItemHandler = new MenuItems();
-            ToolStripControlHost[] arrayControl = menuItemHandler.DTPGenerator();
-            ToolStripControlHost[] arrayControl1 = menuItemHandler.DTPGenerator();
+            ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
+            ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator();
             HideFilters(true,false,false);
 
             for (int i = 0; i < arrayControl.Length; i++)
@@ -114,7 +113,7 @@ namespace Barroc_IT
             else
             {
                 dbh.OpenConnection();
-                string date = getDate(dtp_Deadline);
+                string date = DateHandler.GetDate(dtp_Deadline);
 
                 if (dbh.AddProject(cb_Select_Customer.SelectedValue.ToString(), txtb_Project_Name.Text, cbox_Project_Status.SelectedIndex, txtb_Operating_System.Text, txtb_Software.Text, txtb_Amount_Invoices.Text, txtb_Contact_Person.Text, cbox_Maintenance_Contract.SelectedIndex, date,txtb_Hardware.Text))
                     MessageBox.Show("Succesfully added a project!");
@@ -123,32 +122,6 @@ namespace Barroc_IT
 
                 dbh.CloseConnection();
             }
-        }
-
-        private string getDate(DateTimePicker dtp)
-        {
-            string date = dtp.Value.Year.ToString();
-            int a = dtp.Value.Month;
-
-            if (a < 10)
-            {
-                date += "0" + dtp.Value.Month.ToString();
-            }
-            else 
-            { 
-                date += dtp.Value.Month.ToString();
-            }
-            a = dtp.Value.Day;
-            if (a < 10)
-            {
-                date += "0" + dtp.Value.Day.ToString();
-            }
-            else 
-            { 
-                date += dtp.Value.Day.ToString();
-            }
-
-            return date;
         }
 
         private void txtb_Amount_Invoices_KeyPress(object sender, KeyPressEventArgs e)
@@ -181,6 +154,29 @@ namespace Barroc_IT
                     dbh.CloseConnection();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProjectPanel[] projectInfoPanel = new ProjectPanel[1];
+
+            for (int i = 0; i < projectInfoPanel.Length; i++ )
+            {
+                projectInfoPanel[i] = new ProjectPanel();
+                projectInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                projectInfoPanel[i].Dock = DockStyle.Top;
+                panel1.Controls.Add(projectInfoPanel[i]);
+            }
+        }
+
+        private void frm_Development_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

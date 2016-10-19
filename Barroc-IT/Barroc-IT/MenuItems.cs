@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace Barroc_IT
 {
-    class MenuItems
+    static class MenuItems
     {
 
-        public ToolStripControlHost[] DTPGenerator() 
+        public static ToolStripControlHost[] DTPGenerator() 
         {
             DateTimePicker dtp_From = new DateTimePicker() { Width = 140 };
             DateTimePicker dtp_Till = new DateTimePicker() { Width = 140 };

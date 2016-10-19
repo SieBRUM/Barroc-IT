@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="MenuItems.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectPanel.Designer.cs">
+      <DependentUpon>ProjectPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sales.cs">
       <SubType>Form</SubType>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logout.resx">
       <DependentUpon>Logout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectPanel.resx">
+      <DependentUpon>ProjectPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

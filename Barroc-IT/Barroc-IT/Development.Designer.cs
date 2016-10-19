@@ -60,8 +60,10 @@ namespace Barroc_IT
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tcp_Projects = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_Add_Project = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,7 +73,6 @@ namespace Barroc_IT
             this.tcp_Add_Project = new System.Windows.Forms.TabPage();
             this.txtb_Hardware = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cb_Select_Customer = new System.Windows.Forms.ComboBox();
             this.txtb_Software = new System.Windows.Forms.TextBox();
             this.cbox_Maintenance_Contract = new System.Windows.Forms.ComboBox();
@@ -91,6 +92,7 @@ namespace Barroc_IT
             this.txtb_Operating_System = new System.Windows.Forms.TextBox();
             this.txtb_Amount_Invoices = new System.Windows.Forms.TextBox();
             this.txtb_Project_Name = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -416,8 +418,11 @@ namespace Barroc_IT
             // tcp_Projects
             // 
             this.tcp_Projects.AutoScroll = true;
+            this.tcp_Projects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tcp_Projects.Controls.Add(this.button2);
+            this.tcp_Projects.Controls.Add(this.panel1);
+            this.tcp_Projects.Controls.Add(this.button1);
             this.tcp_Projects.Controls.Add(this.btn_Add_Project);
-            this.tcp_Projects.Controls.Add(this.label1);
             this.tcp_Projects.Location = new System.Drawing.Point(4, 22);
             this.tcp_Projects.Name = "tcp_Projects";
             this.tcp_Projects.Padding = new System.Windows.Forms.Padding(3);
@@ -425,6 +430,37 @@ namespace Barroc_IT
             this.tcp_Projects.TabIndex = 1;
             this.tcp_Projects.Text = "Projects";
             this.tcp_Projects.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(288, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(3, 61);
+            this.panel1.MinimumSize = new System.Drawing.Size(540, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(540, 10);
+            this.panel1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(167, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Add_Project
             // 
@@ -435,15 +471,6 @@ namespace Barroc_IT
             this.btn_Add_Project.Text = "Add";
             this.btn_Add_Project.UseVisualStyleBackColor = true;
             this.btn_Add_Project.Click += new System.EventHandler(this.btn_Add_Project_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 495);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Projects";
             // 
             // tcp_Appointments
             // 
@@ -511,7 +538,6 @@ namespace Barroc_IT
             // 
             this.tcp_Add_Project.Controls.Add(this.txtb_Hardware);
             this.tcp_Add_Project.Controls.Add(this.label4);
-            this.tcp_Add_Project.Controls.Add(this.pictureBox1);
             this.tcp_Add_Project.Controls.Add(this.cb_Select_Customer);
             this.tcp_Add_Project.Controls.Add(this.txtb_Software);
             this.tcp_Add_Project.Controls.Add(this.cbox_Maintenance_Contract);
@@ -531,6 +557,7 @@ namespace Barroc_IT
             this.tcp_Add_Project.Controls.Add(this.txtb_Operating_System);
             this.tcp_Add_Project.Controls.Add(this.txtb_Amount_Invoices);
             this.tcp_Add_Project.Controls.Add(this.txtb_Project_Name);
+            this.tcp_Add_Project.Controls.Add(this.pictureBox1);
             this.tcp_Add_Project.Location = new System.Drawing.Point(4, 22);
             this.tcp_Add_Project.Name = "tcp_Add_Project";
             this.tcp_Add_Project.Padding = new System.Windows.Forms.Padding(3);
@@ -557,14 +584,6 @@ namespace Barroc_IT
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 27;
             this.label4.Text = "Hardware";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(511, 78);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
             // 
             // cb_Select_Customer
             // 
@@ -750,6 +769,14 @@ namespace Barroc_IT
             this.txtb_Project_Name.TabIndex = 3;
             this.txtb_Project_Name.Text = "AUTO GENERATED TEST DATA";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(24, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_Development
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,6 +791,7 @@ namespace Barroc_IT
             this.MinimumSize = new System.Drawing.Size(730, 488);
             this.Name = "frm_Development";
             this.Text = "Barroc-IT - Software for real - Development";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Development_FormClosing);
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
             this.tc_Main.ResumeLayout(false);
@@ -812,7 +840,6 @@ namespace Barroc_IT
         private TabControl tc_Main;
         private TabPage tcp_Overview;
         private TabPage tcp_Projects;
-        private Label label1;
         private Label label2;
         private TabPage tcp_Appointments;
         private TabPage tcp_Help;
@@ -845,6 +872,9 @@ namespace Barroc_IT
         private PictureBox pictureBox1;
         private TextBox txtb_Hardware;
         private Label label4;
+        private Button button1;
+        private Panel panel1;
+        private Button button2;
 
 
 
