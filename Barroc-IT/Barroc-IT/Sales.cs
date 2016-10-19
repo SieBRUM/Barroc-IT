@@ -27,7 +27,7 @@ namespace Barroc_IT
 
         private void frm_Sales_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Application.Exit();
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,14 +36,25 @@ namespace Barroc_IT
             string nextContact = DateHandler.GetDate(dtp_customer_nextcontact);
             string lastContact = DateHandler.GetDate(dtp_customer_lastcontact);
 
-            dbh.OpenConnection();
-
-            if (dbh.AddCustomer(txtb_customer_firstname.Text, txtb_customer_lastname.Text, txtb_customer_company_name.Text, txtb_customer_email.Text, txtb_customer_fax.Text, txtb_customer_streetname_1.Text, txtb_customer_housenumber_1.Text, txtb_customer_residence_1.Text, txtb_customer_zipcode_1.Text, txtb_customer_phonenumber_1.Text, txtb_customer_streetname_2.Text, txtb_customer_housenumber_2.Text, txtb_customer_residence_2.Text, txtb_customer_zipcode_2.Text, txtb_customer_phonenumber_2.Text, lastContact, txtb_customer_last_action.Text, nextContact, txtb_customer_next_action.Text))
-                MessageBox.Show("Succesfully added a customer!");
+            if (txtb_customer_firstname.Text == "" || txtb_customer_lastname.Text == "" || txtb_customer_email.Text == "" || txtb_customer_streetname_1.Text == "" || txtb_customer_housenumber_1.Text == "" || txtb_customer_residence_1.Text == "" || txtb_customer_zipcode_1.Text == "" || txtb_customer_phonenumber_1.Text == "" || txtb_customer_last_action.Text == "" || txtb_customer_next_action.Text == "")
+            {
+                MessageBox.Show("Please make sure all the neccesary fields are filled in.");
+            }
+            else if(dtp_customer_nextcontact.Value < DateTime.Now)
+            {
+                MessageBox.Show("Date of next contact cannot be in the past.");
+            }
             else
-                MessageBox.Show("An error occcured while adding a customer.");
+            {
+                dbh.OpenConnection();
 
-            dbh.CloseConnection();
+                if (dbh.AddCustomer(txtb_customer_firstname.Text, txtb_customer_lastname.Text, txtb_customer_company_name.Text, txtb_customer_email.Text, txtb_customer_fax.Text, txtb_customer_streetname_1.Text, txtb_customer_housenumber_1.Text, txtb_customer_residence_1.Text, txtb_customer_zipcode_1.Text, txtb_customer_phonenumber_1.Text, txtb_customer_streetname_2.Text, txtb_customer_housenumber_2.Text, txtb_customer_residence_2.Text, txtb_customer_zipcode_2.Text, txtb_customer_phonenumber_2.Text, lastContact, txtb_customer_last_action.Text, nextContact, txtb_customer_next_action.Text))
+                    MessageBox.Show("Succesfully added a customer!");
+                else
+                    MessageBox.Show("An error occcured while adding a customer.");
+
+                dbh.CloseConnection();
+            }
         }
     }
 }
