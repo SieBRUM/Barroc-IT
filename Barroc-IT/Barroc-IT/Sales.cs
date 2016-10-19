@@ -40,7 +40,7 @@ namespace Barroc_IT
             {
                 MessageBox.Show("Please make sure all the neccesary fields are filled in.");
             }
-            else if(dtp_customer_nextcontact.Value < DateTime.Now)
+            else if(dtp_customer_nextcontact.Value.Date < DateTime.Now.Date)
             {
                 MessageBox.Show("Date of next contact cannot be in the past.");
             }
