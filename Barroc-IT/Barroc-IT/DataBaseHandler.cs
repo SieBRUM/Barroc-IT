@@ -216,8 +216,8 @@ namespace Barroc_IT
                         tbl_customers
                     ON
                         tbl_projects.customer_id = tbl_customers.customer_id
-                    WHERE
-                       project_id = 12", this.GetConnection()))
+                    ORDER BY
+                        project_id DESC", this.GetConnection()))
             {
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();

@@ -433,7 +433,7 @@ namespace Barroc_IT
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(288, 32);
+            this.button2.Location = new System.Drawing.Point(134, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -446,7 +446,7 @@ namespace Barroc_IT
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(3, 61);
+            this.panel1.Location = new System.Drawing.Point(4, 35);
             this.panel1.MinimumSize = new System.Drawing.Size(540, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 10);
@@ -454,7 +454,7 @@ namespace Barroc_IT
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(167, 34);
+            this.button1.Location = new System.Drawing.Point(43, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;

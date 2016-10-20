@@ -163,11 +163,16 @@ namespace Barroc_IT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ProjectPanel[] projectInfoPanel = new ProjectPanel[1];
+            dbh.OpenConnection();
+            DataTable dt = dbh.GetProject();
+            int amount = dt.Rows.Count;
+
+
+            ProjectPanel[] projectInfoPanel = new ProjectPanel[amount];
 
             for (int i = 0; i < projectInfoPanel.Length; i++ )
             {
-                projectInfoPanel[i] = new ProjectPanel();
+                projectInfoPanel[i] = new ProjectPanel(i,dt);
                 projectInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 projectInfoPanel[i].Dock = DockStyle.Top;
                 panel1.Controls.Add(projectInfoPanel[i]);
