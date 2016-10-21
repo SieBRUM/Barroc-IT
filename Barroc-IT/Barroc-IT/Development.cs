@@ -161,7 +161,7 @@ namespace Barroc_IT
         private void ShowProjects()
         {
             dbh.OpenConnection();
-            DataTable dt = dbh.GetProject();
+            DataTable dt = dbh.GetProjects();
             int amount = dt.Rows.Count;
             if (!showall && amount > 5)
                 amount = 5;
@@ -173,16 +173,32 @@ namespace Barroc_IT
                 projectInfoPanel[i] = new ProjectPanel(i,dt);
                 projectInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 projectInfoPanel[i].Dock = DockStyle.Top;
-                projectInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.EditProject);
+                projectInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditProjectItems);
+                projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
 
             dbh.CloseConnection();
         }
 
-        private void EditProject(object sender, EventArgs e)
+        private void FillEditProjectItems(object sender, EventArgs e)
         {
+            dbh.OpenConnection();
             Button button = (Button)sender;
+            DataTable dt = dbh.GetProject(button.AccessibleName);
+            txtb_Edit_Project_P_Name.Text = dt.Rows[0]["project_name"].ToString();
+            txtb_Edit_Project_OS.Text = dt.Rows[0]["operating_system"].ToString();
+            txtb_Edit_Project_Software.Text = dt.Rows[0]["software"].ToString();
+            txtb_Edit_Project_Hardware.Text = dt.Rows[0]["hardware"].ToString();
+            lbl_Edit_Project_C_P.Text = dt.Rows[0]["contact_person"].ToString();
+            txtb_Edit_Project_AOI.Text = dt.Rows[0]["amount_invoice"].ToString();
+            cb_Edit_Project_M_C.SelectedIndex = Convert.ToInt32(dt.Rows[0]["maintenance_contract"].ToString());
+            cb_Edit_Project_P_Status.SelectedIndex = Convert.ToInt32(dt.Rows[0]["project_status"].ToString());
+            lbl_Edit_Project_C_ID.Text = dt.Rows[0]["full_name"].ToString();
+            dtp_Edit_Project_Deadline.Value = Convert.ToDateTime(dt.Rows[0]["deadline_date"]);
+            lbl_Edit_Project_P_Id.Text = button.AccessibleName;
+            dbh.CloseConnection();
+
             tc_Main.SelectedIndex = 5;
         }
 
@@ -196,6 +212,18 @@ namespace Barroc_IT
             showall = true;
             panel1.Controls.Clear();
             ShowProjects();
+        }
+
+        private void EditProject(object sender, EventArgs e)
+        {
+            string date = DateHandler.GetDate(dtp_Edit_Project_Deadline);
+            dbh.OpenConnection();
+            if(dbh.EditProject(lbl_Edit_Project_P_Id.Text, txtb_Edit_Project_P_Name.Text, cb_Edit_Project_P_Status.SelectedIndex.ToString(), cb_Edit_Project_M_C.SelectedIndex.ToString(), txtb_Edit_Project_OS.Text, txtb_Edit_Project_Hardware.Text, txtb_Edit_Project_Software.Text, txtb_Edit_Project_AOI.Text, date))
+                MessageBox.Show("Succesfully added a project!");
+            else
+                MessageBox.Show("An error occcured while adding a project.");
+
+            dbh.CloseConnection();
         }
     }
 }

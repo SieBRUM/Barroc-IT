@@ -14,6 +14,7 @@ namespace Barroc_IT
     {
         bool opened = false;
         DatabaseHandler dbh;
+        public bool a = false;
         enum projectStatusCode
         {
             New_Project=0, 
@@ -23,6 +24,12 @@ namespace Barroc_IT
             Done=4
         };
 
+        enum ProjectMaintenanceContract
+        {
+            Yes = 0,
+            No = 1
+        };
+
         public ProjectPanel(int rowNr, DataTable dt)
         {
             InitializeComponent();
@@ -30,6 +37,7 @@ namespace Barroc_IT
             dbh = new DatabaseHandler();
 
             int projectStatus = Convert.ToInt16(dt.Rows[rowNr]["project_status"]);
+            int maintenance_contract = Convert.ToInt16(dt.Rows[rowNr]["maintenance_contract"]);
 
             foreach (string s in dt.Rows[rowNr]["software"].ToString().Split(','))
             {
@@ -41,7 +49,7 @@ namespace Barroc_IT
             lbl_Project_Status.Text = ((projectStatusCode)projectStatus).ToString();
             lbl_Deadline.Text = dt.Rows[rowNr]["deadline_date"].ToString();
             lbl_Internal_Contact_Person.Text = dt.Rows[rowNr]["contact_person"].ToString();
-            lbl_Maintenance_Contract.Text = dt.Rows[rowNr]["maintenance_contract"].ToString();
+            lbl_Maintenance_Contract.Text = ((ProjectMaintenanceContract)maintenance_contract).ToString();
             lbl_Operating_System.Text = dt.Rows[rowNr]["operating_system"].ToString();
             lbl_Hardware.Text = dt.Rows[rowNr]["hardware"].ToString();
             lbl_Amount_Invoices.Text = dt.Rows[rowNr]["amount_invoice"].ToString();
@@ -62,6 +70,11 @@ namespace Barroc_IT
                 panel2.Show();
                 opened = true;
             }
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+               
         }
     }
 }

@@ -203,7 +203,7 @@ namespace Barroc_IT
         }
 
 
-        public DataTable GetProject()
+        public DataTable GetProjects()
         {
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
@@ -219,6 +219,7 @@ namespace Barroc_IT
                     ORDER BY
                         project_id DESC", this.GetConnection()))
             {
+
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
                 dt.Columns.Add("project_id", typeof(string));
@@ -237,6 +238,78 @@ namespace Barroc_IT
                 dt.Load(reader);
             }
             return dt;
+        }
+
+        public DataTable GetProject(string p_Id)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT 
+                        project_id, project_name, project_status, maintenance_contract, operating_system, hardware, software, amount_invoice, deadline_date, contact_person, tbl_projects.customer_id, tbl_customers.company_name AS company_name, CONCAT (tbl_customers.customer_id,':', tbl_customers.first_name, ' ', tbl_customers.last_name, ',', tbl_customers.zip_code) AS full_name 
+                    FROM 
+                        tbl_projects
+                    INNER JOIN 
+                        tbl_customers
+                    ON
+                        tbl_projects.customer_id = tbl_customers.customer_id
+                    WHERE
+                        project_id = @project_id
+                    ORDER BY
+                        project_id DESC", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("project_id", p_Id);
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("project_id", typeof(string));
+                dt.Columns.Add("project_name", typeof(string));
+                dt.Columns.Add("project_status", typeof(string));
+                dt.Columns.Add("maintenance_contract", typeof(string));
+                dt.Columns.Add("operating_system", typeof(string));
+                dt.Columns.Add("hardware", typeof(string));
+                dt.Columns.Add("software", typeof(string));
+                dt.Columns.Add("amount_invoice", typeof(string));
+                dt.Columns.Add("deadline_date", typeof(string));
+                dt.Columns.Add("contact_person", typeof(string));
+                dt.Columns.Add("customer_id", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("full_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public bool EditProject(string p_Id, string p_Name, string p_status, string m_contract, string OS, string hardware, string software, string amount_invoice, string deadline_date)
+        {
+            bool success = false;
+
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    UPDATE 
+                        tbl_projects
+                    SET 
+                        project_name = @project_name, project_status = @project_status, maintenance_contract = @maintenance_contract, operating_system = @operating_system, hardware = @hardware, software = @software, amount_invoice = @amount_invoice, deadline_date = @deadline_date 
+                    WHERE
+                        project_id = @project_id", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("project_id", p_Id);
+                cmd.Parameters.AddWithValue("project_name", p_Name);
+                cmd.Parameters.AddWithValue("project_status", p_status);
+                cmd.Parameters.AddWithValue("maintenance_contract", m_contract);
+                cmd.Parameters.AddWithValue("operating_system", OS);
+                cmd.Parameters.AddWithValue("hardware", hardware);
+                cmd.Parameters.AddWithValue("software", software);
+                cmd.Parameters.AddWithValue("amount_invoice", amount_invoice);
+                cmd.Parameters.AddWithValue("deadline_date", deadline_date);
+                try
+                {
+                    success = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    success = false;
+                    MessageBox.Show("An error occured. Detailes below: \n\n " + e);
+                }
+                return success;
+            }
         }
     }
 }

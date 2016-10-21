@@ -93,28 +93,29 @@ namespace Barroc_IT
             this.txtb_Project_Name = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tcp_Edit_Project = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_Edit_Project_C_P = new System.Windows.Forms.Label();
+            this.lbl_Edit_Project_C_ID = new System.Windows.Forms.Label();
+            this.txtb_Edit_Project_Hardware = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtb_Edit_Project_Software = new System.Windows.Forms.TextBox();
+            this.cb_Edit_Project_M_C = new System.Windows.Forms.ComboBox();
+            this.dtp_Edit_Project_Deadline = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cb_Edit_Project_P_Status = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtb_Edit_Project_OS = new System.Windows.Forms.TextBox();
+            this.txtb_Edit_Project_AOI = new System.Windows.Forms.TextBox();
+            this.txtb_Edit_Project_P_Name = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_Edit_Project_P_Id = new System.Windows.Forms.Label();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -461,7 +462,7 @@ namespace Barroc_IT
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btn_Project_Show_All);
             this.panel1.Location = new System.Drawing.Point(4, 35);
-            this.panel1.MinimumSize = new System.Drawing.Size(540, 0);
+            this.panel1.MinimumSize = new System.Drawing.Size(540, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 25);
             this.panel1.TabIndex = 5;
@@ -794,27 +795,28 @@ namespace Barroc_IT
             // 
             // tcp_Edit_Project
             // 
-            this.tcp_Edit_Project.Controls.Add(this.textBox1);
+            this.tcp_Edit_Project.Controls.Add(this.lbl_Edit_Project_P_Id);
+            this.tcp_Edit_Project.Controls.Add(this.lbl_Edit_Project_C_P);
+            this.tcp_Edit_Project.Controls.Add(this.lbl_Edit_Project_C_ID);
+            this.tcp_Edit_Project.Controls.Add(this.txtb_Edit_Project_Hardware);
             this.tcp_Edit_Project.Controls.Add(this.label1);
-            this.tcp_Edit_Project.Controls.Add(this.comboBox1);
-            this.tcp_Edit_Project.Controls.Add(this.textBox2);
-            this.tcp_Edit_Project.Controls.Add(this.comboBox2);
-            this.tcp_Edit_Project.Controls.Add(this.dateTimePicker1);
+            this.tcp_Edit_Project.Controls.Add(this.txtb_Edit_Project_Software);
+            this.tcp_Edit_Project.Controls.Add(this.cb_Edit_Project_M_C);
+            this.tcp_Edit_Project.Controls.Add(this.dtp_Edit_Project_Deadline);
             this.tcp_Edit_Project.Controls.Add(this.button1);
             this.tcp_Edit_Project.Controls.Add(this.label16);
             this.tcp_Edit_Project.Controls.Add(this.label17);
             this.tcp_Edit_Project.Controls.Add(this.label18);
-            this.tcp_Edit_Project.Controls.Add(this.textBox3);
             this.tcp_Edit_Project.Controls.Add(this.label19);
             this.tcp_Edit_Project.Controls.Add(this.label20);
             this.tcp_Edit_Project.Controls.Add(this.label21);
-            this.tcp_Edit_Project.Controls.Add(this.comboBox3);
+            this.tcp_Edit_Project.Controls.Add(this.cb_Edit_Project_P_Status);
             this.tcp_Edit_Project.Controls.Add(this.label22);
             this.tcp_Edit_Project.Controls.Add(this.label23);
             this.tcp_Edit_Project.Controls.Add(this.label24);
-            this.tcp_Edit_Project.Controls.Add(this.textBox4);
-            this.tcp_Edit_Project.Controls.Add(this.textBox5);
-            this.tcp_Edit_Project.Controls.Add(this.textBox6);
+            this.tcp_Edit_Project.Controls.Add(this.txtb_Edit_Project_OS);
+            this.tcp_Edit_Project.Controls.Add(this.txtb_Edit_Project_AOI);
+            this.tcp_Edit_Project.Controls.Add(this.txtb_Edit_Project_P_Name);
             this.tcp_Edit_Project.Controls.Add(this.pictureBox2);
             this.tcp_Edit_Project.Location = new System.Drawing.Point(4, 22);
             this.tcp_Edit_Project.Name = "tcp_Edit_Project";
@@ -824,15 +826,32 @@ namespace Barroc_IT
             this.tcp_Edit_Project.Text = "Edit Project";
             this.tcp_Edit_Project.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // lbl_Edit_Project_C_P
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 337);
-            this.textBox1.MaxLength = 255;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 46);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.Text = "Laptop i7";
+            this.lbl_Edit_Project_C_P.AutoSize = true;
+            this.lbl_Edit_Project_C_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Edit_Project_C_P.Location = new System.Drawing.Point(310, 136);
+            this.lbl_Edit_Project_C_P.Name = "lbl_Edit_Project_C_P";
+            this.lbl_Edit_Project_C_P.Size = new System.Drawing.Size(0, 13);
+            this.lbl_Edit_Project_C_P.TabIndex = 51;
+            // 
+            // lbl_Edit_Project_C_ID
+            // 
+            this.lbl_Edit_Project_C_ID.AutoSize = true;
+            this.lbl_Edit_Project_C_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Edit_Project_C_ID.Location = new System.Drawing.Point(18, 136);
+            this.lbl_Edit_Project_C_ID.Name = "lbl_Edit_Project_C_ID";
+            this.lbl_Edit_Project_C_ID.Size = new System.Drawing.Size(0, 13);
+            this.lbl_Edit_Project_C_ID.TabIndex = 50;
+            // 
+            // txtb_Edit_Project_Hardware
+            // 
+            this.txtb_Edit_Project_Hardware.Location = new System.Drawing.Point(310, 337);
+            this.txtb_Edit_Project_Hardware.MaxLength = 255;
+            this.txtb_Edit_Project_Hardware.Multiline = true;
+            this.txtb_Edit_Project_Hardware.Name = "txtb_Edit_Project_Hardware";
+            this.txtb_Edit_Project_Hardware.Size = new System.Drawing.Size(193, 46);
+            this.txtb_Edit_Project_Hardware.TabIndex = 37;
             // 
             // label1
             // 
@@ -843,47 +862,33 @@ namespace Barroc_IT
             this.label1.TabIndex = 49;
             this.label1.Text = "Hardware";
             // 
-            // comboBox1
+            // txtb_Edit_Project_Software
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 135);
-            this.comboBox1.MaxDropDownItems = 100;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 21);
-            this.comboBox1.TabIndex = 28;
+            this.txtb_Edit_Project_Software.Location = new System.Drawing.Point(17, 337);
+            this.txtb_Edit_Project_Software.MaxLength = 255;
+            this.txtb_Edit_Project_Software.Multiline = true;
+            this.txtb_Edit_Project_Software.Name = "txtb_Edit_Project_Software";
+            this.txtb_Edit_Project_Software.Size = new System.Drawing.Size(193, 46);
+            this.txtb_Edit_Project_Software.TabIndex = 36;
             // 
-            // textBox2
+            // cb_Edit_Project_M_C
             // 
-            this.textBox2.Location = new System.Drawing.Point(17, 337);
-            this.textBox2.MaxLength = 255;
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 46);
-            this.textBox2.TabIndex = 36;
-            this.textBox2.Text = "Skype, Chrome";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cb_Edit_Project_M_C.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Edit_Project_M_C.FormattingEnabled = true;
+            this.cb_Edit_Project_M_C.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this.comboBox2.Location = new System.Drawing.Point(310, 237);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(97, 21);
-            this.comboBox2.TabIndex = 33;
+            this.cb_Edit_Project_M_C.Location = new System.Drawing.Point(310, 237);
+            this.cb_Edit_Project_M_C.Name = "cb_Edit_Project_M_C";
+            this.cb_Edit_Project_M_C.Size = new System.Drawing.Size(97, 21);
+            this.cb_Edit_Project_M_C.TabIndex = 33;
             // 
-            // dateTimePicker1
+            // dtp_Edit_Project_Deadline
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(18, 287);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(171, 20);
-            this.dateTimePicker1.TabIndex = 34;
+            this.dtp_Edit_Project_Deadline.Location = new System.Drawing.Point(18, 287);
+            this.dtp_Edit_Project_Deadline.Name = "dtp_Edit_Project_Deadline";
+            this.dtp_Edit_Project_Deadline.Size = new System.Drawing.Size(171, 20);
+            this.dtp_Edit_Project_Deadline.TabIndex = 34;
             // 
             // button1
             // 
@@ -893,6 +898,7 @@ namespace Barroc_IT
             this.button1.TabIndex = 38;
             this.button1.Text = "Edit Project";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.EditProject);
             // 
             // label16
             // 
@@ -921,14 +927,6 @@ namespace Barroc_IT
             this.label18.TabIndex = 45;
             this.label18.Text = "Contact Person";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(310, 136);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 29;
-            this.textBox3.Text = "J. R. van Laars";
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -956,20 +954,20 @@ namespace Barroc_IT
             this.label21.TabIndex = 42;
             this.label21.Text = "Operating System";
             // 
-            // comboBox3
+            // cb_Edit_Project_P_Status
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cb_Edit_Project_P_Status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Edit_Project_P_Status.FormattingEnabled = true;
+            this.cb_Edit_Project_P_Status.Items.AddRange(new object[] {
             "New Project",
             "In Progress",
             "Halted",
             "Stopped",
             "Done"});
-            this.comboBox3.Location = new System.Drawing.Point(310, 180);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(97, 21);
-            this.comboBox3.TabIndex = 31;
+            this.cb_Edit_Project_P_Status.Location = new System.Drawing.Point(310, 180);
+            this.cb_Edit_Project_P_Status.Name = "cb_Edit_Project_P_Status";
+            this.cb_Edit_Project_P_Status.Size = new System.Drawing.Size(97, 21);
+            this.cb_Edit_Project_P_Status.TabIndex = 31;
             // 
             // label22
             // 
@@ -998,31 +996,29 @@ namespace Barroc_IT
             this.label24.TabIndex = 39;
             this.label24.Text = "Customer Id";
             // 
-            // textBox4
+            // txtb_Edit_Project_OS
             // 
-            this.textBox4.Location = new System.Drawing.Point(18, 237);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 32;
+            this.txtb_Edit_Project_OS.Location = new System.Drawing.Point(18, 237);
+            this.txtb_Edit_Project_OS.Name = "txtb_Edit_Project_OS";
+            this.txtb_Edit_Project_OS.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Edit_Project_OS.TabIndex = 32;
             // 
-            // textBox5
+            // txtb_Edit_Project_AOI
             // 
-            this.textBox5.Location = new System.Drawing.Point(310, 287);
-            this.textBox5.MaxLength = 3;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 35;
-            this.textBox5.Text = "9";
+            this.txtb_Edit_Project_AOI.Location = new System.Drawing.Point(310, 287);
+            this.txtb_Edit_Project_AOI.MaxLength = 3;
+            this.txtb_Edit_Project_AOI.Name = "txtb_Edit_Project_AOI";
+            this.txtb_Edit_Project_AOI.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Edit_Project_AOI.TabIndex = 35;
             // 
-            // textBox6
+            // txtb_Edit_Project_P_Name
             // 
-            this.textBox6.Location = new System.Drawing.Point(18, 177);
-            this.textBox6.MaxLength = 255;
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(219, 41);
-            this.textBox6.TabIndex = 30;
-            this.textBox6.Text = "AUTO GENERATED TEST DATA";
+            this.txtb_Edit_Project_P_Name.Location = new System.Drawing.Point(18, 177);
+            this.txtb_Edit_Project_P_Name.MaxLength = 255;
+            this.txtb_Edit_Project_P_Name.Multiline = true;
+            this.txtb_Edit_Project_P_Name.Name = "txtb_Edit_Project_P_Name";
+            this.txtb_Edit_Project_P_Name.Size = new System.Drawing.Size(219, 41);
+            this.txtb_Edit_Project_P_Name.TabIndex = 30;
             // 
             // pictureBox2
             // 
@@ -1031,6 +1027,16 @@ namespace Barroc_IT
             this.pictureBox2.Size = new System.Drawing.Size(511, 78);
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
+            // 
+            // lbl_Edit_Project_P_Id
+            // 
+            this.lbl_Edit_Project_P_Id.AutoSize = true;
+            this.lbl_Edit_Project_P_Id.Location = new System.Drawing.Point(511, 104);
+            this.lbl_Edit_Project_P_Id.Name = "lbl_Edit_Project_P_Id";
+            this.lbl_Edit_Project_P_Id.Size = new System.Drawing.Size(41, 13);
+            this.lbl_Edit_Project_P_Id.TabIndex = 52;
+            this.lbl_Edit_Project_P_Id.Text = "label25";
+            this.lbl_Edit_Project_P_Id.Visible = false;
             // 
             // frm_Development
             // 
@@ -1134,28 +1140,29 @@ namespace Barroc_IT
         private Panel panel1;
         private Button btn_Project_Show_All;
         private TabPage tcp_Edit_Project;
-        private TextBox textBox1;
+        private TextBox txtb_Edit_Project_Hardware;
         private Label label1;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
-        private ComboBox comboBox2;
-        private DateTimePicker dateTimePicker1;
+        private TextBox txtb_Edit_Project_Software;
+        private ComboBox cb_Edit_Project_M_C;
+        private DateTimePicker dtp_Edit_Project_Deadline;
         private Button button1;
         private Label label16;
         private Label label17;
         private Label label18;
-        private TextBox textBox3;
         private Label label19;
         private Label label20;
         private Label label21;
-        private ComboBox comboBox3;
+        private ComboBox cb_Edit_Project_P_Status;
         private Label label22;
         private Label label23;
         private Label label24;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtb_Edit_Project_OS;
+        private TextBox txtb_Edit_Project_AOI;
+        private TextBox txtb_Edit_Project_P_Name;
         private PictureBox pictureBox2;
+        private Label lbl_Edit_Project_C_ID;
+        private Label lbl_Edit_Project_C_P;
+        private Label lbl_Edit_Project_P_Id;
 
 
 

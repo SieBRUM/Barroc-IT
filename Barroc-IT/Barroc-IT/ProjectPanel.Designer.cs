@@ -33,6 +33,7 @@
             this.lbl_Project_Id = new System.Windows.Forms.Label();
             this.lbl_Project_Name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Edit = new System.Windows.Forms.Button();
             this.lbl_Deadline = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Amount_Invoices = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_Edit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -133,6 +133,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(538, 221);
             this.panel2.TabIndex = 1;
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Location = new System.Drawing.Point(410, 192);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(122, 23);
+            this.btn_Edit.TabIndex = 21;
+            this.btn_Edit.Text = "Edit Project";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // lbl_Deadline
             // 
@@ -304,15 +314,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Company name:";
             // 
-            // btn_Edit
-            // 
-            this.btn_Edit.Location = new System.Drawing.Point(410, 192);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(122, 23);
-            this.btn_Edit.TabIndex = 21;
-            this.btn_Edit.Text = "button1";
-            this.btn_Edit.UseVisualStyleBackColor = true;
-            // 
             // ProjectPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,7 +339,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_Project_Name;
         private System.Windows.Forms.Label lbl_Project_Status;
-        private System.Windows.Forms.Label lbl_Project_Id;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -358,5 +358,6 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Button btn_Edit;
         public System.Windows.Forms.Label lbl_Operating_System;
+        public System.Windows.Forms.Label lbl_Project_Id;
     }
 }
