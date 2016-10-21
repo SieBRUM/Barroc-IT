@@ -335,7 +335,7 @@ namespace Barroc_IT
             this.close.Size = new System.Drawing.Size(30, 25);
             this.close.TabIndex = 2;
             this.close.TabStop = false;
-
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // minimise
             // 
@@ -347,7 +347,7 @@ namespace Barroc_IT
             this.minimise.Size = new System.Drawing.Size(30, 25);
             this.minimise.TabIndex = 3;
             this.minimise.TabStop = false;
-
+            this.minimise.Click += new System.EventHandler(this.minimise_Click);
             // 
             // help
             // 
@@ -359,6 +359,7 @@ namespace Barroc_IT
             this.help.Size = new System.Drawing.Size(25, 25);
             this.help.TabIndex = 4;
             this.help.TabStop = false;
+            this.help.Click += new System.EventHandler(this.help_Click);
             // 
             // frm_Finance_Window_Name
             // 
@@ -370,7 +371,6 @@ namespace Barroc_IT
             this.frm_Finance_Window_Name.Size = new System.Drawing.Size(172, 13);
             this.frm_Finance_Window_Name.TabIndex = 5;
             this.frm_Finance_Window_Name.Text = "Barroc-IT Software for real Finance";
-
             // 
             // MouseMove
             // 
@@ -382,7 +382,7 @@ namespace Barroc_IT
             this.MouseMove.Size = new System.Drawing.Size(731, 34);
             this.MouseMove.TabIndex = 6;
             this.MouseMove.TabStop = false;
-
+            this.MouseMove.Visible = false;
             // 
             // frm_Finance
             // 
