@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPanel.Designer.cs">
+      <DependentUpon>CustomerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="DateHandler.cs" />
     <Compile Include="Finance.cs">
       <SubType>Form</SubType>
@@ -89,6 +95,9 @@
     <Compile Include="Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomerPanel.resx">
+      <DependentUpon>CustomerPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Finance.resx">
       <DependentUpon>Finance.cs</DependentUpon>
     </EmbeddedResource>
