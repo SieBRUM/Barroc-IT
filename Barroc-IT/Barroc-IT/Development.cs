@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace Barroc_IT
 {
@@ -177,8 +178,8 @@ namespace Barroc_IT
                 projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
-
             dbh.CloseConnection();
+            tc_Main.SelectedIndex = 1;
         }
 
         private void FillEditProjectItems(object sender, EventArgs e)
@@ -209,6 +210,8 @@ namespace Barroc_IT
 
         private void btn_Project_Show_All_Click(object sender, EventArgs e)
         {
+            tc_Main.SelectedIndex = 6;
+
             showall = true;
             panel1.Controls.Clear();
             ShowProjects();

@@ -93,6 +93,7 @@ namespace Barroc_IT
             this.txtb_Project_Name = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tcp_Edit_Project = new System.Windows.Forms.TabPage();
+            this.lbl_Edit_Project_P_Id = new System.Windows.Forms.Label();
             this.lbl_Edit_Project_C_P = new System.Windows.Forms.Label();
             this.lbl_Edit_Project_C_ID = new System.Windows.Forms.Label();
             this.txtb_Edit_Project_Hardware = new System.Windows.Forms.TextBox();
@@ -115,7 +116,8 @@ namespace Barroc_IT
             this.txtb_Edit_Project_AOI = new System.Windows.Forms.TextBox();
             this.txtb_Edit_Project_P_Name = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbl_Edit_Project_P_Id = new System.Windows.Forms.Label();
+            this.tcp_Loading = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -127,6 +129,7 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tcp_Edit_Project.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tcp_Loading.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -402,6 +405,7 @@ namespace Barroc_IT
             this.tc_Main.Controls.Add(this.tcp_Help);
             this.tc_Main.Controls.Add(this.tcp_Add_Project);
             this.tc_Main.Controls.Add(this.tcp_Edit_Project);
+            this.tc_Main.Controls.Add(this.tcp_Loading);
             this.tc_Main.Location = new System.Drawing.Point(142, 0);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
@@ -826,6 +830,16 @@ namespace Barroc_IT
             this.tcp_Edit_Project.Text = "Edit Project";
             this.tcp_Edit_Project.UseVisualStyleBackColor = true;
             // 
+            // lbl_Edit_Project_P_Id
+            // 
+            this.lbl_Edit_Project_P_Id.AutoSize = true;
+            this.lbl_Edit_Project_P_Id.Location = new System.Drawing.Point(511, 104);
+            this.lbl_Edit_Project_P_Id.Name = "lbl_Edit_Project_P_Id";
+            this.lbl_Edit_Project_P_Id.Size = new System.Drawing.Size(41, 13);
+            this.lbl_Edit_Project_P_Id.TabIndex = 52;
+            this.lbl_Edit_Project_P_Id.Text = "label25";
+            this.lbl_Edit_Project_P_Id.Visible = false;
+            // 
             // lbl_Edit_Project_C_P
             // 
             this.lbl_Edit_Project_C_P.AutoSize = true;
@@ -1028,15 +1042,25 @@ namespace Barroc_IT
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
             // 
-            // lbl_Edit_Project_P_Id
+            // tcp_Loading
             // 
-            this.lbl_Edit_Project_P_Id.AutoSize = true;
-            this.lbl_Edit_Project_P_Id.Location = new System.Drawing.Point(511, 104);
-            this.lbl_Edit_Project_P_Id.Name = "lbl_Edit_Project_P_Id";
-            this.lbl_Edit_Project_P_Id.Size = new System.Drawing.Size(41, 13);
-            this.lbl_Edit_Project_P_Id.TabIndex = 52;
-            this.lbl_Edit_Project_P_Id.Text = "label25";
-            this.lbl_Edit_Project_P_Id.Visible = false;
+            this.tcp_Loading.Controls.Add(this.label25);
+            this.tcp_Loading.Location = new System.Drawing.Point(4, 22);
+            this.tcp_Loading.Name = "tcp_Loading";
+            this.tcp_Loading.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_Loading.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Loading.TabIndex = 6;
+            this.tcp_Loading.Text = "tabPage1";
+            this.tcp_Loading.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(211, 177);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(110, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Loading please wait...";
             // 
             // frm_Development
             // 
@@ -1071,6 +1095,8 @@ namespace Barroc_IT
             this.tcp_Edit_Project.ResumeLayout(false);
             this.tcp_Edit_Project.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tcp_Loading.ResumeLayout(false);
+            this.tcp_Loading.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1163,6 +1189,8 @@ namespace Barroc_IT
         private Label lbl_Edit_Project_C_ID;
         private Label lbl_Edit_Project_C_P;
         private Label lbl_Edit_Project_P_Id;
+        private TabPage tcp_Loading;
+        private Label label25;
 
 
 
