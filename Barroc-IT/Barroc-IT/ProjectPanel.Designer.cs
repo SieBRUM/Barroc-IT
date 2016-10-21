@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_Edit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +109,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.Controls.Add(this.btn_Edit);
             this.panel2.Controls.Add(this.lbl_Deadline);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lbl_Amount_Invoices);
@@ -244,7 +246,7 @@
             this.rtb_Software.Location = new System.Drawing.Point(410, 28);
             this.rtb_Software.Name = "rtb_Software";
             this.rtb_Software.ReadOnly = true;
-            this.rtb_Software.Size = new System.Drawing.Size(122, 177);
+            this.rtb_Software.Size = new System.Drawing.Size(122, 156);
             this.rtb_Software.TabIndex = 9;
             this.rtb_Software.Text = "";
             // 
@@ -302,6 +304,15 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Company name:";
             // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Location = new System.Drawing.Point(410, 192);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(122, 23);
+            this.btn_Edit.TabIndex = 21;
+            this.btn_Edit.Text = "button1";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            // 
             // ProjectPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,12 +350,13 @@
         private System.Windows.Forms.Label lbl_Customer_Name;
         private System.Windows.Forms.Label lbl_Hardware;
         private System.Windows.Forms.Label lbl_Maintenance_Contract;
-        private System.Windows.Forms.Label lbl_Operating_System;
         private System.Windows.Forms.Label lbl_Internal_Contact_Person;
         private System.Windows.Forms.Label lbl_Company_Name;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_Amount_Invoices;
         private System.Windows.Forms.Label lbl_Deadline;
         private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Button btn_Edit;
+        public System.Windows.Forms.Label lbl_Operating_System;
     }
 }

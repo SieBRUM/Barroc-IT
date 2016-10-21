@@ -68,7 +68,7 @@ namespace Barroc_IT
         /// </summary>
         public void OpenConnection()
         {
-            conn.Open();
+                conn.Open();
         }
 
         /// <summary>

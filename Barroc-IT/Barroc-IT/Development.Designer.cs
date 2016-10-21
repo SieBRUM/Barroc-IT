@@ -60,9 +60,8 @@ namespace Barroc_IT
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tcp_Projects = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Project_Show_All = new System.Windows.Forms.Button();
             this.btn_Add_Project = new System.Windows.Forms.Button();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -93,14 +92,40 @@ namespace Barroc_IT
             this.txtb_Amount_Invoices = new System.Windows.Forms.TextBox();
             this.txtb_Project_Name = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tcp_Edit_Project = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Projects.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tcp_Appointments.SuspendLayout();
             this.tcp_Help.SuspendLayout();
             this.tcp_Add_Project.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tcp_Edit_Project.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -375,6 +400,7 @@ namespace Barroc_IT
             this.tc_Main.Controls.Add(this.tcp_Appointments);
             this.tc_Main.Controls.Add(this.tcp_Help);
             this.tc_Main.Controls.Add(this.tcp_Add_Project);
+            this.tc_Main.Controls.Add(this.tcp_Edit_Project);
             this.tc_Main.Location = new System.Drawing.Point(142, 0);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
@@ -418,10 +444,7 @@ namespace Barroc_IT
             // tcp_Projects
             // 
             this.tcp_Projects.AutoScroll = true;
-            this.tcp_Projects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tcp_Projects.Controls.Add(this.button2);
             this.tcp_Projects.Controls.Add(this.panel1);
-            this.tcp_Projects.Controls.Add(this.button1);
             this.tcp_Projects.Controls.Add(this.btn_Add_Project);
             this.tcp_Projects.Location = new System.Drawing.Point(4, 22);
             this.tcp_Projects.Name = "tcp_Projects";
@@ -431,36 +454,28 @@ namespace Barroc_IT
             this.tcp_Projects.Text = "Projects";
             this.tcp_Projects.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(134, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_Project_Show_All);
             this.panel1.Location = new System.Drawing.Point(4, 35);
-            this.panel1.MinimumSize = new System.Drawing.Size(540, 10);
+            this.panel1.MinimumSize = new System.Drawing.Size(540, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 10);
+            this.panel1.Size = new System.Drawing.Size(540, 25);
             this.panel1.TabIndex = 5;
             // 
-            // button1
+            // btn_Project_Show_All
             // 
-            this.button1.Location = new System.Drawing.Point(43, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Project_Show_All.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Project_Show_All.Location = new System.Drawing.Point(0, 0);
+            this.btn_Project_Show_All.Name = "btn_Project_Show_All";
+            this.btn_Project_Show_All.Size = new System.Drawing.Size(538, 23);
+            this.btn_Project_Show_All.TabIndex = 0;
+            this.btn_Project_Show_All.Text = "Show All";
+            this.btn_Project_Show_All.UseVisualStyleBackColor = true;
+            this.btn_Project_Show_All.Click += new System.EventHandler(this.btn_Project_Show_All_Click);
             // 
             // btn_Add_Project
             // 
@@ -777,6 +792,246 @@ namespace Barroc_IT
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
+            // tcp_Edit_Project
+            // 
+            this.tcp_Edit_Project.Controls.Add(this.textBox1);
+            this.tcp_Edit_Project.Controls.Add(this.label1);
+            this.tcp_Edit_Project.Controls.Add(this.comboBox1);
+            this.tcp_Edit_Project.Controls.Add(this.textBox2);
+            this.tcp_Edit_Project.Controls.Add(this.comboBox2);
+            this.tcp_Edit_Project.Controls.Add(this.dateTimePicker1);
+            this.tcp_Edit_Project.Controls.Add(this.button1);
+            this.tcp_Edit_Project.Controls.Add(this.label16);
+            this.tcp_Edit_Project.Controls.Add(this.label17);
+            this.tcp_Edit_Project.Controls.Add(this.label18);
+            this.tcp_Edit_Project.Controls.Add(this.textBox3);
+            this.tcp_Edit_Project.Controls.Add(this.label19);
+            this.tcp_Edit_Project.Controls.Add(this.label20);
+            this.tcp_Edit_Project.Controls.Add(this.label21);
+            this.tcp_Edit_Project.Controls.Add(this.comboBox3);
+            this.tcp_Edit_Project.Controls.Add(this.label22);
+            this.tcp_Edit_Project.Controls.Add(this.label23);
+            this.tcp_Edit_Project.Controls.Add(this.label24);
+            this.tcp_Edit_Project.Controls.Add(this.textBox4);
+            this.tcp_Edit_Project.Controls.Add(this.textBox5);
+            this.tcp_Edit_Project.Controls.Add(this.textBox6);
+            this.tcp_Edit_Project.Controls.Add(this.pictureBox2);
+            this.tcp_Edit_Project.Location = new System.Drawing.Point(4, 22);
+            this.tcp_Edit_Project.Name = "tcp_Edit_Project";
+            this.tcp_Edit_Project.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_Edit_Project.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Edit_Project.TabIndex = 5;
+            this.tcp_Edit_Project.Text = "Edit Project";
+            this.tcp_Edit_Project.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(310, 337);
+            this.textBox1.MaxLength = 255;
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(193, 46);
+            this.textBox1.TabIndex = 37;
+            this.textBox1.Text = "Laptop i7";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(307, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Hardware";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(17, 135);
+            this.comboBox1.MaxDropDownItems = 100;
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(142, 21);
+            this.comboBox1.TabIndex = 28;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(17, 337);
+            this.textBox2.MaxLength = 255;
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(193, 46);
+            this.textBox2.TabIndex = 36;
+            this.textBox2.Text = "Skype, Chrome";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.comboBox2.Location = new System.Drawing.Point(310, 237);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(97, 21);
+            this.comboBox2.TabIndex = 33;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(18, 287);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(171, 20);
+            this.dateTimePicker1.TabIndex = 34;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(478, 395);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Edit Project";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(15, 271);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(73, 13);
+            this.label16.TabIndex = 47;
+            this.label16.Text = "Deadline date";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(307, 221);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(112, 13);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Maintenance Contract";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(307, 119);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(80, 13);
+            this.label18.TabIndex = 45;
+            this.label18.Text = "Contact Person";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(310, 136);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 29;
+            this.textBox3.Text = "J. R. van Laars";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(307, 271);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(97, 13);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "Amount of invoices";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(15, 321);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 13);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "Software";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(15, 221);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 13);
+            this.label21.TabIndex = 42;
+            this.label21.Text = "Operating System";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "New Project",
+            "In Progress",
+            "Halted",
+            "Stopped",
+            "Done"});
+            this.comboBox3.Location = new System.Drawing.Point(310, 180);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(97, 21);
+            this.comboBox3.TabIndex = 31;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(307, 164);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(73, 13);
+            this.label22.TabIndex = 41;
+            this.label22.Text = "Project Status";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(15, 164);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(71, 13);
+            this.label23.TabIndex = 40;
+            this.label23.Text = "Project Name";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(14, 119);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(63, 13);
+            this.label24.TabIndex = 39;
+            this.label24.Text = "Customer Id";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(18, 237);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 32;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(310, 287);
+            this.textBox5.MaxLength = 3;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 35;
+            this.textBox5.Text = "9";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(18, 177);
+            this.textBox6.MaxLength = 255;
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(219, 41);
+            this.textBox6.TabIndex = 30;
+            this.textBox6.Text = "AUTO GENERATED TEST DATA";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(17, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
             // frm_Development
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,6 +1054,7 @@ namespace Barroc_IT
             this.tcp_Overview.PerformLayout();
             this.tcp_Projects.ResumeLayout(false);
             this.tcp_Projects.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.tcp_Appointments.ResumeLayout(false);
             this.tcp_Appointments.PerformLayout();
             this.tcp_Help.ResumeLayout(false);
@@ -806,6 +1062,9 @@ namespace Barroc_IT
             this.tcp_Add_Project.ResumeLayout(false);
             this.tcp_Add_Project.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tcp_Edit_Project.ResumeLayout(false);
+            this.tcp_Edit_Project.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -872,9 +1131,31 @@ namespace Barroc_IT
         private PictureBox pictureBox1;
         private TextBox txtb_Hardware;
         private Label label4;
-        private Button button1;
         private Panel panel1;
-        private Button button2;
+        private Button btn_Project_Show_All;
+        private TabPage tcp_Edit_Project;
+        private TextBox textBox1;
+        private Label label1;
+        private ComboBox comboBox1;
+        private TextBox textBox2;
+        private ComboBox comboBox2;
+        private DateTimePicker dateTimePicker1;
+        private Button button1;
+        private Label label16;
+        private Label label17;
+        private Label label18;
+        private TextBox textBox3;
+        private Label label19;
+        private Label label20;
+        private Label label21;
+        private ComboBox comboBox3;
+        private Label label22;
+        private Label label23;
+        private Label label24;
+        private TextBox textBox4;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private PictureBox pictureBox2;
 
 
 

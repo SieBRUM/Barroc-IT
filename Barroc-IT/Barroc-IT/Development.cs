@@ -12,6 +12,7 @@ namespace Barroc_IT
 {
     public partial class frm_Development : Form
     {
+        bool showall = false;
         DatabaseHandler dbh;
         public frm_Development()
         {
@@ -19,7 +20,8 @@ namespace Barroc_IT
             dbh = new DatabaseHandler();
             cbox_Project_Status.SelectedIndex = 0;
             cbox_Maintenance_Contract.SelectedIndex = 0;
-            
+            ShowProjects();
+
             ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
             ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator();
             HideFilters(true,false,false);
@@ -156,17 +158,13 @@ namespace Barroc_IT
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void ShowProjects()
         {
             dbh.OpenConnection();
             DataTable dt = dbh.GetProject();
             int amount = dt.Rows.Count;
-
+            if (!showall && amount > 5)
+                amount = 5;
 
             ProjectPanel[] projectInfoPanel = new ProjectPanel[amount];
 
@@ -175,13 +173,29 @@ namespace Barroc_IT
                 projectInfoPanel[i] = new ProjectPanel(i,dt);
                 projectInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 projectInfoPanel[i].Dock = DockStyle.Top;
+                projectInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.EditProject);
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
+
+            dbh.CloseConnection();
+        }
+
+        private void EditProject(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            tc_Main.SelectedIndex = 5;
         }
 
         private void frm_Development_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_Project_Show_All_Click(object sender, EventArgs e)
+        {
+            showall = true;
+            panel1.Controls.Clear();
+            ShowProjects();
         }
     }
 }
