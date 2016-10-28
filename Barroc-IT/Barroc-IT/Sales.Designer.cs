@@ -98,11 +98,15 @@
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Project_Show_All = new System.Windows.Forms.Button();
             tc_Main = new System.Windows.Forms.TabControl();
             tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.mstrp_Menu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tc_Main
@@ -150,6 +154,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -794,6 +800,29 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_Project_Show_All);
+            this.panel1.Location = new System.Drawing.Point(4, 35);
+            this.panel1.MinimumSize = new System.Drawing.Size(540, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(540, 25);
+            this.panel1.TabIndex = 6;
+            // 
+            // btn_Project_Show_All
+            // 
+            this.btn_Project_Show_All.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Project_Show_All.Location = new System.Drawing.Point(0, 0);
+            this.btn_Project_Show_All.Name = "btn_Project_Show_All";
+            this.btn_Project_Show_All.Size = new System.Drawing.Size(538, 23);
+            this.btn_Project_Show_All.TabIndex = 0;
+            this.btn_Project_Show_All.Text = "Show All";
+            this.btn_Project_Show_All.UseVisualStyleBackColor = true;
+            this.btn_Project_Show_All.Click += new System.EventHandler(this.btn_Project_Show_All_Click_1);
+            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -809,10 +838,13 @@
             tc_Main.ResumeLayout(false);
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -888,6 +920,8 @@
         private System.Windows.Forms.TextBox txtb_customer_last_action;
         private System.Windows.Forms.DateTimePicker dtp_customer_nextcontact;
         private System.Windows.Forms.DateTimePicker dtp_customer_lastcontact;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_Project_Show_All;
 
 
     }

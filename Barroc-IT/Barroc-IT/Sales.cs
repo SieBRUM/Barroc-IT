@@ -13,10 +13,13 @@ namespace Barroc_IT
     public partial class frm_Sales : Form
     {
         DatabaseHandler dbh;
+        bool showallCustomer = false;
 
         public frm_Sales()
         {
             InitializeComponent();
+            dbh = new DatabaseHandler();
+            ShowCustomers();
         }
 
         private void mnitem_Logout_Click(object sender, EventArgs e)
@@ -32,7 +35,6 @@ namespace Barroc_IT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dbh = new DatabaseHandler();
             string nextContact = DateHandler.GetDate(dtp_customer_nextcontact);
             string lastContact = DateHandler.GetDate(dtp_customer_lastcontact);
 
@@ -55,6 +57,39 @@ namespace Barroc_IT
 
                 dbh.CloseConnection();
             }
+        }
+
+        private void ShowCustomers()
+        {
+            dbh.OpenConnection();
+            DataTable dt = dbh.GetCustomers();
+            int amount = dt.Rows.Count;
+            if (!showallCustomer && amount > 5)
+                amount = 5;
+
+            CustomerPanel[] customerInfoPanel = new CustomerPanel[amount];
+
+            for (int i = 0; i < customerInfoPanel.Length; i++)
+            {
+                customerInfoPanel[i] = new CustomerPanel(i, dt);
+                customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                customerInfoPanel[i].Dock = DockStyle.Top;
+                panel1.Controls.Add(customerInfoPanel[i]);
+            }
+            dbh.CloseConnection();
+            
+        }
+
+        private void btn_Project_Show_All_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Project_Show_All_Click_1(object sender, EventArgs e)
+        {
+            showallCustomer = true;
+            panel1.Controls.Clear();
+            ShowCustomers();
         }
     }
 }
