@@ -31,7 +31,6 @@ namespace Barroc_IT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Finance));
             this.mstrp_Menu = new System.Windows.Forms.MenuStrip();
             this.mnitem_Overview = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Overview_Department = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,22 +56,12 @@ namespace Barroc_IT
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.close = new System.Windows.Forms.PictureBox();
-            this.minimise = new System.Windows.Forms.PictureBox();
-            this.help = new System.Windows.Forms.PictureBox();
-            this.frm_Finance_Window_Name = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.MouseMove = new System.Windows.Forms.PictureBox();
             this.mstrp_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minimise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.help)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MouseMove)).BeginInit();
             this.SuspendLayout();
             // 
             // mstrp_Menu
             // 
-            this.mstrp_Menu.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.mstrp_Menu.AutoSize = false;
             this.mstrp_Menu.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.mstrp_Menu.Dock = System.Windows.Forms.DockStyle.None;
@@ -94,9 +83,9 @@ namespace Barroc_IT
             this.mnfltr_Appointments_Date,
             this.mnitem_Logout});
             this.mstrp_Menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.mstrp_Menu.Location = new System.Drawing.Point(9, 37);
+            this.mstrp_Menu.Location = new System.Drawing.Point(0, 4);
             this.mstrp_Menu.Name = "mstrp_Menu";
-            this.mstrp_Menu.Size = new System.Drawing.Size(142, 454);
+            this.mstrp_Menu.Size = new System.Drawing.Size(142, 497);
             this.mstrp_Menu.TabIndex = 1;
             // 
             // mnitem_Overview
@@ -323,95 +312,24 @@ namespace Barroc_IT
             this.mnitem_Logout.Name = "mnitem_Logout";
             this.mnitem_Logout.Size = new System.Drawing.Size(135, 25);
             this.mnitem_Logout.Text = "frm_Logout";
-            this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // close
-            // 
-            this.close.BackColor = System.Drawing.Color.Transparent;
-            this.close.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("close.BackgroundImage")));
-            this.close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.close.Location = new System.Drawing.Point(688, 3);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(30, 25);
-            this.close.TabIndex = 2;
-            this.close.TabStop = false;
-            this.close.Click += new System.EventHandler(this.close_Click);
-            // 
-            // minimise
-            // 
-            this.minimise.BackColor = System.Drawing.Color.Transparent;
-            this.minimise.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimise.BackgroundImage")));
-            this.minimise.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.minimise.Location = new System.Drawing.Point(661, 2);
-            this.minimise.Name = "minimise";
-            this.minimise.Size = new System.Drawing.Size(30, 25);
-            this.minimise.TabIndex = 3;
-            this.minimise.TabStop = false;
-            this.minimise.Click += new System.EventHandler(this.minimise_Click);
-            // 
-            // help
-            // 
-            this.help.BackColor = System.Drawing.Color.Transparent;
-            this.help.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("help.BackgroundImage")));
-            this.help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.help.Location = new System.Drawing.Point(636, 2);
-            this.help.Name = "help";
-            this.help.Size = new System.Drawing.Size(25, 25);
-            this.help.TabIndex = 4;
-            this.help.TabStop = false;
-            this.help.Click += new System.EventHandler(this.help_Click);
-            // 
-            // frm_Finance_Window_Name
-            // 
-            this.frm_Finance_Window_Name.AutoSize = true;
-            this.frm_Finance_Window_Name.BackColor = System.Drawing.Color.Transparent;
-            this.frm_Finance_Window_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frm_Finance_Window_Name.Location = new System.Drawing.Point(9, 13);
-            this.frm_Finance_Window_Name.Name = "frm_Finance_Window_Name";
-            this.frm_Finance_Window_Name.Size = new System.Drawing.Size(172, 13);
-            this.frm_Finance_Window_Name.TabIndex = 5;
-            this.frm_Finance_Window_Name.Text = "Barroc-IT Software for real Finance";
-            // 
-            // MouseMove
-            // 
-            this.MouseMove.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.MouseMove.BackColor = System.Drawing.Color.Transparent;
-            this.MouseMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MouseMove.Location = new System.Drawing.Point(0, 0);
-            this.MouseMove.Name = "MouseMove";
-            this.MouseMove.Size = new System.Drawing.Size(731, 34);
-            this.MouseMove.TabIndex = 6;
-            this.MouseMove.TabStop = false;
-            this.MouseMove.Visible = false;
             // 
             // frm_Finance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(730, 500);
-            this.Controls.Add(this.frm_Finance_Window_Name);
-            this.Controls.Add(this.help);
-            this.Controls.Add(this.close);
             this.Controls.Add(this.mstrp_Menu);
-            this.Controls.Add(this.minimise);
-            this.Controls.Add(this.MouseMove);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "frm_Finance";
             this.Text = "Barroc-IT - Software for real - Finance";
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minimise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.help)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MouseMove)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -442,11 +360,6 @@ namespace Barroc_IT
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_Residence;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
-        private PictureBox close;
-        private PictureBox minimise;
-        private PictureBox help;
-        private Label frm_Finance_Window_Name;
         private Timer timer1;
-        private PictureBox MouseMove;
     }
 }

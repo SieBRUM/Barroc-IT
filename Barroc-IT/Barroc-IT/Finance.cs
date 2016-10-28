@@ -9,51 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+using Barroc_IT.Datalayer;
+
 namespace Barroc_IT
 {
     public partial class frm_Finance : Form
     {
+        private FinanceMySQL mysql;
       
         public frm_Finance()
         {
             InitializeComponent();
-            
-            
+            mysql = new FinanceMySQL();
+            mysql.getFinances(); // List Finances
         }
+       
 
-        private void close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Frm_Login formlogin = new Frm_Login();
-            formlogin.Show();
-        }
-
-        private void minimise_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void help_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
-        }
-
-        
 
     }
 }

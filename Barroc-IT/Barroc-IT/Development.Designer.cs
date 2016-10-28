@@ -1066,7 +1066,7 @@ namespace Barroc_IT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 449);
+            this.ClientSize = new System.Drawing.Size(714, 450);
             this.Controls.Add(this.mstrp_Menu);
             this.Controls.Add(this.tc_Main);
             this.DoubleBuffered = true;
