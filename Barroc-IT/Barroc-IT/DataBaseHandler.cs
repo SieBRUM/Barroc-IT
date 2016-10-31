@@ -162,6 +162,32 @@ namespace Barroc_IT
             return dt;
         }
 
+        public bool AddNotification(string c_ID, string notification_type, string department)
+        {
+            bool done;
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    INSERT INTO
+                        tbl_notification(notification_type, notification_date, notification_info)
+                        VALUES (@notification_type, @notification_date, @notification_info)", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("notification_type", notification_type);
+                cmd.Parameters.AddWithValue("notification_date", DateTime.Today);
+                cmd.Parameters.AddWithValue("notification_info", "Customer " + c_ID + " needs to be checked on creditworthyness");
+
+                try
+                {
+                    done = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    done = false;
+                    MessageBox.Show("An error occured. Details below: \n\n " + e);
+                }
+            }
+
+            return done;
+        }
+
         public bool AddCustomer(string c_Firstname, string c_Lastname, string c_Company, string c_Email, string c_Fax, string c_Streetname1, string c_Housenumber1, string c_Residence1, string c_Zipcode1, string c_Phone1, string c_Streetname2, string c_Housenumber2, string c_Residence2, string c_Zipcode2, string c_Phone2, string c_Lastcontact, string c_Lastaction, string c_Nextcontact, string c_Nextaction)
         {
             bool done;
