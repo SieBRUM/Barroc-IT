@@ -71,10 +71,5 @@ namespace Barroc_IT
                 opened = true;
             }
         }
-
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-               
-        }
     }
 }

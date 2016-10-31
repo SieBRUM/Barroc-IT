@@ -118,6 +118,8 @@ namespace Barroc_IT
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tcp_Loading = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
+            this.tcp_Show_Customer = new System.Windows.Forms.TabPage();
+            this.lbl_Customer_Name = new System.Windows.Forms.Label();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -130,6 +132,7 @@ namespace Barroc_IT
             this.tcp_Edit_Project.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tcp_Loading.SuspendLayout();
+            this.tcp_Show_Customer.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -406,6 +409,7 @@ namespace Barroc_IT
             this.tc_Main.Controls.Add(this.tcp_Add_Project);
             this.tc_Main.Controls.Add(this.tcp_Edit_Project);
             this.tc_Main.Controls.Add(this.tcp_Loading);
+            this.tc_Main.Controls.Add(this.tcp_Show_Customer);
             this.tc_Main.Location = new System.Drawing.Point(142, 0);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
@@ -1050,7 +1054,7 @@ namespace Barroc_IT
             this.tcp_Loading.Padding = new System.Windows.Forms.Padding(3);
             this.tcp_Loading.Size = new System.Drawing.Size(566, 424);
             this.tcp_Loading.TabIndex = 6;
-            this.tcp_Loading.Text = "tabPage1";
+            this.tcp_Loading.Text = "Loading";
             this.tcp_Loading.UseVisualStyleBackColor = true;
             // 
             // label25
@@ -1062,11 +1066,31 @@ namespace Barroc_IT
             this.label25.TabIndex = 0;
             this.label25.Text = "Loading please wait...";
             // 
+            // tcp_Show_Customer
+            // 
+            this.tcp_Show_Customer.Controls.Add(this.lbl_Customer_Name);
+            this.tcp_Show_Customer.Location = new System.Drawing.Point(4, 22);
+            this.tcp_Show_Customer.Name = "tcp_Show_Customer";
+            this.tcp_Show_Customer.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_Show_Customer.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Show_Customer.TabIndex = 7;
+            this.tcp_Show_Customer.Text = "Customer";
+            this.tcp_Show_Customer.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Customer_Name
+            // 
+            this.lbl_Customer_Name.AutoSize = true;
+            this.lbl_Customer_Name.Location = new System.Drawing.Point(260, 203);
+            this.lbl_Customer_Name.Name = "lbl_Customer_Name";
+            this.lbl_Customer_Name.Size = new System.Drawing.Size(41, 13);
+            this.lbl_Customer_Name.TabIndex = 0;
+            this.lbl_Customer_Name.Text = "label26";
+            // 
             // frm_Development
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 450);
+            this.ClientSize = new System.Drawing.Size(714, 449);
             this.Controls.Add(this.mstrp_Menu);
             this.Controls.Add(this.tc_Main);
             this.DoubleBuffered = true;
@@ -1097,6 +1121,8 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tcp_Loading.ResumeLayout(false);
             this.tcp_Loading.PerformLayout();
+            this.tcp_Show_Customer.ResumeLayout(false);
+            this.tcp_Show_Customer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1191,6 +1217,8 @@ namespace Barroc_IT
         private Label lbl_Edit_Project_P_Id;
         private TabPage tcp_Loading;
         private Label label25;
+        private TabPage tcp_Show_Customer;
+        private Label lbl_Customer_Name;
 
 
 

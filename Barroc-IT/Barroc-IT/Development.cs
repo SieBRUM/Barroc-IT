@@ -142,7 +142,7 @@ namespace Barroc_IT
                 try
                 {
                     dbh.OpenConnection();
-                    DataTable dt = dbh.GetCustomers();
+                    DataTable dt = dbh.GetCustomerCB();
                     cb_Select_Customer.ValueMember = "customer_id";
                     cb_Select_Customer.DisplayMember = "full_name";
 
@@ -176,6 +176,8 @@ namespace Barroc_IT
                 projectInfoPanel[i].Dock = DockStyle.Top;
                 projectInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditProjectItems);
                 projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
+                projectInfoPanel[i].lbl_Customer_Name.AccessibleName = dt.Rows[i]["customer_id"].ToString();
+                projectInfoPanel[i].lbl_Customer_Name.Click += new System.EventHandler(this.FillCustomerData);
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
             dbh.CloseConnection();
@@ -201,6 +203,16 @@ namespace Barroc_IT
             dbh.CloseConnection();
 
             tc_Main.SelectedIndex = 5;
+        }
+
+        private void FillCustomerData(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Label label = (Label)sender;
+            DataTable dt = dbh.GetCustomer(label.AccessibleName);
+            lbl_Customer_Name.Text = dt.Rows[0]["customer_name"].ToString();
+            tc_Main.SelectedIndex = 7;
+            dbh.CloseConnection();
         }
 
         private void frm_Development_FormClosing(object sender, FormClosingEventArgs e)

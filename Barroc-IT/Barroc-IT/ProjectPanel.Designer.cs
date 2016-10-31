@@ -142,7 +142,6 @@
             this.btn_Edit.TabIndex = 21;
             this.btn_Edit.Text = "Edit Project";
             this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // lbl_Deadline
             // 
@@ -347,7 +346,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox rtb_Software;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbl_Customer_Name;
         private System.Windows.Forms.Label lbl_Hardware;
         private System.Windows.Forms.Label lbl_Maintenance_Contract;
         private System.Windows.Forms.Label lbl_Internal_Contact_Person;
@@ -359,5 +357,6 @@
         public System.Windows.Forms.Button btn_Edit;
         public System.Windows.Forms.Label lbl_Operating_System;
         public System.Windows.Forms.Label lbl_Project_Id;
+        public System.Windows.Forms.Label lbl_Customer_Name;
     }
 }

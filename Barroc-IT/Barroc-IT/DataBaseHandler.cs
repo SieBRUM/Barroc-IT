@@ -141,26 +141,26 @@ namespace Barroc_IT
             return done;
         }
 
-//        public DataTable GetCustomers()
-//        {
-//            DataTable dt = new DataTable();
-//            using (MySqlCommand cmd = new MySqlCommand(@"
-//                    SELECT 
-//                        customer_id, CONCAT (customer_id,':', first_name, ' ', last_name, ',', zip_code) AS full_name 
-//
-//                    FROM 
-//                        tbl_customers
-//                    WHERE
-//                        creditworthy = 1", this.GetConnection()))
-//            {
-//                MySqlDataReader reader;
-//                reader = cmd.ExecuteReader();
-//                dt.Columns.Add("customer_id", typeof(string));
-//                dt.Columns.Add("full_name", typeof(string));
-//                dt.Load(reader);
-//            }
-//            return dt;
-//        }
+        public DataTable GetCustomerCB()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT 
+                        customer_id, CONCAT (customer_id,':', first_name, ' ', last_name, ',', zip_code) AS full_name 
+
+                    FROM 
+                        tbl_customers
+                    WHERE
+                        creditworthy = 1", this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("customer_id", typeof(string));
+                dt.Columns.Add("full_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
 
         public bool AddCustomer(string c_Firstname, string c_Lastname, string c_Company, string c_Email, string c_Fax, string c_Streetname1, string c_Housenumber1, string c_Residence1, string c_Zipcode1, string c_Phone1, string c_Streetname2, string c_Housenumber2, string c_Residence2, string c_Zipcode2, string c_Phone2, string c_Lastcontact, string c_Lastaction, string c_Nextcontact, string c_Nextaction)
         {
@@ -215,6 +215,7 @@ namespace Barroc_IT
                     ORDER BY
                         customer_ID DESC", this.GetConnection()))
             {
+
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
                 dt.Columns.Add("customer_id", typeof(string));
@@ -245,6 +246,51 @@ namespace Barroc_IT
             }
             return dt;
         }
+
+        public DataTable GetCustomer(string customerId)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, 'limit', gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+
+                    FROM
+                        tbl_customers
+                    WHERE
+                        customer_id = @customer_id", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("customer_id", customerId);
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("customer_id", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("zip_code", typeof(string));
+                dt.Columns.Add("zip_code_2", typeof(string));
+                dt.Columns.Add("residence", typeof(string));
+                dt.Columns.Add("residence_2", typeof(string));
+                dt.Columns.Add("phone_number", typeof(string));
+                dt.Columns.Add("phone_number_2", typeof(string));
+                dt.Columns.Add("fax", typeof(string));
+                dt.Columns.Add("email", typeof(string));
+                dt.Columns.Add("prospect", typeof(string));
+                dt.Columns.Add("last_contact", typeof(string));
+                dt.Columns.Add("last_action", typeof(string));
+                dt.Columns.Add("next_contact", typeof(string));
+                dt.Columns.Add("next_action", typeof(string));
+                dt.Columns.Add("credit_balance", typeof(string));
+                dt.Columns.Add("creditworthy", typeof(string));
+                dt.Columns.Add("discount", typeof(string));
+                dt.Columns.Add("iban", typeof(string));
+                dt.Columns.Add("limit", typeof(string));
+                dt.Columns.Add("gross_revenue", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
+                dt.Columns.Add("address", typeof(string));
+                dt.Columns.Add("address_2", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
 
         public DataTable GetProjects()
         {
