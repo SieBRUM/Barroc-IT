@@ -35,6 +35,7 @@ namespace Barroc_IT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string nextContact = DateHandler.GetDate(dtp_customer_nextcontact);
             string lastContact = DateHandler.GetDate(dtp_customer_lastcontact);
 
@@ -42,7 +43,7 @@ namespace Barroc_IT
             {
                 MessageBox.Show("Please make sure all the neccesary fields are filled in.");
             }
-            else if(dtp_customer_nextcontact.Value.Date < DateTime.Now.Date)
+            else if (dtp_customer_nextcontact.Value.Date < DateTime.Now.Date)
             {
                 MessageBox.Show("Date of next contact cannot be in the past.");
             }
@@ -55,6 +56,7 @@ namespace Barroc_IT
                 else
                     MessageBox.Show("An error occcured while adding a customer.");
 
+                dbh.AddNotification(txtb_customer_firstname.Text, "Creditworthy check", "Finance");
                 dbh.CloseConnection();
             }
         }
@@ -90,6 +92,30 @@ namespace Barroc_IT
             showallCustomer = true;
             panel1.Controls.Clear();
             ShowCustomers();
+            
+        }
+
+        private struct Customer
+        {
+            private string first_name;
+            private string last_name;
+            private string company_name;
+            private string email;
+            private string fax;
+            private string streetname_1;
+            private string housenumber_1;
+            private string residence_1;
+            private string zipcode_1;
+            private string phonenumber_1;
+            private string streetname_2;
+            private string housenumber_2;
+            private string residence_2;
+            private string zipcode_2;
+            private string phonenumber_2;
+            private string lastContact;
+            private string lastAction;
+            private string nextContact;
+            private string nextAction;
         }
     }
 }

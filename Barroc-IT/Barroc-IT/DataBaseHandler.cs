@@ -162,7 +162,7 @@ namespace Barroc_IT
             return dt;
         }
 
-        public bool AddNotification(string c_ID, string notification_type, string department)
+        public bool AddNotification(string c_Name, string notification_type, string department)
         {
             bool done;
             using (MySqlCommand cmd = new MySqlCommand(@"
@@ -172,7 +172,7 @@ namespace Barroc_IT
             {
                 cmd.Parameters.AddWithValue("notification_type", notification_type);
                 cmd.Parameters.AddWithValue("notification_date", DateTime.Today);
-                cmd.Parameters.AddWithValue("notification_info", "Customer " + c_ID + " needs to be checked on creditworthyness");
+                cmd.Parameters.AddWithValue("notification_info", "Customer " + c_Name + " needs to be checked on creditworthyness");
 
                 try
                 {
