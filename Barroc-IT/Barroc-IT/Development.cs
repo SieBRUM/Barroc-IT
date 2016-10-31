@@ -22,6 +22,7 @@ namespace Barroc_IT
             cbox_Project_Status.SelectedIndex = 0;
             cbox_Maintenance_Contract.SelectedIndex = 0;
             ShowProjects();
+            tc_Main.SelectedIndex = 0;
 
             ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
             ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator();
@@ -105,9 +106,10 @@ namespace Barroc_IT
 
         private void AddProject(object sender, EventArgs e)
         {
-            if(txtb_Amount_Invoices.Text == "" || txtb_Contact_Person.Text == "" || txtb_Operating_System.Text == "" || txtb_Project_Name.Text == "" || txtb_Software.Text == "" || txtb_Hardware.Text == "")
+            int result;
+            if (txtb_Amount_Invoices.Text == "" || txtb_Contact_Person.Text == "" || txtb_Operating_System.Text == "" || txtb_Project_Name.Text == "" || txtb_Software.Text == "" || txtb_Hardware.Text == "" || int.TryParse(txtb_Edit_Project_AOI.Text, out result))
             {
-                MessageBox.Show("Please make sure all the fields are filled in.");
+                MessageBox.Show("Please make sure all the fields are filled in correctly.");
             }
             else if(dtp_Deadline.Value <= DateTime.Now)
             {
@@ -211,6 +213,17 @@ namespace Barroc_IT
             Label label = (Label)sender;
             DataTable dt = dbh.GetCustomer(label.AccessibleName);
             lbl_Customer_Name.Text = dt.Rows[0]["customer_name"].ToString();
+            lbl_Residence.Text = dt.Rows[0]["residence"].ToString();
+            lbl_Address.Text = dt.Rows[0]["address"].ToString();
+            lbl_Zip_Code.Text = dt.Rows[0]["zip_code"].ToString();
+            lbl_Email.Text = dt.Rows[0]["email"].ToString();
+            lbl_Phonenumber.Text = dt.Rows[0]["phone_number"].ToString();
+            lbl_Fax.Text = dt.Rows[0]["fax"].ToString();
+            lbl_Company_Name.Text = dt.Rows[0]["company_name"].ToString();
+            lbl_Residence2.Text = dt.Rows[0]["residence_2"].ToString();
+            lbl_Address2.Text = dt.Rows[0]["address_2"].ToString();
+            lbl_Zip_Code2.Text = dt.Rows[0]["zip_code_2"].ToString();
+            lbl_Phonenumber2.Text = dt.Rows[0]["phone_number_2"].ToString();
             tc_Main.SelectedIndex = 7;
             dbh.CloseConnection();
         }
@@ -232,13 +245,21 @@ namespace Barroc_IT
         private void EditProject(object sender, EventArgs e)
         {
             string date = DateHandler.GetDate(dtp_Edit_Project_Deadline);
-            dbh.OpenConnection();
-            if(dbh.EditProject(lbl_Edit_Project_P_Id.Text, txtb_Edit_Project_P_Name.Text, cb_Edit_Project_P_Status.SelectedIndex.ToString(), cb_Edit_Project_M_C.SelectedIndex.ToString(), txtb_Edit_Project_OS.Text, txtb_Edit_Project_Hardware.Text, txtb_Edit_Project_Software.Text, txtb_Edit_Project_AOI.Text, date))
-                MessageBox.Show("Succesfully added a project!");
+            int result;
+            if (int.TryParse(txtb_Edit_Project_AOI.Text, out result))
+            {
+                MessageBox.Show("Amount of Invoices not a number!");
+            }
             else
-                MessageBox.Show("An error occcured while adding a project.");
+            { 
+                dbh.OpenConnection();
+                if(dbh.EditProject(lbl_Edit_Project_P_Id.Text, txtb_Edit_Project_P_Name.Text, cb_Edit_Project_P_Status.SelectedIndex.ToString(), cb_Edit_Project_M_C.SelectedIndex.ToString(), txtb_Edit_Project_OS.Text, txtb_Edit_Project_Hardware.Text, txtb_Edit_Project_Software.Text, txtb_Edit_Project_AOI.Text, date))
+                    MessageBox.Show("Succesfully added a project!");
+                else
+                    MessageBox.Show("An error occcured while adding a project.");
 
-            dbh.CloseConnection();
+                dbh.CloseConnection();
+            }
         }
     }
 }

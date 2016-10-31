@@ -119,7 +119,33 @@ namespace Barroc_IT
             this.tcp_Loading = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
             this.tcp_Show_Customer = new System.Windows.Forms.TabPage();
+            this.lbl_Zip_Code = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lbl_Address = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lbl_Residence = new System.Windows.Forms.Label();
             this.lbl_Customer_Name = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lbl_Email = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_Phonenumber = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lbl_Fax = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.lbl_Phonenumber2 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lbl_Zip_Code2 = new System.Windows.Forms.Label();
+            this.lbl_Residence2 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.lbl_Address2 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.lbl_Company_Name = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.mstrp_Menu.SuspendLayout();
             this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -133,6 +159,8 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tcp_Loading.SuspendLayout();
             this.tcp_Show_Customer.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -415,7 +443,7 @@ namespace Barroc_IT
             this.tc_Main.Name = "tc_Main";
             this.tc_Main.SelectedIndex = 0;
             this.tc_Main.Size = new System.Drawing.Size(574, 450);
-            this.tc_Main.TabIndex = 2;
+            this.tc_Main.TabIndex = 1;
             this.tc_Main.TabStop = false;
             this.tc_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
@@ -1062,13 +1090,14 @@ namespace Barroc_IT
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(211, 177);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(110, 13);
+            this.label25.Size = new System.Drawing.Size(113, 13);
             this.label25.TabIndex = 0;
-            this.label25.Text = "Loading please wait...";
+            this.label25.Text = "Loading, please wait...";
             // 
             // tcp_Show_Customer
             // 
-            this.tcp_Show_Customer.Controls.Add(this.lbl_Customer_Name);
+            this.tcp_Show_Customer.Controls.Add(this.pictureBox3);
+            this.tcp_Show_Customer.Controls.Add(this.panel2);
             this.tcp_Show_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Show_Customer.Name = "tcp_Show_Customer";
             this.tcp_Show_Customer.Padding = new System.Windows.Forms.Padding(3);
@@ -1077,14 +1106,283 @@ namespace Barroc_IT
             this.tcp_Show_Customer.Text = "Customer";
             this.tcp_Show_Customer.UseVisualStyleBackColor = true;
             // 
+            // lbl_Zip_Code
+            // 
+            this.lbl_Zip_Code.AutoSize = true;
+            this.lbl_Zip_Code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Zip_Code.Location = new System.Drawing.Point(120, 62);
+            this.lbl_Zip_Code.Name = "lbl_Zip_Code";
+            this.lbl_Zip_Code.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Zip_Code.TabIndex = 7;
+            this.lbl_Zip_Code.Text = "Placeholder";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(3, 62);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(53, 13);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Zip Code:";
+            // 
+            // lbl_Address
+            // 
+            this.lbl_Address.AutoSize = true;
+            this.lbl_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Address.Location = new System.Drawing.Point(120, 49);
+            this.lbl_Address.Name = "lbl_Address";
+            this.lbl_Address.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Address.TabIndex = 5;
+            this.lbl_Address.Text = "Placeholder";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 49);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(48, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Address:";
+            // 
+            // lbl_Residence
+            // 
+            this.lbl_Residence.AutoSize = true;
+            this.lbl_Residence.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Residence.Location = new System.Drawing.Point(120, 35);
+            this.lbl_Residence.Name = "lbl_Residence";
+            this.lbl_Residence.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Residence.TabIndex = 3;
+            this.lbl_Residence.Text = "Placeholder";
+            // 
             // lbl_Customer_Name
             // 
             this.lbl_Customer_Name.AutoSize = true;
-            this.lbl_Customer_Name.Location = new System.Drawing.Point(260, 203);
+            this.lbl_Customer_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Customer_Name.Location = new System.Drawing.Point(120, 9);
             this.lbl_Customer_Name.Name = "lbl_Customer_Name";
-            this.lbl_Customer_Name.Size = new System.Drawing.Size(41, 13);
-            this.lbl_Customer_Name.TabIndex = 0;
-            this.lbl_Customer_Name.Text = "label26";
+            this.lbl_Customer_Name.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Customer_Name.TabIndex = 2;
+            this.lbl_Customer_Name.Text = "Placeholder";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 35);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(61, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Residence:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(3, 9);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(85, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Customer Name:";
+            // 
+            // lbl_Email
+            // 
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Email.Location = new System.Drawing.Point(120, 75);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Email.TabIndex = 9;
+            this.lbl_Email.Text = "Placeholder";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(3, 75);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(38, 13);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "E-mail:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.label37);
+            this.panel2.Controls.Add(this.lbl_Company_Name);
+            this.panel2.Controls.Add(this.lbl_Phonenumber2);
+            this.panel2.Controls.Add(this.label34);
+            this.panel2.Controls.Add(this.label35);
+            this.panel2.Controls.Add(this.lbl_Zip_Code2);
+            this.panel2.Controls.Add(this.lbl_Residence2);
+            this.panel2.Controls.Add(this.label38);
+            this.panel2.Controls.Add(this.label39);
+            this.panel2.Controls.Add(this.lbl_Address2);
+            this.panel2.Controls.Add(this.lbl_Fax);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Controls.Add(this.lbl_Phonenumber);
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.label28);
+            this.panel2.Controls.Add(this.lbl_Email);
+            this.panel2.Controls.Add(this.label26);
+            this.panel2.Controls.Add(this.label31);
+            this.panel2.Controls.Add(this.lbl_Customer_Name);
+            this.panel2.Controls.Add(this.lbl_Zip_Code);
+            this.panel2.Controls.Add(this.lbl_Residence);
+            this.panel2.Controls.Add(this.label30);
+            this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.lbl_Address);
+            this.panel2.Location = new System.Drawing.Point(113, 90);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(341, 229);
+            this.panel2.TabIndex = 10;
+            // 
+            // lbl_Phonenumber
+            // 
+            this.lbl_Phonenumber.AutoSize = true;
+            this.lbl_Phonenumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phonenumber.Location = new System.Drawing.Point(120, 88);
+            this.lbl_Phonenumber.Name = "lbl_Phonenumber";
+            this.lbl_Phonenumber.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Phonenumber.TabIndex = 11;
+            this.lbl_Phonenumber.Text = "Placeholder";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(3, 88);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(79, 13);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Phone number:";
+            // 
+            // lbl_Fax
+            // 
+            this.lbl_Fax.AutoSize = true;
+            this.lbl_Fax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Fax.Location = new System.Drawing.Point(120, 101);
+            this.lbl_Fax.Name = "lbl_Fax";
+            this.lbl_Fax.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Fax.TabIndex = 13;
+            this.lbl_Fax.Text = "Placeholder";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 101);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(27, 13);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Fax:";
+            // 
+            // lbl_Phonenumber2
+            // 
+            this.lbl_Phonenumber2.AutoSize = true;
+            this.lbl_Phonenumber2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phonenumber2.Location = new System.Drawing.Point(120, 199);
+            this.lbl_Phonenumber2.Name = "lbl_Phonenumber2";
+            this.lbl_Phonenumber2.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Phonenumber2.TabIndex = 21;
+            this.lbl_Phonenumber2.Text = "Placeholder";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(3, 159);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(61, 13);
+            this.label34.TabIndex = 14;
+            this.label34.Text = "Residence:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 199);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(79, 13);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Phone number:";
+            // 
+            // lbl_Zip_Code2
+            // 
+            this.lbl_Zip_Code2.AutoSize = true;
+            this.lbl_Zip_Code2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Zip_Code2.Location = new System.Drawing.Point(120, 186);
+            this.lbl_Zip_Code2.Name = "lbl_Zip_Code2";
+            this.lbl_Zip_Code2.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Zip_Code2.TabIndex = 19;
+            this.lbl_Zip_Code2.Text = "Placeholder";
+            // 
+            // lbl_Residence2
+            // 
+            this.lbl_Residence2.AutoSize = true;
+            this.lbl_Residence2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Residence2.Location = new System.Drawing.Point(120, 159);
+            this.lbl_Residence2.Name = "lbl_Residence2";
+            this.lbl_Residence2.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Residence2.TabIndex = 15;
+            this.lbl_Residence2.Text = "Placeholder";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(3, 186);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(53, 13);
+            this.label38.TabIndex = 18;
+            this.label38.Text = "Zip Code:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(3, 173);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(48, 13);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "Address:";
+            // 
+            // lbl_Address2
+            // 
+            this.lbl_Address2.AutoSize = true;
+            this.lbl_Address2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Address2.Location = new System.Drawing.Point(120, 173);
+            this.lbl_Address2.Name = "lbl_Address2";
+            this.lbl_Address2.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Address2.TabIndex = 17;
+            this.lbl_Address2.Text = "Placeholder";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(3, 22);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(83, 13);
+            this.label37.TabIndex = 22;
+            this.label37.Text = "Company name:";
+            // 
+            // lbl_Company_Name
+            // 
+            this.lbl_Company_Name.AutoSize = true;
+            this.lbl_Company_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Company_Name.Location = new System.Drawing.Point(120, 22);
+            this.lbl_Company_Name.Name = "lbl_Company_Name";
+            this.lbl_Company_Name.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Company_Name.TabIndex = 23;
+            this.lbl_Company_Name.Text = "Placeholder";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(3, 135);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(109, 13);
+            this.label27.TabIndex = 24;
+            this.label27.Text = "Alternative details";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox3.TabIndex = 49;
+            this.pictureBox3.TabStop = false;
             // 
             // frm_Development
             // 
@@ -1122,7 +1420,9 @@ namespace Barroc_IT
             this.tcp_Loading.ResumeLayout(false);
             this.tcp_Loading.PerformLayout();
             this.tcp_Show_Customer.ResumeLayout(false);
-            this.tcp_Show_Customer.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1218,7 +1518,33 @@ namespace Barroc_IT
         private TabPage tcp_Loading;
         private Label label25;
         private TabPage tcp_Show_Customer;
+        private Label label28;
+        private Label label26;
         private Label lbl_Customer_Name;
+        private Label lbl_Residence;
+        private Label lbl_Address;
+        private Label label29;
+        private Label lbl_Zip_Code;
+        private Label label30;
+        private Label lbl_Email;
+        private Label label31;
+        private Panel panel2;
+        private Label lbl_Phonenumber;
+        private Label label32;
+        private Label lbl_Fax;
+        private Label label33;
+        private Label lbl_Phonenumber2;
+        private Label label34;
+        private Label label35;
+        private Label lbl_Zip_Code2;
+        private Label lbl_Residence2;
+        private Label label38;
+        private Label label39;
+        private Label lbl_Address2;
+        private Label label37;
+        private Label lbl_Company_Name;
+        private Label label27;
+        private PictureBox pictureBox3;
 
 
 
