@@ -246,7 +246,7 @@ namespace Barroc_IT
         {
             string date = DateHandler.GetDate(dtp_Edit_Project_Deadline);
             int result;
-            if (int.TryParse(txtb_Edit_Project_AOI.Text, out result))
+            if (!int.TryParse(txtb_Edit_Project_AOI.Text, out result))
             {
                 MessageBox.Show("Amount of Invoices not a number!");
             }
