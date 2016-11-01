@@ -55,7 +55,7 @@ namespace Barroc_IT
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tc_Main = new System.Windows.Forms.TabControl();
+            this.tcp_Add_Appointment = new System.Windows.Forms.TabControl();
             this.tcp_Overview = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,21 +119,11 @@ namespace Barroc_IT
             this.tcp_Loading = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
             this.tcp_Show_Customer = new System.Windows.Forms.TabPage();
-            this.lbl_Zip_Code = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lbl_Address = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.lbl_Residence = new System.Windows.Forms.Label();
-            this.lbl_Customer_Name = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.lbl_Email = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_Phonenumber = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.lbl_Fax = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.lbl_Company_Name = new System.Windows.Forms.Label();
             this.lbl_Phonenumber2 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -142,12 +132,25 @@ namespace Barroc_IT
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.lbl_Address2 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.lbl_Company_Name = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lbl_Fax = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.lbl_Phonenumber = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lbl_Email = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lbl_Customer_Name = new System.Windows.Forms.Label();
+            this.lbl_Zip_Code = new System.Windows.Forms.Label();
+            this.lbl_Residence = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lbl_Address = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mstrp_Menu.SuspendLayout();
-            this.tc_Main.SuspendLayout();
+            this.tcp_Add_Appointment.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Projects.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -159,8 +162,9 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tcp_Loading.SuspendLayout();
             this.tcp_Show_Customer.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -427,25 +431,26 @@ namespace Barroc_IT
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // tc_Main
+            // tcp_Add_Appointment
             // 
-            this.tc_Main.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tc_Main.Controls.Add(this.tcp_Overview);
-            this.tc_Main.Controls.Add(this.tcp_Projects);
-            this.tc_Main.Controls.Add(this.tcp_Appointments);
-            this.tc_Main.Controls.Add(this.tcp_Help);
-            this.tc_Main.Controls.Add(this.tcp_Add_Project);
-            this.tc_Main.Controls.Add(this.tcp_Edit_Project);
-            this.tc_Main.Controls.Add(this.tcp_Loading);
-            this.tc_Main.Controls.Add(this.tcp_Show_Customer);
-            this.tc_Main.Location = new System.Drawing.Point(142, 0);
-            this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
-            this.tc_Main.Name = "tc_Main";
-            this.tc_Main.SelectedIndex = 0;
-            this.tc_Main.Size = new System.Drawing.Size(574, 450);
-            this.tc_Main.TabIndex = 1;
-            this.tc_Main.TabStop = false;
-            this.tc_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
+            this.tcp_Add_Appointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Overview);
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Projects);
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Appointments);
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Help);
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Add_Project);
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Edit_Project);
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Loading);
+            this.tcp_Add_Appointment.Controls.Add(this.tcp_Show_Customer);
+            this.tcp_Add_Appointment.Controls.Add(this.tabPage1);
+            this.tcp_Add_Appointment.Location = new System.Drawing.Point(142, 0);
+            this.tcp_Add_Appointment.Margin = new System.Windows.Forms.Padding(0);
+            this.tcp_Add_Appointment.Name = "tcp_Add_Appointment";
+            this.tcp_Add_Appointment.SelectedIndex = 0;
+            this.tcp_Add_Appointment.Size = new System.Drawing.Size(574, 450);
+            this.tcp_Add_Appointment.TabIndex = 1;
+            this.tcp_Add_Appointment.TabStop = false;
+            this.tcp_Add_Appointment.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
             // tcp_Overview
             // 
@@ -527,6 +532,7 @@ namespace Barroc_IT
             // tcp_Appointments
             // 
             this.tcp_Appointments.AutoScroll = true;
+            this.tcp_Appointments.Controls.Add(this.panel3);
             this.tcp_Appointments.Controls.Add(this.label6);
             this.tcp_Appointments.Controls.Add(this.label5);
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
@@ -1106,100 +1112,13 @@ namespace Barroc_IT
             this.tcp_Show_Customer.Text = "Customer";
             this.tcp_Show_Customer.UseVisualStyleBackColor = true;
             // 
-            // lbl_Zip_Code
+            // pictureBox3
             // 
-            this.lbl_Zip_Code.AutoSize = true;
-            this.lbl_Zip_Code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Zip_Code.Location = new System.Drawing.Point(120, 62);
-            this.lbl_Zip_Code.Name = "lbl_Zip_Code";
-            this.lbl_Zip_Code.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Zip_Code.TabIndex = 7;
-            this.lbl_Zip_Code.Text = "Placeholder";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(3, 62);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(53, 13);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Zip Code:";
-            // 
-            // lbl_Address
-            // 
-            this.lbl_Address.AutoSize = true;
-            this.lbl_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Address.Location = new System.Drawing.Point(120, 49);
-            this.lbl_Address.Name = "lbl_Address";
-            this.lbl_Address.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Address.TabIndex = 5;
-            this.lbl_Address.Text = "Placeholder";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(3, 49);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(48, 13);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "Address:";
-            // 
-            // lbl_Residence
-            // 
-            this.lbl_Residence.AutoSize = true;
-            this.lbl_Residence.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Residence.Location = new System.Drawing.Point(120, 35);
-            this.lbl_Residence.Name = "lbl_Residence";
-            this.lbl_Residence.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Residence.TabIndex = 3;
-            this.lbl_Residence.Text = "Placeholder";
-            // 
-            // lbl_Customer_Name
-            // 
-            this.lbl_Customer_Name.AutoSize = true;
-            this.lbl_Customer_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Name.Location = new System.Drawing.Point(120, 9);
-            this.lbl_Customer_Name.Name = "lbl_Customer_Name";
-            this.lbl_Customer_Name.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Customer_Name.TabIndex = 2;
-            this.lbl_Customer_Name.Text = "Placeholder";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(3, 35);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(61, 13);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Residence:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 9);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(85, 13);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Customer Name:";
-            // 
-            // lbl_Email
-            // 
-            this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Email.Location = new System.Drawing.Point(120, 75);
-            this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Email.TabIndex = 9;
-            this.lbl_Email.Text = "Placeholder";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(3, 75);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(38, 13);
-            this.label31.TabIndex = 8;
-            this.label31.Text = "E-mail:";
+            this.pictureBox3.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox3.TabIndex = 49;
+            this.pictureBox3.TabStop = false;
             // 
             // panel2
             // 
@@ -1233,43 +1152,34 @@ namespace Barroc_IT
             this.panel2.Size = new System.Drawing.Size(341, 229);
             this.panel2.TabIndex = 10;
             // 
-            // lbl_Phonenumber
+            // label27
             // 
-            this.lbl_Phonenumber.AutoSize = true;
-            this.lbl_Phonenumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Phonenumber.Location = new System.Drawing.Point(120, 88);
-            this.lbl_Phonenumber.Name = "lbl_Phonenumber";
-            this.lbl_Phonenumber.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Phonenumber.TabIndex = 11;
-            this.lbl_Phonenumber.Text = "Placeholder";
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(3, 135);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(109, 13);
+            this.label27.TabIndex = 24;
+            this.label27.Text = "Alternative details";
             // 
-            // label32
+            // label37
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(3, 88);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(79, 13);
-            this.label32.TabIndex = 10;
-            this.label32.Text = "Phone number:";
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(3, 22);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(83, 13);
+            this.label37.TabIndex = 22;
+            this.label37.Text = "Company name:";
             // 
-            // lbl_Fax
+            // lbl_Company_Name
             // 
-            this.lbl_Fax.AutoSize = true;
-            this.lbl_Fax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Fax.Location = new System.Drawing.Point(120, 101);
-            this.lbl_Fax.Name = "lbl_Fax";
-            this.lbl_Fax.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Fax.TabIndex = 13;
-            this.lbl_Fax.Text = "Placeholder";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(3, 101);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(27, 13);
-            this.label33.TabIndex = 12;
-            this.label33.Text = "Fax:";
+            this.lbl_Company_Name.AutoSize = true;
+            this.lbl_Company_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Company_Name.Location = new System.Drawing.Point(120, 22);
+            this.lbl_Company_Name.Name = "lbl_Company_Name";
+            this.lbl_Company_Name.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Company_Name.TabIndex = 23;
+            this.lbl_Company_Name.Text = "Placeholder";
             // 
             // lbl_Phonenumber2
             // 
@@ -1347,42 +1257,170 @@ namespace Barroc_IT
             this.lbl_Address2.TabIndex = 17;
             this.lbl_Address2.Text = "Placeholder";
             // 
-            // label37
+            // lbl_Fax
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(3, 22);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(83, 13);
-            this.label37.TabIndex = 22;
-            this.label37.Text = "Company name:";
+            this.lbl_Fax.AutoSize = true;
+            this.lbl_Fax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Fax.Location = new System.Drawing.Point(120, 101);
+            this.lbl_Fax.Name = "lbl_Fax";
+            this.lbl_Fax.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Fax.TabIndex = 13;
+            this.lbl_Fax.Text = "Placeholder";
             // 
-            // lbl_Company_Name
+            // label33
             // 
-            this.lbl_Company_Name.AutoSize = true;
-            this.lbl_Company_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Company_Name.Location = new System.Drawing.Point(120, 22);
-            this.lbl_Company_Name.Name = "lbl_Company_Name";
-            this.lbl_Company_Name.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Company_Name.TabIndex = 23;
-            this.lbl_Company_Name.Text = "Placeholder";
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 101);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(27, 13);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Fax:";
             // 
-            // label27
+            // lbl_Phonenumber
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(3, 135);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(109, 13);
-            this.label27.TabIndex = 24;
-            this.label27.Text = "Alternative details";
+            this.lbl_Phonenumber.AutoSize = true;
+            this.lbl_Phonenumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phonenumber.Location = new System.Drawing.Point(120, 88);
+            this.lbl_Phonenumber.Name = "lbl_Phonenumber";
+            this.lbl_Phonenumber.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Phonenumber.TabIndex = 11;
+            this.lbl_Phonenumber.Text = "Placeholder";
             // 
-            // pictureBox3
+            // label32
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(26, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(511, 78);
-            this.pictureBox3.TabIndex = 49;
-            this.pictureBox3.TabStop = false;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(3, 88);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(79, 13);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Phone number:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(3, 9);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(85, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Customer Name:";
+            // 
+            // lbl_Email
+            // 
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Email.Location = new System.Drawing.Point(120, 75);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Email.TabIndex = 9;
+            this.lbl_Email.Text = "Placeholder";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 35);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(61, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Residence:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(3, 75);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(38, 13);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "E-mail:";
+            // 
+            // lbl_Customer_Name
+            // 
+            this.lbl_Customer_Name.AutoSize = true;
+            this.lbl_Customer_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Customer_Name.Location = new System.Drawing.Point(120, 9);
+            this.lbl_Customer_Name.Name = "lbl_Customer_Name";
+            this.lbl_Customer_Name.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Customer_Name.TabIndex = 2;
+            this.lbl_Customer_Name.Text = "Placeholder";
+            // 
+            // lbl_Zip_Code
+            // 
+            this.lbl_Zip_Code.AutoSize = true;
+            this.lbl_Zip_Code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Zip_Code.Location = new System.Drawing.Point(120, 62);
+            this.lbl_Zip_Code.Name = "lbl_Zip_Code";
+            this.lbl_Zip_Code.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Zip_Code.TabIndex = 7;
+            this.lbl_Zip_Code.Text = "Placeholder";
+            // 
+            // lbl_Residence
+            // 
+            this.lbl_Residence.AutoSize = true;
+            this.lbl_Residence.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Residence.Location = new System.Drawing.Point(120, 35);
+            this.lbl_Residence.Name = "lbl_Residence";
+            this.lbl_Residence.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Residence.TabIndex = 3;
+            this.lbl_Residence.Text = "Placeholder";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(3, 62);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(53, 13);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Zip Code:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 49);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(48, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Address:";
+            // 
+            // lbl_Address
+            // 
+            this.lbl_Address.AutoSize = true;
+            this.lbl_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Address.Location = new System.Drawing.Point(120, 49);
+            this.lbl_Address.Name = "lbl_Address";
+            this.lbl_Address.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Address.TabIndex = 5;
+            this.lbl_Address.Text = "Placeholder";
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Location = new System.Drawing.Point(4, 35);
+            this.panel3.MinimumSize = new System.Drawing.Size(540, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(540, 25);
+            this.panel3.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(538, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Show All";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(566, 424);
+            this.tabPage1.TabIndex = 8;
+            this.tabPage1.Text = "Add Appointment";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // frm_Development
             // 
@@ -1390,7 +1428,7 @@ namespace Barroc_IT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 449);
             this.Controls.Add(this.mstrp_Menu);
-            this.Controls.Add(this.tc_Main);
+            this.Controls.Add(this.tcp_Add_Appointment);
             this.DoubleBuffered = true;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -1401,7 +1439,7 @@ namespace Barroc_IT
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Development_FormClosing);
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
-            this.tc_Main.ResumeLayout(false);
+            this.tcp_Add_Appointment.ResumeLayout(false);
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
             this.tcp_Projects.ResumeLayout(false);
@@ -1420,9 +1458,10 @@ namespace Barroc_IT
             this.tcp_Loading.ResumeLayout(false);
             this.tcp_Loading.PerformLayout();
             this.tcp_Show_Customer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1454,7 +1493,7 @@ namespace Barroc_IT
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_Residence;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
-        private TabControl tc_Main;
+        private TabControl tcp_Add_Appointment;
         private TabPage tcp_Overview;
         private TabPage tcp_Projects;
         private Label label2;
@@ -1545,6 +1584,9 @@ namespace Barroc_IT
         private Label lbl_Company_Name;
         private Label label27;
         private PictureBox pictureBox3;
+        private Panel panel3;
+        private Button button2;
+        private TabPage tabPage1;
 
 
 

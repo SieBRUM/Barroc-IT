@@ -22,7 +22,7 @@ namespace Barroc_IT
             cbox_Project_Status.SelectedIndex = 0;
             cbox_Maintenance_Contract.SelectedIndex = 0;
             ShowProjects();
-            tc_Main.SelectedIndex = 0;
+            tcp_Add_Appointment.SelectedIndex = 0;
 
             ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
             ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator();
@@ -43,19 +43,19 @@ namespace Barroc_IT
             switch (toolstrip.Name)
             { 
                 case "mnitem_Overview":
-                    tc_Main.SelectedIndex = 0;
+                    tcp_Add_Appointment.SelectedIndex = 0;
                     HideFilters(true, false, false);
                     break;
                 case "mnitem_Projects":
-                    tc_Main.SelectedIndex = 1;
+                    tcp_Add_Appointment.SelectedIndex = 1;
                     HideFilters(false, true, false);
                     break;
                 case "mnitem_Appointments":
-                    tc_Main.SelectedIndex = 2;
+                    tcp_Add_Appointment.SelectedIndex = 2;
                     HideFilters(false, false, true);
                     break;
                 default:
-                    tc_Main.SelectedIndex = 0;
+                    tcp_Add_Appointment.SelectedIndex = 0;
                     break;
             }
         }
@@ -101,7 +101,7 @@ namespace Barroc_IT
 
         private void btn_Add_Project_Click(object sender, EventArgs e)
         {
-            tc_Main.SelectedIndex = 4;
+            tcp_Add_Appointment.SelectedIndex = 4;
         }
 
         private void AddProject(object sender, EventArgs e)
@@ -139,7 +139,7 @@ namespace Barroc_IT
 
         private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tc_Main.SelectedIndex == 4)
+            if (tcp_Add_Appointment.SelectedIndex == 4)
             {
                 try
                 {
@@ -183,7 +183,13 @@ namespace Barroc_IT
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
             dbh.CloseConnection();
-            tc_Main.SelectedIndex = 1;
+            tcp_Add_Appointment.SelectedIndex = 1;
+        }
+
+        private void ShowAppointmnets()
+        {
+            dbh.OpenConnection();
+
         }
 
         private void FillEditProjectItems(object sender, EventArgs e)
@@ -204,7 +210,7 @@ namespace Barroc_IT
             lbl_Edit_Project_P_Id.Text = button.AccessibleName;
             dbh.CloseConnection();
 
-            tc_Main.SelectedIndex = 5;
+            tcp_Add_Appointment.SelectedIndex = 5;
         }
 
         private void FillCustomerData(object sender, EventArgs e)
@@ -224,7 +230,7 @@ namespace Barroc_IT
             lbl_Address2.Text = dt.Rows[0]["address_2"].ToString();
             lbl_Zip_Code2.Text = dt.Rows[0]["zip_code_2"].ToString();
             lbl_Phonenumber2.Text = dt.Rows[0]["phone_number_2"].ToString();
-            tc_Main.SelectedIndex = 7;
+            tcp_Add_Appointment.SelectedIndex = 7;
             dbh.CloseConnection();
         }
 
@@ -235,7 +241,7 @@ namespace Barroc_IT
 
         private void btn_Project_Show_All_Click(object sender, EventArgs e)
         {
-            tc_Main.SelectedIndex = 6;
+            tcp_Add_Appointment.SelectedIndex = 6;
 
             showall = true;
             panel1.Controls.Clear();
