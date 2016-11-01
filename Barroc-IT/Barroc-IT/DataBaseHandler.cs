@@ -317,6 +317,41 @@ namespace Barroc_IT
             return dt;
         }
 
+        public bool EditCustomer(string c_id, string c_firstName, string c_lastName, string c_companyName, string c_mail, string c_fax, string c_streetName1, string c_houseNumber1, string c_residence1, string c_zipCode1, string c_phoneNumber1)
+        {
+            bool success = false;
+
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    UPDATE
+                        tbl_customers
+                    SET
+                        firstName = @firstName, last_name = @lastName, company_name = @company_name, email = @email, fax = @fax, street_name = @street_name, house_number = @house_number, residence = @residence, zip_code = @zip_code, phone_number = @phone_number
+                    WHERE
+                        customer_id = @customer_id",this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("customer_id", c_id);
+                cmd.Parameters.AddWithValue("firstName", c_firstName);
+                cmd.Parameters.AddWithValue("last_name", c_lastName);
+                cmd.Parameters.AddWithValue("company_name", c_companyName);
+                cmd.Parameters.AddWithValue("email", c_mail);
+                cmd.Parameters.AddWithValue("fax", c_fax);
+                cmd.Parameters.AddWithValue("street_name", c_streetName1);
+                cmd.Parameters.AddWithValue("house_number", c_houseNumber1);
+                cmd.Parameters.AddWithValue("residence", c_residence1);
+                cmd.Parameters.AddWithValue("zip_code", c_zipCode1);
+                cmd.Parameters.AddWithValue("phone_number", c_phoneNumber1);
+                try
+                {
+                    success = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    success = false;
+                    MessageBox.Show("An error occured. Detailes below: \n\n " + e);
+                }
+                return success;                
+            }
+        }
 
         public DataTable GetProjects()
         {
