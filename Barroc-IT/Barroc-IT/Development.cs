@@ -282,5 +282,13 @@ namespace Barroc_IT
                 dbh.CloseConnection();
             }
         }
+
+        private void btn_showallAppointments_Click(object sender, EventArgs e)
+        {
+            showallAppointments = true;
+            appointmentsPanel.Controls.Clear();
+            ShowAppointments();
+        }
+
     }
 }

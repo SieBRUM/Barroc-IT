@@ -67,7 +67,7 @@
             // 
             this.lbl_Customer_Residence_Data.AutoSize = true;
             this.lbl_Customer_Residence_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Residence_Data.Location = new System.Drawing.Point(184, 29);
+            this.lbl_Customer_Residence_Data.Location = new System.Drawing.Point(101, 29);
             this.lbl_Customer_Residence_Data.Name = "lbl_Customer_Residence_Data";
             this.lbl_Customer_Residence_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Residence_Data.TabIndex = 20;
@@ -86,7 +86,7 @@
             // 
             this.lbl_Customer_PhoneNumber_Data.AutoSize = true;
             this.lbl_Customer_PhoneNumber_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_PhoneNumber_Data.Location = new System.Drawing.Point(184, 97);
+            this.lbl_Customer_PhoneNumber_Data.Location = new System.Drawing.Point(101, 97);
             this.lbl_Customer_PhoneNumber_Data.Name = "lbl_Customer_PhoneNumber_Data";
             this.lbl_Customer_PhoneNumber_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_PhoneNumber_Data.TabIndex = 18;
@@ -115,7 +115,7 @@
             // 
             this.lbl_Customer_Email_Data.AutoSize = true;
             this.lbl_Customer_Email_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Email_Data.Location = new System.Drawing.Point(184, 80);
+            this.lbl_Customer_Email_Data.Location = new System.Drawing.Point(101, 80);
             this.lbl_Customer_Email_Data.Name = "lbl_Customer_Email_Data";
             this.lbl_Customer_Email_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Email_Data.TabIndex = 15;
@@ -135,7 +135,7 @@
             // 
             this.lbl_Customer_Zipcode_Data.AutoSize = true;
             this.lbl_Customer_Zipcode_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Zipcode_Data.Location = new System.Drawing.Point(184, 63);
+            this.lbl_Customer_Zipcode_Data.Location = new System.Drawing.Point(101, 63);
             this.lbl_Customer_Zipcode_Data.Name = "lbl_Customer_Zipcode_Data";
             this.lbl_Customer_Zipcode_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Zipcode_Data.TabIndex = 13;
@@ -145,7 +145,7 @@
             // 
             this.lbl_Customer_Company_Name_Data.AutoSize = true;
             this.lbl_Customer_Company_Name_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Company_Name_Data.Location = new System.Drawing.Point(184, 12);
+            this.lbl_Customer_Company_Name_Data.Location = new System.Drawing.Point(101, 12);
             this.lbl_Customer_Company_Name_Data.Name = "lbl_Customer_Company_Name_Data";
             this.lbl_Customer_Company_Name_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Company_Name_Data.TabIndex = 12;
@@ -155,7 +155,7 @@
             // 
             this.lbl_Customer_Address_Data.AutoSize = true;
             this.lbl_Customer_Address_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Address_Data.Location = new System.Drawing.Point(184, 46);
+            this.lbl_Customer_Address_Data.Location = new System.Drawing.Point(101, 46);
             this.lbl_Customer_Address_Data.Name = "lbl_Customer_Address_Data";
             this.lbl_Customer_Address_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Address_Data.TabIndex = 11;

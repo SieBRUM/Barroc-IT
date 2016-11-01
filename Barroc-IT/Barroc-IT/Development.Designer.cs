@@ -65,7 +65,7 @@ namespace Barroc_IT
             this.btn_Add_Project = new System.Windows.Forms.Button();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
             this.appointmentsPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tcp_Help = new System.Windows.Forms.TabPage();
@@ -548,22 +548,23 @@ namespace Barroc_IT
             this.appointmentsPanel.AutoSize = true;
             this.appointmentsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.appointmentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.appointmentsPanel.Controls.Add(this.button2);
+            this.appointmentsPanel.Controls.Add(this.btn_showallAppointments);
             this.appointmentsPanel.Location = new System.Drawing.Point(4, 35);
             this.appointmentsPanel.MinimumSize = new System.Drawing.Size(540, 2);
             this.appointmentsPanel.Name = "appointmentsPanel";
             this.appointmentsPanel.Size = new System.Drawing.Size(540, 25);
             this.appointmentsPanel.TabIndex = 6;
             // 
-            // button2
+            // btn_showallAppointments
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(538, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Show All";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_showallAppointments.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_showallAppointments.Location = new System.Drawing.Point(0, 0);
+            this.btn_showallAppointments.Name = "btn_showallAppointments";
+            this.btn_showallAppointments.Size = new System.Drawing.Size(538, 23);
+            this.btn_showallAppointments.TabIndex = 0;
+            this.btn_showallAppointments.Text = "Show All";
+            this.btn_showallAppointments.UseVisualStyleBackColor = true;
+            this.btn_showallAppointments.Click += new System.EventHandler(this.btn_showallAppointments_Click);
             // 
             // label6
             // 
@@ -1585,7 +1586,7 @@ namespace Barroc_IT
         private Label label27;
         private PictureBox pictureBox3;
         private Panel appointmentsPanel;
-        private Button button2;
+        private Button btn_showallAppointments;
         private TabPage tabPage1;
 
 
