@@ -353,6 +353,34 @@ namespace Barroc_IT
             }
         }
 
+        public DataTable GetAppointments()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        customer_id, appointment_time, appointment_residence, appointment_zipcode, appointment_date, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address
+                    
+                    FROM
+                        tbl_appointments
+
+                    ORDER BY
+                        customer_id DESC", this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("customer_id", typeof(string));
+                dt.Columns.Add("appointment_time", typeof(string));
+                dt.Columns.Add("appointment_address", typeof(string));
+                dt.Columns.Add("appointment_housenumber", typeof(string));
+                dt.Columns.Add("appointment_zipcode", typeof(string));
+                dt.Columns.Add("appointment_date", typeof(string));
+                dt.Columns.Add("appointment_made", typeof(string));
+                dt.Columns.Add("appointment_summary", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
         public DataTable GetProjects()
         {
             DataTable dt = new DataTable();

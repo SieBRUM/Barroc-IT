@@ -64,6 +64,8 @@ namespace Barroc_IT
             this.btn_Project_Show_All = new System.Windows.Forms.Button();
             this.btn_Add_Project = new System.Windows.Forms.Button();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
+            this.appointmentsPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tcp_Help = new System.Windows.Forms.TabPage();
@@ -146,8 +148,6 @@ namespace Barroc_IT
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Add_Appointment.SuspendLayout();
@@ -155,6 +155,7 @@ namespace Barroc_IT
             this.tcp_Projects.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tcp_Appointments.SuspendLayout();
+            this.appointmentsPanel.SuspendLayout();
             this.tcp_Help.SuspendLayout();
             this.tcp_Add_Project.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -164,7 +165,6 @@ namespace Barroc_IT
             this.tcp_Show_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -532,7 +532,7 @@ namespace Barroc_IT
             // tcp_Appointments
             // 
             this.tcp_Appointments.AutoScroll = true;
-            this.tcp_Appointments.Controls.Add(this.panel3);
+            this.tcp_Appointments.Controls.Add(this.appointmentsPanel);
             this.tcp_Appointments.Controls.Add(this.label6);
             this.tcp_Appointments.Controls.Add(this.label5);
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
@@ -542,6 +542,28 @@ namespace Barroc_IT
             this.tcp_Appointments.TabIndex = 2;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
+            // 
+            // appointmentsPanel
+            // 
+            this.appointmentsPanel.AutoSize = true;
+            this.appointmentsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.appointmentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.appointmentsPanel.Controls.Add(this.button2);
+            this.appointmentsPanel.Location = new System.Drawing.Point(4, 35);
+            this.appointmentsPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.appointmentsPanel.Name = "appointmentsPanel";
+            this.appointmentsPanel.Size = new System.Drawing.Size(540, 25);
+            this.appointmentsPanel.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(538, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Show All";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -1390,28 +1412,6 @@ namespace Barroc_IT
             this.lbl_Address.TabIndex = 5;
             this.lbl_Address.Text = "Placeholder";
             // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(4, 35);
-            this.panel3.MinimumSize = new System.Drawing.Size(540, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(540, 25);
-            this.panel3.TabIndex = 6;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(538, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Show All";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -1447,6 +1447,7 @@ namespace Barroc_IT
             this.panel1.ResumeLayout(false);
             this.tcp_Appointments.ResumeLayout(false);
             this.tcp_Appointments.PerformLayout();
+            this.appointmentsPanel.ResumeLayout(false);
             this.tcp_Help.ResumeLayout(false);
             this.tcp_Help.PerformLayout();
             this.tcp_Add_Project.ResumeLayout(false);
@@ -1461,7 +1462,6 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1584,7 +1584,7 @@ namespace Barroc_IT
         private Label lbl_Company_Name;
         private Label label27;
         private PictureBox pictureBox3;
-        private Panel panel3;
+        private Panel appointmentsPanel;
         private Button button2;
         private TabPage tabPage1;
 

@@ -13,7 +13,8 @@ namespace Barroc_IT
 {
     public partial class frm_Development : Form
     {
-        bool showall = false;
+        bool showallProjects = false;
+        bool showallAppointments = false;
         DatabaseHandler dbh;
         public frm_Development()
         {
@@ -22,6 +23,7 @@ namespace Barroc_IT
             cbox_Project_Status.SelectedIndex = 0;
             cbox_Maintenance_Contract.SelectedIndex = 0;
             ShowProjects();
+            ShowAppointments();
             tcp_Add_Appointment.SelectedIndex = 0;
 
             ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
@@ -161,12 +163,32 @@ namespace Barroc_IT
             }
         }
 
+        private void ShowAppointments()
+        {
+            dbh.OpenConnection();
+            DataTable dt = dbh.GetAppointments();
+            int amount = dt.Rows.Count;
+            if (!showallAppointments && amount > 5)
+                amount = 5;
+
+            AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+            for (int i = 0; i < appointmentInfoPanel.Length; i++)
+            {
+                appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                appointmentInfoPanel[i].Dock = DockStyle.Top;
+                appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+            }
+            dbh.CloseConnection();
+        }
+
         private void ShowProjects()
         {
             dbh.OpenConnection();
             DataTable dt = dbh.GetProjects();
             int amount = dt.Rows.Count;
-            if (!showall && amount > 5)
+            if (!showallProjects && amount > 5)
                 amount = 5;
 
             ProjectPanel[] projectInfoPanel = new ProjectPanel[amount];
@@ -183,13 +205,6 @@ namespace Barroc_IT
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
             dbh.CloseConnection();
-            tcp_Add_Appointment.SelectedIndex = 1;
-        }
-
-        private void ShowAppointmnets()
-        {
-            dbh.OpenConnection();
-
         }
 
         private void FillEditProjectItems(object sender, EventArgs e)
@@ -243,7 +258,7 @@ namespace Barroc_IT
         {
             tcp_Add_Appointment.SelectedIndex = 6;
 
-            showall = true;
+            showallProjects = true;
             panel1.Controls.Clear();
             ShowProjects();
         }
