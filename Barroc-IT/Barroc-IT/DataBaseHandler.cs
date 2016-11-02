@@ -278,7 +278,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, 'limit', gross_revenue, street_name, house_number, street_name_2, house_number_2 CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, 'limit', gross_revenue, street_name, house_number, street_name_2, house_number_2, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
 
                     FROM
                         tbl_customers

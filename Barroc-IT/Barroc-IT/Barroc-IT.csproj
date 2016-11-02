@@ -64,6 +64,12 @@
     <Compile Include="Finance.Designer.cs">
       <DependentUpon>Finance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finance_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance_2.Designer.cs">
+      <DependentUpon>Finance_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finance.resx">
       <DependentUpon>Finance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance_2.resx">
+      <DependentUpon>Finance_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
