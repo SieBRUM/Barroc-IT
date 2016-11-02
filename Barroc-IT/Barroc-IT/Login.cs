@@ -53,7 +53,7 @@ namespace Barroc_IT
                             salForm.Show();
                             break;
                         case "finance":
-                            frm_Finance finForm = new frm_Finance();
+                            frm_Finance_2 finForm = new frm_Finance_2();
                             finForm.Show();
                             break;
                         default:

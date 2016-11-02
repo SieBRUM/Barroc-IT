@@ -1,6 +1,6 @@
 ﻿namespace Barroc_IT
 {
-    partial class Finance_2
+    partial class frm_Finance_2
     {
         /// <summary>
         /// Required designer variable.

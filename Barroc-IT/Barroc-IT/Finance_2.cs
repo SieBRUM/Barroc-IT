@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Barroc_IT
 {
-    public partial class Finance_2 : Form
+    public partial class frm_Finance_2 : Form
     {
-        public Finance_2()
+        public frm_Finance_2()
         {
             InitializeComponent();
         }
