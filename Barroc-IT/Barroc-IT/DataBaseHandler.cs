@@ -504,5 +504,34 @@ namespace Barroc_IT
                 return success;
             }
         }
+
+        public bool AddAppointment(string c_Id, string a_Date, string a_Residence, string a_Streetname, string a_Housenumber, string a_Zipcode,string a_Summary)
+        {
+            bool done;
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    INSERT INTO
+                        tbl_appointments(customer_id, appointment_datetime, appointment_residence, appointment_streetname, appointment_housenumber, appointment_zipcode, appointment_made, appointment_summary)
+                        VALUES (@customer_id, @appointment_datetime, @appointment_residence, @appointment_streetname, @appointment_housenumber, @appointment_zipcode, @appointment_made, @appointment_summary)", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("customer_id", c_Id);
+                cmd.Parameters.AddWithValue("appointment_datetime", a_Date);
+                cmd.Parameters.AddWithValue("appointment_residence", a_Residence);
+                cmd.Parameters.AddWithValue("appointment_streetname", a_Streetname);
+                cmd.Parameters.AddWithValue("appointment_housenumber", a_Housenumber);
+                cmd.Parameters.AddWithValue("appointment_zipcode", a_Zipcode);
+                cmd.Parameters.AddWithValue("appointment_made", DateTime.Now);
+                cmd.Parameters.AddWithValue("appointment_summary", a_Summary);
+                try
+                {
+                    done = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    done = false;
+                    MessageBox.Show("An error occured. Detailes below: \n\n " + e);
+                }
+            }
+            return done;
+        }
     }
 }

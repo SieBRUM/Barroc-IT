@@ -341,5 +341,15 @@ namespace Barroc_IT
                 txtb_A_Appointment_Zipcode.Enabled = true;
             }
         }
+
+        private void AddAppointment(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            if (dbh.AddAppointment(cb_Appointment_Select_Customer.SelectedValue.ToString(), dtp_A_Appointment.Value.ToString(), txtb_A_Appointment_Residence.Text, txtb_A_Appointment_Streetname.Text, txtb_A_Appointment_Housenumber.Text, txtb_A_Appointment_Zipcode.Text, rtb_A_Appointment.Text))
+                MessageBox.Show("Succesfully added an appointment!");
+            else
+                MessageBox.Show("An error occcured while adding an appointment.");
+            dbh.CloseConnection();
+        }
     }
 }
