@@ -228,6 +228,46 @@ namespace Barroc_IT
             return done;
         }
 
+        public DataTable GetInvoices()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, ledger_account_number, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id
+                    FROM
+                        tbl_invoices
+                    INNER JOIN
+                        tbl_projects
+
+                    ON
+                        tbl_invoices.project_id = tbl_projects.project_id
+
+                    INNER JOIN
+                        tbl_customers
+
+                    ON
+                        tbl_projects.customer_id = tbl_customers.customer_id
+
+                    ORDER BY invoice_id DESC", this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("customer_id");
+                dt.Columns.Add("invoice_id");
+                dt.Columns.Add("status");
+                dt.Columns.Add("total_price");
+                dt.Columns.Add("company_name");
+                dt.Columns.Add("contact_person");
+                dt.Columns.Add("ledger_account_number");
+                dt.Columns.Add("IBAN");
+                dt.Columns.Add("VAT");
+                dt.Columns.Add("discount");
+                dt.Columns.Add("project_id");
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
         public DataTable GetCustomers()
         {
             DataTable dt = new DataTable();
@@ -412,7 +452,7 @@ namespace Barroc_IT
                     ORDER BY
                         project_id DESC", this.GetConnection()))
             {
-
+                
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
                 dt.Columns.Add("project_id", typeof(string));

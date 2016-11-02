@@ -54,14 +54,18 @@
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tcp_Overview = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tcp_Main = new System.Windows.Forms.TabControl();
             this.tcp_Invoices = new System.Windows.Forms.TabPage();
             this.tcp_AddInvoice = new System.Windows.Forms.TabPage();
+            this.invoicesPanel = new System.Windows.Forms.Panel();
+            this.btn_Project_Show_All = new System.Windows.Forms.Button();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Main.SuspendLayout();
+            this.tcp_Invoices.SuspendLayout();
+            this.invoicesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -332,14 +336,6 @@
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 466);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 1;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -347,6 +343,14 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 466);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 1;
             // 
             // tcp_Main
             // 
@@ -364,6 +368,7 @@
             // 
             // tcp_Invoices
             // 
+            this.tcp_Invoices.Controls.Add(this.invoicesPanel);
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
             this.tcp_Invoices.Padding = new System.Windows.Forms.Padding(3);
@@ -382,20 +387,45 @@
             this.tcp_AddInvoice.Text = "Add Invoice";
             this.tcp_AddInvoice.UseVisualStyleBackColor = true;
             // 
-            // Finance_2
+            // invoicesPanel
+            // 
+            this.invoicesPanel.AutoSize = true;
+            this.invoicesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.invoicesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.invoicesPanel.Controls.Add(this.btn_Project_Show_All);
+            this.invoicesPanel.Location = new System.Drawing.Point(4, 35);
+            this.invoicesPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.invoicesPanel.Name = "invoicesPanel";
+            this.invoicesPanel.Size = new System.Drawing.Size(540, 25);
+            this.invoicesPanel.TabIndex = 6;
+            // 
+            // btn_Project_Show_All
+            // 
+            this.btn_Project_Show_All.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Project_Show_All.Location = new System.Drawing.Point(0, 0);
+            this.btn_Project_Show_All.Name = "btn_Project_Show_All";
+            this.btn_Project_Show_All.Size = new System.Drawing.Size(538, 23);
+            this.btn_Project_Show_All.TabIndex = 0;
+            this.btn_Project_Show_All.Text = "Show All";
+            this.btn_Project_Show_All.UseVisualStyleBackColor = true;
+            // 
+            // frm_Finance_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 461);
             this.Controls.Add(this.tcp_Main);
             this.Controls.Add(this.mstrp_Menu);
-            this.Name = "Finance_2";
+            this.Name = "frm_Finance_2";
             this.Text = "Finance_2";
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
             this.tcp_Main.ResumeLayout(false);
+            this.tcp_Invoices.ResumeLayout(false);
+            this.tcp_Invoices.PerformLayout();
+            this.invoicesPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -433,5 +463,7 @@
         private System.Windows.Forms.TabControl tcp_Main;
         private System.Windows.Forms.TabPage tcp_Invoices;
         private System.Windows.Forms.TabPage tcp_AddInvoice;
+        private System.Windows.Forms.Panel invoicesPanel;
+        private System.Windows.Forms.Button btn_Project_Show_All;
     }
 }

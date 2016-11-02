@@ -220,6 +220,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(538, 46);
             this.panel1.TabIndex = 4;
+            this.panel1.Click += new System.EventHandler(this.OpenMoreInfo);
+            this.panel1.DoubleClick += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_Price
             // 
