@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TabControl tc_Main;
+            this.tcp_Main = new System.Windows.Forms.TabControl();
             this.tcp_Overview = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tcp_Customer = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Project_Show_All = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tcp_AddCustomer = new System.Windows.Forms.TabPage();
             this.dtp_customer_lastcontact = new System.Windows.Forms.DateTimePicker();
             this.dtp_customer_nextcontact = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@
             this.lbl_customer_lastname = new System.Windows.Forms.Label();
             this.txtb_customer_firstname = new System.Windows.Forms.TextBox();
             this.lbl_Customer_firstname = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tcp_EditCustomer = new System.Windows.Forms.TabPage();
             this.dtpCustomerLastContact = new System.Windows.Forms.DateTimePicker();
             this.dtpCustomerNextContact = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
@@ -136,34 +136,33 @@
             this.tstxtb_Appointments_CoName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Appointments_Residence = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Appointments_Residence = new System.Windows.Forms.ToolStripTextBox();
-            this.tscmb_Appointments_Summary = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnfltr_Appointments_Summary = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            tc_Main = new System.Windows.Forms.TabControl();
-            tc_Main.SuspendLayout();
+            this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tcp_Customer.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tcp_AddCustomer.SuspendLayout();
+            this.tcp_EditCustomer.SuspendLayout();
             this.mstrp_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tc_Main
+            // tcp_Main
             // 
-            tc_Main.Anchor = System.Windows.Forms.AnchorStyles.None;
-            tc_Main.Controls.Add(this.tcp_Overview);
-            tc_Main.Controls.Add(this.tabPage1);
-            tc_Main.Controls.Add(this.tabPage2);
-            tc_Main.Controls.Add(this.tabPage3);
-            tc_Main.Location = new System.Drawing.Point(142, 1);
-            tc_Main.Margin = new System.Windows.Forms.Padding(0);
-            tc_Main.Name = "tc_Main";
-            tc_Main.SelectedIndex = 0;
-            tc_Main.Size = new System.Drawing.Size(574, 464);
-            tc_Main.TabIndex = 3;
-            tc_Main.TabStop = false;
+            this.tcp_Main.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tcp_Main.Controls.Add(this.tcp_Overview);
+            this.tcp_Main.Controls.Add(this.tcp_Customer);
+            this.tcp_Main.Controls.Add(this.tcp_AddCustomer);
+            this.tcp_Main.Controls.Add(this.tcp_EditCustomer);
+            this.tcp_Main.Location = new System.Drawing.Point(142, 1);
+            this.tcp_Main.Margin = new System.Windows.Forms.Padding(0);
+            this.tcp_Main.Name = "tcp_Main";
+            this.tcp_Main.SelectedIndex = 0;
+            this.tcp_Main.Size = new System.Drawing.Size(574, 464);
+            this.tcp_Main.TabIndex = 3;
+            this.tcp_Main.TabStop = false;
             // 
             // tcp_Overview
             // 
@@ -194,17 +193,17 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             // 
-            // tabPage1
+            // tcp_Customer
             // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(566, 438);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "Customer";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tcp_Customer.AutoScroll = true;
+            this.tcp_Customer.Controls.Add(this.panel1);
+            this.tcp_Customer.Location = new System.Drawing.Point(4, 22);
+            this.tcp_Customer.Name = "tcp_Customer";
+            this.tcp_Customer.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_Customer.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Customer.TabIndex = 1;
+            this.tcp_Customer.Text = "Customer";
+            this.tcp_Customer.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -229,54 +228,54 @@
             this.btn_Project_Show_All.UseVisualStyleBackColor = true;
             this.btn_Project_Show_All.Click += new System.EventHandler(this.btn_Project_Show_All_Click_1);
             // 
-            // tabPage2
+            // tcp_AddCustomer
             // 
-            this.tabPage2.Controls.Add(this.dtp_customer_lastcontact);
-            this.tabPage2.Controls.Add(this.dtp_customer_nextcontact);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.txtb_customer_next_action);
-            this.tabPage2.Controls.Add(this.lbl_customer_next_action);
-            this.tabPage2.Controls.Add(this.lbl_customer_next_contact);
-            this.tabPage2.Controls.Add(this.txtb_customer_last_action);
-            this.tabPage2.Controls.Add(this.lbl_customer_last_action);
-            this.tabPage2.Controls.Add(this.lbl_customer_last_contact);
-            this.tabPage2.Controls.Add(this.txtb_customer_fax);
-            this.tabPage2.Controls.Add(this.lbl_customer_fax);
-            this.tabPage2.Controls.Add(this.txtb_customer_email);
-            this.tabPage2.Controls.Add(this.lbl_customer_email);
-            this.tabPage2.Controls.Add(this.txtb_customer_phonenumber_2);
-            this.tabPage2.Controls.Add(this.lbl_customer_phonenumber_2);
-            this.tabPage2.Controls.Add(this.txtb_customer_phonenumber_1);
-            this.tabPage2.Controls.Add(this.lbl_customer_phonenumber_1);
-            this.tabPage2.Controls.Add(this.txtb_customer_zipcode_2);
-            this.tabPage2.Controls.Add(this.lbl_customers_zipcode_2);
-            this.tabPage2.Controls.Add(this.txtb_customer_residence_2);
-            this.tabPage2.Controls.Add(this.lbl_customer_residence_2);
-            this.tabPage2.Controls.Add(this.txtb_customer_housenumber_2);
-            this.tabPage2.Controls.Add(this.lbl_customer_housenumer_2);
-            this.tabPage2.Controls.Add(this.txtb_customer_streetname_2);
-            this.tabPage2.Controls.Add(this.lbl_customer_streetname_2);
-            this.tabPage2.Controls.Add(this.txtb_customer_zipcode_1);
-            this.tabPage2.Controls.Add(this.lbl_customer_zipcode_1);
-            this.tabPage2.Controls.Add(this.txtb_customer_residence_1);
-            this.tabPage2.Controls.Add(this.lbl_customer_residence_1);
-            this.tabPage2.Controls.Add(this.txtb_customer_housenumber_1);
-            this.tabPage2.Controls.Add(this.lbl_customer_housenumber_1);
-            this.tabPage2.Controls.Add(this.txtb_customer_streetname_1);
-            this.tabPage2.Controls.Add(this.lbl_customer_streetname_1);
-            this.tabPage2.Controls.Add(this.txtb_customer_company_name);
-            this.tabPage2.Controls.Add(this.lbl_customer_company_name);
-            this.tabPage2.Controls.Add(this.txtb_customer_lastname);
-            this.tabPage2.Controls.Add(this.lbl_customer_lastname);
-            this.tabPage2.Controls.Add(this.txtb_customer_firstname);
-            this.tabPage2.Controls.Add(this.lbl_Customer_firstname);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(566, 438);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "addCustomer";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tcp_AddCustomer.Controls.Add(this.dtp_customer_lastcontact);
+            this.tcp_AddCustomer.Controls.Add(this.dtp_customer_nextcontact);
+            this.tcp_AddCustomer.Controls.Add(this.button1);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_next_action);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_next_action);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_next_contact);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_last_action);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_last_action);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_last_contact);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_fax);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_fax);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_email);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_email);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_phonenumber_2);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_phonenumber_2);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_phonenumber_1);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_phonenumber_1);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_zipcode_2);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customers_zipcode_2);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_residence_2);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_residence_2);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_housenumber_2);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_housenumer_2);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_streetname_2);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_streetname_2);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_zipcode_1);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_zipcode_1);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_residence_1);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_residence_1);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_housenumber_1);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_housenumber_1);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_streetname_1);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_streetname_1);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_company_name);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_company_name);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_lastname);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_customer_lastname);
+            this.tcp_AddCustomer.Controls.Add(this.txtb_customer_firstname);
+            this.tcp_AddCustomer.Controls.Add(this.lbl_Customer_firstname);
+            this.tcp_AddCustomer.Location = new System.Drawing.Point(4, 22);
+            this.tcp_AddCustomer.Name = "tcp_AddCustomer";
+            this.tcp_AddCustomer.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_AddCustomer.Size = new System.Drawing.Size(566, 438);
+            this.tcp_AddCustomer.TabIndex = 2;
+            this.tcp_AddCustomer.Text = "addCustomer";
+            this.tcp_AddCustomer.UseVisualStyleBackColor = true;
             // 
             // dtp_customer_lastcontact
             // 
@@ -610,54 +609,54 @@
             this.lbl_Customer_firstname.TabIndex = 0;
             this.lbl_Customer_firstname.Text = "First name *";
             // 
-            // tabPage3
+            // tcp_EditCustomer
             // 
-            this.tabPage3.Controls.Add(this.dtpCustomerLastContact);
-            this.tabPage3.Controls.Add(this.dtpCustomerNextContact);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.txtbCustomerNextAction);
-            this.tabPage3.Controls.Add(this.lblCustomerNextAction);
-            this.tabPage3.Controls.Add(this.lblCustomerNextContact);
-            this.tabPage3.Controls.Add(this.txtbCustomerLastAction);
-            this.tabPage3.Controls.Add(this.lblCustomerLastAction);
-            this.tabPage3.Controls.Add(this.lblCustomerLastContact);
-            this.tabPage3.Controls.Add(this.txtbCustomerFax);
-            this.tabPage3.Controls.Add(this.lblCustomerFax);
-            this.tabPage3.Controls.Add(this.txtbCustomerMail);
-            this.tabPage3.Controls.Add(this.lblCustomerMail);
-            this.tabPage3.Controls.Add(this.txtCustomerPhonenumber2);
-            this.tabPage3.Controls.Add(this.lblCustomerPhonenumber2);
-            this.tabPage3.Controls.Add(this.txtbCustomerPhonenumber1);
-            this.tabPage3.Controls.Add(this.lblCustomerPhonenumber1);
-            this.tabPage3.Controls.Add(this.txtbCustomerZipcode2);
-            this.tabPage3.Controls.Add(this.lblCustomerZipcode2);
-            this.tabPage3.Controls.Add(this.txtbCustomerResidence2);
-            this.tabPage3.Controls.Add(this.lblCustomerResidence2);
-            this.tabPage3.Controls.Add(this.txtbCustomerHousenumber2);
-            this.tabPage3.Controls.Add(this.lblCustomerHousenumber2);
-            this.tabPage3.Controls.Add(this.txtbCustomerStreetName2);
-            this.tabPage3.Controls.Add(this.lblCustomerStreetName2);
-            this.tabPage3.Controls.Add(this.txtbCustomerZipcode1);
-            this.tabPage3.Controls.Add(this.lblCustomerZipcode1);
-            this.tabPage3.Controls.Add(this.txtbCustomerResidence1);
-            this.tabPage3.Controls.Add(this.lblCustomerResidence1);
-            this.tabPage3.Controls.Add(this.txtbCustomerHousenumber1);
-            this.tabPage3.Controls.Add(this.lblCustomerHousenumber1);
-            this.tabPage3.Controls.Add(this.txtbCustomerStreetName1);
-            this.tabPage3.Controls.Add(this.lblCustomerStreetName1);
-            this.tabPage3.Controls.Add(this.txtbCustomerCompanyName);
-            this.tabPage3.Controls.Add(this.lblCustomerCompanyName);
-            this.tabPage3.Controls.Add(this.txtbCustomerLastName);
-            this.tabPage3.Controls.Add(this.lblCustomerLastName);
-            this.tabPage3.Controls.Add(this.txtbCustomerFirstName);
-            this.tabPage3.Controls.Add(this.lblCustomerFirstName);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(566, 438);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "editCustomer";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tcp_EditCustomer.Controls.Add(this.dtpCustomerLastContact);
+            this.tcp_EditCustomer.Controls.Add(this.dtpCustomerNextContact);
+            this.tcp_EditCustomer.Controls.Add(this.button2);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerNextAction);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerNextAction);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerNextContact);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerLastAction);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerLastAction);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerLastContact);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerFax);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerFax);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerMail);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerMail);
+            this.tcp_EditCustomer.Controls.Add(this.txtCustomerPhonenumber2);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerPhonenumber2);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerPhonenumber1);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerPhonenumber1);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerZipcode2);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerZipcode2);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerResidence2);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerResidence2);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerHousenumber2);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerHousenumber2);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerStreetName2);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerStreetName2);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerZipcode1);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerZipcode1);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerResidence1);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerResidence1);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerHousenumber1);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerHousenumber1);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerStreetName1);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerStreetName1);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerCompanyName);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerCompanyName);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerLastName);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerLastName);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerFirstName);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerFirstName);
+            this.tcp_EditCustomer.Location = new System.Drawing.Point(4, 22);
+            this.tcp_EditCustomer.Name = "tcp_EditCustomer";
+            this.tcp_EditCustomer.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_EditCustomer.Size = new System.Drawing.Size(566, 438);
+            this.tcp_EditCustomer.TabIndex = 3;
+            this.tcp_EditCustomer.Text = "editCustomer";
+            this.tcp_EditCustomer.UseVisualStyleBackColor = true;
             // 
             // dtpCustomerLastContact
             // 
@@ -1012,7 +1011,7 @@
             this.mnfltr_Appointments_CuName,
             this.mnfltr_Appointments_CoName,
             this.mnfltr_Appointments_Residence,
-            this.tscmb_Appointments_Summary,
+            this.mnfltr_Appointments_Summary,
             this.mnfltr_Appointments_Date,
             this.mnitem_Logout});
             this.mstrp_Menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
@@ -1028,6 +1027,7 @@
             this.mnitem_Overview.Size = new System.Drawing.Size(135, 25);
             this.mnitem_Overview.Text = "Overview";
             this.mnitem_Overview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnitem_Overview.Click += new System.EventHandler(this.MenuHandler);
             // 
             // mnfltr_Overview_Department
             // 
@@ -1095,6 +1095,7 @@
             this.mnitem_Projects.Size = new System.Drawing.Size(135, 25);
             this.mnitem_Projects.Text = "Projects";
             this.mnitem_Projects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnitem_Projects.Click += new System.EventHandler(this.MenuHandler);
             // 
             // mnfltr_Projects_Name
             // 
@@ -1155,6 +1156,7 @@
             this.mnitem_Appointments.Size = new System.Drawing.Size(135, 30);
             this.mnitem_Appointments.Text = "Appointments";
             this.mnitem_Appointments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnitem_Appointments.Click += new System.EventHandler(this.MenuHandler);
             // 
             // mnfltr_Appointments_CuName
             // 
@@ -1204,16 +1206,16 @@
             this.tstxtb_Appointments_Residence.Name = "tstxtb_Appointments_Residence";
             this.tstxtb_Appointments_Residence.Size = new System.Drawing.Size(100, 23);
             // 
-            // tscmb_Appointments_Summary
+            // mnfltr_Appointments_Summary
             // 
-            this.tscmb_Appointments_Summary.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnfltr_Appointments_Summary.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBox3});
-            this.tscmb_Appointments_Summary.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tscmb_Appointments_Summary.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
-            this.tscmb_Appointments_Summary.Name = "tscmb_Appointments_Summary";
-            this.tscmb_Appointments_Summary.Size = new System.Drawing.Size(124, 19);
-            this.tscmb_Appointments_Summary.Text = "Summary";
-            this.tscmb_Appointments_Summary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnfltr_Appointments_Summary.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mnfltr_Appointments_Summary.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
+            this.mnfltr_Appointments_Summary.Name = "mnfltr_Appointments_Summary";
+            this.mnfltr_Appointments_Summary.Size = new System.Drawing.Size(124, 19);
+            this.mnfltr_Appointments_Summary.Text = "Summary";
+            this.mnfltr_Appointments_Summary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripComboBox3
             // 
@@ -1236,6 +1238,7 @@
             // 
             // mnitem_Logout
             // 
+            this.mnitem_Logout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.mnitem_Logout.Checked = true;
             this.mnitem_Logout.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnitem_Logout.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -1252,23 +1255,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 461);
-            this.Controls.Add(tc_Main);
+            this.Controls.Add(this.tcp_Main);
             this.Controls.Add(this.mstrp_Menu);
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "frm_Sales";
             this.Text = "Barroc-IT - Software for real - Sales";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Sales_FormClosing);
-            tc_Main.ResumeLayout(false);
+            this.tcp_Main.ResumeLayout(false);
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tcp_Customer.ResumeLayout(false);
+            this.tcp_Customer.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tcp_AddCustomer.ResumeLayout(false);
+            this.tcp_AddCustomer.PerformLayout();
+            this.tcp_EditCustomer.ResumeLayout(false);
+            this.tcp_EditCustomer.PerformLayout();
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
             this.ResumeLayout(false);
@@ -1296,7 +1299,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Appointments_CuName;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Appointments_CoName;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Appointments_Residence;
-        private System.Windows.Forms.ToolStripMenuItem tscmb_Appointments_Summary;
+        private System.Windows.Forms.ToolStripMenuItem mnfltr_Appointments_Summary;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Appointments_Date;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CuName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
@@ -1305,9 +1308,9 @@
         private System.Windows.Forms.TabPage tcp_Overview;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tcp_Customer;
         private System.Windows.Forms.Label lbl_Customer_firstname;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tcp_AddCustomer;
         private System.Windows.Forms.TextBox txtb_customer_fax;
         private System.Windows.Forms.Label lbl_customer_fax;
         private System.Windows.Forms.TextBox txtb_customer_email;
@@ -1348,7 +1351,7 @@
         private System.Windows.Forms.DateTimePicker dtp_customer_lastcontact;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Project_Show_All;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tcp_EditCustomer;
         private System.Windows.Forms.DateTimePicker dtpCustomerLastContact;
         private System.Windows.Forms.DateTimePicker dtpCustomerNextContact;
         private System.Windows.Forms.Button button2;
@@ -1388,6 +1391,7 @@
         private System.Windows.Forms.Label lblCustomerLastName;
         private System.Windows.Forms.TextBox txtbCustomerFirstName;
         private System.Windows.Forms.Label lblCustomerFirstName;
+        private System.Windows.Forms.TabControl tcp_Main;
 
 
     }

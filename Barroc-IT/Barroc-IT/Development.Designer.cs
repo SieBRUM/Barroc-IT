@@ -55,7 +55,7 @@ namespace Barroc_IT
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tcp_Add_Appointment = new System.Windows.Forms.TabControl();
+            this.tcp_Main = new System.Windows.Forms.TabControl();
             this.tcp_Overview = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -150,7 +150,7 @@ namespace Barroc_IT
             this.lbl_Address = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mstrp_Menu.SuspendLayout();
-            this.tcp_Add_Appointment.SuspendLayout();
+            this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Projects.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -431,26 +431,26 @@ namespace Barroc_IT
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // tcp_Add_Appointment
+            // tcp_Main
             // 
-            this.tcp_Add_Appointment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Overview);
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Projects);
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Appointments);
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Help);
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Add_Project);
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Edit_Project);
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Loading);
-            this.tcp_Add_Appointment.Controls.Add(this.tcp_Show_Customer);
-            this.tcp_Add_Appointment.Controls.Add(this.tabPage1);
-            this.tcp_Add_Appointment.Location = new System.Drawing.Point(142, 0);
-            this.tcp_Add_Appointment.Margin = new System.Windows.Forms.Padding(0);
-            this.tcp_Add_Appointment.Name = "tcp_Add_Appointment";
-            this.tcp_Add_Appointment.SelectedIndex = 0;
-            this.tcp_Add_Appointment.Size = new System.Drawing.Size(574, 450);
-            this.tcp_Add_Appointment.TabIndex = 1;
-            this.tcp_Add_Appointment.TabStop = false;
-            this.tcp_Add_Appointment.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
+            this.tcp_Main.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tcp_Main.Controls.Add(this.tcp_Overview);
+            this.tcp_Main.Controls.Add(this.tcp_Projects);
+            this.tcp_Main.Controls.Add(this.tcp_Appointments);
+            this.tcp_Main.Controls.Add(this.tcp_Help);
+            this.tcp_Main.Controls.Add(this.tcp_Add_Project);
+            this.tcp_Main.Controls.Add(this.tcp_Edit_Project);
+            this.tcp_Main.Controls.Add(this.tcp_Loading);
+            this.tcp_Main.Controls.Add(this.tcp_Show_Customer);
+            this.tcp_Main.Controls.Add(this.tabPage1);
+            this.tcp_Main.Location = new System.Drawing.Point(142, 0);
+            this.tcp_Main.Margin = new System.Windows.Forms.Padding(0);
+            this.tcp_Main.Name = "tcp_Main";
+            this.tcp_Main.SelectedIndex = 0;
+            this.tcp_Main.Size = new System.Drawing.Size(574, 450);
+            this.tcp_Main.TabIndex = 1;
+            this.tcp_Main.TabStop = false;
+            this.tcp_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
             // tcp_Overview
             // 
@@ -1429,7 +1429,7 @@ namespace Barroc_IT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 449);
             this.Controls.Add(this.mstrp_Menu);
-            this.Controls.Add(this.tcp_Add_Appointment);
+            this.Controls.Add(this.tcp_Main);
             this.DoubleBuffered = true;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -1440,7 +1440,7 @@ namespace Barroc_IT
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Development_FormClosing);
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
-            this.tcp_Add_Appointment.ResumeLayout(false);
+            this.tcp_Main.ResumeLayout(false);
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
             this.tcp_Projects.ResumeLayout(false);
@@ -1494,7 +1494,7 @@ namespace Barroc_IT
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_Residence;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
-        private TabControl tcp_Add_Appointment;
+        private TabControl tcp_Main;
         private TabPage tcp_Overview;
         private TabPage tcp_Projects;
         private Label label2;
