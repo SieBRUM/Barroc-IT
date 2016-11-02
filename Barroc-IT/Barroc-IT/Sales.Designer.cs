@@ -110,9 +110,6 @@
             this.lblCustomerStreetName1 = new System.Windows.Forms.Label();
             this.txtbCustomerCompanyName = new System.Windows.Forms.TextBox();
             this.lblCustomerCompanyName = new System.Windows.Forms.Label();
-            this.txtbCustomerLastName = new System.Windows.Forms.TextBox();
-            this.lblCustomerLastName = new System.Windows.Forms.Label();
-            this.txtbCustomerFirstName = new System.Windows.Forms.TextBox();
             this.lblCustomerFirstName = new System.Windows.Forms.Label();
             this.tcp_Main = new System.Windows.Forms.TabControl();
             this.mstrp_Menu = new System.Windows.Forms.MenuStrip();
@@ -140,6 +137,7 @@
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCustomerNameCustomer = new System.Windows.Forms.Label();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -596,6 +594,7 @@
             // 
             // tcp_EditCustomer
             // 
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerNameCustomer);
             this.tcp_EditCustomer.Controls.Add(this.dtpCustomerLastContact);
             this.tcp_EditCustomer.Controls.Add(this.dtpCustomerNextContact);
             this.tcp_EditCustomer.Controls.Add(this.button2);
@@ -631,9 +630,6 @@
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerStreetName1);
             this.tcp_EditCustomer.Controls.Add(this.txtbCustomerCompanyName);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerCompanyName);
-            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerLastName);
-            this.tcp_EditCustomer.Controls.Add(this.lblCustomerLastName);
-            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerFirstName);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerFirstName);
             this.tcp_EditCustomer.Location = new System.Drawing.Point(4, 22);
             this.tcp_EditCustomer.Name = "tcp_EditCustomer";
@@ -925,7 +921,7 @@
             // 
             // txtbCustomerCompanyName
             // 
-            this.txtbCustomerCompanyName.Location = new System.Drawing.Point(385, 26);
+            this.txtbCustomerCompanyName.Location = new System.Drawing.Point(190, 29);
             this.txtbCustomerCompanyName.MaxLength = 30;
             this.txtbCustomerCompanyName.Name = "txtbCustomerCompanyName";
             this.txtbCustomerCompanyName.Size = new System.Drawing.Size(100, 20);
@@ -934,47 +930,20 @@
             // lblCustomerCompanyName
             // 
             this.lblCustomerCompanyName.AutoSize = true;
-            this.lblCustomerCompanyName.Location = new System.Drawing.Point(382, 10);
+            this.lblCustomerCompanyName.Location = new System.Drawing.Point(187, 10);
             this.lblCustomerCompanyName.Name = "lblCustomerCompanyName";
             this.lblCustomerCompanyName.Size = new System.Drawing.Size(80, 13);
             this.lblCustomerCompanyName.TabIndex = 55;
             this.lblCustomerCompanyName.Text = "Company name";
-            // 
-            // txtbCustomerLastName
-            // 
-            this.txtbCustomerLastName.Enabled = false;
-            this.txtbCustomerLastName.Location = new System.Drawing.Point(190, 26);
-            this.txtbCustomerLastName.MaxLength = 30;
-            this.txtbCustomerLastName.Name = "txtbCustomerLastName";
-            this.txtbCustomerLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtbCustomerLastName.TabIndex = 2;
-            // 
-            // lblCustomerLastName
-            // 
-            this.lblCustomerLastName.AutoSize = true;
-            this.lblCustomerLastName.Location = new System.Drawing.Point(187, 10);
-            this.lblCustomerLastName.Name = "lblCustomerLastName";
-            this.lblCustomerLastName.Size = new System.Drawing.Size(56, 13);
-            this.lblCustomerLastName.TabIndex = 53;
-            this.lblCustomerLastName.Text = "Last name";
-            // 
-            // txtbCustomerFirstName
-            // 
-            this.txtbCustomerFirstName.Enabled = false;
-            this.txtbCustomerFirstName.Location = new System.Drawing.Point(11, 26);
-            this.txtbCustomerFirstName.MaxLength = 20;
-            this.txtbCustomerFirstName.Name = "txtbCustomerFirstName";
-            this.txtbCustomerFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtbCustomerFirstName.TabIndex = 1;
             // 
             // lblCustomerFirstName
             // 
             this.lblCustomerFirstName.AutoSize = true;
             this.lblCustomerFirstName.Location = new System.Drawing.Point(8, 10);
             this.lblCustomerFirstName.Name = "lblCustomerFirstName";
-            this.lblCustomerFirstName.Size = new System.Drawing.Size(55, 13);
+            this.lblCustomerFirstName.Size = new System.Drawing.Size(38, 13);
             this.lblCustomerFirstName.TabIndex = 50;
-            this.lblCustomerFirstName.Text = "First name";
+            this.lblCustomerFirstName.Text = "Name:";
             // 
             // tcp_Main
             // 
@@ -1250,6 +1219,17 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
+            // lblCustomerNameCustomer
+            // 
+            this.lblCustomerNameCustomer.AutoSize = true;
+            this.lblCustomerNameCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerNameCustomer.Location = new System.Drawing.Point(8, 32);
+            this.lblCustomerNameCustomer.Name = "lblCustomerNameCustomer";
+            this.lblCustomerNameCustomer.Size = new System.Drawing.Size(73, 13);
+            this.lblCustomerNameCustomer.TabIndex = 89;
+            this.lblCustomerNameCustomer.Text = "placeholder";
+            this.lblCustomerNameCustomer.UseMnemonic = false;
+            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1387,11 +1367,9 @@
         private System.Windows.Forms.Label lblCustomerStreetName1;
         private System.Windows.Forms.TextBox txtbCustomerCompanyName;
         private System.Windows.Forms.Label lblCustomerCompanyName;
-        private System.Windows.Forms.TextBox txtbCustomerLastName;
-        private System.Windows.Forms.Label lblCustomerLastName;
-        private System.Windows.Forms.TextBox txtbCustomerFirstName;
         private System.Windows.Forms.Label lblCustomerFirstName;
         private System.Windows.Forms.TabControl tcp_Main;
+        private System.Windows.Forms.Label lblCustomerNameCustomer;
 
     }
 }

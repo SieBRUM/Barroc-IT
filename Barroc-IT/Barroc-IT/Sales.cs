@@ -160,8 +160,14 @@ namespace Barroc_IT
             txtbCustomerResidence2.Text = dt.Rows[0]["residence_2"].ToString();
             txtbCustomerZipcode2.Text = dt.Rows[0]["zip_code_2"].ToString();
             txtbCustomerPhonenumber2.Text = dt.Rows[0]["phone_number_2"].ToString();
+            dtpCustomerLastContact.Text = dt.Rows[0]["last_contact"].ToString();
+            txtbCustomerLastAction.Text = dt.Rows[0]["last_action"].ToString();
+            dtpCustomerNextContact.Text = dt.Rows[0]["next_contact"].ToString();
+            txtbCustomerNextAction.Text = dt.Rows[0]["next_action"].ToString();
+            lblCustomerNameCustomer.Text = dt.Rows[0]["customer_name"].ToString();
 
             tcp_Main.SelectedIndex = 3;
+            dbh.CloseConnection();
         }
 
         private void btn_Project_Show_All_Click(object sender, EventArgs e)
