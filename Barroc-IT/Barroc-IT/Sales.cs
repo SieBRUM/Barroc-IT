@@ -165,10 +165,30 @@ namespace Barroc_IT
             dtpCustomerNextContact.Text = dt.Rows[0]["next_contact"].ToString();
             txtbCustomerNextAction.Text = dt.Rows[0]["next_action"].ToString();
             lblCustomerNameCustomer.Text = dt.Rows[0]["customer_name"].ToString();
+            lblCustomerId.Text = dt.Rows[0]["customer_id"].ToString();
+            //lblCustomer_FirstName.Text = dt.Rows[0]["first_name"].ToString();
+            //lblCustomer_LastName.Text = dt.Rows[0]["last_name"].ToString();
 
             tcp_Main.SelectedIndex = 3;
             dbh.CloseConnection();
         }
+
+        //private void EditCustomer(object sender, EventArgs e)
+        //{
+        //    int result;
+        //    if (!int.TryParse(txtbCustomerFax.Text, out result))
+        //    {
+        //        MessageBox.Show("fax is not a number");
+        //    }
+        //    else
+        //    {
+        //        dbh.OpenConnection();
+        //        if (dbh.EditCustomer(lblCustomerId.Text, ))
+        //        {
+        //            MessageBox.Show("Succesfully added customer!");
+        //        }
+        //    }
+        //}
 
         private void btn_Project_Show_All_Click(object sender, EventArgs e)
         {

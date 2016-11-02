@@ -75,6 +75,7 @@
             this.txtb_customer_firstname = new System.Windows.Forms.TextBox();
             this.lbl_Customer_firstname = new System.Windows.Forms.Label();
             this.tcp_EditCustomer = new System.Windows.Forms.TabPage();
+            this.lblCustomerNameCustomer = new System.Windows.Forms.Label();
             this.dtpCustomerLastContact = new System.Windows.Forms.DateTimePicker();
             this.dtpCustomerNextContact = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
@@ -137,7 +138,9 @@
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblCustomerNameCustomer = new System.Windows.Forms.Label();
+            this.lblCustomerId = new System.Windows.Forms.Label();
+            this.lblCustomer_FirstName = new System.Windows.Forms.Label();
+            this.lblCustomer_LastName = new System.Windows.Forms.Label();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -594,6 +597,9 @@
             // 
             // tcp_EditCustomer
             // 
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomer_LastName);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomer_FirstName);
+            this.tcp_EditCustomer.Controls.Add(this.lblCustomerId);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerNameCustomer);
             this.tcp_EditCustomer.Controls.Add(this.dtpCustomerLastContact);
             this.tcp_EditCustomer.Controls.Add(this.dtpCustomerNextContact);
@@ -638,6 +644,17 @@
             this.tcp_EditCustomer.TabIndex = 3;
             this.tcp_EditCustomer.Text = "editCustomer";
             this.tcp_EditCustomer.UseVisualStyleBackColor = true;
+            // 
+            // lblCustomerNameCustomer
+            // 
+            this.lblCustomerNameCustomer.AutoSize = true;
+            this.lblCustomerNameCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerNameCustomer.Location = new System.Drawing.Point(8, 32);
+            this.lblCustomerNameCustomer.Name = "lblCustomerNameCustomer";
+            this.lblCustomerNameCustomer.Size = new System.Drawing.Size(73, 13);
+            this.lblCustomerNameCustomer.TabIndex = 89;
+            this.lblCustomerNameCustomer.Text = "placeholder";
+            this.lblCustomerNameCustomer.UseMnemonic = false;
             // 
             // dtpCustomerLastContact
             // 
@@ -1219,16 +1236,32 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // lblCustomerNameCustomer
+            // lblCustomerId
             // 
-            this.lblCustomerNameCustomer.AutoSize = true;
-            this.lblCustomerNameCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerNameCustomer.Location = new System.Drawing.Point(8, 32);
-            this.lblCustomerNameCustomer.Name = "lblCustomerNameCustomer";
-            this.lblCustomerNameCustomer.Size = new System.Drawing.Size(73, 13);
-            this.lblCustomerNameCustomer.TabIndex = 89;
-            this.lblCustomerNameCustomer.Text = "placeholder";
-            this.lblCustomerNameCustomer.UseMnemonic = false;
+            this.lblCustomerId.AutoSize = true;
+            this.lblCustomerId.Location = new System.Drawing.Point(496, 10);
+            this.lblCustomerId.Name = "lblCustomerId";
+            this.lblCustomerId.Size = new System.Drawing.Size(64, 13);
+            this.lblCustomerId.TabIndex = 90;
+            this.lblCustomerId.Text = "customer_id";
+            // 
+            // lblCustomer_FirstName
+            // 
+            this.lblCustomer_FirstName.AutoSize = true;
+            this.lblCustomer_FirstName.Location = new System.Drawing.Point(496, 23);
+            this.lblCustomer_FirstName.Name = "lblCustomer_FirstName";
+            this.lblCustomer_FirstName.Size = new System.Drawing.Size(52, 13);
+            this.lblCustomer_FirstName.TabIndex = 91;
+            this.lblCustomer_FirstName.Text = "first name";
+            // 
+            // lblCustomer_LastName
+            // 
+            this.lblCustomer_LastName.AutoSize = true;
+            this.lblCustomer_LastName.Location = new System.Drawing.Point(496, 36);
+            this.lblCustomer_LastName.Name = "lblCustomer_LastName";
+            this.lblCustomer_LastName.Size = new System.Drawing.Size(52, 13);
+            this.lblCustomer_LastName.TabIndex = 92;
+            this.lblCustomer_LastName.Text = "last name";
             // 
             // frm_Sales
             // 
@@ -1370,6 +1403,9 @@
         private System.Windows.Forms.Label lblCustomerFirstName;
         private System.Windows.Forms.TabControl tcp_Main;
         private System.Windows.Forms.Label lblCustomerNameCustomer;
+        private System.Windows.Forms.Label lblCustomerId;
+        private System.Windows.Forms.Label lblCustomer_LastName;
+        private System.Windows.Forms.Label lblCustomer_FirstName;
 
     }
 }
