@@ -77,9 +77,21 @@ namespace Barroc_IT
                 customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 customerInfoPanel[i].Dock = DockStyle.Top;
                 panel1.Controls.Add(customerInfoPanel[i]);
+                customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
+                customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
             }
-            dbh.CloseConnection();
+            dbh.CloseConnection();            
+        }
+
+        private void FillEditCustomer (object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Button button = (Button)sender;
+            DataTable dt = dbh.GetCustomer(button.AccessibleName);
+            txtbCustomerMail.Text = dt.Rows[0]["email"].ToString();
             
+
+            tc_Main.SelectedIndex = 3;
         }
 
         private void btn_Project_Show_All_Click(object sender, EventArgs e)

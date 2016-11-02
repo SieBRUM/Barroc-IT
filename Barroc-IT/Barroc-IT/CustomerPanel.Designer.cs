@@ -79,6 +79,7 @@
             this.lbl_Unpaid_Invoice = new System.Windows.Forms.Label();
             this.lbl_Customer_ID = new System.Windows.Forms.Label();
             this.lbl_Customer_Name = new System.Windows.Forms.Label();
+            this.btn_editCustomer = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +87,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.Controls.Add(this.btn_editCustomer);
             this.panel2.Controls.Add(this.lbl_Customer_Prospect);
             this.panel2.Controls.Add(this.lbl_Prospect);
             this.panel2.Controls.Add(this.lbl_Customer_Gross_Revenue);
@@ -318,7 +320,6 @@
             this.lbl_Customer_Creditworthy.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Creditworthy.TabIndex = 64;
             this.lbl_Customer_Creditworthy.Text = "Placeholder";
-            this.lbl_Customer_Creditworthy.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbl_Creditworthy
             // 
@@ -328,7 +329,6 @@
             this.lbl_Creditworthy.Size = new System.Drawing.Size(68, 13);
             this.lbl_Creditworthy.TabIndex = 63;
             this.lbl_Creditworthy.Text = "Creditworthy:";
-            this.lbl_Creditworthy.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbl_Customer_Credit_Balance
             // 
@@ -621,6 +621,15 @@
             this.lbl_Customer_Name.TabIndex = 0;
             this.lbl_Customer_Name.Text = "Customer Name";
             // 
+            // btn_editCustomer
+            // 
+            this.btn_editCustomer.Location = new System.Drawing.Point(439, 329);
+            this.btn_editCustomer.Name = "btn_editCustomer";
+            this.btn_editCustomer.Size = new System.Drawing.Size(89, 23);
+            this.btn_editCustomer.TabIndex = 83;
+            this.btn_editCustomer.Text = "edit customer";
+            this.btn_editCustomer.UseVisualStyleBackColor = true;
+            // 
             // CustomerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -693,5 +702,6 @@
         private System.Windows.Forms.Label lbl_Limit;
         private System.Windows.Forms.Label lbl_Customer_Iban;
         private System.Windows.Forms.Label lbl_Iban;
+        public System.Windows.Forms.Button btn_editCustomer;
     }
 }

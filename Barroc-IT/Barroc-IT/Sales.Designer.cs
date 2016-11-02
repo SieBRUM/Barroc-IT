@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TabControl tc_Main;
+            this.tc_Main = new System.Windows.Forms.TabControl();
             this.tcp_Overview = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -140,8 +140,7 @@
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            tc_Main = new System.Windows.Forms.TabControl();
-            tc_Main.SuspendLayout();
+            this.tc_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -152,18 +151,18 @@
             // 
             // tc_Main
             // 
-            tc_Main.Anchor = System.Windows.Forms.AnchorStyles.None;
-            tc_Main.Controls.Add(this.tcp_Overview);
-            tc_Main.Controls.Add(this.tabPage1);
-            tc_Main.Controls.Add(this.tabPage2);
-            tc_Main.Controls.Add(this.tabPage3);
-            tc_Main.Location = new System.Drawing.Point(142, 1);
-            tc_Main.Margin = new System.Windows.Forms.Padding(0);
-            tc_Main.Name = "tc_Main";
-            tc_Main.SelectedIndex = 0;
-            tc_Main.Size = new System.Drawing.Size(574, 464);
-            tc_Main.TabIndex = 3;
-            tc_Main.TabStop = false;
+            this.tc_Main.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tc_Main.Controls.Add(this.tcp_Overview);
+            this.tc_Main.Controls.Add(this.tabPage1);
+            this.tc_Main.Controls.Add(this.tabPage2);
+            this.tc_Main.Controls.Add(this.tabPage3);
+            this.tc_Main.Location = new System.Drawing.Point(142, 1);
+            this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
+            this.tc_Main.Name = "tc_Main";
+            this.tc_Main.SelectedIndex = 0;
+            this.tc_Main.Size = new System.Drawing.Size(574, 464);
+            this.tc_Main.TabIndex = 3;
+            this.tc_Main.TabStop = false;
             // 
             // tcp_Overview
             // 
@@ -1252,14 +1251,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 461);
-            this.Controls.Add(tc_Main);
+            this.Controls.Add(this.tc_Main);
             this.Controls.Add(this.mstrp_Menu);
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "frm_Sales";
             this.Text = "Barroc-IT - Software for real - Sales";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Sales_FormClosing);
-            tc_Main.ResumeLayout(false);
+            this.tc_Main.ResumeLayout(false);
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -1388,6 +1387,7 @@
         private System.Windows.Forms.Label lblCustomerLastName;
         private System.Windows.Forms.TextBox txtbCustomerFirstName;
         private System.Windows.Forms.Label lblCustomerFirstName;
+        private System.Windows.Forms.TabControl tc_Main;
 
 
     }
