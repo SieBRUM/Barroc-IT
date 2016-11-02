@@ -362,7 +362,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_appointments.customer_id AS appointment_customer_id, appointment_time, appointment_residence, appointment_zipcode, appointment_date, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
                     
                     FROM
                         tbl_appointments
@@ -379,11 +379,10 @@ namespace Barroc_IT
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
                 dt.Columns.Add("appointment_customer_id", typeof(string));
-                dt.Columns.Add("appointment_time", typeof(string));
+                dt.Columns.Add("appointment_datetime", typeof(string));
                 dt.Columns.Add("appointment_address", typeof(string));
                 dt.Columns.Add("appointment_housenumber", typeof(string));
                 dt.Columns.Add("appointment_zipcode", typeof(string));
-                dt.Columns.Add("appointment_date", typeof(string));
                 dt.Columns.Add("appointment_made", typeof(string));
                 dt.Columns.Add("appointment_summary", typeof(string));
                 dt.Columns.Add("company_name", typeof(string));

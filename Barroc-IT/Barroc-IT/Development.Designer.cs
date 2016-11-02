@@ -149,6 +149,22 @@ namespace Barroc_IT
             this.label29 = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.checkb_Location = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtb_A_Appointment_Zipcode = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtb_A_Appointment_Housenumber = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtb_A_Appointment_Streetname = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtb_A_Appointment_Residence = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cb_Appointment_Select_Customer = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -165,6 +181,7 @@ namespace Barroc_IT
             this.tcp_Show_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -1415,6 +1432,22 @@ namespace Barroc_IT
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.checkb_Location);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.label45);
+            this.tabPage1.Controls.Add(this.label44);
+            this.tabPage1.Controls.Add(this.label43);
+            this.tabPage1.Controls.Add(this.txtb_A_Appointment_Zipcode);
+            this.tabPage1.Controls.Add(this.label42);
+            this.tabPage1.Controls.Add(this.txtb_A_Appointment_Housenumber);
+            this.tabPage1.Controls.Add(this.label41);
+            this.tabPage1.Controls.Add(this.txtb_A_Appointment_Streetname);
+            this.tabPage1.Controls.Add(this.label40);
+            this.tabPage1.Controls.Add(this.richTextBox1);
+            this.tabPage1.Controls.Add(this.txtb_A_Appointment_Residence);
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.cb_Appointment_Select_Customer);
+            this.tabPage1.Controls.Add(this.label36);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1422,6 +1455,147 @@ namespace Barroc_IT
             this.tabPage1.TabIndex = 8;
             this.tabPage1.Text = "Add Appointment";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // checkb_Location
+            // 
+            this.checkb_Location.AutoSize = true;
+            this.checkb_Location.Location = new System.Drawing.Point(205, 44);
+            this.checkb_Location.Name = "checkb_Location";
+            this.checkb_Location.Size = new System.Drawing.Size(196, 17);
+            this.checkb_Location.TabIndex = 32;
+            this.checkb_Location.Text = "Appointment is at customer location.";
+            this.checkb_Location.UseVisualStyleBackColor = true;
+            this.checkb_Location.CheckedChanged += new System.EventHandler(this.GetLocation);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(27, 358);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 23);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Add Appointment";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(24, 266);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(50, 13);
+            this.label45.TabIndex = 30;
+            this.label45.Text = "Summary";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(24, 227);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(92, 13);
+            this.label44.TabIndex = 29;
+            this.label44.Text = "Appointment Date";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(24, 188);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(46, 13);
+            this.label43.TabIndex = 28;
+            this.label43.Text = "Zipcode";
+            // 
+            // txtb_A_Appointment_Zipcode
+            // 
+            this.txtb_A_Appointment_Zipcode.Location = new System.Drawing.Point(27, 204);
+            this.txtb_A_Appointment_Zipcode.Name = "txtb_A_Appointment_Zipcode";
+            this.txtb_A_Appointment_Zipcode.Size = new System.Drawing.Size(142, 20);
+            this.txtb_A_Appointment_Zipcode.TabIndex = 27;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(24, 147);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(73, 13);
+            this.label42.TabIndex = 26;
+            this.label42.Text = "Housenumber";
+            // 
+            // txtb_A_Appointment_Housenumber
+            // 
+            this.txtb_A_Appointment_Housenumber.Location = new System.Drawing.Point(27, 163);
+            this.txtb_A_Appointment_Housenumber.Name = "txtb_A_Appointment_Housenumber";
+            this.txtb_A_Appointment_Housenumber.Size = new System.Drawing.Size(142, 20);
+            this.txtb_A_Appointment_Housenumber.TabIndex = 25;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(24, 105);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(61, 13);
+            this.label41.TabIndex = 24;
+            this.label41.Text = "Streetname";
+            // 
+            // txtb_A_Appointment_Streetname
+            // 
+            this.txtb_A_Appointment_Streetname.Location = new System.Drawing.Point(27, 121);
+            this.txtb_A_Appointment_Streetname.Name = "txtb_A_Appointment_Streetname";
+            this.txtb_A_Appointment_Streetname.Size = new System.Drawing.Size(142, 20);
+            this.txtb_A_Appointment_Streetname.TabIndex = 23;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(24, 64);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(58, 13);
+            this.label40.TabIndex = 22;
+            this.label40.Text = "Residence";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(26, 282);
+            this.richTextBox1.MaxLength = 255;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(412, 70);
+            this.richTextBox1.TabIndex = 21;
+            this.richTextBox1.Text = "";
+            // 
+            // txtb_A_Appointment_Residence
+            // 
+            this.txtb_A_Appointment_Residence.Location = new System.Drawing.Point(27, 80);
+            this.txtb_A_Appointment_Residence.Name = "txtb_A_Appointment_Residence";
+            this.txtb_A_Appointment_Residence.Size = new System.Drawing.Size(142, 20);
+            this.txtb_A_Appointment_Residence.TabIndex = 17;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM-dd-yyyy hh:mm";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(26, 243);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(125, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // cb_Appointment_Select_Customer
+            // 
+            this.cb_Appointment_Select_Customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Appointment_Select_Customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Appointment_Select_Customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Appointment_Select_Customer.FormattingEnabled = true;
+            this.cb_Appointment_Select_Customer.Location = new System.Drawing.Point(27, 40);
+            this.cb_Appointment_Select_Customer.MaxDropDownItems = 100;
+            this.cb_Appointment_Select_Customer.Name = "cb_Appointment_Select_Customer";
+            this.cb_Appointment_Select_Customer.Size = new System.Drawing.Size(142, 21);
+            this.cb_Appointment_Select_Customer.TabIndex = 14;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(23, 24);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(63, 13);
+            this.label36.TabIndex = 15;
+            this.label36.Text = "Customer Id";
             // 
             // frm_Development
             // 
@@ -1463,6 +1637,8 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1588,6 +1764,22 @@ namespace Barroc_IT
         private Panel appointmentsPanel;
         private Button btn_showallAppointments;
         private TabPage tabPage1;
+        private ComboBox cb_Appointment_Select_Customer;
+        private Label label36;
+        private DateTimePicker dateTimePicker1;
+        private Label label42;
+        private TextBox txtb_A_Appointment_Housenumber;
+        private Label label41;
+        private TextBox txtb_A_Appointment_Streetname;
+        private Label label40;
+        private RichTextBox richTextBox1;
+        private TextBox txtb_A_Appointment_Residence;
+        private Label label45;
+        private Label label44;
+        private Label label43;
+        private TextBox txtb_A_Appointment_Zipcode;
+        private Button button2;
+        private CheckBox checkb_Location;
 
 
 

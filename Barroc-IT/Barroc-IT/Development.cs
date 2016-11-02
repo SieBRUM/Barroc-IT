@@ -161,6 +161,26 @@ namespace Barroc_IT
                     dbh.CloseConnection();
                 }
             }
+            else if (tcp_Main.SelectedIndex == 8)
+            {
+                try
+                {
+                    dbh.OpenConnection();
+                    DataTable dt = dbh.GetCustomerCB();
+                    cb_Appointment_Select_Customer.ValueMember = "customer_id";
+                    cb_Appointment_Select_Customer.DisplayMember = "full_name";
+
+                    cb_Appointment_Select_Customer.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
         }
 
         private void ShowAppointments()
@@ -245,6 +265,7 @@ namespace Barroc_IT
             lbl_Address2.Text = dt.Rows[0]["address_2"].ToString();
             lbl_Zip_Code2.Text = dt.Rows[0]["zip_code_2"].ToString();
             lbl_Phonenumber2.Text = dt.Rows[0]["phone_number_2"].ToString();
+
             tcp_Main.SelectedIndex = 7;
             dbh.CloseConnection();
         }
@@ -290,5 +311,35 @@ namespace Barroc_IT
             ShowAppointments();
         }
 
+        private void GetLocation(object sender, EventArgs e)
+        {
+            if (checkb_Location.Checked)
+            {
+                dbh.OpenConnection();
+                DataTable dt = dbh.GetCustomer(cb_Appointment_Select_Customer.SelectedValue.ToString());
+                cb_Appointment_Select_Customer.Enabled = false;
+                txtb_A_Appointment_Residence.Text = dt.Rows[0]["residence"].ToString();
+                txtb_A_Appointment_Residence.Enabled = false;
+                txtb_A_Appointment_Streetname.Text = dt.Rows[0]["street_name"].ToString();
+                txtb_A_Appointment_Streetname.Enabled = false;
+                txtb_A_Appointment_Housenumber.Text = dt.Rows[0]["house_number"].ToString();
+                txtb_A_Appointment_Housenumber.Enabled = false;
+                txtb_A_Appointment_Zipcode.Text = dt.Rows[0]["zip_code"].ToString();
+                txtb_A_Appointment_Zipcode.Enabled = false;
+                dbh.CloseConnection();
+            }
+            else 
+            {
+                cb_Appointment_Select_Customer.Enabled = true;
+                txtb_A_Appointment_Residence.Text = "";
+                txtb_A_Appointment_Streetname.Text = "";
+                txtb_A_Appointment_Housenumber.Text = "";
+                txtb_A_Appointment_Zipcode.Text = "";
+                txtb_A_Appointment_Residence.Enabled = true;
+                txtb_A_Appointment_Streetname.Enabled = true;
+                txtb_A_Appointment_Housenumber.Enabled = true;
+                txtb_A_Appointment_Zipcode.Enabled = true;
+            }
+        }
     }
 }

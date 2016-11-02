@@ -25,8 +25,7 @@ namespace Barroc_IT
             lbl_Appointment_Zipcode_Data.Text = dt.Rows[rowNr]["appointment_zipcode"].ToString();
             lbl_Appointment_Residence_Data.Text = dt.Rows[rowNr]["appointment_residence"].ToString();
             lbl_Appointment_Made_Data.Text = dt.Rows[rowNr]["appointment_made"].ToString();
-            lbl_Appointment_Date.Text = dt.Rows[rowNr]["appointment_date"].ToString();
-            lbl_Appointment_Time_Data.Text = dt.Rows[rowNr]["appointment_time"].ToString();
+            lbl_Appointment_Time_Data.Text = dt.Rows[rowNr]["appointment_datetime"].ToString();
             rtb_Summary.Text = dt.Rows[rowNr]["appointment_summary"].ToString();
             lbl_CustomerName.Text = dt.Rows[rowNr]["appointment_customer_id"].ToString();
             lbl_Customer_Company_Name_Data.Text = dt.Rows[rowNr]["company_name"].ToString();
