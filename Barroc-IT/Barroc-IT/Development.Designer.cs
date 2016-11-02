@@ -1627,7 +1627,6 @@ namespace Barroc_IT
             this.MinimumSize = new System.Drawing.Size(730, 488);
             this.Name = "frm_Development";
             this.Text = "Barroc-IT - Software for real - Development";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Development_FormClosing);
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
             this.tcp_Main.ResumeLayout(false);

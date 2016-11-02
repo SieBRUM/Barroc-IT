@@ -97,8 +97,7 @@ namespace Barroc_IT
 
         private void mnitem_Logout_Click(object sender, EventArgs e)
         {
-            frm_Logout lgfrm = new frm_Logout(this);
-            lgfrm.Show();
+            this.Close();
         }
 
         private void btn_Add_Project_Click(object sender, EventArgs e)
@@ -271,11 +270,6 @@ namespace Barroc_IT
             dbh.CloseConnection();
         }
 
-        private void frm_Development_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btn_Project_Show_All_Click(object sender, EventArgs e)
         {
             tcp_Main.SelectedIndex = 6;
@@ -356,6 +350,25 @@ namespace Barroc_IT
         private void button2_Click(object sender, EventArgs e)
         {
             tcp_Main.SelectedIndex = 8;
+        }
+
+        // LOGOUT FUNCTION
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            switch (MessageBox.Show(this, "Are you sure you want to exit? Any unsaved changes will be lost.", "Closing", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    Frm_Login frmlogin = new Frm_Login();
+                    frmlogin.Show();
+                    break;
+            }
         }
     }
 }

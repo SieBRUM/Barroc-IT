@@ -89,12 +89,6 @@
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logout.Designer.cs">
-      <DependentUpon>Logout.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuItems.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectPanel.cs">
@@ -130,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Development.resx">
       <DependentUpon>Development.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logout.resx">
-      <DependentUpon>Logout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectPanel.resx">
       <DependentUpon>ProjectPanel.cs</DependentUpon>
