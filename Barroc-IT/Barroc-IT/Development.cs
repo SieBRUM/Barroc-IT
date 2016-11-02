@@ -225,6 +225,7 @@ namespace Barroc_IT
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
             dbh.CloseConnection();
+            tcp_Main.SelectedIndex = 1;
         }
 
         private void FillEditProjectItems(object sender, EventArgs e)
@@ -350,6 +351,11 @@ namespace Barroc_IT
             else
                 MessageBox.Show("An error occcured while adding an appointment.");
             dbh.CloseConnection();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tcp_Main.SelectedIndex = 8;
         }
     }
 }

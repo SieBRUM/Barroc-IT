@@ -67,7 +67,6 @@ namespace Barroc_IT
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tcp_Help = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -149,6 +148,7 @@ namespace Barroc_IT
             this.label29 = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.checkb_Location = new System.Windows.Forms.CheckBox();
             this.btn_Add_Appointment = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
@@ -165,7 +165,7 @@ namespace Barroc_IT
             this.dtp_A_Appointment = new System.Windows.Forms.DateTimePicker();
             this.cb_Appointment_Select_Customer = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -551,9 +551,9 @@ namespace Barroc_IT
             // tcp_Appointments
             // 
             this.tcp_Appointments.AutoScroll = true;
+            this.tcp_Appointments.Controls.Add(this.button2);
             this.tcp_Appointments.Controls.Add(this.appointmentsPanel);
             this.tcp_Appointments.Controls.Add(this.label6);
-            this.tcp_Appointments.Controls.Add(this.label5);
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
@@ -593,15 +593,6 @@ namespace Barroc_IT
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Appointments";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Appointments";
             // 
             // tcp_Help
             // 
@@ -674,7 +665,6 @@ namespace Barroc_IT
             this.txtb_Hardware.Name = "txtb_Hardware";
             this.txtb_Hardware.Size = new System.Drawing.Size(193, 46);
             this.txtb_Hardware.TabIndex = 11;
-            this.txtb_Hardware.Text = "Laptop i7";
             // 
             // label4
             // 
@@ -705,7 +695,6 @@ namespace Barroc_IT
             this.txtb_Software.Name = "txtb_Software";
             this.txtb_Software.Size = new System.Drawing.Size(193, 46);
             this.txtb_Software.TabIndex = 10;
-            this.txtb_Software.Text = "Skype, Chrome";
             // 
             // cbox_Maintenance_Contract
             // 
@@ -769,7 +758,6 @@ namespace Barroc_IT
             this.txtb_Contact_Person.Name = "txtb_Contact_Person";
             this.txtb_Contact_Person.Size = new System.Drawing.Size(100, 20);
             this.txtb_Contact_Person.TabIndex = 2;
-            this.txtb_Contact_Person.Text = "J. R. van Laars";
             // 
             // label12
             // 
@@ -847,7 +835,6 @@ namespace Barroc_IT
             this.txtb_Operating_System.Name = "txtb_Operating_System";
             this.txtb_Operating_System.Size = new System.Drawing.Size(100, 20);
             this.txtb_Operating_System.TabIndex = 5;
-            this.txtb_Operating_System.Text = "Windows 10";
             // 
             // txtb_Amount_Invoices
             // 
@@ -856,7 +843,7 @@ namespace Barroc_IT
             this.txtb_Amount_Invoices.Name = "txtb_Amount_Invoices";
             this.txtb_Amount_Invoices.Size = new System.Drawing.Size(100, 20);
             this.txtb_Amount_Invoices.TabIndex = 9;
-            this.txtb_Amount_Invoices.Text = "9";
+            this.txtb_Amount_Invoices.Text = "0";
             this.txtb_Amount_Invoices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtb_Amount_Invoices_KeyPress);
             // 
             // txtb_Project_Name
@@ -867,13 +854,14 @@ namespace Barroc_IT
             this.txtb_Project_Name.Name = "txtb_Project_Name";
             this.txtb_Project_Name.Size = new System.Drawing.Size(219, 41);
             this.txtb_Project_Name.TabIndex = 3;
-            this.txtb_Project_Name.Text = "AUTO GENERATED TEST DATA";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 6);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
@@ -913,7 +901,7 @@ namespace Barroc_IT
             // lbl_Edit_Project_P_Id
             // 
             this.lbl_Edit_Project_P_Id.AutoSize = true;
-            this.lbl_Edit_Project_P_Id.Location = new System.Drawing.Point(511, 104);
+            this.lbl_Edit_Project_P_Id.Location = new System.Drawing.Point(518, 104);
             this.lbl_Edit_Project_P_Id.Name = "lbl_Edit_Project_P_Id";
             this.lbl_Edit_Project_P_Id.Size = new System.Drawing.Size(41, 13);
             this.lbl_Edit_Project_P_Id.TabIndex = 52;
@@ -924,7 +912,7 @@ namespace Barroc_IT
             // 
             this.lbl_Edit_Project_C_P.AutoSize = true;
             this.lbl_Edit_Project_C_P.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Edit_Project_C_P.Location = new System.Drawing.Point(310, 136);
+            this.lbl_Edit_Project_C_P.Location = new System.Drawing.Point(317, 136);
             this.lbl_Edit_Project_C_P.Name = "lbl_Edit_Project_C_P";
             this.lbl_Edit_Project_C_P.Size = new System.Drawing.Size(0, 13);
             this.lbl_Edit_Project_C_P.TabIndex = 51;
@@ -933,14 +921,14 @@ namespace Barroc_IT
             // 
             this.lbl_Edit_Project_C_ID.AutoSize = true;
             this.lbl_Edit_Project_C_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Edit_Project_C_ID.Location = new System.Drawing.Point(18, 136);
+            this.lbl_Edit_Project_C_ID.Location = new System.Drawing.Point(25, 136);
             this.lbl_Edit_Project_C_ID.Name = "lbl_Edit_Project_C_ID";
             this.lbl_Edit_Project_C_ID.Size = new System.Drawing.Size(0, 13);
             this.lbl_Edit_Project_C_ID.TabIndex = 50;
             // 
             // txtb_Edit_Project_Hardware
             // 
-            this.txtb_Edit_Project_Hardware.Location = new System.Drawing.Point(310, 337);
+            this.txtb_Edit_Project_Hardware.Location = new System.Drawing.Point(317, 337);
             this.txtb_Edit_Project_Hardware.MaxLength = 255;
             this.txtb_Edit_Project_Hardware.Multiline = true;
             this.txtb_Edit_Project_Hardware.Name = "txtb_Edit_Project_Hardware";
@@ -950,7 +938,7 @@ namespace Barroc_IT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 321);
+            this.label1.Location = new System.Drawing.Point(314, 321);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 49;
@@ -958,7 +946,7 @@ namespace Barroc_IT
             // 
             // txtb_Edit_Project_Software
             // 
-            this.txtb_Edit_Project_Software.Location = new System.Drawing.Point(17, 337);
+            this.txtb_Edit_Project_Software.Location = new System.Drawing.Point(24, 337);
             this.txtb_Edit_Project_Software.MaxLength = 255;
             this.txtb_Edit_Project_Software.Multiline = true;
             this.txtb_Edit_Project_Software.Name = "txtb_Edit_Project_Software";
@@ -972,21 +960,21 @@ namespace Barroc_IT
             this.cb_Edit_Project_M_C.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this.cb_Edit_Project_M_C.Location = new System.Drawing.Point(310, 237);
+            this.cb_Edit_Project_M_C.Location = new System.Drawing.Point(317, 237);
             this.cb_Edit_Project_M_C.Name = "cb_Edit_Project_M_C";
             this.cb_Edit_Project_M_C.Size = new System.Drawing.Size(97, 21);
             this.cb_Edit_Project_M_C.TabIndex = 33;
             // 
             // dtp_Edit_Project_Deadline
             // 
-            this.dtp_Edit_Project_Deadline.Location = new System.Drawing.Point(18, 287);
+            this.dtp_Edit_Project_Deadline.Location = new System.Drawing.Point(25, 287);
             this.dtp_Edit_Project_Deadline.Name = "dtp_Edit_Project_Deadline";
             this.dtp_Edit_Project_Deadline.Size = new System.Drawing.Size(171, 20);
             this.dtp_Edit_Project_Deadline.TabIndex = 34;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(478, 395);
+            this.button1.Location = new System.Drawing.Point(485, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 38;
@@ -997,7 +985,7 @@ namespace Barroc_IT
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 271);
+            this.label16.Location = new System.Drawing.Point(22, 271);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(73, 13);
             this.label16.TabIndex = 47;
@@ -1006,7 +994,7 @@ namespace Barroc_IT
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(307, 221);
+            this.label17.Location = new System.Drawing.Point(314, 221);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(112, 13);
             this.label17.TabIndex = 46;
@@ -1015,7 +1003,7 @@ namespace Barroc_IT
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(307, 119);
+            this.label18.Location = new System.Drawing.Point(314, 119);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(80, 13);
             this.label18.TabIndex = 45;
@@ -1024,7 +1012,7 @@ namespace Barroc_IT
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(307, 271);
+            this.label19.Location = new System.Drawing.Point(314, 271);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(97, 13);
             this.label19.TabIndex = 44;
@@ -1033,7 +1021,7 @@ namespace Barroc_IT
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 321);
+            this.label20.Location = new System.Drawing.Point(22, 321);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(49, 13);
             this.label20.TabIndex = 43;
@@ -1042,7 +1030,7 @@ namespace Barroc_IT
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 221);
+            this.label21.Location = new System.Drawing.Point(22, 221);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(90, 13);
             this.label21.TabIndex = 42;
@@ -1058,7 +1046,7 @@ namespace Barroc_IT
             "Halted",
             "Stopped",
             "Done"});
-            this.cb_Edit_Project_P_Status.Location = new System.Drawing.Point(310, 180);
+            this.cb_Edit_Project_P_Status.Location = new System.Drawing.Point(317, 180);
             this.cb_Edit_Project_P_Status.Name = "cb_Edit_Project_P_Status";
             this.cb_Edit_Project_P_Status.Size = new System.Drawing.Size(97, 21);
             this.cb_Edit_Project_P_Status.TabIndex = 31;
@@ -1066,7 +1054,7 @@ namespace Barroc_IT
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(307, 164);
+            this.label22.Location = new System.Drawing.Point(314, 164);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(73, 13);
             this.label22.TabIndex = 41;
@@ -1075,7 +1063,7 @@ namespace Barroc_IT
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(15, 164);
+            this.label23.Location = new System.Drawing.Point(22, 164);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(71, 13);
             this.label23.TabIndex = 40;
@@ -1084,7 +1072,7 @@ namespace Barroc_IT
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(14, 119);
+            this.label24.Location = new System.Drawing.Point(21, 119);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(63, 13);
             this.label24.TabIndex = 39;
@@ -1092,14 +1080,14 @@ namespace Barroc_IT
             // 
             // txtb_Edit_Project_OS
             // 
-            this.txtb_Edit_Project_OS.Location = new System.Drawing.Point(18, 237);
+            this.txtb_Edit_Project_OS.Location = new System.Drawing.Point(25, 237);
             this.txtb_Edit_Project_OS.Name = "txtb_Edit_Project_OS";
             this.txtb_Edit_Project_OS.Size = new System.Drawing.Size(100, 20);
             this.txtb_Edit_Project_OS.TabIndex = 32;
             // 
             // txtb_Edit_Project_AOI
             // 
-            this.txtb_Edit_Project_AOI.Location = new System.Drawing.Point(310, 287);
+            this.txtb_Edit_Project_AOI.Location = new System.Drawing.Point(317, 287);
             this.txtb_Edit_Project_AOI.MaxLength = 3;
             this.txtb_Edit_Project_AOI.Name = "txtb_Edit_Project_AOI";
             this.txtb_Edit_Project_AOI.Size = new System.Drawing.Size(100, 20);
@@ -1107,7 +1095,7 @@ namespace Barroc_IT
             // 
             // txtb_Edit_Project_P_Name
             // 
-            this.txtb_Edit_Project_P_Name.Location = new System.Drawing.Point(18, 177);
+            this.txtb_Edit_Project_P_Name.Location = new System.Drawing.Point(25, 177);
             this.txtb_Edit_Project_P_Name.MaxLength = 255;
             this.txtb_Edit_Project_P_Name.Multiline = true;
             this.txtb_Edit_Project_P_Name.Name = "txtb_Edit_Project_P_Name";
@@ -1116,9 +1104,11 @@ namespace Barroc_IT
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(17, 6);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(26, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
             // 
@@ -1156,9 +1146,11 @@ namespace Barroc_IT
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(26, 6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 49;
             this.pictureBox3.TabStop = false;
             // 
@@ -1459,6 +1451,16 @@ namespace Barroc_IT
             this.tabPage1.Text = "Add Appointment";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 49;
+            this.pictureBox4.TabStop = false;
+            // 
             // checkb_Location
             // 
             this.checkb_Location.AutoSize = true;
@@ -1602,13 +1604,15 @@ namespace Barroc_IT
             this.label36.TabIndex = 15;
             this.label36.Text = "Customer Id";
             // 
-            // pictureBox4
+            // button2
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(26, 6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(511, 78);
-            this.pictureBox4.TabIndex = 49;
-            this.pictureBox4.TabStop = false;
+            this.button2.Location = new System.Drawing.Point(3, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frm_Development
             // 
@@ -1618,7 +1622,6 @@ namespace Barroc_IT
             this.Controls.Add(this.mstrp_Menu);
             this.Controls.Add(this.tcp_Main);
             this.DoubleBuffered = true;
-            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(730, 488);
             this.MinimumSize = new System.Drawing.Size(730, 488);
@@ -1691,7 +1694,6 @@ namespace Barroc_IT
         private TabPage tcp_Appointments;
         private TabPage tcp_Help;
         private Label label3;
-        private Label label5;
         private Label label6;
         private Label label7;
         private Label label8;
@@ -1795,6 +1797,7 @@ namespace Barroc_IT
         private Button btn_Add_Appointment;
         private CheckBox checkb_Location;
         private PictureBox pictureBox4;
+        private Button button2;
 
 
 

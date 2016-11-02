@@ -520,7 +520,7 @@ namespace Barroc_IT
                 cmd.Parameters.AddWithValue("appointment_housenumber", a_Housenumber);
                 cmd.Parameters.AddWithValue("appointment_zipcode", a_Zipcode);
                 cmd.Parameters.AddWithValue("appointment_made", DateTime.Now);
-                cmd.Parameters.AddWithValue("appointment_summary", a_Summary);
+                cmd.Parameters.AddWithValue("appointment_summary", a_Summary);  
                 try
                 {
                     done = (Int64)cmd.ExecuteNonQuery() > 0;
