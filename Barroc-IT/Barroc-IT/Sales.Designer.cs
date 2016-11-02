@@ -88,7 +88,7 @@
             this.lblCustomerFax = new System.Windows.Forms.Label();
             this.txtbCustomerMail = new System.Windows.Forms.TextBox();
             this.lblCustomerMail = new System.Windows.Forms.Label();
-            this.txtCustomerPhonenumber2 = new System.Windows.Forms.TextBox();
+            this.txtbCustomerPhonenumber2 = new System.Windows.Forms.TextBox();
             this.lblCustomerPhonenumber2 = new System.Windows.Forms.Label();
             this.txtbCustomerPhonenumber1 = new System.Windows.Forms.TextBox();
             this.lblCustomerPhonenumber1 = new System.Windows.Forms.Label();
@@ -609,7 +609,7 @@
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerFax);
             this.tcp_EditCustomer.Controls.Add(this.txtbCustomerMail);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerMail);
-            this.tcp_EditCustomer.Controls.Add(this.txtCustomerPhonenumber2);
+            this.tcp_EditCustomer.Controls.Add(this.txtbCustomerPhonenumber2);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerPhonenumber2);
             this.tcp_EditCustomer.Controls.Add(this.txtbCustomerPhonenumber1);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerPhonenumber1);
@@ -753,13 +753,13 @@
             this.lblCustomerMail.TabIndex = 83;
             this.lblCustomerMail.Text = "Email *";
             // 
-            // txtCustomerPhonenumber2
+            // txtbCustomerPhonenumber2
             // 
-            this.txtCustomerPhonenumber2.Location = new System.Drawing.Point(190, 408);
-            this.txtCustomerPhonenumber2.MaxLength = 10;
-            this.txtCustomerPhonenumber2.Name = "txtCustomerPhonenumber2";
-            this.txtCustomerPhonenumber2.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerPhonenumber2.TabIndex = 15;
+            this.txtbCustomerPhonenumber2.Location = new System.Drawing.Point(190, 408);
+            this.txtbCustomerPhonenumber2.MaxLength = 10;
+            this.txtbCustomerPhonenumber2.Name = "txtbCustomerPhonenumber2";
+            this.txtbCustomerPhonenumber2.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerPhonenumber2.TabIndex = 15;
             // 
             // lblCustomerPhonenumber2
             // 
@@ -1365,7 +1365,7 @@
         private System.Windows.Forms.Label lblCustomerFax;
         private System.Windows.Forms.TextBox txtbCustomerMail;
         private System.Windows.Forms.Label lblCustomerMail;
-        private System.Windows.Forms.TextBox txtCustomerPhonenumber2;
+        private System.Windows.Forms.TextBox txtbCustomerPhonenumber2;
         private System.Windows.Forms.Label lblCustomerPhonenumber2;
         private System.Windows.Forms.TextBox txtbCustomerPhonenumber1;
         private System.Windows.Forms.Label lblCustomerPhonenumber1;

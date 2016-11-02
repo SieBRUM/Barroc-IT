@@ -148,7 +148,19 @@ namespace Barroc_IT
             Button button = (Button)sender;
             DataTable dt = dbh.GetCustomer(button.AccessibleName);
             txtbCustomerMail.Text = dt.Rows[0]["email"].ToString();
-            
+            txtbCustomerCompanyName.Text = dt.Rows[0]["company_name"].ToString();
+            txtbCustomerFax.Text = dt.Rows[0]["fax"].ToString();
+            txtbCustomerStreetName1.Text = dt.Rows[0]["street_name"].ToString();
+            txtbCustomerHousenumber1.Text = dt.Rows[0]["house_number"].ToString();
+            txtbCustomerResidence1.Text = dt.Rows[0]["residence"].ToString();
+            txtbCustomerZipcode1.Text = dt.Rows[0]["zip_code"].ToString();
+            txtbCustomerPhonenumber1.Text = dt.Rows[0]["phone_number"].ToString();
+            txtbCustomerStreetName2.Text = dt.Rows[0]["street_name_2"].ToString();
+            txtbCustomerHousenumber2.Text = dt.Rows[0]["house_number_2"].ToString();
+            txtbCustomerResidence2.Text = dt.Rows[0]["residence_2"].ToString();
+            txtbCustomerZipcode2.Text = dt.Rows[0]["zip_code_2"].ToString();
+            txtbCustomerPhonenumber2.Text = dt.Rows[0]["phone_number_2"].ToString();
+
             tcp_Main.SelectedIndex = 3;
         }
 
