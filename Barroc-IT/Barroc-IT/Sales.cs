@@ -191,9 +191,9 @@ namespace Barroc_IT
         private void EditCustomer(object sender, EventArgs e)
         {
             int result;
-            if (!int.TryParse(txtbCustomerFax.Text, out result))
+            if (!int.TryParse(txtbCustomerFax.Text, out result) && !int.TryParse(txtbCustomerPhonenumber1.Text,out result))
             {
-                MessageBox.Show("fax is not a number");
+                MessageBox.Show("fax of phonenumber are not numbers");
             }
             else
             {
