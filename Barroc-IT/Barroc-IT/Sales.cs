@@ -20,7 +20,7 @@ namespace Barroc_IT
             InitializeComponent();
             dbh = new DatabaseHandler();
             ShowCustomers();
-            HideFilters(true, false, false);
+            HideFilters(true, false, false, false);
         }
 
         private void MenuHandler(object sender, EventArgs e)
@@ -32,15 +32,19 @@ namespace Barroc_IT
             {
                 case "mnitem_Overview":
                     tcp_Main.SelectedIndex = 0;
-                    HideFilters(true, false, false);
-                    break;
-                case "mnitem_Projects":
-                    tcp_Main.SelectedIndex = 1;
-                    HideFilters(false, true, false);
+                    HideFilters(true, false, false, false);
                     break;
                 case "mnitem_Appointments":
+                    tcp_Main.SelectedIndex = 1;
+                    HideFilters(false, true, false, false);
+                    break;
+                case "mnitem_Invoices":
                     tcp_Main.SelectedIndex = 2;
-                    HideFilters(false, false, true);
+                    HideFilters(false, false, true,false);
+                    break;
+                case "mnitem_Customers":
+                    tcp_Main.SelectedIndex = 3;
+                    HideFilters(false, false, false, true);
                     break;
                 default:
                     tcp_Main.SelectedIndex = 0;
@@ -48,7 +52,7 @@ namespace Barroc_IT
             }
         }
 
-        private void HideFilters(bool overview, bool projects, bool appointments)
+        private void HideFilters(bool overview, bool Appointments, bool Invoices, bool Customers)
         {
             Font bold = new Font(mnitem_Overview.Font, FontStyle.Bold);
             Font regular = new Font(mnitem_Overview.Font, FontStyle.Regular);
@@ -57,28 +61,39 @@ namespace Barroc_IT
                 mnitem_Overview.Font = bold;
             else
                 mnitem_Overview.Font = regular;
-            if (projects)
-                mnitem_Projects.Font = bold;
-            else
-                mnitem_Projects.Font = regular;
-            if (appointments)
+            if (Appointments)
                 mnitem_Appointments.Font = bold;
             else
                 mnitem_Appointments.Font = regular;
+            if (Invoices)
+                mnitem_Invoices.Font = bold;
+            else
+                mnitem_Invoices.Font = regular;
+            if (Customers)
+                mnitem_Customers.Font = bold;
+            else
+                mnitem_Customers.Font = regular;
 
             mnfltr_Overview_Department.Visible = overview;
             mnfltr_Overview_Type.Visible = overview;
             mnfltr_Overview_Date.Visible = overview;
 
-            mnfltr_Projects_CuName.Visible = projects;
-            mnfltr_Projects_ID.Visible = projects;
-            mnfltr_Projects_Name.Visible = projects;
+            mnfltr_Apointments_Residence.Visible = Appointments;
+            mnfltr_Appontments_CoName.Visible = Appointments;
+            mnfltr_Appointments_CuName.Visible = Appointments;
+            mnfltr_Appointments_date.Visible = Appointments;
+            mnfltr_Appointments_Summary.Visible = Appointments;
 
-            mnfltr_Appointments_CuName.Visible = appointments;
-            mnfltr_Appointments_CoName.Visible = appointments;
-            mnfltr_Appointments_Residence.Visible = appointments;
-            mnfltr_Appointments_Summary.Visible = appointments;
-            mnfltr_Appointments_Date.Visible = appointments;
+            mnfltr_Invoices_CuName.Visible = Invoices;
+            mnfltr_Invoices_CoName.Visible = Invoices;
+            mnfltr_Invoices_Paid.Visible = Invoices;
+            mnfltr_Invoices_Number.Visible = Invoices;
+
+            mnfltr_Customers_CuName.Visible = Customers;
+            mnfltr_Customers_CoName.Visible = Customers;
+            mnfltr_Customers_Residence.Visible = Customers;
+            mnfltr_Customers_UnpaidInvoice.Visible = Customers;
+
         }
 
         //private void mnitem_Logout_Click(object sender, EventArgs e)
