@@ -451,6 +451,47 @@ namespace Barroc_IT
             return dt;
         }
 
+        public DataTable FilterAppointments(string filter, string colName)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                    
+                    FROM
+                        tbl_appointments
+
+                    INNER JOIN
+                        tbl_customers
+
+                    ON
+                        tbl_appointments.customer_id = tbl_customers.customer_id
+
+                    Where
+                        " + colName + " LIKE @filter ", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_datetime", typeof(string));
+                dt.Columns.Add("appointment_address", typeof(string));
+                dt.Columns.Add("appointment_housenumber", typeof(string));
+                dt.Columns.Add("appointment_zipcode", typeof(string));
+                dt.Columns.Add("appointment_made", typeof(string));
+                dt.Columns.Add("appointment_summary", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("customer_residence", typeof(string));
+                dt.Columns.Add("customer_address", typeof(string));
+                dt.Columns.Add("customer_zip_code", typeof(string));
+                dt.Columns.Add("customer_phone_number", typeof(string));
+                dt.Columns.Add("customer_email", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
         public DataTable GetAppointments()
         {
             DataTable dt = new DataTable();

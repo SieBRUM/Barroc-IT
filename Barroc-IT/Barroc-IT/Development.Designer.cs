@@ -348,6 +348,7 @@ namespace Barroc_IT
             // 
             this.tstxtb_Projects_CuName.Name = "tstxtb_Projects_CuName";
             this.tstxtb_Projects_CuName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Projects_CuName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchProjectOnC_Name);
             // 
             // mnitem_Appointments
             // 
