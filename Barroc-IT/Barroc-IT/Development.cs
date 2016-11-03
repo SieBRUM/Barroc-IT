@@ -198,8 +198,29 @@ namespace Barroc_IT
                 appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 appointmentInfoPanel[i].Dock = DockStyle.Top;
                 appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
             }
             dbh.CloseConnection();
+        }
+
+        private void FillEditAppointmentItems(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Button button = (Button)sender;
+            //MessageBox.Show(button.AccessibleName);
+            DataTable dt = dbh.GetAppointment(button.AccessibleName);
+            //cb_Edit_A_C_ID.SelectedValue = dt.Rows[0]["appointment_customer_id"].ToString();
+            txtb_E_Appointment_Residence.Text = dt.Rows[0]["appointment_residence"].ToString();
+            txtb_E_Appointment_Streetname.Text = dt.Rows[0]["appointment_streetname"].ToString();
+            txtb_E_Appointment_Housenumber.Text = dt.Rows[0]["appointment_housenumber"].ToString();
+            txtb_E_Appointment_Zip_Code.Text = dt.Rows[0]["appointment_zipcode"].ToString();
+            dtp_E_Appointment_Date.Value = Convert.ToDateTime(dt.Rows[0]["appointment_datetime"]);
+            rtb_E_Appointment_Summary.Text = dt.Rows[0]["appointment_summary"].ToString();
+            lbl_E_Appointment_Customer.Text = dt.Rows[0]["customer_data"].ToString();
+            dbh.CloseConnection();
+            tcp_Main.SelectedIndex = 9;
+
         }
 
         private void ShowProjects()

@@ -497,7 +497,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_id,appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
                     
                     FROM
                         tbl_appointments
@@ -511,10 +511,12 @@ namespace Barroc_IT
                     ORDER BY
                         appointment_customer_id DESC", this.GetConnection()))
             {
+                
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
                 dt.Columns.Add("appointment_customer_id", typeof(string));
                 dt.Columns.Add("appointment_datetime", typeof(string));
+                dt.Columns.Add("appointment_id", typeof(string));
                 dt.Columns.Add("appointment_address", typeof(string));
                 dt.Columns.Add("appointment_housenumber", typeof(string));
                 dt.Columns.Add("appointment_zipcode", typeof(string));
@@ -526,6 +528,44 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_zip_code", typeof(string));
                 dt.Columns.Add("customer_phone_number", typeof(string));
                 dt.Columns.Add("customer_email", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable GetAppointment(string a_Id)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_id,appointment_residence, appointment_zipcode, appointment_summary, appointment_streetname, appointment_housenumber, CONCAT (tbl_appointments.customer_id, ':',tbl_customers.first_name, ' ',tbl_customers.last_name, ',',tbl_customers.zip_code) AS customer_data
+                     
+                    FROM
+                        tbl_appointments
+
+                    INNER JOIN
+                        tbl_customers
+
+                    ON
+                        tbl_appointments.customer_id = tbl_customers.customer_id
+
+                    WHERE
+                        appointment_id = @appointment_id
+
+                    ORDER BY
+                        appointment_customer_id DESC", this.GetConnection()))
+            {
+                //                         customer_id, CONCAT (customer_id,':', first_name, ' ', last_name, ',', zip_code) AS full_name 
+                cmd.Parameters.AddWithValue("appointment_id", a_Id);
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_datetime", typeof(string));
+                dt.Columns.Add("appointment_id", typeof(string));
+                dt.Columns.Add("appointment_housenumber", typeof(string));
+                dt.Columns.Add("appointment_zipcode", typeof(string));
+                dt.Columns.Add("appointment_summary", typeof(string));
+                dt.Columns.Add("customer_data", typeof(string));
                 dt.Load(reader);
             }
             return dt;

@@ -59,6 +59,7 @@
             this.lbl_Appointment_Zipcode_Data = new System.Windows.Forms.Label();
             this.lbl_Appointment_Zipcode = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Edit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -175,7 +176,7 @@
             this.rtb_Summary.Location = new System.Drawing.Point(15, 149);
             this.rtb_Summary.Name = "rtb_Summary";
             this.rtb_Summary.ReadOnly = true;
-            this.rtb_Summary.Size = new System.Drawing.Size(508, 69);
+            this.rtb_Summary.Size = new System.Drawing.Size(370, 69);
             this.rtb_Summary.TabIndex = 9;
             this.rtb_Summary.Text = "";
             // 
@@ -266,6 +267,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.Controls.Add(this.btn_Edit);
             this.panel2.Controls.Add(this.lbl_Appointment_Made_Data);
             this.panel2.Controls.Add(this.lbl_Appointment_Made);
             this.panel2.Controls.Add(this.lbl_Appointment_Residence_Data);
@@ -388,6 +390,15 @@
             this.panel1.Click += new System.EventHandler(this.OpenMoreInfo);
             this.panel1.DoubleClick += new System.EventHandler(this.OpenMoreInfo);
             // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Location = new System.Drawing.Point(410, 209);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(122, 23);
+            this.btn_Edit.TabIndex = 30;
+            this.btn_Edit.Text = "Edit Appointment";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            // 
             // AppointmentPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +451,7 @@
         private System.Windows.Forms.Label lbl_Appointment_Address;
         public System.Windows.Forms.Label lbl_Appointment_Zipcode_Data;
         private System.Windows.Forms.Label lbl_Appointment_Zipcode;
+        public System.Windows.Forms.Button btn_Edit;
 
     }
 }
