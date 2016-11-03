@@ -81,20 +81,20 @@ namespace Barroc_IT
             mnfltr_Appointments_Date.Visible = appointments;
         }
 
-        private void mnitem_Logout_Click(object sender, EventArgs e)
-        {
-            frm_Logout lgfrm = new frm_Logout(this);
-            lgfrm.Show();
-        }
+        //private void mnitem_Logout_Click(object sender, EventArgs e)
+        //{
+        //    frm_Logout lgfrm = new frm_Logout(this);
+        //    lgfrm.Show();
+        //}
 
-        private void frm_Sales_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void frm_Sales_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    Application.Exit();
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             string nextContact = DateHandler.GetDate(dtp_customer_nextcontact);
             string lastContact = DateHandler.GetDate(dtp_customer_lastcontact);
 
@@ -139,10 +139,10 @@ namespace Barroc_IT
                 customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                 customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
             }
-            dbh.CloseConnection();            
+            dbh.CloseConnection();
         }
 
-        private void FillEditCustomer (object sender, EventArgs e)
+        private void FillEditCustomer(object sender, EventArgs e)
         {
             dbh.OpenConnection();
             Button button = (Button)sender;
@@ -166,29 +166,34 @@ namespace Barroc_IT
             txtbCustomerNextAction.Text = dt.Rows[0]["next_action"].ToString();
             lblCustomerNameCustomer.Text = dt.Rows[0]["customer_name"].ToString();
             lblCustomerId.Text = dt.Rows[0]["customer_id"].ToString();
-            //lblCustomer_FirstName.Text = dt.Rows[0]["first_name"].ToString();
-            //lblCustomer_LastName.Text = dt.Rows[0]["last_name"].ToString();
+            lblCustomer_FirstName.Text = dt.Rows[0]["first_name"].ToString();
+            lblCustomer_LastName.Text = dt.Rows[0]["last_name"].ToString();
 
             tcp_Main.SelectedIndex = 3;
             dbh.CloseConnection();
         }
 
-        //private void EditCustomer(object sender, EventArgs e)
-        //{
-        //    int result;
-        //    if (!int.TryParse(txtbCustomerFax.Text, out result))
-        //    {
-        //        MessageBox.Show("fax is not a number");
-        //    }
-        //    else
-        //    {
-        //        dbh.OpenConnection();
-        //        if (dbh.EditCustomer(lblCustomerId.Text, ))
-        //        {
-        //            MessageBox.Show("Succesfully added customer!");
-        //        }
-        //    }
-        //}
+        private void EditCustomer(object sender, EventArgs e)
+        {
+            int result;
+            if (!int.TryParse(txtbCustomerFax.Text, out result))
+            {
+                MessageBox.Show("fax is not a number");
+            }
+            else
+            {
+                dbh.OpenConnection();
+                if (dbh.EditCustomer(lblCustomerId.Text, lblCustomer_FirstName.Text, lblCustomer_LastName.Text, txtbCustomerCompanyName.Text, txtbCustomerMail.Text, txtbCustomerFax.Text, txtbCustomerStreetName1.Text, txtbCustomerHousenumber1.Text, txtbCustomerResidence1.Text, txtbCustomerZipcode1.Text, txtbCustomerPhonenumber1.Text))
+                {
+                    MessageBox.Show("Succesfully added customer!");
+                }
+                else
+                {
+                    MessageBox.Show("An error occcured while adding a project.");
+                }
+                dbh.CloseConnection();
+            }
+        }
 
         private void btn_Project_Show_All_Click(object sender, EventArgs e)
         {
@@ -200,30 +205,30 @@ namespace Barroc_IT
             showallCustomer = true;
             panel1.Controls.Clear();
             ShowCustomers();
-            
+
         }
 
-        private struct Customer
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            private string first_name;
-            private string last_name;
-            private string company_name;
-            private string email;
-            private string fax;
-            private string streetname_1;
-            private string housenumber_1;
-            private string residence_1;
-            private string zipcode_1;
-            private string phonenumber_1;
-            private string streetname_2;
-            private string housenumber_2;
-            private string residence_2;
-            private string zipcode_2;
-            private string phonenumber_2;
-            private string lastContact;
-            private string lastAction;
-            private string nextContact;
-            private string nextAction;
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            switch (MessageBox.Show(this, "Are you sure you want to exit? Any unsaved changes will be lost.", "Closing", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    Frm_Login frmlogin = new Frm_Login();
+                    frmlogin.Show();
+                    break;
+            }
+        }
+
+        private void mnitem_Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

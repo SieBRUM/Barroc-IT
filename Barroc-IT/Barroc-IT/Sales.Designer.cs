@@ -75,6 +75,9 @@
             this.txtb_customer_firstname = new System.Windows.Forms.TextBox();
             this.lbl_Customer_firstname = new System.Windows.Forms.Label();
             this.tcp_EditCustomer = new System.Windows.Forms.TabPage();
+            this.lblCustomer_LastName = new System.Windows.Forms.Label();
+            this.lblCustomer_FirstName = new System.Windows.Forms.Label();
+            this.lblCustomerId = new System.Windows.Forms.Label();
             this.lblCustomerNameCustomer = new System.Windows.Forms.Label();
             this.dtpCustomerLastContact = new System.Windows.Forms.DateTimePicker();
             this.dtpCustomerNextContact = new System.Windows.Forms.DateTimePicker();
@@ -138,9 +141,6 @@
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblCustomerId = new System.Windows.Forms.Label();
-            this.lblCustomer_FirstName = new System.Windows.Forms.Label();
-            this.lblCustomer_LastName = new System.Windows.Forms.Label();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -645,6 +645,36 @@
             this.tcp_EditCustomer.Text = "editCustomer";
             this.tcp_EditCustomer.UseVisualStyleBackColor = true;
             // 
+            // lblCustomer_LastName
+            // 
+            this.lblCustomer_LastName.AutoSize = true;
+            this.lblCustomer_LastName.Location = new System.Drawing.Point(496, 36);
+            this.lblCustomer_LastName.Name = "lblCustomer_LastName";
+            this.lblCustomer_LastName.Size = new System.Drawing.Size(52, 13);
+            this.lblCustomer_LastName.TabIndex = 92;
+            this.lblCustomer_LastName.Text = "last name";
+            this.lblCustomer_LastName.Visible = false;
+            // 
+            // lblCustomer_FirstName
+            // 
+            this.lblCustomer_FirstName.AutoSize = true;
+            this.lblCustomer_FirstName.Location = new System.Drawing.Point(496, 23);
+            this.lblCustomer_FirstName.Name = "lblCustomer_FirstName";
+            this.lblCustomer_FirstName.Size = new System.Drawing.Size(52, 13);
+            this.lblCustomer_FirstName.TabIndex = 91;
+            this.lblCustomer_FirstName.Text = "first name";
+            this.lblCustomer_FirstName.Visible = false;
+            // 
+            // lblCustomerId
+            // 
+            this.lblCustomerId.AutoSize = true;
+            this.lblCustomerId.Location = new System.Drawing.Point(496, 10);
+            this.lblCustomerId.Name = "lblCustomerId";
+            this.lblCustomerId.Size = new System.Drawing.Size(64, 13);
+            this.lblCustomerId.TabIndex = 90;
+            this.lblCustomerId.Text = "customer_id";
+            this.lblCustomerId.Visible = false;
+            // 
             // lblCustomerNameCustomer
             // 
             this.lblCustomerNameCustomer.AutoSize = true;
@@ -679,13 +709,14 @@
             this.button2.TabIndex = 20;
             this.button2.Text = "ENTER";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.EditCustomer);
             // 
             // txtbCustomerNextAction
             // 
             this.txtbCustomerNextAction.Location = new System.Drawing.Point(385, 353);
             this.txtbCustomerNextAction.MaxLength = 30;
             this.txtbCustomerNextAction.Name = "txtbCustomerNextAction";
-            this.txtbCustomerNextAction.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerNextAction.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerNextAction.TabIndex = 19;
             // 
             // lblCustomerNextAction
@@ -711,7 +742,7 @@
             this.txtbCustomerLastAction.Location = new System.Drawing.Point(385, 237);
             this.txtbCustomerLastAction.MaxLength = 30;
             this.txtbCustomerLastAction.Name = "txtbCustomerLastAction";
-            this.txtbCustomerLastAction.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerLastAction.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerLastAction.TabIndex = 17;
             // 
             // lblCustomerLastAction
@@ -737,7 +768,7 @@
             this.txtbCustomerFax.Location = new System.Drawing.Point(190, 76);
             this.txtbCustomerFax.MaxLength = 10;
             this.txtbCustomerFax.Name = "txtbCustomerFax";
-            this.txtbCustomerFax.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerFax.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerFax.TabIndex = 5;
             // 
             // lblCustomerFax
@@ -754,7 +785,7 @@
             this.txtbCustomerMail.Location = new System.Drawing.Point(11, 76);
             this.txtbCustomerMail.MaxLength = 255;
             this.txtbCustomerMail.Name = "txtbCustomerMail";
-            this.txtbCustomerMail.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerMail.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerMail.TabIndex = 4;
             // 
             // lblCustomerMail
@@ -771,7 +802,7 @@
             this.txtbCustomerPhonenumber2.Location = new System.Drawing.Point(190, 408);
             this.txtbCustomerPhonenumber2.MaxLength = 10;
             this.txtbCustomerPhonenumber2.Name = "txtbCustomerPhonenumber2";
-            this.txtbCustomerPhonenumber2.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerPhonenumber2.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerPhonenumber2.TabIndex = 15;
             // 
             // lblCustomerPhonenumber2
@@ -788,7 +819,7 @@
             this.txtbCustomerPhonenumber1.Location = new System.Drawing.Point(11, 408);
             this.txtbCustomerPhonenumber1.MaxLength = 10;
             this.txtbCustomerPhonenumber1.Name = "txtbCustomerPhonenumber1";
-            this.txtbCustomerPhonenumber1.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerPhonenumber1.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerPhonenumber1.TabIndex = 10;
             // 
             // lblCustomerPhonenumber1
@@ -805,7 +836,7 @@
             this.txtbCustomerZipcode2.Location = new System.Drawing.Point(190, 353);
             this.txtbCustomerZipcode2.MaxLength = 6;
             this.txtbCustomerZipcode2.Name = "txtbCustomerZipcode2";
-            this.txtbCustomerZipcode2.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerZipcode2.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerZipcode2.TabIndex = 14;
             // 
             // lblCustomerZipcode2
@@ -822,7 +853,7 @@
             this.txtbCustomerResidence2.Location = new System.Drawing.Point(190, 296);
             this.txtbCustomerResidence2.MaxLength = 30;
             this.txtbCustomerResidence2.Name = "txtbCustomerResidence2";
-            this.txtbCustomerResidence2.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerResidence2.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerResidence2.TabIndex = 13;
             // 
             // lblCustomerResidence2
@@ -839,7 +870,7 @@
             this.txtbCustomerHousenumber2.Location = new System.Drawing.Point(190, 237);
             this.txtbCustomerHousenumber2.MaxLength = 3;
             this.txtbCustomerHousenumber2.Name = "txtbCustomerHousenumber2";
-            this.txtbCustomerHousenumber2.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerHousenumber2.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerHousenumber2.TabIndex = 12;
             // 
             // lblCustomerHousenumber2
@@ -856,7 +887,7 @@
             this.txtbCustomerStreetName2.Location = new System.Drawing.Point(190, 180);
             this.txtbCustomerStreetName2.MaxLength = 20;
             this.txtbCustomerStreetName2.Name = "txtbCustomerStreetName2";
-            this.txtbCustomerStreetName2.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerStreetName2.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerStreetName2.TabIndex = 11;
             // 
             // lblCustomerStreetName2
@@ -873,7 +904,7 @@
             this.txtbCustomerZipcode1.Location = new System.Drawing.Point(11, 353);
             this.txtbCustomerZipcode1.MaxLength = 6;
             this.txtbCustomerZipcode1.Name = "txtbCustomerZipcode1";
-            this.txtbCustomerZipcode1.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerZipcode1.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerZipcode1.TabIndex = 9;
             // 
             // lblCustomerZipcode1
@@ -890,7 +921,7 @@
             this.txtbCustomerResidence1.Location = new System.Drawing.Point(11, 296);
             this.txtbCustomerResidence1.MaxLength = 30;
             this.txtbCustomerResidence1.Name = "txtbCustomerResidence1";
-            this.txtbCustomerResidence1.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerResidence1.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerResidence1.TabIndex = 8;
             // 
             // lblCustomerResidence1
@@ -907,7 +938,7 @@
             this.txtbCustomerHousenumber1.Location = new System.Drawing.Point(11, 237);
             this.txtbCustomerHousenumber1.MaxLength = 3;
             this.txtbCustomerHousenumber1.Name = "txtbCustomerHousenumber1";
-            this.txtbCustomerHousenumber1.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerHousenumber1.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerHousenumber1.TabIndex = 7;
             // 
             // lblCustomerHousenumber1
@@ -924,7 +955,7 @@
             this.txtbCustomerStreetName1.Location = new System.Drawing.Point(11, 180);
             this.txtbCustomerStreetName1.MaxLength = 20;
             this.txtbCustomerStreetName1.Name = "txtbCustomerStreetName1";
-            this.txtbCustomerStreetName1.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerStreetName1.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerStreetName1.TabIndex = 6;
             // 
             // lblCustomerStreetName1
@@ -941,7 +972,7 @@
             this.txtbCustomerCompanyName.Location = new System.Drawing.Point(190, 29);
             this.txtbCustomerCompanyName.MaxLength = 30;
             this.txtbCustomerCompanyName.Name = "txtbCustomerCompanyName";
-            this.txtbCustomerCompanyName.Size = new System.Drawing.Size(100, 20);
+            this.txtbCustomerCompanyName.Size = new System.Drawing.Size(123, 20);
             this.txtbCustomerCompanyName.TabIndex = 3;
             // 
             // lblCustomerCompanyName
@@ -1236,33 +1267,6 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // lblCustomerId
-            // 
-            this.lblCustomerId.AutoSize = true;
-            this.lblCustomerId.Location = new System.Drawing.Point(496, 10);
-            this.lblCustomerId.Name = "lblCustomerId";
-            this.lblCustomerId.Size = new System.Drawing.Size(64, 13);
-            this.lblCustomerId.TabIndex = 90;
-            this.lblCustomerId.Text = "customer_id";
-            // 
-            // lblCustomer_FirstName
-            // 
-            this.lblCustomer_FirstName.AutoSize = true;
-            this.lblCustomer_FirstName.Location = new System.Drawing.Point(496, 23);
-            this.lblCustomer_FirstName.Name = "lblCustomer_FirstName";
-            this.lblCustomer_FirstName.Size = new System.Drawing.Size(52, 13);
-            this.lblCustomer_FirstName.TabIndex = 91;
-            this.lblCustomer_FirstName.Text = "first name";
-            // 
-            // lblCustomer_LastName
-            // 
-            this.lblCustomer_LastName.AutoSize = true;
-            this.lblCustomer_LastName.Location = new System.Drawing.Point(496, 36);
-            this.lblCustomer_LastName.Name = "lblCustomer_LastName";
-            this.lblCustomer_LastName.Size = new System.Drawing.Size(52, 13);
-            this.lblCustomer_LastName.TabIndex = 92;
-            this.lblCustomer_LastName.Text = "last name";
-            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1274,7 +1278,6 @@
             this.MaximizeBox = false;
             this.Name = "frm_Sales";
             this.Text = "Barroc-IT - Software for real - Sales";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Sales_FormClosing);
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
             this.tcp_Customer.ResumeLayout(false);

@@ -318,7 +318,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, 'limit', gross_revenue, street_name, house_number, street_name_2, house_number_2, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, 'limit', gross_revenue, street_name, house_number, street_name_2, house_number_2, first_name, last_name, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
 
                     FROM
                         tbl_customers
@@ -353,6 +353,8 @@ namespace Barroc_IT
                 dt.Columns.Add("house_number", typeof(string));
                 dt.Columns.Add("street_name_2", typeof(string));
                 dt.Columns.Add("house_number_2", typeof(string));
+                dt.Columns.Add("first_name",typeof(string));
+                dt.Columns.Add("last_name", typeof(string));
                 dt.Columns.Add("customer_name", typeof(string));
                 dt.Columns.Add("address", typeof(string));
                 dt.Columns.Add("address_2", typeof(string));
@@ -369,13 +371,13 @@ namespace Barroc_IT
                     UPDATE
                         tbl_customers
                     SET
-                        firstName = @firstName, last_name = @lastName, company_name = @company_name, email = @email, fax = @fax, street_name = @street_name, house_number = @house_number, residence = @residence, zip_code = @zip_code, phone_number = @phone_number
+                        first_name = @firstName, last_name = @lastName, company_name = @company_name, email = @email, fax = @fax, street_name = @street_name, house_number = @house_number, residence = @residence, zip_code = @zip_code, phone_number = @phone_number
                     WHERE
                         customer_id = @customer_id",this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("customer_id", c_id);
                 cmd.Parameters.AddWithValue("firstName", c_firstName);
-                cmd.Parameters.AddWithValue("last_name", c_lastName);
+                cmd.Parameters.AddWithValue("lastName", c_lastName);
                 cmd.Parameters.AddWithValue("company_name", c_companyName);
                 cmd.Parameters.AddWithValue("email", c_mail);
                 cmd.Parameters.AddWithValue("fax", c_fax);
