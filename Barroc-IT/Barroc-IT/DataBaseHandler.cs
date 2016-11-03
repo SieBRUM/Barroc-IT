@@ -414,7 +414,7 @@ namespace Barroc_IT
 //            return dt;
 //        }
 
-        public DataTable FilterProjects(string filter, string row)
+        public DataTable FilterProjects(string filter, string colName)
         {
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
@@ -427,9 +427,8 @@ namespace Barroc_IT
                     ON 
                         tbl_projects.customer_id = tbl_customers.customer_id
                     WHERE
-                       project_name LIKE @filter ", this.GetConnection()))
+                       " + colName + " LIKE @filter ", this.GetConnection()))
             {
-                cmd.Parameters.AddWithValue("row", row);
                 cmd.Parameters.AddWithValue("filter", "%" + filter +"%");
 
                 MySqlDataReader reader;

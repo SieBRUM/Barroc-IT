@@ -329,6 +329,7 @@ namespace Barroc_IT
             // 
             this.tstxtb_Projects_PID.Name = "tstxtb_Projects_PID";
             this.tstxtb_Projects_PID.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Projects_PID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchProjectOnP_ID);
             // 
             // mnfltr_Projects_CuName
             // 
