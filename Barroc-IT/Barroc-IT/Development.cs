@@ -370,5 +370,36 @@ namespace Barroc_IT
                     break;
             }
         }
+
+
+        private void SearchProjectOnP_Name(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Projects_PName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                panel1.Controls.Clear();
+                DataTable dt = dbh.FilterProjects(filter, "project_name");
+                int amount = dt.Rows.Count;
+                if (!showallProjects && amount > 5)
+                    amount = 5;
+
+                ProjectPanel[] projectInfoPanel = new ProjectPanel[amount];
+
+                for (int i = 0; i < projectInfoPanel.Length; i++)
+                {
+                    projectInfoPanel[i] = new ProjectPanel(i, dt);
+                    projectInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    projectInfoPanel[i].Dock = DockStyle.Top;
+                    projectInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditProjectItems);
+                    projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
+                    projectInfoPanel[i].lbl_Customer_Name.AccessibleName = dt.Rows[i]["customer_id"].ToString();
+                    projectInfoPanel[i].lbl_Customer_Name.Click += new System.EventHandler(this.FillCustomerData);
+                    panel1.Controls.Add(projectInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+                tcp_Main.SelectedIndex = 1;
+            }
+        }
     }
 }

@@ -64,6 +64,7 @@ namespace Barroc_IT
             this.btn_Project_Show_All = new System.Windows.Forms.Button();
             this.btn_Add_Project = new System.Windows.Forms.Button();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -165,7 +166,6 @@ namespace Barroc_IT
             this.dtp_A_Appointment = new System.Windows.Forms.DateTimePicker();
             this.cb_Appointment_Select_Customer = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -310,6 +310,7 @@ namespace Barroc_IT
             // 
             this.tstxtb_Projects_PName.Name = "tstxtb_Projects_PName";
             this.tstxtb_Projects_PName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Projects_PName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchProjectOnP_Name);
             // 
             // mnfltr_Projects_ID
             // 
@@ -561,6 +562,16 @@ namespace Barroc_IT
             this.tcp_Appointments.TabIndex = 2;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // appointmentsPanel
             // 
@@ -1603,16 +1614,6 @@ namespace Barroc_IT
             this.label36.Size = new System.Drawing.Size(63, 13);
             this.label36.TabIndex = 15;
             this.label36.Text = "Customer Id";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frm_Development
             // 
