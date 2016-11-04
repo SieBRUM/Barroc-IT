@@ -21,10 +21,13 @@ namespace Barroc_IT
             panel2.Hide();
             dbh = new DatabaseHandler();
 
+            string notification_added_date = dt.Rows[rowNr]["notification_date"].ToString();
+            string today = DateTime.Today.ToString();
+
             lbl_Notification_ID.Text = dt.Rows[rowNr]["notification_id"].ToString();
             lbl_Notification_Info_Data.Text = dt.Rows[rowNr]["notification_info"].ToString();
             lbl_Notification_Type.Text = dt.Rows[rowNr]["notification_type"].ToString();
-            lbl_Notification_Added.Text = dt.Rows[rowNr]["notification_date"].ToString();
+            lbl_Notification_Added.Text = ((DateTime.Today) - Convert.ToDateTime(dt.Rows[rowNr]["notification_date"])).TotalDays + " days ago";
         }
 
         private void OpenMoreInfo(object sender, EventArgs e)
