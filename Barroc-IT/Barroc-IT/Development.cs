@@ -208,6 +208,7 @@ namespace Barroc_IT
         {
             dbh.OpenConnection();
             Button button = (Button)sender;
+            lbl_E_Appointment_Id.Text = button.AccessibleName;
             //MessageBox.Show(button.AccessibleName);
             DataTable dt = dbh.GetAppointment(button.AccessibleName);
             //cb_Edit_A_C_ID.SelectedValue = dt.Rows[0]["appointment_customer_id"].ToString();
@@ -308,6 +309,14 @@ namespace Barroc_IT
             {
                 MessageBox.Show("Amount of Invoices not a number!");
             }
+            else if(txtb_Edit_Project_P_Name.Text == "" || txtb_Edit_Project_OS.Text == "" || txtb_Edit_Project_Software.Text == "" || txtb_Edit_Project_Hardware.Text == "")
+            {
+                MessageBox.Show("Make sure all fields are filled in correctly!");
+            }
+            else if(dtp_Edit_Project_Deadline.Value <= DateTime.Now)
+            {
+                MessageBox.Show("Deadline date cannot be today or in the past!");
+            }
             else
             { 
                 dbh.OpenConnection();
@@ -360,12 +369,23 @@ namespace Barroc_IT
 
         private void AddAppointment(object sender, EventArgs e)
         {
-            dbh.OpenConnection();
-            if (dbh.AddAppointment(cb_Appointment_Select_Customer.SelectedValue.ToString(), dtp_A_Appointment.Value.ToString(), txtb_A_Appointment_Residence.Text, txtb_A_Appointment_Streetname.Text, txtb_A_Appointment_Housenumber.Text, txtb_A_Appointment_Zipcode.Text, rtb_A_Appointment.Text))
-                MessageBox.Show("Succesfully added an appointment!");
+            if(txtb_A_Appointment_Housenumber.Text == "" || txtb_A_Appointment_Residence.Text == "" || txtb_A_Appointment_Streetname.Text == "" || txtb_A_Appointment_Zipcode.Text == "" || rtb_A_Appointment.Text == "")
+            {
+                MessageBox.Show("Make sure all fields are filled in correctly!");
+            }
+            else if(dtp_A_Appointment.Value < DateTime.Now)
+            {
+                MessageBox.Show("Date cannot be in the past!");
+            }
             else
-                MessageBox.Show("An error occcured while adding an appointment.");
-            dbh.CloseConnection();
+            {
+                dbh.OpenConnection();
+                if (dbh.AddAppointment(cb_Appointment_Select_Customer.SelectedValue.ToString(), dtp_A_Appointment.Value.ToString(), txtb_A_Appointment_Residence.Text, txtb_A_Appointment_Streetname.Text, txtb_A_Appointment_Housenumber.Text, txtb_A_Appointment_Zipcode.Text, rtb_A_Appointment.Text))
+                    MessageBox.Show("Succesfully added an appointment!");
+                else
+                    MessageBox.Show("An error occcured while adding an appointment.");
+                dbh.CloseConnection();
+             }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -480,6 +500,27 @@ namespace Barroc_IT
                 }
                 dbh.CloseConnection();
                 tcp_Main.SelectedIndex = 1;
+            }
+        }
+
+        private void EditAppointment(object sender, EventArgs e)
+        {
+            if(txtb_E_Appointment_Housenumber.Text == "" || txtb_E_Appointment_Residence.Text == "" || txtb_E_Appointment_Streetname.Text == "" || txtb_E_Appointment_Zip_Code.Text == "" || rtb_E_Appointment_Summary.Text == "")
+            {
+                MessageBox.Show("Make sure all fields are filled in correctly!");
+            }
+            else if(dtp_E_Appointment_Date.Value < DateTime.Now)
+            {
+                MessageBox.Show("Date cannot be in the past!");
+            }
+            else
+            {
+                dbh.OpenConnection();
+                if (dbh.EditAppointment(lbl_E_Appointment_Id.Text,dtp_E_Appointment_Date.Value.ToString(),txtb_E_Appointment_Residence.Text,txtb_E_Appointment_Streetname.Text,txtb_E_Appointment_Housenumber.Text,txtb_E_Appointment_Zip_Code.Text,rtb_E_Appointment_Summary.Text))
+                    MessageBox.Show("Succesfully editted the appointment!");
+                else
+                    MessageBox.Show("An error occcured while adding an appointment.");
+                dbh.CloseConnection();
             }
         }
     }

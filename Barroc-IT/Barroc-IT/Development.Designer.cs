@@ -167,6 +167,7 @@ namespace Barroc_IT
             this.cb_Appointment_Select_Customer = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.tcp_Edit_Appointment = new System.Windows.Forms.TabPage();
+            this.lbl_E_Appointment_Customer = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -182,7 +183,7 @@ namespace Barroc_IT
             this.txtb_E_Appointment_Residence = new System.Windows.Forms.TextBox();
             this.dtp_E_Appointment_Date = new System.Windows.Forms.DateTimePicker();
             this.label51 = new System.Windows.Forms.Label();
-            this.lbl_E_Appointment_Customer = new System.Windows.Forms.Label();
+            this.lbl_E_Appointment_Id = new System.Windows.Forms.Label();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -1639,6 +1640,7 @@ namespace Barroc_IT
             // 
             // tcp_Edit_Appointment
             // 
+            this.tcp_Edit_Appointment.Controls.Add(this.lbl_E_Appointment_Id);
             this.tcp_Edit_Appointment.Controls.Add(this.lbl_E_Appointment_Customer);
             this.tcp_Edit_Appointment.Controls.Add(this.pictureBox5);
             this.tcp_Edit_Appointment.Controls.Add(this.button3);
@@ -1663,6 +1665,15 @@ namespace Barroc_IT
             this.tcp_Edit_Appointment.Text = "Edit Appointment";
             this.tcp_Edit_Appointment.UseVisualStyleBackColor = true;
             // 
+            // lbl_E_Appointment_Customer
+            // 
+            this.lbl_E_Appointment_Customer.AutoSize = true;
+            this.lbl_E_Appointment_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_E_Appointment_Customer.Location = new System.Drawing.Point(21, 102);
+            this.lbl_E_Appointment_Customer.Name = "lbl_E_Appointment_Customer";
+            this.lbl_E_Appointment_Customer.Size = new System.Drawing.Size(0, 13);
+            this.lbl_E_Appointment_Customer.TabIndex = 67;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
@@ -1681,6 +1692,7 @@ namespace Barroc_IT
             this.button3.TabIndex = 64;
             this.button3.Text = "Edit Appointment";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.EditAppointment);
             // 
             // label5
             // 
@@ -1792,14 +1804,15 @@ namespace Barroc_IT
             this.label51.TabIndex = 51;
             this.label51.Text = "Customer Id";
             // 
-            // lbl_E_Appointment_Customer
+            // lbl_E_Appointment_Id
             // 
-            this.lbl_E_Appointment_Customer.AutoSize = true;
-            this.lbl_E_Appointment_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_E_Appointment_Customer.Location = new System.Drawing.Point(21, 102);
-            this.lbl_E_Appointment_Customer.Name = "lbl_E_Appointment_Customer";
-            this.lbl_E_Appointment_Customer.Size = new System.Drawing.Size(0, 13);
-            this.lbl_E_Appointment_Customer.TabIndex = 67;
+            this.lbl_E_Appointment_Id.AutoSize = true;
+            this.lbl_E_Appointment_Id.Location = new System.Drawing.Point(481, 17);
+            this.lbl_E_Appointment_Id.Name = "lbl_E_Appointment_Id";
+            this.lbl_E_Appointment_Id.Size = new System.Drawing.Size(41, 13);
+            this.lbl_E_Appointment_Id.TabIndex = 68;
+            this.lbl_E_Appointment_Id.Text = "label52";
+            this.lbl_E_Appointment_Id.Visible = false;
             // 
             // frm_Development
             // 
@@ -2004,6 +2017,7 @@ namespace Barroc_IT
         private DateTimePicker dtp_E_Appointment_Date;
         private Label label51;
         private Label lbl_E_Appointment_Customer;
+        private Label lbl_E_Appointment_Id;
 
 
 
