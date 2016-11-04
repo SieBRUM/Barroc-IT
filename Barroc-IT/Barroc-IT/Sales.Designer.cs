@@ -121,6 +121,8 @@
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.tcp_Invoices = new System.Windows.Forms.TabPage();
+            this.invoicesPanel = new System.Windows.Forms.Panel();
+            this.btn_ShowAllInvoices = new System.Windows.Forms.Button();
             this.mstrp_Menu = new System.Windows.Forms.MenuStrip();
             this.mnitem_Overview = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Overview_Department = new System.Windows.Forms.ToolStripMenuItem();
@@ -149,7 +151,7 @@
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.mnitem_Customers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Customers_CuName = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Customers_CuName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Customers_CoName = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Customers_Residence = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,8 +159,6 @@
             this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.invoicesPanel = new System.Windows.Forms.Panel();
-            this.btn_ShowAllInvoices = new System.Windows.Forms.Button();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -168,8 +168,8 @@
             this.tcp_Appointments.SuspendLayout();
             this.appointmentsPanel.SuspendLayout();
             this.tcp_Invoices.SuspendLayout();
-            this.mstrp_Menu.SuspendLayout();
             this.invoicesPanel.SuspendLayout();
+            this.mstrp_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcp_Overview
@@ -1087,6 +1087,29 @@
             this.tcp_Invoices.Text = "Invoices";
             this.tcp_Invoices.UseVisualStyleBackColor = true;
             // 
+            // invoicesPanel
+            // 
+            this.invoicesPanel.AutoSize = true;
+            this.invoicesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.invoicesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.invoicesPanel.Controls.Add(this.btn_ShowAllInvoices);
+            this.invoicesPanel.Location = new System.Drawing.Point(4, 35);
+            this.invoicesPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.invoicesPanel.Name = "invoicesPanel";
+            this.invoicesPanel.Size = new System.Drawing.Size(540, 25);
+            this.invoicesPanel.TabIndex = 7;
+            // 
+            // btn_ShowAllInvoices
+            // 
+            this.btn_ShowAllInvoices.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_ShowAllInvoices.Location = new System.Drawing.Point(0, 0);
+            this.btn_ShowAllInvoices.Name = "btn_ShowAllInvoices";
+            this.btn_ShowAllInvoices.Size = new System.Drawing.Size(538, 23);
+            this.btn_ShowAllInvoices.TabIndex = 0;
+            this.btn_ShowAllInvoices.Text = "Show All";
+            this.btn_ShowAllInvoices.UseVisualStyleBackColor = true;
+            this.btn_ShowAllInvoices.Click += new System.EventHandler(this.btn_ShowAllInvoices_Click);
+            // 
             // mstrp_Menu
             // 
             this.mstrp_Menu.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1365,7 +1388,7 @@
             // mnfltr_Customers_CuName
             // 
             this.mnfltr_Customers_CuName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox4});
+            this.tstxtb_Customers_CuName});
             this.mnfltr_Customers_CuName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Customers_CuName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Customers_CuName.Name = "mnfltr_Customers_CuName";
@@ -1373,10 +1396,11 @@
             this.mnfltr_Customers_CuName.Text = "Customer Name";
             this.mnfltr_Customers_CuName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolStripTextBox4
+            // tstxtb_Customers_CuName
             // 
-            this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customers_CuName.Name = "tstxtb_Customers_CuName";
+            this.tstxtb_Customers_CuName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customers_CuName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchCustomerOnCu_Name);
             // 
             // mnfltr_Customers_CoName
             // 
@@ -1440,29 +1464,6 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // invoicesPanel
-            // 
-            this.invoicesPanel.AutoSize = true;
-            this.invoicesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.invoicesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.invoicesPanel.Controls.Add(this.btn_ShowAllInvoices);
-            this.invoicesPanel.Location = new System.Drawing.Point(4, 35);
-            this.invoicesPanel.MinimumSize = new System.Drawing.Size(540, 2);
-            this.invoicesPanel.Name = "invoicesPanel";
-            this.invoicesPanel.Size = new System.Drawing.Size(540, 25);
-            this.invoicesPanel.TabIndex = 7;
-            // 
-            // btn_ShowAllInvoices
-            // 
-            this.btn_ShowAllInvoices.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_ShowAllInvoices.Location = new System.Drawing.Point(0, 0);
-            this.btn_ShowAllInvoices.Name = "btn_ShowAllInvoices";
-            this.btn_ShowAllInvoices.Size = new System.Drawing.Size(538, 23);
-            this.btn_ShowAllInvoices.TabIndex = 0;
-            this.btn_ShowAllInvoices.Text = "Show All";
-            this.btn_ShowAllInvoices.UseVisualStyleBackColor = true;
-            this.btn_ShowAllInvoices.Click += new System.EventHandler(this.btn_ShowAllInvoices_Click);
-            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1489,9 +1490,9 @@
             this.appointmentsPanel.ResumeLayout(false);
             this.tcp_Invoices.ResumeLayout(false);
             this.tcp_Invoices.PerformLayout();
+            this.invoicesPanel.ResumeLayout(false);
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
-            this.invoicesPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1623,7 +1624,7 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Customers_CuName;
         private System.Windows.Forms.Button btn_Add_Customer;
         private System.Windows.Forms.Panel appointmentsPanel;
         private System.Windows.Forms.Button btn_showallAppointments;

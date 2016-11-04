@@ -56,12 +56,12 @@ namespace Barroc_IT
             lbl_Customer_Last_Action.Text = dt.Rows[rowNr]["last_action"].ToString();
             lbl_Customer_Next_Contact.Text = dt.Rows[rowNr]["next_contact"].ToString();
             lbl_Customer_Next_Action.Text = dt.Rows[rowNr]["next_action"].ToString();
-            lbl_Customer_Credit_Balance.Text = dt.Rows[rowNr]["credit_balance"].ToString();
+            lbl_Customer_Credit_Balance.Text = "\u20AC" + dt.Rows[rowNr]["credit_balance"].ToString();
             lbl_Customer_Creditworthy.Text = ((creditworthy)creditworthy).ToString();
-            lbl_Customer_Discount.Text = dt.Rows[rowNr]["discount"].ToString();
+            lbl_Customer_Discount.Text = dt.Rows[rowNr]["discount"].ToString() + "%";
             lbl_Customer_Iban.Text = dt.Rows[rowNr]["iban"].ToString();
-            lbl_Customer_Limit.Text = dt.Rows[rowNr]["limit"].ToString();
-            lbl_Customer_Gross_Revenue.Text = dt.Rows[rowNr]["gross_revenue"].ToString();
+            lbl_Customer_Limit.Text = "\u20AC " + dt.Rows[rowNr]["limit"].ToString();
+            lbl_Customer_Gross_Revenue.Text = "\u20AC " + dt.Rows[rowNr]["gross_revenue"].ToString();
         }
 
         private void ShowMoreInfo(object sender, EventArgs e)

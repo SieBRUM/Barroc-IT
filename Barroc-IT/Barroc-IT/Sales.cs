@@ -188,7 +188,7 @@ namespace Barroc_IT
             lblCustomer_FirstName.Text = dt.Rows[0]["first_name"].ToString();
             lblCustomer_LastName.Text = dt.Rows[0]["last_name"].ToString();
 
-            tcp_Main.SelectedIndex = 3;
+            tcp_Main.SelectedIndex = 5;
             dbh.CloseConnection();
         }
 
@@ -307,6 +307,33 @@ namespace Barroc_IT
             showallInvoices = true;
             invoicesPanel.Controls.Clear();
             ShowInvoices();
+        }
+
+        private void SearchCustomerOnCu_Name(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Customers_CuName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                panel1.Controls.Clear();
+                DataTable dt = dbh.FilterCustomers(filter, "first_name", "last_name");
+                int amount = dt.Rows.Count;
+                if (!showallCustomers && amount > 5)
+                    amount = 5;
+
+                CustomerPanel[] customerInfoPanel = new CustomerPanel[amount];
+
+                for (int i = 0; i < customerInfoPanel.Length; i++)
+                {
+                    customerInfoPanel[i] = new CustomerPanel(i, dt);
+                    customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    customerInfoPanel[i].Dock = DockStyle.Top;
+                    panel1.Controls.Add(customerInfoPanel[i]);
+                    customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
+                    customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
+                }
+                dbh.CloseConnection();
+            }
         }
     }
 }
