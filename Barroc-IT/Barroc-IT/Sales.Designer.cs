@@ -153,9 +153,9 @@
             this.mnfltr_Customers_CuName = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Customers_CuName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Customers_CoName = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Customers_CoName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Customers_Residence = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Customers_Residence = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
@@ -1405,7 +1405,7 @@
             // mnfltr_Customers_CoName
             // 
             this.mnfltr_Customers_CoName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1});
+            this.tstxtb_Customers_CoName});
             this.mnfltr_Customers_CoName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Customers_CoName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Customers_CoName.Name = "mnfltr_Customers_CoName";
@@ -1413,15 +1413,16 @@
             this.mnfltr_Customers_CoName.Text = "Company Name";
             this.mnfltr_Customers_CoName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolStripTextBox1
+            // tstxtb_Customers_CoName
             // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customers_CoName.Name = "tstxtb_Customers_CoName";
+            this.tstxtb_Customers_CoName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customers_CoName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchCustomerOnCo_Name);
             // 
             // mnfltr_Customers_Residence
             // 
             this.mnfltr_Customers_Residence.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox2});
+            this.tstxtb_Customers_Residence});
             this.mnfltr_Customers_Residence.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Customers_Residence.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Customers_Residence.Name = "mnfltr_Customers_Residence";
@@ -1429,10 +1430,11 @@
             this.mnfltr_Customers_Residence.Text = "Residence";
             this.mnfltr_Customers_Residence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolStripTextBox2
+            // tstxtb_Customers_Residence
             // 
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customers_Residence.Name = "tstxtb_Customers_Residence";
+            this.tstxtb_Customers_Residence.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customers_Residence.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchCustomerOnResidence);
             // 
             // mnfltr_Customers_UnpaidInvoice
             // 
@@ -1619,8 +1621,8 @@
         private System.Windows.Forms.TabPage tcp_Appointments;
         private System.Windows.Forms.TabPage tcp_Invoices;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Customers_CoName;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Customers_Residence;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;

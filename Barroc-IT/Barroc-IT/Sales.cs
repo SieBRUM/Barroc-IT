@@ -335,5 +335,59 @@ namespace Barroc_IT
                 dbh.CloseConnection();
             }
         }
+
+        private void SearchCustomerOnCo_Name(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Customers_CoName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                panel1.Controls.Clear();
+                DataTable dt = dbh.FilterCustomers(filter, "company_name");
+                int amount = dt.Rows.Count;
+                if (!showallCustomers && amount > 5)
+                    amount = 5;
+
+                CustomerPanel[] customerInfoPanel = new CustomerPanel[amount];
+
+                for (int i = 0; i < customerInfoPanel.Length; i++)
+                {
+                    customerInfoPanel[i] = new CustomerPanel(i, dt);
+                    customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    customerInfoPanel[i].Dock = DockStyle.Top;
+                    panel1.Controls.Add(customerInfoPanel[i]);
+                    customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
+                    customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchCustomerOnResidence(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Customers_Residence.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                panel1.Controls.Clear();
+                DataTable dt = dbh.FilterCustomers(filter, "residence", "residence_2");
+                int amount = dt.Rows.Count;
+                if (!showallCustomers && amount > 5)
+                    amount = 5;
+
+                CustomerPanel[] customerInfoPanel = new CustomerPanel[amount];
+
+                for (int i = 0; i < customerInfoPanel.Length; i++)
+                {
+                    customerInfoPanel[i] = new CustomerPanel(i, dt);
+                    customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    customerInfoPanel[i].Dock = DockStyle.Top;
+                    panel1.Controls.Add(customerInfoPanel[i]);
+                    customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
+                    customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
+                }
+                dbh.CloseConnection();
+            }
+        }
     }
 }
