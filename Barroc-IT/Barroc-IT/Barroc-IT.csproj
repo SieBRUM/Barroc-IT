@@ -90,6 +90,12 @@
       <DependentUpon>Development.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuItems.cs" />
+    <Compile Include="OverviewPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OverviewPanel.Designer.cs">
+      <DependentUpon>OverviewPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectPanel.cs">
       <SubType>UserControl</SubType>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Development.resx">
       <DependentUpon>Development.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewPanel.resx">
+      <DependentUpon>OverviewPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectPanel.resx">
       <DependentUpon>ProjectPanel.cs</DependentUpon>

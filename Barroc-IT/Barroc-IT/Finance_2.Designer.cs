@@ -74,6 +74,8 @@
             this.tcp_Customers = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_ShowAllCustomers = new System.Windows.Forms.Button();
+            this.notificationsPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Main.SuspendLayout();
@@ -83,6 +85,7 @@
             this.appointmentsPanel.SuspendLayout();
             this.tcp_Customers.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.notificationsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -410,6 +413,7 @@
             // tcp_Overview
             // 
             this.tcp_Overview.AutoScroll = true;
+            this.tcp_Overview.Controls.Add(this.notificationsPanel);
             this.tcp_Overview.Controls.Add(this.label3);
             this.tcp_Overview.Controls.Add(this.label2);
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
@@ -575,6 +579,29 @@
             this.btn_ShowAllCustomers.UseVisualStyleBackColor = true;
             this.btn_ShowAllCustomers.Click += new System.EventHandler(this.btn_ShowAllCustomers_Click);
             // 
+            // notificationsPanel
+            // 
+            this.notificationsPanel.AutoScroll = true;
+            this.notificationsPanel.AutoSize = true;
+            this.notificationsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.notificationsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.notificationsPanel.Controls.Add(this.button1);
+            this.notificationsPanel.Location = new System.Drawing.Point(4, 35);
+            this.notificationsPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.notificationsPanel.Name = "notificationsPanel";
+            this.notificationsPanel.Size = new System.Drawing.Size(540, 25);
+            this.notificationsPanel.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(538, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Show All";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frm_Finance_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,6 +625,7 @@
             this.tcp_Customers.ResumeLayout(false);
             this.tcp_Customers.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.notificationsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -650,5 +678,7 @@
         private System.Windows.Forms.TabPage tcp_Customers;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_ShowAllCustomers;
+        private System.Windows.Forms.Panel notificationsPanel;
+        private System.Windows.Forms.Button button1;
     }
 }

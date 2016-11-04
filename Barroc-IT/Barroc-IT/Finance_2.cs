@@ -15,6 +15,8 @@ namespace Barroc_IT
         bool showAllInvoices = false;
         bool showallAppointments = false;
         bool showAllCustomers = false;
+        bool showallNotifications = false;
+
         DatabaseHandler dbh;
 
         public frm_Finance_2()
@@ -24,6 +26,7 @@ namespace Barroc_IT
             ShowInvoices();
             ShowAppointments();
             ShowCustomers();
+            ShowNotifications();
         }
 
         private void MenuHandler(object sender, EventArgs e)
@@ -185,6 +188,38 @@ namespace Barroc_IT
                 //customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
             }
             dbh.CloseConnection();
+        }
+
+        private void ShowNotifications()
+        {
+            dbh.OpenConnection();
+            DataTable dt = dbh.GetNotifications();
+            int amount = dt.Rows.Count;
+            if (!showallNotifications && amount > 5)
+                amount = 5;
+
+            OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+            for (int i = 0; i < overviewInfoPanel.Length; i++)
+            {
+                overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                overviewInfoPanel[i].Dock = DockStyle.Top;
+                overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+            }
+            dbh.CloseConnection();
+        }
+
+        private void ResolveNotification(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Button button = (Button)sender;
+            dbh.ResolveNotification(button.AccessibleName);
+            notificationsPanel.Controls.Clear();
+            dbh.CloseConnection();
+            ShowNotifications();
         }
 
         private void btn_ShowAllCustomers_Click(object sender, EventArgs e)

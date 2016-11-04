@@ -662,6 +662,28 @@ namespace Barroc_IT
             return dt;
         }
 
+        public DataTable GetNotifications()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        notification_id, notification_type, notification_date, notification_info
+                    FROM
+                        tbl_notification
+                    WHERE
+                        notification_resolved = 0", this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("notification_id", typeof(string));
+                dt.Columns.Add("notification_type", typeof(string));
+                dt.Columns.Add("notification_date", typeof(string));
+                dt.Columns.Add("notification_info", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
         public DataTable GetProjects()
         {
             DataTable dt = new DataTable();
@@ -737,6 +759,32 @@ namespace Barroc_IT
             return dt;
         }
 
+        public bool ResolveNotification(string n_ID)
+        {
+            bool succes = false;
+
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    UPDATE
+                        tbl_notification
+                    SET
+                        notification_resolved = 1
+                    WHERE
+                        notification_id = @notification_id", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("notification_id", n_ID);
+                try
+                {
+                    succes = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    succes = false;
+                    MessageBox.Show("An error occured. Details below: \n\n " + e);
+                }
+            }
+            return succes;
+        }
+
         public bool EditProject(string p_Id, string p_Name, string p_status, string m_contract, string OS, string hardware, string software, string amount_invoice, string deadline_date)
         {
             bool success = false;
@@ -765,7 +813,7 @@ namespace Barroc_IT
                 catch (Exception e)
                 {
                     success = false;
-                    MessageBox.Show("An error occured. Detailes below: \n\n " + e);
+                    MessageBox.Show("An error occured. Details below: \n\n " + e);
                 }
                 return success;
             }
