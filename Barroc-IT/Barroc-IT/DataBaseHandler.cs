@@ -233,7 +233,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, ledger_account_number, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id
+                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, ledger_account_number, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (first_name, ' ', last_name) AS customer_name
                     FROM
                         tbl_invoices
                     INNER JOIN
@@ -263,6 +263,7 @@ namespace Barroc_IT
                 dt.Columns.Add("VAT");
                 dt.Columns.Add("discount");
                 dt.Columns.Add("project_id");
+                dt.Columns.Add("customer_name");
                 dt.Load(reader);
             }
             return dt;

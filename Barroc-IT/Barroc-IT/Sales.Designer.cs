@@ -32,8 +32,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tcp_Customer = new System.Windows.Forms.TabPage();
+            this.btn_Add_Customer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Project_Show_All = new System.Windows.Forms.Button();
+            this.btn_ShowAllCustomers = new System.Windows.Forms.Button();
             this.tcp_AddCustomer = new System.Windows.Forms.TabPage();
             this.dtp_customer_lastcontact = new System.Windows.Forms.DateTimePicker();
             this.dtp_customer_nextcontact = new System.Windows.Forms.DateTimePicker();
@@ -117,6 +118,8 @@
             this.lblCustomerFirstName = new System.Windows.Forms.Label();
             this.tcp_Main = new System.Windows.Forms.TabControl();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
+            this.appointmentsPanel = new System.Windows.Forms.Panel();
+            this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.tcp_Invoices = new System.Windows.Forms.TabPage();
             this.mstrp_Menu = new System.Windows.Forms.MenuStrip();
             this.mnitem_Overview = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,6 +136,7 @@
             this.mnfltr_Apointments_Residence = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Projects_CuName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Appointments_Summary = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Invoices = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Invoices_CuName = new System.Windows.Forms.ToolStripMenuItem();
@@ -140,27 +144,32 @@
             this.mnfltr_Invoices_CoName = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Appointments_CoName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Invoices_Paid = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Invoices_Number = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.mnitem_Customers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Customers_CuName = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnfltr_Customers_CoName = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnfltr_Customers_Residence = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.mnfltr_Customers_CoName = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.mnfltr_Customers_Residence = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
+            this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoicesPanel = new System.Windows.Forms.Panel();
+            this.btn_ShowAllInvoices = new System.Windows.Forms.Button();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tcp_AddCustomer.SuspendLayout();
             this.tcp_EditCustomer.SuspendLayout();
             this.tcp_Main.SuspendLayout();
+            this.tcp_Appointments.SuspendLayout();
+            this.appointmentsPanel.SuspendLayout();
+            this.tcp_Invoices.SuspendLayout();
             this.mstrp_Menu.SuspendLayout();
+            this.invoicesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcp_Overview
@@ -195,6 +204,7 @@
             // tcp_Customer
             // 
             this.tcp_Customer.AutoScroll = true;
+            this.tcp_Customer.Controls.Add(this.btn_Add_Customer);
             this.tcp_Customer.Controls.Add(this.panel1);
             this.tcp_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Customer.Name = "tcp_Customer";
@@ -204,28 +214,38 @@
             this.tcp_Customer.Text = "Customer";
             this.tcp_Customer.UseVisualStyleBackColor = true;
             // 
+            // btn_Add_Customer
+            // 
+            this.btn_Add_Customer.Location = new System.Drawing.Point(3, 6);
+            this.btn_Add_Customer.Name = "btn_Add_Customer";
+            this.btn_Add_Customer.Size = new System.Drawing.Size(34, 23);
+            this.btn_Add_Customer.TabIndex = 7;
+            this.btn_Add_Customer.Text = "Add";
+            this.btn_Add_Customer.UseVisualStyleBackColor = true;
+            this.btn_Add_Customer.Click += new System.EventHandler(this.btn_Add_Customer_Click);
+            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_Project_Show_All);
+            this.panel1.Controls.Add(this.btn_ShowAllCustomers);
             this.panel1.Location = new System.Drawing.Point(4, 35);
             this.panel1.MinimumSize = new System.Drawing.Size(540, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 25);
             this.panel1.TabIndex = 6;
             // 
-            // btn_Project_Show_All
+            // btn_ShowAllCustomers
             // 
-            this.btn_Project_Show_All.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_Project_Show_All.Location = new System.Drawing.Point(0, 0);
-            this.btn_Project_Show_All.Name = "btn_Project_Show_All";
-            this.btn_Project_Show_All.Size = new System.Drawing.Size(538, 23);
-            this.btn_Project_Show_All.TabIndex = 0;
-            this.btn_Project_Show_All.Text = "Show All";
-            this.btn_Project_Show_All.UseVisualStyleBackColor = true;
-            this.btn_Project_Show_All.Click += new System.EventHandler(this.btn_Project_Show_All_Click_1);
+            this.btn_ShowAllCustomers.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_ShowAllCustomers.Location = new System.Drawing.Point(0, 0);
+            this.btn_ShowAllCustomers.Name = "btn_ShowAllCustomers";
+            this.btn_ShowAllCustomers.Size = new System.Drawing.Size(538, 23);
+            this.btn_ShowAllCustomers.TabIndex = 0;
+            this.btn_ShowAllCustomers.Text = "Show All";
+            this.btn_ShowAllCustomers.UseVisualStyleBackColor = true;
+            this.btn_ShowAllCustomers.Click += new System.EventHandler(this.btn_ShowAllCustomers_Click);
             // 
             // tcp_AddCustomer
             // 
@@ -1025,6 +1045,8 @@
             // 
             // tcp_Appointments
             // 
+            this.tcp_Appointments.AutoScroll = true;
+            this.tcp_Appointments.Controls.Add(this.appointmentsPanel);
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
@@ -1033,8 +1055,31 @@
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
             // 
+            // appointmentsPanel
+            // 
+            this.appointmentsPanel.AutoSize = true;
+            this.appointmentsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.appointmentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.appointmentsPanel.Controls.Add(this.btn_showallAppointments);
+            this.appointmentsPanel.Location = new System.Drawing.Point(4, 35);
+            this.appointmentsPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.appointmentsPanel.Name = "appointmentsPanel";
+            this.appointmentsPanel.Size = new System.Drawing.Size(540, 25);
+            this.appointmentsPanel.TabIndex = 7;
+            // 
+            // btn_showallAppointments
+            // 
+            this.btn_showallAppointments.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_showallAppointments.Location = new System.Drawing.Point(0, 0);
+            this.btn_showallAppointments.Name = "btn_showallAppointments";
+            this.btn_showallAppointments.Size = new System.Drawing.Size(538, 23);
+            this.btn_showallAppointments.TabIndex = 0;
+            this.btn_showallAppointments.Text = "Show All";
+            this.btn_showallAppointments.UseVisualStyleBackColor = true;
+            // 
             // tcp_Invoices
             // 
+            this.tcp_Invoices.Controls.Add(this.invoicesPanel);
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
             this.tcp_Invoices.Size = new System.Drawing.Size(566, 438);
@@ -1218,6 +1263,11 @@
             this.mnfltr_Appointments_Summary.Text = "Summary";
             this.mnfltr_Appointments_Summary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            // 
             // mnfltr_Appointments_date
             // 
             this.mnfltr_Appointments_date.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -1281,6 +1331,11 @@
             this.mnfltr_Invoices_Paid.Text = "Paid/Not Paid";
             this.mnfltr_Invoices_Paid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripComboBox4
+            // 
+            this.toolStripComboBox4.Name = "toolStripComboBox4";
+            this.toolStripComboBox4.Size = new System.Drawing.Size(121, 23);
+            // 
             // mnfltr_Invoices_Number
             // 
             this.mnfltr_Invoices_Number.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1291,6 +1346,11 @@
             this.mnfltr_Invoices_Number.Size = new System.Drawing.Size(124, 19);
             this.mnfltr_Invoices_Number.Text = "Invoice Number";
             this.mnfltr_Invoices_Number.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // toolStripTextBox3
+            // 
+            this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.Size = new System.Drawing.Size(100, 23);
             // 
             // mnitem_Customers
             // 
@@ -1313,6 +1373,11 @@
             this.mnfltr_Customers_CuName.Text = "Customer Name";
             this.mnfltr_Customers_CuName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripTextBox4
+            // 
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
+            // 
             // mnfltr_Customers_CoName
             // 
             this.mnfltr_Customers_CoName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1323,6 +1388,11 @@
             this.mnfltr_Customers_CoName.Size = new System.Drawing.Size(124, 19);
             this.mnfltr_Customers_CoName.Text = "Company Name";
             this.mnfltr_Customers_CoName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // mnfltr_Customers_Residence
             // 
@@ -1335,6 +1405,11 @@
             this.mnfltr_Customers_Residence.Text = "Residence";
             this.mnfltr_Customers_Residence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            // 
             // mnfltr_Customers_UnpaidInvoice
             // 
             this.mnfltr_Customers_UnpaidInvoice.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1345,6 +1420,11 @@
             this.mnfltr_Customers_UnpaidInvoice.Size = new System.Drawing.Size(124, 19);
             this.mnfltr_Customers_UnpaidInvoice.Text = "Unpaid Invoice";
             this.mnfltr_Customers_UnpaidInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // toolStripComboBox2
+            // 
+            this.toolStripComboBox2.Name = "toolStripComboBox2";
+            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 23);
             // 
             // mnitem_Logout
             // 
@@ -1360,40 +1440,28 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // toolStripComboBox1
+            // invoicesPanel
             // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.invoicesPanel.AutoSize = true;
+            this.invoicesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.invoicesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.invoicesPanel.Controls.Add(this.btn_ShowAllInvoices);
+            this.invoicesPanel.Location = new System.Drawing.Point(4, 35);
+            this.invoicesPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.invoicesPanel.Name = "invoicesPanel";
+            this.invoicesPanel.Size = new System.Drawing.Size(540, 25);
+            this.invoicesPanel.TabIndex = 7;
             // 
-            // toolStripTextBox1
+            // btn_ShowAllInvoices
             // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
-            // 
-            // toolStripTextBox2
-            // 
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
-            // 
-            // toolStripComboBox2
-            // 
-            this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 23);
-            // 
-            // toolStripComboBox4
-            // 
-            this.toolStripComboBox4.Name = "toolStripComboBox4";
-            this.toolStripComboBox4.Size = new System.Drawing.Size(121, 23);
-            // 
-            // toolStripTextBox3
-            // 
-            this.toolStripTextBox3.Name = "toolStripTextBox3";
-            this.toolStripTextBox3.Size = new System.Drawing.Size(100, 23);
-            // 
-            // toolStripTextBox4
-            // 
-            this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
+            this.btn_ShowAllInvoices.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_ShowAllInvoices.Location = new System.Drawing.Point(0, 0);
+            this.btn_ShowAllInvoices.Name = "btn_ShowAllInvoices";
+            this.btn_ShowAllInvoices.Size = new System.Drawing.Size(538, 23);
+            this.btn_ShowAllInvoices.TabIndex = 0;
+            this.btn_ShowAllInvoices.Text = "Show All";
+            this.btn_ShowAllInvoices.UseVisualStyleBackColor = true;
+            this.btn_ShowAllInvoices.Click += new System.EventHandler(this.btn_ShowAllInvoices_Click);
             // 
             // frm_Sales
             // 
@@ -1416,8 +1484,14 @@
             this.tcp_EditCustomer.ResumeLayout(false);
             this.tcp_EditCustomer.PerformLayout();
             this.tcp_Main.ResumeLayout(false);
+            this.tcp_Appointments.ResumeLayout(false);
+            this.tcp_Appointments.PerformLayout();
+            this.appointmentsPanel.ResumeLayout(false);
+            this.tcp_Invoices.ResumeLayout(false);
+            this.tcp_Invoices.PerformLayout();
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
+            this.invoicesPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1491,7 +1565,7 @@
         private System.Windows.Forms.DateTimePicker dtp_customer_nextcontact;
         private System.Windows.Forms.DateTimePicker dtp_customer_lastcontact;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Project_Show_All;
+        private System.Windows.Forms.Button btn_ShowAllCustomers;
         private System.Windows.Forms.TabPage tcp_EditCustomer;
         private System.Windows.Forms.DateTimePicker dtpCustomerLastContact;
         private System.Windows.Forms.DateTimePicker dtpCustomerNextContact;
@@ -1550,6 +1624,11 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
+        private System.Windows.Forms.Button btn_Add_Customer;
+        private System.Windows.Forms.Panel appointmentsPanel;
+        private System.Windows.Forms.Button btn_showallAppointments;
+        private System.Windows.Forms.Panel invoicesPanel;
+        private System.Windows.Forms.Button btn_ShowAllInvoices;
 
     }
 }

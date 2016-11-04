@@ -13,13 +13,17 @@ namespace Barroc_IT
     public partial class frm_Sales : Form
     {
         DatabaseHandler dbh;
-        bool showallCustomer = false;
+        bool showallCustomers = false;
+        bool showallAppointments = false;
+        bool showallInvoices = false;
 
         public frm_Sales()
         {
             InitializeComponent();
             dbh = new DatabaseHandler();
             ShowCustomers();
+            ShowAppointments();
+            ShowInvoices();
             HideFilters(true, false, false, false);
         }
 
@@ -140,7 +144,7 @@ namespace Barroc_IT
             dbh.OpenConnection();
             DataTable dt = dbh.GetCustomers();
             int amount = dt.Rows.Count;
-            if (!showallCustomer && amount > 5)
+            if (!showallCustomers && amount > 5)
                 amount = 5;
 
             CustomerPanel[] customerInfoPanel = new CustomerPanel[amount];
@@ -215,14 +219,6 @@ namespace Barroc_IT
 
         }
 
-        private void btn_Project_Show_All_Click_1(object sender, EventArgs e)
-        {
-            showallCustomer = true;
-            panel1.Controls.Clear();
-            ShowCustomers();
-
-        }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -244,6 +240,73 @@ namespace Barroc_IT
         private void mnitem_Logout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Add_Customer_Click(object sender, EventArgs e)
+        {
+            tcp_Main.SelectedIndex = 4;
+        }
+
+        private void btn_showallAppointments_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowAppointments()
+        {
+            dbh.OpenConnection();
+            DataTable dt = dbh.GetAppointments();
+            int amount = dt.Rows.Count;
+            if (!showallAppointments && amount > 5)
+                amount = 5;
+
+            AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+            for (int i = 0; i < appointmentInfoPanel.Length; i++)
+            {
+                appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                appointmentInfoPanel[i].Dock = DockStyle.Top;
+                appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                //appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+            }
+            dbh.CloseConnection();
+        }
+
+        private void btn_ShowAllCustomers_Click(object sender, EventArgs e)
+        {
+            showallCustomers = true;
+            panel1.Controls.Clear();
+            ShowCustomers();
+        }
+
+        private void ShowInvoices()
+        {
+            dbh = new DatabaseHandler();
+            dbh.OpenConnection();
+            DataTable dt = dbh.GetInvoices();
+            int amount = dt.Rows.Count;
+            if (!showallInvoices && amount > 5)
+                amount = 5;
+
+            InvoicePanel[] invoiceInfoPanel = new InvoicePanel[amount];
+
+            for (int i = 0; i < invoiceInfoPanel.Length; i++)
+            {
+                invoiceInfoPanel[i] = new InvoicePanel(i, dt);
+                invoiceInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                invoiceInfoPanel[i].Dock = DockStyle.Top;
+                invoicesPanel.Controls.Add(invoiceInfoPanel[i]);
+            }
+            dbh.CloseConnection();
+        }
+
+        private void btn_ShowAllInvoices_Click(object sender, EventArgs e)
+        {
+            showallInvoices = true;
+            invoicesPanel.Controls.Clear();
+            ShowInvoices();
         }
     }
 }
