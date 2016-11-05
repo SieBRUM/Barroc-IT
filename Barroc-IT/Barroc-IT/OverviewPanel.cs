@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -13,13 +7,11 @@ namespace Barroc_IT
     public partial class OverviewPanel : UserControl
     {
         bool opened = false;
-        DatabaseHandler dbh;
 
         public OverviewPanel(int rowNr, DataTable dt)
         {
             InitializeComponent();
             panel2.Hide();
-            dbh = new DatabaseHandler();
 
             string notification_added_date = dt.Rows[rowNr]["notification_date"].ToString();
             string today = DateTime.Today.ToString();
@@ -42,6 +34,11 @@ namespace Barroc_IT
                 panel2.Show();
                 opened = true;
             }
+        }
+
+        private void DeletePanel(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

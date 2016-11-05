@@ -32,10 +32,10 @@
             this.lbl_Notification_Type = new System.Windows.Forms.Label();
             this.lbl_Notification_ID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Resolved = new System.Windows.Forms.Button();
             this.lbl_Notification_Info_Data = new System.Windows.Forms.Label();
             this.lbl_Notification_Info = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Resolved = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,16 @@
             this.panel2.Size = new System.Drawing.Size(538, 84);
             this.panel2.TabIndex = 7;
             // 
+            // btn_Resolved
+            // 
+            this.btn_Resolved.Location = new System.Drawing.Point(456, 55);
+            this.btn_Resolved.Name = "btn_Resolved";
+            this.btn_Resolved.Size = new System.Drawing.Size(75, 23);
+            this.btn_Resolved.TabIndex = 39;
+            this.btn_Resolved.Text = "Resolved";
+            this.btn_Resolved.UseVisualStyleBackColor = true;
+            this.btn_Resolved.Click += new System.EventHandler(this.DeletePanel);
+            // 
             // lbl_Notification_Info_Data
             // 
             this.lbl_Notification_Info_Data.AutoSize = true;
@@ -113,15 +123,6 @@
             this.panel1.Size = new System.Drawing.Size(538, 46);
             this.panel1.TabIndex = 6;
             this.panel1.Click += new System.EventHandler(this.OpenMoreInfo);
-            // 
-            // btn_Resolved
-            // 
-            this.btn_Resolved.Location = new System.Drawing.Point(456, 55);
-            this.btn_Resolved.Name = "btn_Resolved";
-            this.btn_Resolved.Size = new System.Drawing.Size(75, 23);
-            this.btn_Resolved.TabIndex = 39;
-            this.btn_Resolved.Text = "Resolved";
-            this.btn_Resolved.UseVisualStyleBackColor = true;
             // 
             // OverviewPanel
             // 

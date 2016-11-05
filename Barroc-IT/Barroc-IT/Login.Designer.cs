@@ -40,7 +40,7 @@
             // 
             // bt_Login
             // 
-            this.bt_Login.Location = new System.Drawing.Point(246, 225);
+            this.bt_Login.Location = new System.Drawing.Point(241, 225);
             this.bt_Login.Name = "bt_Login";
             this.bt_Login.Size = new System.Drawing.Size(75, 23);
             this.bt_Login.TabIndex = 0;
@@ -51,7 +51,7 @@
             // lbl_Username
             // 
             this.lbl_Username.AutoSize = true;
-            this.lbl_Username.Location = new System.Drawing.Point(204, 121);
+            this.lbl_Username.Location = new System.Drawing.Point(199, 121);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(55, 13);
             this.lbl_Username.TabIndex = 1;
@@ -60,7 +60,7 @@
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
-            this.lbl_Password.Location = new System.Drawing.Point(204, 160);
+            this.lbl_Password.Location = new System.Drawing.Point(199, 160);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(53, 13);
             this.lbl_Password.TabIndex = 2;
@@ -68,14 +68,14 @@
             // 
             // txtb_Username
             // 
-            this.txtb_Username.Location = new System.Drawing.Point(205, 137);
+            this.txtb_Username.Location = new System.Drawing.Point(200, 137);
             this.txtb_Username.Name = "txtb_Username";
             this.txtb_Username.Size = new System.Drawing.Size(178, 20);
             this.txtb_Username.TabIndex = 4;
             // 
             // txtb_Password
             // 
-            this.txtb_Password.Location = new System.Drawing.Point(205, 176);
+            this.txtb_Password.Location = new System.Drawing.Point(200, 176);
             this.txtb_Password.Name = "txtb_Password";
             this.txtb_Password.PasswordChar = '•';
             this.txtb_Password.Size = new System.Drawing.Size(178, 20);
@@ -85,7 +85,7 @@
             // cb_Remember
             // 
             this.cb_Remember.AutoSize = true;
-            this.cb_Remember.Location = new System.Drawing.Point(207, 202);
+            this.cb_Remember.Location = new System.Drawing.Point(202, 202);
             this.cb_Remember.Name = "cb_Remember";
             this.cb_Remember.Size = new System.Drawing.Size(94, 17);
             this.cb_Remember.TabIndex = 6;
@@ -95,9 +95,13 @@
             // 
             // pb_Banner
             // 
-            this.pb_Banner.Location = new System.Drawing.Point(36, 12);
+            this.pb_Banner.ErrorImage = null;
+            this.pb_Banner.Image = global::Barroc_IT.Properties.Resources.Barroc_IT_Banner;
+            this.pb_Banner.InitialImage = null;
+            this.pb_Banner.Location = new System.Drawing.Point(27, 12);
             this.pb_Banner.Name = "pb_Banner";
             this.pb_Banner.Size = new System.Drawing.Size(502, 86);
+            this.pb_Banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Banner.TabIndex = 7;
             this.pb_Banner.TabStop = false;
             // 

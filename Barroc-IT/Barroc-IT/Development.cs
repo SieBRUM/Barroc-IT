@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Timers;
 
 namespace Barroc_IT
 {
@@ -16,6 +10,7 @@ namespace Barroc_IT
         bool showallProjects = false;
         bool showallAppointments = false;
         DatabaseHandler dbh;
+
         public frm_Development()
         {
             InitializeComponent();
@@ -209,9 +204,7 @@ namespace Barroc_IT
             dbh.OpenConnection();
             Button button = (Button)sender;
             lbl_E_Appointment_Id.Text = button.AccessibleName;
-            //MessageBox.Show(button.AccessibleName);
             DataTable dt = dbh.GetAppointment(button.AccessibleName);
-            //cb_Edit_A_C_ID.SelectedValue = dt.Rows[0]["appointment_customer_id"].ToString();
             txtb_E_Appointment_Residence.Text = dt.Rows[0]["appointment_residence"].ToString();
             txtb_E_Appointment_Streetname.Text = dt.Rows[0]["appointment_streetname"].ToString();
             txtb_E_Appointment_Housenumber.Text = dt.Rows[0]["appointment_housenumber"].ToString();
@@ -219,6 +212,7 @@ namespace Barroc_IT
             dtp_E_Appointment_Date.Value = Convert.ToDateTime(dt.Rows[0]["appointment_datetime"]);
             rtb_E_Appointment_Summary.Text = dt.Rows[0]["appointment_summary"].ToString();
             lbl_E_Appointment_Customer.Text = dt.Rows[0]["customer_data"].ToString();
+
             dbh.CloseConnection();
             tcp_Main.SelectedIndex = 9;
 
@@ -227,6 +221,7 @@ namespace Barroc_IT
         private void ShowProjects()
         {
             dbh.OpenConnection();
+
             DataTable dt = dbh.GetProjects();
             int amount = dt.Rows.Count;
             if (!showallProjects && amount > 5)
@@ -252,8 +247,10 @@ namespace Barroc_IT
         private void FillEditProjectItems(object sender, EventArgs e)
         {
             dbh.OpenConnection();
+
             Button button = (Button)sender;
             DataTable dt = dbh.GetProject(button.AccessibleName);
+
             txtb_Edit_Project_P_Name.Text = dt.Rows[0]["project_name"].ToString();
             txtb_Edit_Project_OS.Text = dt.Rows[0]["operating_system"].ToString();
             txtb_Edit_Project_Software.Text = dt.Rows[0]["software"].ToString();
@@ -265,14 +262,15 @@ namespace Barroc_IT
             lbl_Edit_Project_C_ID.Text = dt.Rows[0]["full_name"].ToString();
             dtp_Edit_Project_Deadline.Value = Convert.ToDateTime(dt.Rows[0]["deadline_date"]);
             lbl_Edit_Project_P_Id.Text = button.AccessibleName;
-            dbh.CloseConnection();
 
+            dbh.CloseConnection();
             tcp_Main.SelectedIndex = 5;
         }
 
         private void FillCustomerData(object sender, EventArgs e)
         {
             dbh.OpenConnection();
+
             Label label = (Label)sender;
             DataTable dt = dbh.GetCustomer(label.AccessibleName);
             lbl_Customer_Name.Text = dt.Rows[0]["customer_name"].ToString();
@@ -320,6 +318,7 @@ namespace Barroc_IT
             else
             { 
                 dbh.OpenConnection();
+
                 if(dbh.EditProject(lbl_Edit_Project_P_Id.Text, txtb_Edit_Project_P_Name.Text, cb_Edit_Project_P_Status.SelectedIndex.ToString(), cb_Edit_Project_M_C.SelectedIndex.ToString(), txtb_Edit_Project_OS.Text, txtb_Edit_Project_Hardware.Text, txtb_Edit_Project_Software.Text, txtb_Edit_Project_AOI.Text, date))
                     MessageBox.Show("Succesfully added a project!");
                 else
@@ -388,12 +387,11 @@ namespace Barroc_IT
              }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_GoTo_Appointment(object sender, EventArgs e)
         {
             tcp_Main.SelectedIndex = 8;
         }
 
-        // LOGOUT FUNCTION
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -482,7 +480,7 @@ namespace Barroc_IT
                 panel1.Controls.Clear();
                 DataTable dt = dbh.FilterProjects(filter, "tbl_customers.first_name");
                 int amount = dt.Rows.Count;
-                if (!showallProjects && amount > 5)
+                if (!showallProjects && dt.Rows.Count > 5)
                     amount = 5;
 
                 ProjectPanel[] projectInfoPanel = new ProjectPanel[amount];

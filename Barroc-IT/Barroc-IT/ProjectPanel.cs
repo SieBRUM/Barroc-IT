@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -13,8 +7,6 @@ namespace Barroc_IT
     public partial class ProjectPanel : UserControl
     {
         bool opened = false;
-        DatabaseHandler dbh;
-        public bool a = false;
         enum projectStatusCode
         {
             New_Project=0, 
@@ -34,7 +26,6 @@ namespace Barroc_IT
         {
             InitializeComponent();
             panel2.Hide();
-            dbh = new DatabaseHandler();
 
             int projectStatus = Convert.ToInt16(dt.Rows[rowNr]["project_status"]);
             int maintenance_contract = Convert.ToInt16(dt.Rows[rowNr]["maintenance_contract"]);

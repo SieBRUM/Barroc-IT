@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -163,7 +158,6 @@ namespace Barroc_IT
                 appointmentInfoPanel[i].Dock = DockStyle.Top;
                 appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
                 appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
-                //appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
             }
             dbh.CloseConnection();
         }
@@ -185,7 +179,6 @@ namespace Barroc_IT
                 customerInfoPanel[i].Dock = DockStyle.Top;
                 panel1.Controls.Add(customerInfoPanel[i]);
                 customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
-                //customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
             }
             dbh.CloseConnection();
         }
@@ -217,9 +210,9 @@ namespace Barroc_IT
             dbh.OpenConnection();
             Button button = (Button)sender;
             dbh.ResolveNotification(button.AccessibleName);
-            notificationsPanel.Controls.Clear();
+            //notificationsPanel.Controls.Clear();
             dbh.CloseConnection();
-            ShowNotifications();
+            //ShowNotifications();
         }
 
         private void btn_ShowAllCustomers_Click(object sender, EventArgs e)

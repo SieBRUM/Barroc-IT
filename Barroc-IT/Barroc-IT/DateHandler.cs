@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -39,7 +35,6 @@ namespace Barroc_IT
 
         public static DateTime? toDate(this string dateTimeStr, string[] dateFmt)
         {
-            // example: var dt="2011-03-21 13:26".toDate("yyyy-MM-dd HH:mm");
             const DateTimeStyles style = DateTimeStyles.AllowWhiteSpaces;
             DateTime? result = null;
             DateTime dt;

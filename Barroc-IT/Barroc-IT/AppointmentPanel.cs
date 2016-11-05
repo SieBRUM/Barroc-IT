@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -13,13 +7,11 @@ namespace Barroc_IT
     public partial class AppointmentPanel : UserControl
     {
         bool opened = false;
-        DatabaseHandler dbh;
 
         public AppointmentPanel(int rowNr, DataTable dt)
         {
             InitializeComponent();
             panel2.Hide();
-            dbh = new DatabaseHandler();
 
             lbl_Appointment_Address_Data.Text = dt.Rows[rowNr]["appointment_address"].ToString();
             lbl_Appointment_Zipcode_Data.Text = dt.Rows[rowNr]["appointment_zipcode"].ToString();

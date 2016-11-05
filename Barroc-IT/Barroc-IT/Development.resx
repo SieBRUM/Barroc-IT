@@ -121,24 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="mnitem_Logout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        Qk02AwAAAAAAADYAAAAoAAAAEAAAABAAAAABABgAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA////////
-        ////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////sGBWjUU7cDkxcDkxcDkxcDkxcDkxcDkxl0pA////////
-        ////////////////////qFJF1Yl/yGpfxGNVvlhLuE5AskU2rjsscDkx////////////////////////
-        ////qFJF1oqAzndqym9ixWZYv1tOulJEtEc5cDkx////////////////////////////qFJF1oqA0Hlu
-        0Hlt8eDex2hcwV1Ru1RHcDkx////////////////////////////qFJF1oqA0Hlu1oqA+vn504d9yGxg
-        w2JVcDkx////////////////////////////qFJF2JCG1oqA1oqA1oh/1Yh91IZ80oN5jUU7////////
-        ////////////////////v21iqFJFqFJFqFJFqFJFqFJFqFJFqFJFrl5T////////////////////////
-        ////////9urpqFJF////////////f01G8+Tj////////////////////////////////////9urpsWRY
-        ////////////f01G8+Tj////////////////////////////////////9urpuXRp////////////mVhP
-        8+Tj////////////////////////////////////////7t7buXRpsWRYmVhP79nW////////////////
-        ////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////
-</value>
-  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAAAAAAD/7gAOQWRvYmUAZAAAAAAB/9sAQwAKBwcHCAcKCAgKDgkICQ4RDQoK

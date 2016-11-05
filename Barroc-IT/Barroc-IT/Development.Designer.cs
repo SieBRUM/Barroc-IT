@@ -64,7 +64,7 @@ namespace Barroc_IT
             this.btn_Project_Show_All = new System.Windows.Forms.Button();
             this.btn_Add_Project = new System.Windows.Forms.Button();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_GoTo_Add_Appointment = new System.Windows.Forms.Button();
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -167,9 +167,10 @@ namespace Barroc_IT
             this.cb_Appointment_Select_Customer = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.tcp_Edit_Appointment = new System.Windows.Forms.TabPage();
+            this.lbl_E_Appointment_Id = new System.Windows.Forms.Label();
             this.lbl_E_Appointment_Customer = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Edit_Appointment = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
@@ -183,7 +184,6 @@ namespace Barroc_IT
             this.txtb_E_Appointment_Residence = new System.Windows.Forms.TextBox();
             this.dtp_E_Appointment_Date = new System.Windows.Forms.DateTimePicker();
             this.label51 = new System.Windows.Forms.Label();
-            this.lbl_E_Appointment_Id = new System.Windows.Forms.Label();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -464,7 +464,6 @@ namespace Barroc_IT
             this.mnitem_Logout.Checked = true;
             this.mnitem_Logout.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnitem_Logout.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.mnitem_Logout.Image = ((System.Drawing.Image)(resources.GetObject("mnitem_Logout.Image")));
             this.mnitem_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Margin = new System.Windows.Forms.Padding(0, 100, 0, 0);
             this.mnitem_Logout.Name = "mnitem_Logout";
@@ -575,7 +574,7 @@ namespace Barroc_IT
             // tcp_Appointments
             // 
             this.tcp_Appointments.AutoScroll = true;
-            this.tcp_Appointments.Controls.Add(this.button2);
+            this.tcp_Appointments.Controls.Add(this.btn_GoTo_Add_Appointment);
             this.tcp_Appointments.Controls.Add(this.appointmentsPanel);
             this.tcp_Appointments.Controls.Add(this.label6);
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
@@ -586,15 +585,15 @@ namespace Barroc_IT
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_GoTo_Add_Appointment
             // 
-            this.button2.Location = new System.Drawing.Point(3, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_GoTo_Add_Appointment.Location = new System.Drawing.Point(3, 6);
+            this.btn_GoTo_Add_Appointment.Name = "btn_GoTo_Add_Appointment";
+            this.btn_GoTo_Add_Appointment.Size = new System.Drawing.Size(34, 23);
+            this.btn_GoTo_Add_Appointment.TabIndex = 7;
+            this.btn_GoTo_Add_Appointment.Text = "Add";
+            this.btn_GoTo_Add_Appointment.UseVisualStyleBackColor = true;
+            this.btn_GoTo_Add_Appointment.Click += new System.EventHandler(this.btn_GoTo_Appointment);
             // 
             // appointmentsPanel
             // 
@@ -1643,7 +1642,7 @@ namespace Barroc_IT
             this.tcp_Edit_Appointment.Controls.Add(this.lbl_E_Appointment_Id);
             this.tcp_Edit_Appointment.Controls.Add(this.lbl_E_Appointment_Customer);
             this.tcp_Edit_Appointment.Controls.Add(this.pictureBox5);
-            this.tcp_Edit_Appointment.Controls.Add(this.button3);
+            this.tcp_Edit_Appointment.Controls.Add(this.btn_Edit_Appointment);
             this.tcp_Edit_Appointment.Controls.Add(this.label5);
             this.tcp_Edit_Appointment.Controls.Add(this.label46);
             this.tcp_Edit_Appointment.Controls.Add(this.label47);
@@ -1665,6 +1664,16 @@ namespace Barroc_IT
             this.tcp_Edit_Appointment.Text = "Edit Appointment";
             this.tcp_Edit_Appointment.UseVisualStyleBackColor = true;
             // 
+            // lbl_E_Appointment_Id
+            // 
+            this.lbl_E_Appointment_Id.AutoSize = true;
+            this.lbl_E_Appointment_Id.Location = new System.Drawing.Point(481, 17);
+            this.lbl_E_Appointment_Id.Name = "lbl_E_Appointment_Id";
+            this.lbl_E_Appointment_Id.Size = new System.Drawing.Size(41, 13);
+            this.lbl_E_Appointment_Id.TabIndex = 68;
+            this.lbl_E_Appointment_Id.Text = "label52";
+            this.lbl_E_Appointment_Id.Visible = false;
+            // 
             // lbl_E_Appointment_Customer
             // 
             this.lbl_E_Appointment_Customer.AutoSize = true;
@@ -1684,15 +1693,15 @@ namespace Barroc_IT
             this.pictureBox5.TabIndex = 66;
             this.pictureBox5.TabStop = false;
             // 
-            // button3
+            // btn_Edit_Appointment
             // 
-            this.button3.Location = new System.Drawing.Point(446, 393);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 23);
-            this.button3.TabIndex = 64;
-            this.button3.Text = "Edit Appointment";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.EditAppointment);
+            this.btn_Edit_Appointment.Location = new System.Drawing.Point(446, 393);
+            this.btn_Edit_Appointment.Name = "btn_Edit_Appointment";
+            this.btn_Edit_Appointment.Size = new System.Drawing.Size(105, 23);
+            this.btn_Edit_Appointment.TabIndex = 64;
+            this.btn_Edit_Appointment.Text = "Edit Appointment";
+            this.btn_Edit_Appointment.UseVisualStyleBackColor = true;
+            this.btn_Edit_Appointment.Click += new System.EventHandler(this.EditAppointment);
             // 
             // label5
             // 
@@ -1803,16 +1812,6 @@ namespace Barroc_IT
             this.label51.Size = new System.Drawing.Size(63, 13);
             this.label51.TabIndex = 51;
             this.label51.Text = "Customer Id";
-            // 
-            // lbl_E_Appointment_Id
-            // 
-            this.lbl_E_Appointment_Id.AutoSize = true;
-            this.lbl_E_Appointment_Id.Location = new System.Drawing.Point(481, 17);
-            this.lbl_E_Appointment_Id.Name = "lbl_E_Appointment_Id";
-            this.lbl_E_Appointment_Id.Size = new System.Drawing.Size(41, 13);
-            this.lbl_E_Appointment_Id.TabIndex = 68;
-            this.lbl_E_Appointment_Id.Text = "label52";
-            this.lbl_E_Appointment_Id.Visible = false;
             // 
             // frm_Development
             // 
@@ -1999,10 +1998,10 @@ namespace Barroc_IT
         private Button btn_Add_Appointment;
         private CheckBox checkb_Location;
         private PictureBox pictureBox4;
-        private Button button2;
+        private Button btn_GoTo_Add_Appointment;
         private TabPage tcp_Edit_Appointment;
         private PictureBox pictureBox5;
-        private Button button3;
+        private Button btn_Edit_Appointment;
         private Label label5;
         private Label label46;
         private Label label47;

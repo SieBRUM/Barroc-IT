@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -13,7 +7,6 @@ namespace Barroc_IT
     public partial class CustomerPanel : UserControl
     {
         bool opened = false;
-        DatabaseHandler dbh;
 
         enum prospect
         {
@@ -33,9 +26,7 @@ namespace Barroc_IT
             InitializeComponent();
             panel2.Hide();
 
-            dbh = new DatabaseHandler();
-
-            //int prospect = Convert.ToInt16(dt.Rows[rowNr]["prospect"]);
+            
             int creditworthy = Convert.ToInt16(dt.Rows[rowNr]["creditworthy"]);
 
             lbl_Customer_ID.Text = dt.Rows[rowNr]["customer_id"].ToString();
@@ -51,7 +42,6 @@ namespace Barroc_IT
             lbl_Customer_Phonenumber_2.Text = dt.Rows[rowNr]["phone_number_2"].ToString();
             lbl_Customer_Faxnumber.Text = dt.Rows[rowNr]["fax"].ToString();
             lbl_Customer_Email.Text = dt.Rows[rowNr]["email"].ToString();
-            //lbl_Customer_Prospect.Text = ((prospect)prospect).ToString();
             lbl_Customer_Last_Contact.Text = dt.Rows[rowNr]["last_contact"].ToString();
             lbl_Customer_Last_Action.Text = dt.Rows[rowNr]["last_action"].ToString();
             lbl_Customer_Next_Contact.Text = dt.Rows[rowNr]["next_contact"].ToString();

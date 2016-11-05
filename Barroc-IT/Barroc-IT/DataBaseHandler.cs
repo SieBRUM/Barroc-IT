@@ -400,21 +400,6 @@ namespace Barroc_IT
             }
         }
 
-//        public DataTable Filter(string filter, string table, string row)
-//        {
-//            DataTable dt = new DataTable();
-//            using (MySqlCommand cmd = new MySqlCommand(@"
-//                    SELECT 
-//                        
-//                ", this.GetConnection()))
-//            {
-//                MySqlDataReader reader;
-//                reader = cmd.ExecuteReader();
-//                dt.Load(reader);
-//            }
-//            return dt;
-//        }
-
         public DataTable FilterCustomers(string filter, string colName)
         {
             DataTable dt = new DataTable();
@@ -646,7 +631,6 @@ namespace Barroc_IT
                     ORDER BY
                         appointment_customer_id DESC", this.GetConnection()))
             {
-                //                         customer_id, CONCAT (customer_id,':', first_name, ' ', last_name, ',', zip_code) AS full_name 
                 cmd.Parameters.AddWithValue("appointment_id", a_Id);
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();

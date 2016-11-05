@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -13,7 +7,6 @@ namespace Barroc_IT
     public partial class InvoicePanel : UserControl
     {
         bool opened = false;
-        DatabaseHandler dbh;
 
         enum invoiceStatus
         {
@@ -25,13 +18,9 @@ namespace Barroc_IT
         {
             InitializeComponent();
             panel2.Hide();
-            dbh = new DatabaseHandler();
-
-            //int invoiceStatus = Convert.ToInt16(dt.Rows[rowNr]["status"]);
 
             lbl_Customer_Name.Text = dt.Rows[rowNr]["customer_id"].ToString() + ": " + dt.Rows[rowNr]["customer_name"].ToString();
             lbl_Invoice_ID.Text = dt.Rows[rowNr]["invoice_id"].ToString();
-            //lbl_Unpaid_Invoice.Text = ((invoiceStatus)invoiceStatus).ToString();
             lbl_Price.Text = "\u20AC " + dt.Rows[rowNr]["total_price"].ToString();
             lbl_Customer_CompanyName.Text = dt.Rows[rowNr]["company_name"].ToString();
             lbl_Customer_Contact_Person.Text = dt.Rows[rowNr]["contact_person"].ToString();
