@@ -17,6 +17,7 @@ namespace Barroc_IT
         public frm_Finance_2()
         {
             InitializeComponent();
+            cbox_Project_Status.SelectedIndex = 0;
             HideFilters(true, false, false, false);
             ShowInvoices();
             ShowAppointments();
@@ -97,6 +98,30 @@ namespace Barroc_IT
 
         }
 
+        private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tcp_Main.SelectedIndex == 2)
+            {
+                try
+                {
+                    dbh.OpenConnection();
+                    DataTable dt = dbh.GetProjectCB();
+                    cb_Select_Project.ValueMember = "project_id";
+                    cb_Select_Project.DisplayMember = "project_and_name";
+
+                    cb_Select_Project.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+        }
+
         private void ShowInvoices()
         {
             dbh = new DatabaseHandler();
@@ -136,7 +161,7 @@ namespace Barroc_IT
             }
         }
 
-        private void btn_Add_Invoice_Click(object sender, EventArgs e)
+        private void btn_GoTo_Add_Invoice_Click(object sender, EventArgs e)
         {
             tcp_Main.SelectedIndex = 2;
         }
@@ -233,5 +258,15 @@ namespace Barroc_IT
             invoicesPanel.Controls.Clear();
             ShowInvoices();
         }
+
+        private void btn_Add_Invoice_Click(object sender, EventArgs e)
+        {
+
+            dbh.OpenConnection();
+            dbh.AddInvoice(cb_Select_Project.SelectedValue.ToString(), txtb_VAT.Text, cbox_Project_Status.SelectedIndex, txtb_Price.Text);
+            MessageBox.Show("Added invoice");
+            dbh.CloseConnection();
+        }
+
     }
 }

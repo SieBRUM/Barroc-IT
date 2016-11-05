@@ -162,6 +162,30 @@ namespace Barroc_IT
             return dt;
         }
 
+        public DataTable GetProjectCB()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        project_id, CONCAT(project_id,':', project_name, ' ', tbl_customers.first_name, ' ', tbl_customers.last_name) AS project_and_name
+                    FROM 
+                        tbl_projects
+                    INNER JOIN
+                        tbl_customers
+                    ON
+                        tbl_projects.customer_id = tbl_customers.customer_id
+                    ORDER BY
+                        project_id",this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("project_id", typeof(string));
+                dt.Columns.Add("project_and_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
         public bool AddNotification(string c_Name, string notification_type, string department)
         {
             bool done;
@@ -222,7 +246,32 @@ namespace Barroc_IT
                 catch (Exception e)
                 {
                     done = false;
-                    MessageBox.Show("An error occured. Detailes below: \n\n " + e);
+                    MessageBox.Show("An error occured. Details below: \n\n " + e);
+                }
+            }
+            return done;
+        }
+
+        public bool AddInvoice(string p_ID, string i_VAT, int i_Status, string i_TotalPrice)
+        {
+            bool done;
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    INSERT INTO
+                        tbl_invoices(project_id, VAT, status, total_price)
+                    VALUES (@project_id, @VAT, @status, @total_price)",this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("project_id", p_ID);
+                cmd.Parameters.AddWithValue("VAT", i_VAT);
+                cmd.Parameters.AddWithValue("status", i_Status);
+                cmd.Parameters.AddWithValue("total_price", i_TotalPrice);
+                try
+                {
+                    done = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    done = false;
+                    MessageBox.Show("An error occured. Details below: \n\n " + e);
                 }
             }
             return done;

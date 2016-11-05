@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Finance_2));
             this.mstrp_Menu = new System.Windows.Forms.MenuStrip();
             this.mnitem_Overview = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Overview_Department = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,10 +67,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tcp_Main = new System.Windows.Forms.TabControl();
             this.tcp_Invoices = new System.Windows.Forms.TabPage();
-            this.btn_Add_Invoice = new System.Windows.Forms.Button();
+            this.btn_GoTo_Add_Invoice = new System.Windows.Forms.Button();
             this.invoicesPanel = new System.Windows.Forms.Panel();
             this.btn_ShowAllInvoices = new System.Windows.Forms.Button();
             this.tcp_AddInvoice = new System.Windows.Forms.TabPage();
+            this.btn_Add_Invoice = new System.Windows.Forms.Button();
+            this.lbl_Price = new System.Windows.Forms.Label();
+            this.txtb_Price = new System.Windows.Forms.TextBox();
+            this.cbox_Project_Status = new System.Windows.Forms.ComboBox();
+            this.lbl_Invoice_Status = new System.Windows.Forms.Label();
+            this.lbl_VAT = new System.Windows.Forms.Label();
+            this.txtb_VAT = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cb_Select_Project = new System.Windows.Forms.ComboBox();
+            this.lbl_Project_id = new System.Windows.Forms.Label();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
@@ -82,6 +93,8 @@
             this.tcp_Main.SuspendLayout();
             this.tcp_Invoices.SuspendLayout();
             this.invoicesPanel.SuspendLayout();
+            this.tcp_AddInvoice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tcp_Appointments.SuspendLayout();
             this.appointmentsPanel.SuspendLayout();
             this.tcp_Customers.SuspendLayout();
@@ -425,7 +438,6 @@
             // 
             // notificationsPanel
             // 
-            this.notificationsPanel.AutoScroll = true;
             this.notificationsPanel.AutoSize = true;
             this.notificationsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.notificationsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -477,10 +489,11 @@
             this.tcp_Main.Size = new System.Drawing.Size(574, 464);
             this.tcp_Main.TabIndex = 4;
             this.tcp_Main.TabStop = false;
+            this.tcp_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
             // tcp_Invoices
             // 
-            this.tcp_Invoices.Controls.Add(this.btn_Add_Invoice);
+            this.tcp_Invoices.Controls.Add(this.btn_GoTo_Add_Invoice);
             this.tcp_Invoices.Controls.Add(this.invoicesPanel);
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
@@ -490,15 +503,15 @@
             this.tcp_Invoices.Text = "Invoices";
             this.tcp_Invoices.UseVisualStyleBackColor = true;
             // 
-            // btn_Add_Invoice
+            // btn_GoTo_Add_Invoice
             // 
-            this.btn_Add_Invoice.Location = new System.Drawing.Point(3, 6);
-            this.btn_Add_Invoice.Name = "btn_Add_Invoice";
-            this.btn_Add_Invoice.Size = new System.Drawing.Size(34, 23);
-            this.btn_Add_Invoice.TabIndex = 7;
-            this.btn_Add_Invoice.Text = "Add";
-            this.btn_Add_Invoice.UseVisualStyleBackColor = true;
-            this.btn_Add_Invoice.Click += new System.EventHandler(this.btn_Add_Invoice_Click);
+            this.btn_GoTo_Add_Invoice.Location = new System.Drawing.Point(3, 6);
+            this.btn_GoTo_Add_Invoice.Name = "btn_GoTo_Add_Invoice";
+            this.btn_GoTo_Add_Invoice.Size = new System.Drawing.Size(34, 23);
+            this.btn_GoTo_Add_Invoice.TabIndex = 7;
+            this.btn_GoTo_Add_Invoice.Text = "Add";
+            this.btn_GoTo_Add_Invoice.UseVisualStyleBackColor = true;
+            this.btn_GoTo_Add_Invoice.Click += new System.EventHandler(this.btn_GoTo_Add_Invoice_Click);
             // 
             // invoicesPanel
             // 
@@ -525,6 +538,16 @@
             // 
             // tcp_AddInvoice
             // 
+            this.tcp_AddInvoice.Controls.Add(this.btn_Add_Invoice);
+            this.tcp_AddInvoice.Controls.Add(this.lbl_Price);
+            this.tcp_AddInvoice.Controls.Add(this.txtb_Price);
+            this.tcp_AddInvoice.Controls.Add(this.cbox_Project_Status);
+            this.tcp_AddInvoice.Controls.Add(this.lbl_Invoice_Status);
+            this.tcp_AddInvoice.Controls.Add(this.lbl_VAT);
+            this.tcp_AddInvoice.Controls.Add(this.txtb_VAT);
+            this.tcp_AddInvoice.Controls.Add(this.pictureBox1);
+            this.tcp_AddInvoice.Controls.Add(this.cb_Select_Project);
+            this.tcp_AddInvoice.Controls.Add(this.lbl_Project_id);
             this.tcp_AddInvoice.Location = new System.Drawing.Point(4, 22);
             this.tcp_AddInvoice.Name = "tcp_AddInvoice";
             this.tcp_AddInvoice.Padding = new System.Windows.Forms.Padding(3);
@@ -532,6 +555,103 @@
             this.tcp_AddInvoice.TabIndex = 2;
             this.tcp_AddInvoice.Text = "Add Invoice";
             this.tcp_AddInvoice.UseVisualStyleBackColor = true;
+            // 
+            // btn_Add_Invoice
+            // 
+            this.btn_Add_Invoice.Location = new System.Drawing.Point(485, 403);
+            this.btn_Add_Invoice.Name = "btn_Add_Invoice";
+            this.btn_Add_Invoice.Size = new System.Drawing.Size(75, 23);
+            this.btn_Add_Invoice.TabIndex = 34;
+            this.btn_Add_Invoice.Text = "Add invoice";
+            this.btn_Add_Invoice.UseVisualStyleBackColor = true;
+            this.btn_Add_Invoice.Click += new System.EventHandler(this.btn_Add_Invoice_Click);
+            // 
+            // lbl_Price
+            // 
+            this.lbl_Price.AutoSize = true;
+            this.lbl_Price.Location = new System.Drawing.Point(316, 225);
+            this.lbl_Price.Name = "lbl_Price";
+            this.lbl_Price.Size = new System.Drawing.Size(31, 13);
+            this.lbl_Price.TabIndex = 33;
+            this.lbl_Price.Text = "Price";
+            // 
+            // txtb_Price
+            // 
+            this.txtb_Price.Location = new System.Drawing.Point(319, 241);
+            this.txtb_Price.MaxLength = 3;
+            this.txtb_Price.Name = "txtb_Price";
+            this.txtb_Price.Size = new System.Drawing.Size(100, 20);
+            this.txtb_Price.TabIndex = 32;
+            // 
+            // cbox_Project_Status
+            // 
+            this.cbox_Project_Status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbox_Project_Status.Enabled = false;
+            this.cbox_Project_Status.FormattingEnabled = true;
+            this.cbox_Project_Status.Items.AddRange(new object[] {
+            "Unpaid",
+            "Paid"});
+            this.cbox_Project_Status.Location = new System.Drawing.Point(27, 241);
+            this.cbox_Project_Status.Name = "cbox_Project_Status";
+            this.cbox_Project_Status.Size = new System.Drawing.Size(97, 21);
+            this.cbox_Project_Status.TabIndex = 30;
+            // 
+            // lbl_Invoice_Status
+            // 
+            this.lbl_Invoice_Status.AutoSize = true;
+            this.lbl_Invoice_Status.Location = new System.Drawing.Point(24, 225);
+            this.lbl_Invoice_Status.Name = "lbl_Invoice_Status";
+            this.lbl_Invoice_Status.Size = new System.Drawing.Size(75, 13);
+            this.lbl_Invoice_Status.TabIndex = 31;
+            this.lbl_Invoice_Status.Text = "Invoice Status";
+            // 
+            // lbl_VAT
+            // 
+            this.lbl_VAT.AutoSize = true;
+            this.lbl_VAT.Location = new System.Drawing.Point(316, 180);
+            this.lbl_VAT.Name = "lbl_VAT";
+            this.lbl_VAT.Size = new System.Drawing.Size(28, 13);
+            this.lbl_VAT.TabIndex = 29;
+            this.lbl_VAT.Text = "VAT";
+            // 
+            // txtb_VAT
+            // 
+            this.txtb_VAT.Location = new System.Drawing.Point(319, 196);
+            this.txtb_VAT.Name = "txtb_VAT";
+            this.txtb_VAT.Size = new System.Drawing.Size(100, 20);
+            this.txtb_VAT.TabIndex = 28;
+            this.txtb_VAT.Text = "21";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cb_Select_Project
+            // 
+            this.cb_Select_Project.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_Select_Project.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_Select_Project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Select_Project.FormattingEnabled = true;
+            this.cb_Select_Project.Location = new System.Drawing.Point(27, 196);
+            this.cb_Select_Project.MaxDropDownItems = 100;
+            this.cb_Select_Project.Name = "cb_Select_Project";
+            this.cb_Select_Project.Size = new System.Drawing.Size(286, 21);
+            this.cb_Select_Project.TabIndex = 14;
+            // 
+            // lbl_Project_id
+            // 
+            this.lbl_Project_id.AutoSize = true;
+            this.lbl_Project_id.Location = new System.Drawing.Point(23, 180);
+            this.lbl_Project_id.Name = "lbl_Project_id";
+            this.lbl_Project_id.Size = new System.Drawing.Size(52, 13);
+            this.lbl_Project_id.TabIndex = 15;
+            this.lbl_Project_id.Text = "Project Id";
             // 
             // tcp_Appointments
             // 
@@ -619,6 +739,9 @@
             this.tcp_Invoices.ResumeLayout(false);
             this.tcp_Invoices.PerformLayout();
             this.invoicesPanel.ResumeLayout(false);
+            this.tcp_AddInvoice.ResumeLayout(false);
+            this.tcp_AddInvoice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tcp_Appointments.ResumeLayout(false);
             this.tcp_Appointments.PerformLayout();
             this.appointmentsPanel.ResumeLayout(false);
@@ -670,7 +793,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Customers_CoName;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Customers_Residence;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Customers_UnpaidInvoice;
-        private System.Windows.Forms.Button btn_Add_Invoice;
+        private System.Windows.Forms.Button btn_GoTo_Add_Invoice;
         private System.Windows.Forms.TabPage tcp_Appointments;
         private System.Windows.Forms.Panel appointmentsPanel;
         private System.Windows.Forms.Button btn_showallAppointments;
@@ -679,5 +802,15 @@
         private System.Windows.Forms.Button btn_ShowAllCustomers;
         private System.Windows.Forms.Panel notificationsPanel;
         private System.Windows.Forms.Button btn_Show_All_Notifications;
+        private System.Windows.Forms.ComboBox cb_Select_Project;
+        private System.Windows.Forms.Label lbl_Project_id;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_VAT;
+        private System.Windows.Forms.TextBox txtb_VAT;
+        private System.Windows.Forms.ComboBox cbox_Project_Status;
+        private System.Windows.Forms.Label lbl_Invoice_Status;
+        private System.Windows.Forms.Label lbl_Price;
+        private System.Windows.Forms.TextBox txtb_Price;
+        private System.Windows.Forms.Button btn_Add_Invoice;
     }
 }
