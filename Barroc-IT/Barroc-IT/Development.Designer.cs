@@ -1135,6 +1135,7 @@ namespace Barroc_IT
             // 
             // panel2
             // 
+            this.panel2.AccessibleName = "";
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.label37);
             this.panel2.Controls.Add(this.lbl_Company_Name);
@@ -1186,6 +1187,7 @@ namespace Barroc_IT
             // 
             // lbl_Company_Name
             // 
+            this.lbl_Company_Name.AccessibleName = "Controls";
             this.lbl_Company_Name.AutoSize = true;
             this.lbl_Company_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Company_Name.Location = new System.Drawing.Point(120, 22);
@@ -1196,6 +1198,7 @@ namespace Barroc_IT
             // 
             // lbl_Phonenumber2
             // 
+            this.lbl_Phonenumber2.AccessibleName = "Controls";
             this.lbl_Phonenumber2.AutoSize = true;
             this.lbl_Phonenumber2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Phonenumber2.Location = new System.Drawing.Point(120, 199);
@@ -1224,6 +1227,7 @@ namespace Barroc_IT
             // 
             // lbl_Zip_Code2
             // 
+            this.lbl_Zip_Code2.AccessibleName = "Controls";
             this.lbl_Zip_Code2.AutoSize = true;
             this.lbl_Zip_Code2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Zip_Code2.Location = new System.Drawing.Point(120, 186);
@@ -1234,6 +1238,7 @@ namespace Barroc_IT
             // 
             // lbl_Residence2
             // 
+            this.lbl_Residence2.AccessibleName = "Controls";
             this.lbl_Residence2.AutoSize = true;
             this.lbl_Residence2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Residence2.Location = new System.Drawing.Point(120, 159);
@@ -1262,6 +1267,7 @@ namespace Barroc_IT
             // 
             // lbl_Address2
             // 
+            this.lbl_Address2.AccessibleName = "Controls";
             this.lbl_Address2.AutoSize = true;
             this.lbl_Address2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Address2.Location = new System.Drawing.Point(120, 173);
@@ -1272,6 +1278,7 @@ namespace Barroc_IT
             // 
             // lbl_Fax
             // 
+            this.lbl_Fax.AccessibleName = "Controls";
             this.lbl_Fax.AutoSize = true;
             this.lbl_Fax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Fax.Location = new System.Drawing.Point(120, 101);
@@ -1291,6 +1298,7 @@ namespace Barroc_IT
             // 
             // lbl_Phonenumber
             // 
+            this.lbl_Phonenumber.AccessibleName = "Controls";
             this.lbl_Phonenumber.AutoSize = true;
             this.lbl_Phonenumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Phonenumber.Location = new System.Drawing.Point(120, 88);
@@ -1319,6 +1327,7 @@ namespace Barroc_IT
             // 
             // lbl_Email
             // 
+            this.lbl_Email.AccessibleName = "Controls";
             this.lbl_Email.AutoSize = true;
             this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Email.Location = new System.Drawing.Point(120, 75);
@@ -1347,6 +1356,7 @@ namespace Barroc_IT
             // 
             // lbl_Customer_Name
             // 
+            this.lbl_Customer_Name.AccessibleName = "Controls";
             this.lbl_Customer_Name.AutoSize = true;
             this.lbl_Customer_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Name.Location = new System.Drawing.Point(120, 9);
@@ -1357,6 +1367,7 @@ namespace Barroc_IT
             // 
             // lbl_Zip_Code
             // 
+            this.lbl_Zip_Code.AccessibleName = "Controls";
             this.lbl_Zip_Code.AutoSize = true;
             this.lbl_Zip_Code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Zip_Code.Location = new System.Drawing.Point(120, 62);
@@ -1367,6 +1378,7 @@ namespace Barroc_IT
             // 
             // lbl_Residence
             // 
+            this.lbl_Residence.AccessibleName = "Controls";
             this.lbl_Residence.AutoSize = true;
             this.lbl_Residence.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Residence.Location = new System.Drawing.Point(120, 35);
@@ -1395,6 +1407,7 @@ namespace Barroc_IT
             // 
             // lbl_Address
             // 
+            this.lbl_Address.AccessibleName = "Controls";
             this.lbl_Address.AutoSize = true;
             this.lbl_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Address.Location = new System.Drawing.Point(120, 49);

@@ -246,6 +246,14 @@ namespace Barroc_IT
             lbl_Zip_Code2.Text = dt.Rows[0]["zip_code_2"].ToString();
             lbl_Phonenumber2.Text = dt.Rows[0]["phone_number_2"].ToString();
 
+            foreach (Control control in panel2.Controls)
+            {
+                if (control.AccessibleName == "Controls" && (control.Text == "" || control.Text == "0" || control.Text == " 0"))
+                {
+                    control.Text = "N/A";
+                }
+            }
+
             tcp_Main.SelectedIndex = 7;
             dbh.CloseConnection();
         }
