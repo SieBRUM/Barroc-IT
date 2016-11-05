@@ -30,23 +30,23 @@ namespace Barroc_IT
             switch (toolstrip.Name)
             {
                 case "mnitem_Overview":
-                    tcp_Main.SelectedIndex = 0;
+                    tc_Main.SelectedIndex = 0;
                     HideFilters(true, false, false, false);
                     break;
                 case "mnitem_Appointments":
-                    tcp_Main.SelectedIndex = 1;
+                    tc_Main.SelectedIndex = 1;
                     HideFilters(false, true, false, false);
                     break;
                 case "mnitem_Invoices":
-                    tcp_Main.SelectedIndex = 2;
+                    tc_Main.SelectedIndex = 2;
                     HideFilters(false, false, true,false);
                     break;
                 case "mnitem_Customers":
-                    tcp_Main.SelectedIndex = 3;
+                    tc_Main.SelectedIndex = 3;
                     HideFilters(false, false, false, true);
                     break;
                 default:
-                    tcp_Main.SelectedIndex = 0;
+                    tc_Main.SelectedIndex = 0;
                     break;
             }
         }
@@ -95,26 +95,46 @@ namespace Barroc_IT
 
         }
 
-        //private void mnitem_Logout_Click(object sender, EventArgs e)
-        //{
-        //    frm_Logout lgfrm = new frm_Logout(this);
-        //    lgfrm.Show();
-        //}
-
-        //private void frm_Sales_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    Application.Exit();
-        //}
-
-        private void button1_Click(object sender, EventArgs e)
+        private void AddCustomer(object sender, EventArgs e)
         {
+            int result;
+            bool check = true;
+            int optional = 0;
+            foreach (Control a in tcp_AddCustomer.Controls)
+            {
+                if (a is TextBox)
+                {
+                    if (a.AccessibleName != "OptionalLocation" || a.AccessibleName != "VeryOptional")
+                    {
+                        if (a.Text == "")
+                        {
+                            check = false;
+                        }
+                    }
+                    else if (a.AccessibleName == "OptionalLocation")
+                    {
+                        if (a.Text != "")
+                        {
+                            ++optional;
+                        }
+                    }
+                }
+            }
 
             string nextContact = DateHandler.GetDate(dtp_customer_nextcontact);
             string lastContact = DateHandler.GetDate(dtp_customer_lastcontact);
 
-            if (txtb_customer_firstname.Text == "" || txtb_customer_lastname.Text == "" || txtb_customer_email.Text == "" || txtb_customer_streetname_1.Text == "" || txtb_customer_housenumber_1.Text == "" || txtb_customer_residence_1.Text == "" || txtb_customer_zipcode_1.Text == "" || txtb_customer_phonenumber_1.Text == "" || txtb_customer_last_action.Text == "" || txtb_customer_next_action.Text == "")
+            if (!check)
             {
                 MessageBox.Show("Please make sure all the neccesary fields are filled in.");
+            }
+            else if (optional != 0 && optional != 4)
+            {
+                MessageBox.Show("All address details have to be filled in!");
+            }
+            else if (!int.TryParse(txtb_customer_fax.Text, out result) && !int.TryParse(txtb_customer_phonenumber_1.Text, out result) && !int.TryParse(txtb_customer_phonenumber_2.Text, out result))
+            {
+                MessageBox.Show("fax or phonenumber are not numbers");
             }
             else if (dtp_customer_nextcontact.Value.Date < DateTime.Now.Date)
             {
@@ -183,16 +203,47 @@ namespace Barroc_IT
             lblCustomer_FirstName.Text = dt.Rows[0]["first_name"].ToString();
             lblCustomer_LastName.Text = dt.Rows[0]["last_name"].ToString();
 
-            tcp_Main.SelectedIndex = 5;
+            tc_Main.SelectedIndex = 5;
             dbh.CloseConnection();
         }
 
         private void EditCustomer(object sender, EventArgs e)
         {
             int result;
-            if (!int.TryParse(txtbCustomerFax.Text, out result) && !int.TryParse(txtbCustomerPhonenumber1.Text,out result))
+            bool check = true;
+            int optional = 0;
+            foreach (Control a in tcp_EditCustomer.Controls)
             {
-                MessageBox.Show("fax of phonenumber are not numbers");
+                if (a is TextBox)
+                {
+                    if (a.AccessibleName != "OptionalLocation" || a.AccessibleName != "VeryOptional")
+                    {
+                        if (a.Text == "")
+                        {
+                            check = false;
+                        }
+                    }
+                    else if (a.AccessibleName == "OptionalLocation")
+                    {
+                        if (a.Text != "")
+                        {
+                            ++optional;
+                        }
+                    }
+                }
+            }
+
+            if (!int.TryParse(txtbCustomerFax.Text, out result) && !int.TryParse(txtbCustomerPhonenumber1.Text, out result) && !int.TryParse(txtbCustomerPhonenumber2.Text, out result))
+            {
+                MessageBox.Show("fax or phonenumber are not numbers");
+            }
+            else if (!check)
+            {
+                MessageBox.Show("Not all fields are filled in.");
+            }
+            else if (dtpCustomerNextContact.Value < DateTime.Now)
+            {
+                MessageBox.Show("Next action date cannot be in the past!");
             }
             else
             {
@@ -207,11 +258,6 @@ namespace Barroc_IT
                 }
                 dbh.CloseConnection();
             }
-        }
-
-        private void btn_Project_Show_All_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -239,12 +285,14 @@ namespace Barroc_IT
 
         private void btn_Add_Customer_Click(object sender, EventArgs e)
         {
-            tcp_Main.SelectedIndex = 4;
+            tc_Main.SelectedIndex = 4;
         }
 
         private void btn_showallAppointments_Click(object sender, EventArgs e)
         {
-
+            showallAppointments = true;
+            appointmentsPanel.Controls.Clear();
+            ShowAppointments();
         }
 
         private void ShowAppointments()
@@ -264,7 +312,7 @@ namespace Barroc_IT
                 appointmentInfoPanel[i].Dock = DockStyle.Top;
                 appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
                 appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
-                //appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+                appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
             }
             dbh.CloseConnection();
         }
@@ -293,6 +341,7 @@ namespace Barroc_IT
                 invoiceInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 invoiceInfoPanel[i].Dock = DockStyle.Top;
                 invoicesPanel.Controls.Add(invoiceInfoPanel[i]);
+
             }
             dbh.CloseConnection();
         }
@@ -383,6 +432,126 @@ namespace Barroc_IT
                 }
                 dbh.CloseConnection();
             }
+        }
+
+        private void AddAppointment(object sender, EventArgs e)
+        {
+            if (txtb_A_Appointment_Housenumber.Text == "" || txtb_A_Appointment_Residence.Text == "" || txtb_A_Appointment_Streetname.Text == "" || txtb_A_Appointment_Zipcode.Text == "" || rtb_A_Appointment.Text == "")
+            {
+                MessageBox.Show("Make sure all fields are filled in correctly!");
+            }
+            else if (dtp_A_Appointment.Value < DateTime.Now)
+            {
+                MessageBox.Show("Date cannot be in the past!");
+            }
+            else
+            {
+                dbh.OpenConnection();
+                if (dbh.AddAppointment(cb_Appointment_Select_Customer.SelectedValue.ToString(), dtp_A_Appointment.Value.ToString(), txtb_A_Appointment_Residence.Text, txtb_A_Appointment_Streetname.Text, txtb_A_Appointment_Housenumber.Text, txtb_A_Appointment_Zipcode.Text, rtb_A_Appointment.Text))
+                    MessageBox.Show("Succesfully added an appointment!");
+                else
+                    MessageBox.Show("An error occcured while adding an appointment.");
+                dbh.CloseConnection();
+            }
+        }
+
+        private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tc_Main.SelectedIndex == 7)
+            {
+                try
+                {
+                    dbh.OpenConnection();
+                    DataTable dt = dbh.GetCustomerCB();
+                    cb_Appointment_Select_Customer.ValueMember = "customer_id";
+                    cb_Appointment_Select_Customer.DisplayMember = "full_name";
+
+                    cb_Appointment_Select_Customer.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+        }
+
+        private void GetLocation(object sender, EventArgs e)
+        {
+            if (checkb_Location.Checked)
+            {
+                dbh.OpenConnection();
+                DataTable dt = dbh.GetCustomer(cb_Appointment_Select_Customer.SelectedValue.ToString());
+                cb_Appointment_Select_Customer.Enabled = false;
+                txtb_A_Appointment_Residence.Text = dt.Rows[0]["residence"].ToString();
+                txtb_A_Appointment_Residence.Enabled = false;
+                txtb_A_Appointment_Streetname.Text = dt.Rows[0]["street_name"].ToString();
+                txtb_A_Appointment_Streetname.Enabled = false;
+                txtb_A_Appointment_Housenumber.Text = dt.Rows[0]["house_number"].ToString();
+                txtb_A_Appointment_Housenumber.Enabled = false;
+                txtb_A_Appointment_Zipcode.Text = dt.Rows[0]["zip_code"].ToString();
+                txtb_A_Appointment_Zipcode.Enabled = false;
+                dbh.CloseConnection();
+            }
+            else
+            {
+                cb_Appointment_Select_Customer.Enabled = true;
+                txtb_A_Appointment_Residence.Text = "";
+                txtb_A_Appointment_Streetname.Text = "";
+                txtb_A_Appointment_Housenumber.Text = "";
+                txtb_A_Appointment_Zipcode.Text = "";
+                txtb_A_Appointment_Residence.Enabled = true;
+                txtb_A_Appointment_Streetname.Enabled = true;
+                txtb_A_Appointment_Housenumber.Enabled = true;
+                txtb_A_Appointment_Zipcode.Enabled = true;
+            }
+        }
+
+        private void FillEditAppointmentItems(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Button button = (Button)sender;
+            lbl_E_Appointment_Id.Text = button.AccessibleName;
+            DataTable dt = dbh.GetAppointment(button.AccessibleName);
+            txtb_E_Appointment_Residence.Text = dt.Rows[0]["appointment_residence"].ToString();
+            txtb_E_Appointment_Streetname.Text = dt.Rows[0]["appointment_streetname"].ToString();
+            txtb_E_Appointment_Housenumber.Text = dt.Rows[0]["appointment_housenumber"].ToString();
+            txtb_E_Appointment_Zip_Code.Text = dt.Rows[0]["appointment_zipcode"].ToString();
+            dtp_E_Appointment_Date.Value = Convert.ToDateTime(dt.Rows[0]["appointment_datetime"]);
+            rtb_E_Appointment_Summary.Text = dt.Rows[0]["appointment_summary"].ToString();
+            lbl_E_Appointment_Customer.Text = dt.Rows[0]["customer_data"].ToString();
+
+            dbh.CloseConnection();
+            tc_Main.SelectedIndex = 6;
+        }
+
+        private void EditAppointment(object sender, EventArgs e)
+        {
+            if (txtb_E_Appointment_Housenumber.Text == "" || txtb_E_Appointment_Residence.Text == "" || txtb_E_Appointment_Streetname.Text == "" || txtb_E_Appointment_Zip_Code.Text == "" || rtb_E_Appointment_Summary.Text == "")
+            {
+                MessageBox.Show("Make sure all fields are filled in correctly!");
+            }
+            else if (dtp_E_Appointment_Date.Value < DateTime.Now)
+            {
+                MessageBox.Show("Date cannot be in the past!");
+            }
+            else
+            {
+                dbh.OpenConnection();
+                if (dbh.EditAppointment(lbl_E_Appointment_Id.Text, dtp_E_Appointment_Date.Value.ToString(), txtb_E_Appointment_Residence.Text, txtb_E_Appointment_Streetname.Text, txtb_E_Appointment_Housenumber.Text, txtb_E_Appointment_Zip_Code.Text, rtb_E_Appointment_Summary.Text))
+                    MessageBox.Show("Succesfully editted the appointment!");
+                else
+                    MessageBox.Show("An error occcured while adding an appointment.");
+                dbh.CloseConnection();
+            }
+        }
+
+        private void btn_GoTo_Add_Appointment_Click(object sender, EventArgs e)
+        {
+            tc_Main.SelectedIndex = 7;
         }
     }
 }

@@ -192,11 +192,10 @@
             // 
             // mnitem_Appointments
             // 
-            this.mnitem_Appointments.AutoSize = false;
             this.mnitem_Appointments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnitem_Appointments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Appointments.Name = "mnitem_Appointments";
-            this.mnitem_Appointments.Size = new System.Drawing.Size(135, 30);
+            this.mnitem_Appointments.Size = new System.Drawing.Size(135, 25);
             this.mnitem_Appointments.Text = "Appointments";
             this.mnitem_Appointments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Appointments.Click += new System.EventHandler(this.MenuHandler);

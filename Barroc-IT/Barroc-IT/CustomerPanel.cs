@@ -52,6 +52,14 @@ namespace Barroc_IT
             lbl_Customer_Iban.Text = dt.Rows[rowNr]["iban"].ToString();
             lbl_Customer_Limit.Text = "\u20AC " + dt.Rows[rowNr]["limit"].ToString();
             lbl_Customer_Gross_Revenue.Text = "\u20AC " + dt.Rows[rowNr]["gross_revenue"].ToString();
+
+            foreach (Control control in panel2.Controls)
+            {
+                if (control.AccessibleName == "Control" && (control.Text == "" || control.Text == "0"))
+                {
+                    control.Text = "N/A";
+                }
+            }
         }
 
         private void ShowMoreInfo(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace Barroc_IT
             InitializeComponent();
             panel2.Hide();
 
+            lbl_Appointment_Date.Text = dt.Rows[rowNr]["appointment_datetime"].ToString();
             lbl_Appointment_Address_Data.Text = dt.Rows[rowNr]["appointment_address"].ToString();
             lbl_Appointment_Zipcode_Data.Text = dt.Rows[rowNr]["appointment_zipcode"].ToString();
             lbl_Appointment_Residence_Data.Text = dt.Rows[rowNr]["appointment_residence"].ToString();
@@ -26,6 +27,9 @@ namespace Barroc_IT
             lbl_Customer_Zipcode_Data.Text = dt.Rows[rowNr]["customer_zip_code"].ToString();
             lbl_Customer_PhoneNumber_Data.Text = dt.Rows[rowNr]["customer_phone_number"].ToString();
             lbl_Customer_Email_Data.Text = dt.Rows[rowNr]["customer_email"].ToString();
+
+            if (rtb_Summary.Text == "")
+                lbl_hasSummary.Text = "No summary";
         }
 
         private void OpenMoreInfo(object sender, EventArgs e)

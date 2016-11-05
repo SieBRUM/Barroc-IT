@@ -32,7 +32,6 @@
             this.lbl_Customer_Residence = new System.Windows.Forms.Label();
             this.lbl_Customer_PhoneNumber_Data = new System.Windows.Forms.Label();
             this.lbl_Customer_PhoneNumber = new System.Windows.Forms.Label();
-            this.lbl_Appointment_Contactperson_Data = new System.Windows.Forms.Label();
             this.lbl_Customer_Email_Data = new System.Windows.Forms.Label();
             this.lbl_Appointment_Time_Data = new System.Windows.Forms.Label();
             this.lbl_Customer_Zipcode_Data = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.lbl_Appointment_Summary = new System.Windows.Forms.Label();
             this.rtb_Summary = new System.Windows.Forms.RichTextBox();
             this.lbl_Customer_Email = new System.Windows.Forms.Label();
-            this.lbl_Appointment_Contactperson = new System.Windows.Forms.Label();
             this.lbl_Appointment_Time = new System.Windows.Forms.Label();
             this.lbl_Customer_Zipcode = new System.Windows.Forms.Label();
             this.lbl_Customer_Address = new System.Windows.Forms.Label();
@@ -50,6 +48,7 @@
             this.lbl_CustomerName = new System.Windows.Forms.Label();
             this.lbl_hasSummary = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Edit = new System.Windows.Forms.Button();
             this.lbl_Appointment_Made_Data = new System.Windows.Forms.Label();
             this.lbl_Appointment_Made = new System.Windows.Forms.Label();
             this.lbl_Appointment_Residence_Data = new System.Windows.Forms.Label();
@@ -59,7 +58,6 @@
             this.lbl_Appointment_Zipcode_Data = new System.Windows.Forms.Label();
             this.lbl_Appointment_Zipcode = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Edit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -101,16 +99,6 @@
             this.lbl_Customer_PhoneNumber.Size = new System.Drawing.Size(79, 13);
             this.lbl_Customer_PhoneNumber.TabIndex = 17;
             this.lbl_Customer_PhoneNumber.Text = "Phone number:";
-            // 
-            // lbl_Appointment_Contactperson_Data
-            // 
-            this.lbl_Appointment_Contactperson_Data.AutoSize = true;
-            this.lbl_Appointment_Contactperson_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Appointment_Contactperson_Data.Location = new System.Drawing.Point(407, 29);
-            this.lbl_Appointment_Contactperson_Data.Name = "lbl_Appointment_Contactperson_Data";
-            this.lbl_Appointment_Contactperson_Data.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Appointment_Contactperson_Data.TabIndex = 16;
-            this.lbl_Appointment_Contactperson_Data.Text = "Placeholder";
             // 
             // lbl_Customer_Email_Data
             // 
@@ -188,15 +176,6 @@
             this.lbl_Customer_Email.Size = new System.Drawing.Size(35, 13);
             this.lbl_Customer_Email.TabIndex = 8;
             this.lbl_Customer_Email.Text = "Email:";
-            // 
-            // lbl_Appointment_Contactperson
-            // 
-            this.lbl_Appointment_Contactperson.AutoSize = true;
-            this.lbl_Appointment_Contactperson.Location = new System.Drawing.Point(286, 29);
-            this.lbl_Appointment_Contactperson.Name = "lbl_Appointment_Contactperson";
-            this.lbl_Appointment_Contactperson.Size = new System.Drawing.Size(79, 13);
-            this.lbl_Appointment_Contactperson.TabIndex = 7;
-            this.lbl_Appointment_Contactperson.Text = "Contactperson:";
             // 
             // lbl_Appointment_Time
             // 
@@ -280,7 +259,6 @@
             this.panel2.Controls.Add(this.lbl_Customer_Residence);
             this.panel2.Controls.Add(this.lbl_Customer_PhoneNumber_Data);
             this.panel2.Controls.Add(this.lbl_Customer_PhoneNumber);
-            this.panel2.Controls.Add(this.lbl_Appointment_Contactperson_Data);
             this.panel2.Controls.Add(this.lbl_Customer_Email_Data);
             this.panel2.Controls.Add(this.lbl_Appointment_Time_Data);
             this.panel2.Controls.Add(this.lbl_Customer_Zipcode_Data);
@@ -289,7 +267,6 @@
             this.panel2.Controls.Add(this.lbl_Appointment_Summary);
             this.panel2.Controls.Add(this.rtb_Summary);
             this.panel2.Controls.Add(this.lbl_Customer_Email);
-            this.panel2.Controls.Add(this.lbl_Appointment_Contactperson);
             this.panel2.Controls.Add(this.lbl_Appointment_Time);
             this.panel2.Controls.Add(this.lbl_Customer_Zipcode);
             this.panel2.Controls.Add(this.lbl_Customer_Address);
@@ -300,11 +277,20 @@
             this.panel2.Size = new System.Drawing.Size(538, 235);
             this.panel2.TabIndex = 3;
             // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Location = new System.Drawing.Point(410, 209);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(122, 23);
+            this.btn_Edit.TabIndex = 30;
+            this.btn_Edit.Text = "Edit Appointment";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            // 
             // lbl_Appointment_Made_Data
             // 
             this.lbl_Appointment_Made_Data.AutoSize = true;
             this.lbl_Appointment_Made_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Appointment_Made_Data.Location = new System.Drawing.Point(408, 97);
+            this.lbl_Appointment_Made_Data.Location = new System.Drawing.Point(408, 80);
             this.lbl_Appointment_Made_Data.Name = "lbl_Appointment_Made_Data";
             this.lbl_Appointment_Made_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Appointment_Made_Data.TabIndex = 29;
@@ -313,7 +299,7 @@
             // lbl_Appointment_Made
             // 
             this.lbl_Appointment_Made.AutoSize = true;
-            this.lbl_Appointment_Made.Location = new System.Drawing.Point(287, 97);
+            this.lbl_Appointment_Made.Location = new System.Drawing.Point(287, 80);
             this.lbl_Appointment_Made.Name = "lbl_Appointment_Made";
             this.lbl_Appointment_Made.Size = new System.Drawing.Size(98, 13);
             this.lbl_Appointment_Made.TabIndex = 28;
@@ -323,7 +309,7 @@
             // 
             this.lbl_Appointment_Residence_Data.AutoSize = true;
             this.lbl_Appointment_Residence_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Appointment_Residence_Data.Location = new System.Drawing.Point(407, 46);
+            this.lbl_Appointment_Residence_Data.Location = new System.Drawing.Point(407, 29);
             this.lbl_Appointment_Residence_Data.Name = "lbl_Appointment_Residence_Data";
             this.lbl_Appointment_Residence_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Appointment_Residence_Data.TabIndex = 27;
@@ -332,7 +318,7 @@
             // lbl_Appointment_Residence
             // 
             this.lbl_Appointment_Residence.AutoSize = true;
-            this.lbl_Appointment_Residence.Location = new System.Drawing.Point(286, 46);
+            this.lbl_Appointment_Residence.Location = new System.Drawing.Point(286, 29);
             this.lbl_Appointment_Residence.Name = "lbl_Appointment_Residence";
             this.lbl_Appointment_Residence.Size = new System.Drawing.Size(118, 13);
             this.lbl_Appointment_Residence.TabIndex = 26;
@@ -342,7 +328,7 @@
             // 
             this.lbl_Appointment_Address_Data.AutoSize = true;
             this.lbl_Appointment_Address_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Appointment_Address_Data.Location = new System.Drawing.Point(407, 63);
+            this.lbl_Appointment_Address_Data.Location = new System.Drawing.Point(407, 46);
             this.lbl_Appointment_Address_Data.Name = "lbl_Appointment_Address_Data";
             this.lbl_Appointment_Address_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Appointment_Address_Data.TabIndex = 25;
@@ -351,7 +337,7 @@
             // lbl_Appointment_Address
             // 
             this.lbl_Appointment_Address.AutoSize = true;
-            this.lbl_Appointment_Address.Location = new System.Drawing.Point(286, 63);
+            this.lbl_Appointment_Address.Location = new System.Drawing.Point(286, 46);
             this.lbl_Appointment_Address.Name = "lbl_Appointment_Address";
             this.lbl_Appointment_Address.Size = new System.Drawing.Size(109, 13);
             this.lbl_Appointment_Address.TabIndex = 24;
@@ -361,7 +347,7 @@
             // 
             this.lbl_Appointment_Zipcode_Data.AutoSize = true;
             this.lbl_Appointment_Zipcode_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Appointment_Zipcode_Data.Location = new System.Drawing.Point(407, 80);
+            this.lbl_Appointment_Zipcode_Data.Location = new System.Drawing.Point(407, 63);
             this.lbl_Appointment_Zipcode_Data.Name = "lbl_Appointment_Zipcode_Data";
             this.lbl_Appointment_Zipcode_Data.Size = new System.Drawing.Size(74, 13);
             this.lbl_Appointment_Zipcode_Data.TabIndex = 23;
@@ -370,7 +356,7 @@
             // lbl_Appointment_Zipcode
             // 
             this.lbl_Appointment_Zipcode.AutoSize = true;
-            this.lbl_Appointment_Zipcode.Location = new System.Drawing.Point(286, 80);
+            this.lbl_Appointment_Zipcode.Location = new System.Drawing.Point(286, 63);
             this.lbl_Appointment_Zipcode.Name = "lbl_Appointment_Zipcode";
             this.lbl_Appointment_Zipcode.Size = new System.Drawing.Size(109, 13);
             this.lbl_Appointment_Zipcode.TabIndex = 22;
@@ -389,15 +375,6 @@
             this.panel1.TabIndex = 2;
             this.panel1.Click += new System.EventHandler(this.OpenMoreInfo);
             this.panel1.DoubleClick += new System.EventHandler(this.OpenMoreInfo);
-            // 
-            // btn_Edit
-            // 
-            this.btn_Edit.Location = new System.Drawing.Point(410, 209);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(122, 23);
-            this.btn_Edit.TabIndex = 30;
-            this.btn_Edit.Text = "Edit Appointment";
-            this.btn_Edit.UseVisualStyleBackColor = true;
             // 
             // AppointmentPanel
             // 
@@ -424,7 +401,6 @@
         private System.Windows.Forms.Label lbl_Customer_Residence;
         private System.Windows.Forms.Label lbl_Customer_PhoneNumber_Data;
         private System.Windows.Forms.Label lbl_Customer_PhoneNumber;
-        private System.Windows.Forms.Label lbl_Appointment_Contactperson_Data;
         private System.Windows.Forms.Label lbl_Customer_Email_Data;
         public System.Windows.Forms.Label lbl_Appointment_Time_Data;
         private System.Windows.Forms.Label lbl_Customer_Zipcode_Data;
@@ -433,7 +409,6 @@
         private System.Windows.Forms.Label lbl_Appointment_Summary;
         private System.Windows.Forms.RichTextBox rtb_Summary;
         private System.Windows.Forms.Label lbl_Customer_Email;
-        private System.Windows.Forms.Label lbl_Appointment_Contactperson;
         private System.Windows.Forms.Label lbl_Appointment_Time;
         private System.Windows.Forms.Label lbl_Customer_Zipcode;
         private System.Windows.Forms.Label lbl_Customer_Address;

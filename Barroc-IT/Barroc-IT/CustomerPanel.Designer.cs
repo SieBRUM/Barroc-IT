@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_editCustomer = new System.Windows.Forms.Button();
             this.lbl_Customer_Prospect = new System.Windows.Forms.Label();
             this.lbl_Prospect = new System.Windows.Forms.Label();
             this.lbl_Customer_Gross_Revenue = new System.Windows.Forms.Label();
@@ -79,13 +80,13 @@
             this.lbl_Unpaid_Invoice = new System.Windows.Forms.Label();
             this.lbl_Customer_ID = new System.Windows.Forms.Label();
             this.lbl_Customer_Name = new System.Windows.Forms.Label();
-            this.btn_editCustomer = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.AccessibleName = "Control";
             this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel2.Controls.Add(this.btn_editCustomer);
             this.panel2.Controls.Add(this.lbl_Customer_Prospect);
@@ -140,8 +141,18 @@
             this.panel2.Size = new System.Drawing.Size(538, 364);
             this.panel2.TabIndex = 3;
             // 
+            // btn_editCustomer
+            // 
+            this.btn_editCustomer.Location = new System.Drawing.Point(439, 329);
+            this.btn_editCustomer.Name = "btn_editCustomer";
+            this.btn_editCustomer.Size = new System.Drawing.Size(89, 23);
+            this.btn_editCustomer.TabIndex = 83;
+            this.btn_editCustomer.Text = "edit customer";
+            this.btn_editCustomer.UseVisualStyleBackColor = true;
+            // 
             // lbl_Customer_Prospect
             // 
+            this.lbl_Customer_Prospect.AccessibleName = "Control";
             this.lbl_Customer_Prospect.AutoSize = true;
             this.lbl_Customer_Prospect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Prospect.Location = new System.Drawing.Point(128, 223);
@@ -161,6 +172,7 @@
             // 
             // lbl_Customer_Gross_Revenue
             // 
+            this.lbl_Customer_Gross_Revenue.AccessibleName = "Control";
             this.lbl_Customer_Gross_Revenue.AutoSize = true;
             this.lbl_Customer_Gross_Revenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Gross_Revenue.Location = new System.Drawing.Point(454, 104);
@@ -180,6 +192,7 @@
             // 
             // lbl_Customer_Limit
             // 
+            this.lbl_Customer_Limit.AccessibleName = "Control";
             this.lbl_Customer_Limit.AutoSize = true;
             this.lbl_Customer_Limit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Limit.Location = new System.Drawing.Point(454, 87);
@@ -199,6 +212,7 @@
             // 
             // lbl_Customer_Iban
             // 
+            this.lbl_Customer_Iban.AccessibleName = "Control";
             this.lbl_Customer_Iban.AutoSize = true;
             this.lbl_Customer_Iban.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Iban.Location = new System.Drawing.Point(454, 70);
@@ -218,6 +232,7 @@
             // 
             // lbl_Customer_Last_Contact
             // 
+            this.lbl_Customer_Last_Contact.AccessibleName = "Control";
             this.lbl_Customer_Last_Contact.AutoSize = true;
             this.lbl_Customer_Last_Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Last_Contact.Location = new System.Drawing.Point(128, 255);
@@ -237,6 +252,7 @@
             // 
             // lbl_Customer_Last_Action
             // 
+            this.lbl_Customer_Last_Action.AccessibleName = "Control";
             this.lbl_Customer_Last_Action.AutoSize = true;
             this.lbl_Customer_Last_Action.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Last_Action.Location = new System.Drawing.Point(128, 272);
@@ -256,6 +272,7 @@
             // 
             // lbl_Customer_Next_Contact
             // 
+            this.lbl_Customer_Next_Contact.AccessibleName = "Control";
             this.lbl_Customer_Next_Contact.AutoSize = true;
             this.lbl_Customer_Next_Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Next_Contact.Location = new System.Drawing.Point(128, 289);
@@ -275,6 +292,7 @@
             // 
             // lbl_Customer_Next_Action
             // 
+            this.lbl_Customer_Next_Action.AccessibleName = "Control";
             this.lbl_Customer_Next_Action.AutoSize = true;
             this.lbl_Customer_Next_Action.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Next_Action.Location = new System.Drawing.Point(128, 306);
@@ -294,6 +312,7 @@
             // 
             // lbl_Customer_Discount
             // 
+            this.lbl_Customer_Discount.AccessibleName = "Control";
             this.lbl_Customer_Discount.AutoSize = true;
             this.lbl_Customer_Discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Discount.Location = new System.Drawing.Point(454, 53);
@@ -313,6 +332,7 @@
             // 
             // lbl_Customer_Creditworthy
             // 
+            this.lbl_Customer_Creditworthy.AccessibleName = "Control";
             this.lbl_Customer_Creditworthy.AutoSize = true;
             this.lbl_Customer_Creditworthy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Creditworthy.Location = new System.Drawing.Point(454, 36);
@@ -332,6 +352,7 @@
             // 
             // lbl_Customer_Credit_Balance
             // 
+            this.lbl_Customer_Credit_Balance.AccessibleName = "Control";
             this.lbl_Customer_Credit_Balance.AutoSize = true;
             this.lbl_Customer_Credit_Balance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Credit_Balance.Location = new System.Drawing.Point(454, 19);
@@ -351,6 +372,7 @@
             // 
             // lbl_Customer_Phonenumber_1
             // 
+            this.lbl_Customer_Phonenumber_1.AccessibleName = "Control";
             this.lbl_Customer_Phonenumber_1.AutoSize = true;
             this.lbl_Customer_Phonenumber_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Phonenumber_1.Location = new System.Drawing.Point(128, 138);
@@ -370,6 +392,7 @@
             // 
             // lbl_Customer_Phonenumber_2
             // 
+            this.lbl_Customer_Phonenumber_2.AccessibleName = "Control";
             this.lbl_Customer_Phonenumber_2.AutoSize = true;
             this.lbl_Customer_Phonenumber_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Phonenumber_2.Location = new System.Drawing.Point(128, 155);
@@ -389,6 +412,7 @@
             // 
             // lbl_Customer_Faxnumber
             // 
+            this.lbl_Customer_Faxnumber.AccessibleName = "Control";
             this.lbl_Customer_Faxnumber.AutoSize = true;
             this.lbl_Customer_Faxnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Faxnumber.Location = new System.Drawing.Point(128, 172);
@@ -408,6 +432,7 @@
             // 
             // lbl_Customer_Email
             // 
+            this.lbl_Customer_Email.AccessibleName = "Control";
             this.lbl_Customer_Email.AutoSize = true;
             this.lbl_Customer_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Email.Location = new System.Drawing.Point(128, 189);
@@ -427,6 +452,7 @@
             // 
             // lbl_Customer_NumofProjects
             // 
+            this.lbl_Customer_NumofProjects.AccessibleName = "Control";
             this.lbl_Customer_NumofProjects.AutoSize = true;
             this.lbl_Customer_NumofProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_NumofProjects.Location = new System.Drawing.Point(128, 206);
@@ -446,6 +472,7 @@
             // 
             // lbl_Customer_Address_2
             // 
+            this.lbl_Customer_Address_2.AccessibleName = "Control";
             this.lbl_Customer_Address_2.AutoSize = true;
             this.lbl_Customer_Address_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Address_2.Location = new System.Drawing.Point(128, 53);
@@ -465,6 +492,7 @@
             // 
             // lbl_Customer_Zipcode_1
             // 
+            this.lbl_Customer_Zipcode_1.AccessibleName = "Control";
             this.lbl_Customer_Zipcode_1.AutoSize = true;
             this.lbl_Customer_Zipcode_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Zipcode_1.Location = new System.Drawing.Point(128, 70);
@@ -484,6 +512,7 @@
             // 
             // lbl_Customer_Zipcode_2
             // 
+            this.lbl_Customer_Zipcode_2.AccessibleName = "Control";
             this.lbl_Customer_Zipcode_2.AutoSize = true;
             this.lbl_Customer_Zipcode_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Zipcode_2.Location = new System.Drawing.Point(128, 87);
@@ -503,6 +532,7 @@
             // 
             // lbl_Customer_Residence_1
             // 
+            this.lbl_Customer_Residence_1.AccessibleName = "Control";
             this.lbl_Customer_Residence_1.AutoSize = true;
             this.lbl_Customer_Residence_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Residence_1.Location = new System.Drawing.Point(128, 104);
@@ -522,6 +552,7 @@
             // 
             // lbl_Customer_Residence_2
             // 
+            this.lbl_Customer_Residence_2.AccessibleName = "Control";
             this.lbl_Customer_Residence_2.AutoSize = true;
             this.lbl_Customer_Residence_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Residence_2.Location = new System.Drawing.Point(128, 121);
@@ -541,6 +572,7 @@
             // 
             // lbl_Customer_Address_1
             // 
+            this.lbl_Customer_Address_1.AccessibleName = "Control";
             this.lbl_Customer_Address_1.AutoSize = true;
             this.lbl_Customer_Address_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_Address_1.Location = new System.Drawing.Point(128, 36);
@@ -560,6 +592,7 @@
             // 
             // lbl_Customer_CompanyName
             // 
+            this.lbl_Customer_CompanyName.AccessibleName = "Control";
             this.lbl_Customer_CompanyName.AutoSize = true;
             this.lbl_Customer_CompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_CompanyName.Location = new System.Drawing.Point(128, 19);
@@ -620,15 +653,6 @@
             this.lbl_Customer_Name.Size = new System.Drawing.Size(95, 13);
             this.lbl_Customer_Name.TabIndex = 0;
             this.lbl_Customer_Name.Text = "Customer Name";
-            // 
-            // btn_editCustomer
-            // 
-            this.btn_editCustomer.Location = new System.Drawing.Point(439, 329);
-            this.btn_editCustomer.Name = "btn_editCustomer";
-            this.btn_editCustomer.Size = new System.Drawing.Size(89, 23);
-            this.btn_editCustomer.TabIndex = 83;
-            this.btn_editCustomer.Text = "edit customer";
-            this.btn_editCustomer.UseVisualStyleBackColor = true;
             // 
             // CustomerPanel
             // 
