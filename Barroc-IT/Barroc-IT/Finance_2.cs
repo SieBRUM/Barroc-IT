@@ -138,8 +138,19 @@ namespace Barroc_IT
                 invoiceInfoPanel[i] = new InvoicePanel(i, dt);
                 invoiceInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 invoiceInfoPanel[i].Dock = DockStyle.Top;
+                invoiceInfoPanel[i].btn_Paid.AccessibleName = dt.Rows[i]["invoice_id"].ToString();
+                invoiceInfoPanel[i].btn_Paid.Click += new EventHandler(this.PayInvoice);
                 invoicesPanel.Controls.Add(invoiceInfoPanel[i]);
             }
+            dbh.CloseConnection();
+        }
+
+        private void PayInvoice(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Button button = (Button)sender;
+            dbh.PayInvoice(button.AccessibleName);
+            button.Dispose();
             dbh.CloseConnection();
         }
 

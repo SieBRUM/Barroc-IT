@@ -277,6 +277,32 @@ namespace Barroc_IT
             return done;
         }
 
+        public bool PayInvoice(string i_ID)
+        {
+            bool succes = false;
+
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    UPDATE
+                        tbl_invoices
+                    SET
+                        status = 1
+                    WHERE
+                        invoice_id = @invoice_id", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("invoice_id", i_ID);
+                try
+                {
+                    succes = (Int64)cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception e)
+                {
+                    succes = false;
+                    MessageBox.Show("An error occured. Details below: \n\n " + e);
+                }
+            }
+            return succes;
+        }
+
         public DataTable GetInvoices()
         {
             DataTable dt = new DataTable();

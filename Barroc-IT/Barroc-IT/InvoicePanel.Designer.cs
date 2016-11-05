@@ -46,15 +46,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Price = new System.Windows.Forms.Label();
             this.lbl_Invoice_ID = new System.Windows.Forms.Label();
-            this.lbl_Unpaid_Invoice = new System.Windows.Forms.Label();
+            this.lbl_Invoice_Status = new System.Windows.Forms.Label();
             this.lbl_Customer_Name = new System.Windows.Forms.Label();
+            this.btn_Paid = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.Controls.Add(this.btn_Paid);
             this.panel2.Controls.Add(this.lbl_Customer_Discount);
             this.panel2.Controls.Add(this.lbl_Discount);
             this.panel2.Controls.Add(this.label9);
@@ -210,10 +212,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.lbl_Price);
             this.panel1.Controls.Add(this.lbl_Invoice_ID);
-            this.panel1.Controls.Add(this.lbl_Unpaid_Invoice);
+            this.panel1.Controls.Add(this.lbl_Invoice_Status);
             this.panel1.Controls.Add(this.lbl_Customer_Name);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -243,15 +245,15 @@
             this.lbl_Invoice_ID.TabIndex = 3;
             this.lbl_Invoice_ID.Text = "Invoice ID";
             // 
-            // lbl_Unpaid_Invoice
+            // lbl_Invoice_Status
             // 
-            this.lbl_Unpaid_Invoice.AutoSize = true;
-            this.lbl_Unpaid_Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Unpaid_Invoice.Location = new System.Drawing.Point(326, 17);
-            this.lbl_Unpaid_Invoice.Name = "lbl_Unpaid_Invoice";
-            this.lbl_Unpaid_Invoice.Size = new System.Drawing.Size(92, 13);
-            this.lbl_Unpaid_Invoice.TabIndex = 2;
-            this.lbl_Unpaid_Invoice.Text = "Unpaid invoice";
+            this.lbl_Invoice_Status.AutoSize = true;
+            this.lbl_Invoice_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Invoice_Status.Location = new System.Drawing.Point(326, 17);
+            this.lbl_Invoice_Status.Name = "lbl_Invoice_Status";
+            this.lbl_Invoice_Status.Size = new System.Drawing.Size(92, 13);
+            this.lbl_Invoice_Status.TabIndex = 2;
+            this.lbl_Invoice_Status.Text = "Unpaid invoice";
             // 
             // lbl_Customer_Name
             // 
@@ -262,6 +264,16 @@
             this.lbl_Customer_Name.Size = new System.Drawing.Size(95, 13);
             this.lbl_Customer_Name.TabIndex = 0;
             this.lbl_Customer_Name.Text = "Customer Name";
+            // 
+            // btn_Paid
+            // 
+            this.btn_Paid.Location = new System.Drawing.Point(460, 73);
+            this.btn_Paid.Name = "btn_Paid";
+            this.btn_Paid.Size = new System.Drawing.Size(75, 23);
+            this.btn_Paid.TabIndex = 53;
+            this.btn_Paid.Text = "Paid";
+            this.btn_Paid.UseVisualStyleBackColor = true;
+            this.btn_Paid.Click += new System.EventHandler(this.PayInvoice);
             // 
             // InvoicePanel
             // 
@@ -286,7 +298,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_Unpaid_Invoice;
+        private System.Windows.Forms.Label lbl_Invoice_Status;
         private System.Windows.Forms.Label lbl_Customer_Name;
         private System.Windows.Forms.Label lbl_Price;
         private System.Windows.Forms.Label lbl_Invoice_ID;
@@ -304,6 +316,7 @@
         private System.Windows.Forms.Label lbl_Tax_Percentage;
         private System.Windows.Forms.Label lbl_Customer_Contact_Person;
         private System.Windows.Forms.Label lbl_Internal_Contact_Person;
+        public System.Windows.Forms.Button btn_Paid;
 
 
     }

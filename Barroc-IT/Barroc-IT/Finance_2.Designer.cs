@@ -729,7 +729,7 @@
             this.Controls.Add(this.tcp_Main);
             this.Controls.Add(this.mstrp_Menu);
             this.Name = "frm_Finance_2";
-            this.Text = "Finance_2";
+            this.Text = "Barroc-IT - Software for real - Finance";
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
             this.tcp_Overview.ResumeLayout(false);
