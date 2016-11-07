@@ -194,7 +194,7 @@ namespace Barroc_IT
                 appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 appointmentInfoPanel[i].Dock = DockStyle.Top;
                 appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
-                appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                appointmentInfoPanel[i].btn_Edit.Dispose();
             }
             dbh.CloseConnection();
         }
