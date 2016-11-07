@@ -296,12 +296,13 @@ namespace Barroc_IT
             txtb_E_C_Discount.Text = dt.Rows[0]["discount"].ToString();
             cb_E_C_Creditworthy.SelectedIndex = int.Parse(dt.Rows[0]["creditworthy"].ToString());
             cb_E_C_Prospect.SelectedIndex = int.Parse(dt.Rows[0]["prospect"].ToString());
+            lbl_E_C_Customer_ID.Text = dt.Rows[0]["customer_id"].ToString();
             tcp_Main.SelectedIndex = 5;
         }
 
         public static bool ValidateBankAccount(string bankAccount)
         {
-            bankAccount = bankAccount.ToUpper(); //IN ORDER TO COPE WITH THE REGEX BELOW
+            bankAccount = bankAccount.ToUpper();
             if (String.IsNullOrEmpty(bankAccount))
                 return false;
             else if (System.Text.RegularExpressions.Regex.IsMatch(bankAccount, "^[A-Z0-9]"))
@@ -332,20 +333,46 @@ namespace Barroc_IT
             else
                 return false;
         }
-
+            
         private void EditFinancialDetails(object sender, EventArgs e)
         {
+            int result;
             dbh.OpenConnection();
-        //    if (!ValidateBankAccount(txtb_E_C_IBAN.Text))
-        //    {
-        //        //MessageBox.Show("Not a correct IBAN!");
-        //    }
-            //else
-            //{
-               dbh.EditCustomerFinancial("18","12","12","12","12","1","12","1");
-            //}
 
-               dbh.CloseConnection();
+            if (!ValidateBankAccount(txtb_E_C_IBAN.Text))
+            {
+                MessageBox.Show("Not a correct IBAN!");
+            }
+            else if(!int.TryParse(txtb_E_C_Credit_Balance.Text, out result) || !int.TryParse(txtb_E_C_Limit.Text,out result) || !int.TryParse(txtb_E_C_Discount.Text, out result) || !int.TryParse(txtb_E_C_GrossRevenue.Text,out result))
+            {
+                MessageBox.Show("Make sure all fields are filled in correctly");
+            }
+            else
+            {
+                if (dbh.EditCustomerFinancial(lbl_E_C_Customer_ID.Text, txtb_E_C_IBAN.Text, txtb_E_C_Credit_Balance.Text, txtb_E_C_GrossRevenue.Text, txtb_E_C_Discount.Text, cb_E_C_Creditworthy.SelectedIndex.ToString(), txtb_E_C_GrossRevenue.Text, cb_E_C_Prospect.SelectedIndex.ToString()))
+                {
+                    MessageBox.Show("Succesfully editted the customers financial details");
+                }
+                else
+                {
+                    MessageBox.Show("An unidentified error occured.");
+                }
+            }
+            dbh.CloseConnection();
+        }
+
+        private void btn_Show_All_Notifications_Click(object sender, EventArgs e)
+        {
+            notificationsPanel.Controls.Clear();
+            showallNotifications = true;
+            ShowNotifications();
+        }
+
+        private void btn_showallAppointments_Click(object sender, EventArgs e)
+        {
+            appointmentsPanel.Controls.Clear();
+            showallAppointments = true;
+            ShowAppointments();
         } 
     }
 }
