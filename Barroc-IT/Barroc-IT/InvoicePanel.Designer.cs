@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Paid = new System.Windows.Forms.Button();
             this.lbl_Customer_Discount = new System.Windows.Forms.Label();
             this.lbl_Discount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.lbl_Invoice_ID = new System.Windows.Forms.Label();
             this.lbl_Invoice_Status = new System.Windows.Forms.Label();
             this.lbl_Customer_Name = new System.Windows.Forms.Label();
-            this.btn_Paid = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(538, 99);
             this.panel2.TabIndex = 5;
+            // 
+            // btn_Paid
+            // 
+            this.btn_Paid.Location = new System.Drawing.Point(460, 73);
+            this.btn_Paid.Name = "btn_Paid";
+            this.btn_Paid.Size = new System.Drawing.Size(75, 23);
+            this.btn_Paid.TabIndex = 53;
+            this.btn_Paid.Text = "Paid";
+            this.btn_Paid.UseVisualStyleBackColor = true;
+            this.btn_Paid.Click += new System.EventHandler(this.PayInvoice);
             // 
             // lbl_Customer_Discount
             // 
@@ -234,6 +244,7 @@
             this.lbl_Price.Size = new System.Drawing.Size(36, 13);
             this.lbl_Price.TabIndex = 4;
             this.lbl_Price.Text = "Price";
+            this.lbl_Price.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_Invoice_ID
             // 
@@ -244,6 +255,7 @@
             this.lbl_Invoice_ID.Size = new System.Drawing.Size(66, 13);
             this.lbl_Invoice_ID.TabIndex = 3;
             this.lbl_Invoice_ID.Text = "Invoice ID";
+            this.lbl_Invoice_ID.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_Invoice_Status
             // 
@@ -254,6 +266,7 @@
             this.lbl_Invoice_Status.Size = new System.Drawing.Size(92, 13);
             this.lbl_Invoice_Status.TabIndex = 2;
             this.lbl_Invoice_Status.Text = "Unpaid invoice";
+            this.lbl_Invoice_Status.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_Customer_Name
             // 
@@ -264,16 +277,7 @@
             this.lbl_Customer_Name.Size = new System.Drawing.Size(95, 13);
             this.lbl_Customer_Name.TabIndex = 0;
             this.lbl_Customer_Name.Text = "Customer Name";
-            // 
-            // btn_Paid
-            // 
-            this.btn_Paid.Location = new System.Drawing.Point(460, 73);
-            this.btn_Paid.Name = "btn_Paid";
-            this.btn_Paid.Size = new System.Drawing.Size(75, 23);
-            this.btn_Paid.TabIndex = 53;
-            this.btn_Paid.Text = "Paid";
-            this.btn_Paid.UseVisualStyleBackColor = true;
-            this.btn_Paid.Click += new System.EventHandler(this.PayInvoice);
+            this.lbl_Customer_Name.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // InvoicePanel
             // 

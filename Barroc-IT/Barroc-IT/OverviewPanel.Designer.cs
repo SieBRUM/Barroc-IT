@@ -49,6 +49,7 @@
             this.lbl_Notification_Added.Size = new System.Drawing.Size(73, 13);
             this.lbl_Notification_Added.TabIndex = 4;
             this.lbl_Notification_Added.Text = "Date added";
+            this.lbl_Notification_Added.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_Notification_Type
             // 
@@ -59,6 +60,7 @@
             this.lbl_Notification_Type.Size = new System.Drawing.Size(100, 13);
             this.lbl_Notification_Type.TabIndex = 3;
             this.lbl_Notification_Type.Text = "Notification type";
+            this.lbl_Notification_Type.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_Notification_ID
             // 
@@ -69,10 +71,11 @@
             this.lbl_Notification_ID.Size = new System.Drawing.Size(89, 13);
             this.lbl_Notification_ID.TabIndex = 0;
             this.lbl_Notification_ID.Text = "Notification ID";
+            this.lbl_Notification_ID.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.Controls.Add(this.btn_Resolved);
             this.panel2.Controls.Add(this.lbl_Notification_Info_Data);
             this.panel2.Controls.Add(this.lbl_Notification_Info);
@@ -113,7 +116,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.lbl_Notification_Added);
             this.panel1.Controls.Add(this.lbl_Notification_Type);
             this.panel1.Controls.Add(this.lbl_Notification_ID);

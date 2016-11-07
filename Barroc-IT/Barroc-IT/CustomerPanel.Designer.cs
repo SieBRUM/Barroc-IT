@@ -87,7 +87,7 @@
             // panel2
             // 
             this.panel2.AccessibleName = "Control";
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.Controls.Add(this.btn_editCustomer);
             this.panel2.Controls.Add(this.lbl_Customer_Prospect);
             this.panel2.Controls.Add(this.lbl_Prospect);
@@ -612,7 +612,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.lbl_Unpaid_Invoice);
             this.panel1.Controls.Add(this.lbl_Customer_ID);
             this.panel1.Controls.Add(this.lbl_Customer_Name);
@@ -633,6 +633,7 @@
             this.lbl_Unpaid_Invoice.Size = new System.Drawing.Size(92, 13);
             this.lbl_Unpaid_Invoice.TabIndex = 2;
             this.lbl_Unpaid_Invoice.Text = "Unpaid invoice";
+            this.lbl_Unpaid_Invoice.Click += new System.EventHandler(this.ShowMoreInfo);
             // 
             // lbl_Customer_ID
             // 
@@ -643,6 +644,7 @@
             this.lbl_Customer_ID.Size = new System.Drawing.Size(76, 13);
             this.lbl_Customer_ID.TabIndex = 1;
             this.lbl_Customer_ID.Text = "Customer ID";
+            this.lbl_Customer_ID.Click += new System.EventHandler(this.ShowMoreInfo);
             // 
             // lbl_Customer_Name
             // 
@@ -653,6 +655,7 @@
             this.lbl_Customer_Name.Size = new System.Drawing.Size(95, 13);
             this.lbl_Customer_Name.TabIndex = 0;
             this.lbl_Customer_Name.Text = "Customer Name";
+            this.lbl_Customer_Name.Click += new System.EventHandler(this.ShowMoreInfo);
             // 
             // CustomerPanel
             // 

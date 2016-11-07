@@ -222,6 +222,7 @@
             this.lbl_Appointment_Date.Size = new System.Drawing.Size(106, 13);
             this.lbl_Appointment_Date.TabIndex = 2;
             this.lbl_Appointment_Date.Text = "Appointment date";
+            this.lbl_Appointment_Date.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_CustomerName
             // 
@@ -232,6 +233,7 @@
             this.lbl_CustomerName.Size = new System.Drawing.Size(93, 13);
             this.lbl_CustomerName.TabIndex = 1;
             this.lbl_CustomerName.Text = "Customer name";
+            this.lbl_CustomerName.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // lbl_hasSummary
             // 
@@ -242,10 +244,11 @@
             this.lbl_hasSummary.Size = new System.Drawing.Size(81, 13);
             this.lbl_hasSummary.TabIndex = 0;
             this.lbl_hasSummary.Text = "Has summary";
+            this.lbl_hasSummary.Click += new System.EventHandler(this.OpenMoreInfo);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.Controls.Add(this.btn_Edit);
             this.panel2.Controls.Add(this.lbl_Appointment_Made_Data);
             this.panel2.Controls.Add(this.lbl_Appointment_Made);
@@ -364,7 +367,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.lbl_Appointment_Date);
             this.panel1.Controls.Add(this.lbl_CustomerName);
             this.panel1.Controls.Add(this.lbl_hasSummary);

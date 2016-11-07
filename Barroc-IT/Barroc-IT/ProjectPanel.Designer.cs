@@ -58,7 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.lbl_Project_Status);
             this.panel1.Controls.Add(this.lbl_Project_Id);
             this.panel1.Controls.Add(this.lbl_Project_Name);
@@ -108,7 +108,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.Controls.Add(this.btn_Edit);
             this.panel2.Controls.Add(this.lbl_Deadline);
             this.panel2.Controls.Add(this.label4);

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Sales));
             this.tcp_Overview = new System.Windows.Forms.TabPage();
+            this.notificationsPanel = new System.Windows.Forms.Panel();
+            this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tcp_Customer = new System.Windows.Forms.TabPage();
             this.btn_Add_Customer = new System.Windows.Forms.Button();
@@ -196,9 +198,8 @@
             this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.notificationsPanel = new System.Windows.Forms.Panel();
-            this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.tcp_Overview.SuspendLayout();
+            this.notificationsPanel.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
             this.customersPanel.SuspendLayout();
             this.tcp_AddCustomer.SuspendLayout();
@@ -213,7 +214,6 @@
             this.tcp_Add_Appointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.mstrp_Menu.SuspendLayout();
-            this.notificationsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcp_Overview
@@ -224,10 +224,33 @@
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Overview.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 461);
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
+            // 
+            // notificationsPanel
+            // 
+            this.notificationsPanel.AutoSize = true;
+            this.notificationsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.notificationsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.notificationsPanel.Controls.Add(this.btn_Show_All_Notifications);
+            this.notificationsPanel.Location = new System.Drawing.Point(4, 35);
+            this.notificationsPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.notificationsPanel.Name = "notificationsPanel";
+            this.notificationsPanel.Size = new System.Drawing.Size(540, 25);
+            this.notificationsPanel.TabIndex = 8;
+            // 
+            // btn_Show_All_Notifications
+            // 
+            this.btn_Show_All_Notifications.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Show_All_Notifications.Location = new System.Drawing.Point(0, 0);
+            this.btn_Show_All_Notifications.Name = "btn_Show_All_Notifications";
+            this.btn_Show_All_Notifications.Size = new System.Drawing.Size(538, 23);
+            this.btn_Show_All_Notifications.TabIndex = 0;
+            this.btn_Show_All_Notifications.Text = "Show All";
+            this.btn_Show_All_Notifications.UseVisualStyleBackColor = true;
+            this.btn_Show_All_Notifications.Click += new System.EventHandler(this.btn_Show_All_Notifications_Click);
             // 
             // label3
             // 
@@ -1088,13 +1111,12 @@
             this.tc_Main.Controls.Add(this.tcp_EditCustomer);
             this.tc_Main.Controls.Add(this.tcp_Edit_Appointment);
             this.tc_Main.Controls.Add(this.tcp_Add_Appointment);
-            this.tc_Main.Location = new System.Drawing.Point(142, 1);
+            this.tc_Main.Location = new System.Drawing.Point(142, -22);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
             this.tc_Main.SelectedIndex = 0;
-            this.tc_Main.Size = new System.Drawing.Size(574, 464);
-            this.tc_Main.TabIndex = 3;
-            this.tc_Main.TabStop = false;
+            this.tc_Main.Size = new System.Drawing.Size(574, 487);
+            this.tc_Main.TabIndex = 0;
             this.tc_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
             // tcp_Appointments
@@ -1886,29 +1908,6 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // notificationsPanel
-            // 
-            this.notificationsPanel.AutoSize = true;
-            this.notificationsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.notificationsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.notificationsPanel.Controls.Add(this.btn_Show_All_Notifications);
-            this.notificationsPanel.Location = new System.Drawing.Point(4, 35);
-            this.notificationsPanel.MinimumSize = new System.Drawing.Size(540, 2);
-            this.notificationsPanel.Name = "notificationsPanel";
-            this.notificationsPanel.Size = new System.Drawing.Size(540, 25);
-            this.notificationsPanel.TabIndex = 8;
-            // 
-            // btn_Show_All_Notifications
-            // 
-            this.btn_Show_All_Notifications.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_Show_All_Notifications.Location = new System.Drawing.Point(0, 0);
-            this.btn_Show_All_Notifications.Name = "btn_Show_All_Notifications";
-            this.btn_Show_All_Notifications.Size = new System.Drawing.Size(538, 23);
-            this.btn_Show_All_Notifications.TabIndex = 0;
-            this.btn_Show_All_Notifications.Text = "Show All";
-            this.btn_Show_All_Notifications.UseVisualStyleBackColor = true;
-            this.btn_Show_All_Notifications.Click += new System.EventHandler(this.btn_Show_All_Notifications_Click);
-            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1922,6 +1921,7 @@
             this.Text = "Barroc-IT - Software for real - Sales";
             this.tcp_Overview.ResumeLayout(false);
             this.tcp_Overview.PerformLayout();
+            this.notificationsPanel.ResumeLayout(false);
             this.tcp_Customer.ResumeLayout(false);
             this.tcp_Customer.PerformLayout();
             this.customersPanel.ResumeLayout(false);
@@ -1944,7 +1944,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
-            this.notificationsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

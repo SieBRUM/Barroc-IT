@@ -306,6 +306,10 @@ namespace Barroc_IT
             else if (System.Text.RegularExpressions.Regex.IsMatch(bankAccount, "^[A-Z0-9]"))
             {
                 bankAccount = bankAccount.Replace(" ", String.Empty);
+                if (bankAccount.Length < 4)
+                {
+                    return false;
+                }
                 string bank =
                 bankAccount.Substring(4, bankAccount.Length - 4) + bankAccount.Substring(0, 4);
                 int asciiShift = 55;
