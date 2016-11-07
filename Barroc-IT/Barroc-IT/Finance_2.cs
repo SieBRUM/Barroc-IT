@@ -248,9 +248,7 @@ namespace Barroc_IT
             dbh.OpenConnection();
             Button button = (Button)sender;
             dbh.ResolveNotification(button.AccessibleName);
-            //notificationsPanel.Controls.Clear();
             dbh.CloseConnection();
-            //ShowNotifications();
         }
 
         private void btn_ShowAllCustomers_Click(object sender, EventArgs e)

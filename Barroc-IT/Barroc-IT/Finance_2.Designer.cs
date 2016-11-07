@@ -64,7 +64,6 @@
             this.notificationsPanel = new System.Windows.Forms.Panel();
             this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tcp_Main = new System.Windows.Forms.TabControl();
             this.tcp_Invoices = new System.Windows.Forms.TabPage();
             this.btn_GoTo_Add_Invoice = new System.Windows.Forms.Button();
@@ -448,7 +447,6 @@
             this.tcp_Overview.AutoScroll = true;
             this.tcp_Overview.Controls.Add(this.notificationsPanel);
             this.tcp_Overview.Controls.Add(this.label3);
-            this.tcp_Overview.Controls.Add(this.label2);
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
@@ -487,14 +485,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 466);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 1;
             // 
             // tcp_Main
             // 
@@ -996,7 +986,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnitem_Logout;
         private System.Windows.Forms.TabPage tcp_Overview;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tcp_Main;
         private System.Windows.Forms.TabPage tcp_Invoices;
         private System.Windows.Forms.TabPage tcp_AddInvoice;

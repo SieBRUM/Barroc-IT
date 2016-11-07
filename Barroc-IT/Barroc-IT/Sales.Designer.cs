@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Sales));
             this.tcp_Overview = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tcp_Customer = new System.Windows.Forms.TabPage();
             this.btn_Add_Customer = new System.Windows.Forms.Button();
             this.customersPanel = new System.Windows.Forms.Panel();
@@ -197,6 +196,8 @@
             this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.notificationsPanel = new System.Windows.Forms.Panel();
+            this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
             this.customersPanel.SuspendLayout();
@@ -212,13 +213,14 @@
             this.tcp_Add_Appointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.mstrp_Menu.SuspendLayout();
+            this.notificationsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcp_Overview
             // 
             this.tcp_Overview.AutoScroll = true;
+            this.tcp_Overview.Controls.Add(this.notificationsPanel);
             this.tcp_Overview.Controls.Add(this.label3);
-            this.tcp_Overview.Controls.Add(this.label2);
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
@@ -234,14 +236,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 466);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 1;
             // 
             // tcp_Customer
             // 
@@ -1892,6 +1886,29 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
+            // notificationsPanel
+            // 
+            this.notificationsPanel.AutoSize = true;
+            this.notificationsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.notificationsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.notificationsPanel.Controls.Add(this.btn_Show_All_Notifications);
+            this.notificationsPanel.Location = new System.Drawing.Point(4, 35);
+            this.notificationsPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.notificationsPanel.Name = "notificationsPanel";
+            this.notificationsPanel.Size = new System.Drawing.Size(540, 25);
+            this.notificationsPanel.TabIndex = 8;
+            // 
+            // btn_Show_All_Notifications
+            // 
+            this.btn_Show_All_Notifications.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Show_All_Notifications.Location = new System.Drawing.Point(0, 0);
+            this.btn_Show_All_Notifications.Name = "btn_Show_All_Notifications";
+            this.btn_Show_All_Notifications.Size = new System.Drawing.Size(538, 23);
+            this.btn_Show_All_Notifications.TabIndex = 0;
+            this.btn_Show_All_Notifications.Text = "Show All";
+            this.btn_Show_All_Notifications.UseVisualStyleBackColor = true;
+            this.btn_Show_All_Notifications.Click += new System.EventHandler(this.btn_Show_All_Notifications_Click);
+            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1927,6 +1944,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.mstrp_Menu.ResumeLayout(false);
             this.mstrp_Menu.PerformLayout();
+            this.notificationsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1957,7 +1975,6 @@
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.TabPage tcp_Overview;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tcp_Customer;
         private System.Windows.Forms.Label lbl_Customer_firstname;
         private System.Windows.Forms.TabPage tcp_AddCustomer;
@@ -2101,6 +2118,8 @@
         private System.Windows.Forms.ComboBox cb_Appointment_Select_Customer;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button btn_GoTo_Add_Appointment;
+        private System.Windows.Forms.Panel notificationsPanel;
+        private System.Windows.Forms.Button btn_Show_All_Notifications;
 
     }
 }

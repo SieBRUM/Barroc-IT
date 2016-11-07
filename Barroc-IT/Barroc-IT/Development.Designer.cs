@@ -57,8 +57,6 @@ namespace Barroc_IT
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.tcp_Main = new System.Windows.Forms.TabControl();
             this.tcp_Overview = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tcp_Projects = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Project_Show_All = new System.Windows.Forms.Button();
@@ -147,6 +145,8 @@ namespace Barroc_IT
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
+            this.notificationsPanel = new System.Windows.Forms.Panel();
+            this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Main.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
@@ -163,6 +163,7 @@ namespace Barroc_IT
             this.tcp_Show_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
+            this.notificationsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -454,8 +455,7 @@ namespace Barroc_IT
             // tcp_Overview
             // 
             this.tcp_Overview.AutoScroll = true;
-            this.tcp_Overview.Controls.Add(this.label3);
-            this.tcp_Overview.Controls.Add(this.label2);
+            this.tcp_Overview.Controls.Add(this.notificationsPanel);
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
@@ -463,24 +463,6 @@ namespace Barroc_IT
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Overview";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 466);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Overview";
             // 
             // tcp_Projects
             // 
@@ -1416,6 +1398,29 @@ namespace Barroc_IT
             this.lbl_Address.TabIndex = 5;
             this.lbl_Address.Text = "Placeholder";
             // 
+            // notificationsPanel
+            // 
+            this.notificationsPanel.AutoSize = true;
+            this.notificationsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.notificationsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.notificationsPanel.Controls.Add(this.btn_Show_All_Notifications);
+            this.notificationsPanel.Location = new System.Drawing.Point(4, 35);
+            this.notificationsPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.notificationsPanel.Name = "notificationsPanel";
+            this.notificationsPanel.Size = new System.Drawing.Size(540, 25);
+            this.notificationsPanel.TabIndex = 8;
+            // 
+            // btn_Show_All_Notifications
+            // 
+            this.btn_Show_All_Notifications.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Show_All_Notifications.Location = new System.Drawing.Point(0, 0);
+            this.btn_Show_All_Notifications.Name = "btn_Show_All_Notifications";
+            this.btn_Show_All_Notifications.Size = new System.Drawing.Size(538, 23);
+            this.btn_Show_All_Notifications.TabIndex = 0;
+            this.btn_Show_All_Notifications.Text = "Show All";
+            this.btn_Show_All_Notifications.UseVisualStyleBackColor = true;
+            this.btn_Show_All_Notifications.Click += new System.EventHandler(this.btn_Show_All_Notifications_Click);
+            // 
             // frm_Development
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1454,6 +1459,7 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.notificationsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1488,10 +1494,8 @@ namespace Barroc_IT
         private TabControl tcp_Main;
         private TabPage tcp_Overview;
         private TabPage tcp_Projects;
-        private Label label2;
         private TabPage tcp_Appointments;
         private TabPage tcp_Help;
-        private Label label3;
         private Label label6;
         private Label label7;
         private Label label8;
@@ -1577,6 +1581,8 @@ namespace Barroc_IT
         private PictureBox pictureBox3;
         private Panel appointmentsPanel;
         private Button btn_showallAppointments;
+        private Panel notificationsPanel;
+        private Button btn_Show_All_Notifications;
 
 
 

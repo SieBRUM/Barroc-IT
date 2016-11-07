@@ -9,6 +9,7 @@ namespace Barroc_IT
     {
         bool showallProjects = false;
         bool showallAppointments = false;
+        bool showallNotifications = false;
         DatabaseHandler dbh;
 
         public frm_Development()
@@ -19,6 +20,7 @@ namespace Barroc_IT
             cbox_Maintenance_Contract.SelectedIndex = 0;
             ShowProjects();
             ShowAppointments();
+            ShowNotifications();
             tcp_Main.SelectedIndex = 0;
 
             ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
@@ -415,6 +417,43 @@ namespace Barroc_IT
                 dbh.CloseConnection();
                 tcp_Main.SelectedIndex = 1;
             }
+        }
+
+        private void ShowNotifications()
+        {
+            dbh.OpenConnection();
+            DataTable dt = dbh.GetNotifications();
+            int amount = dt.Rows.Count;
+            if (!showallNotifications && amount > 5)
+                amount = 5;
+
+            OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+            for (int i = 0; i < overviewInfoPanel.Length; i++)
+            {
+                overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                overviewInfoPanel[i].Dock = DockStyle.Top;
+                overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+            }
+            dbh.CloseConnection();
+        }
+
+        private void ResolveNotification(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Button button = (Button)sender;
+            dbh.ResolveNotification(button.AccessibleName);
+            dbh.CloseConnection();
+        }
+
+        private void btn_Show_All_Notifications_Click(object sender, EventArgs e)
+        {
+            notificationsPanel.Controls.Clear();
+            showallNotifications = true;
+            ShowNotifications();
         }
     }
 }
