@@ -87,6 +87,24 @@
             this.tcp_Customers = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_ShowAllCustomers = new System.Windows.Forms.Button();
+            this.tcp_Edit_Customer = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label222 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_E_C_Customer = new System.Windows.Forms.Label();
+            this.txtb_E_C_IBAN = new System.Windows.Forms.TextBox();
+            this.txtb_E_C_Credit_Balance = new System.Windows.Forms.TextBox();
+            this.txtb_E_C_Discount = new System.Windows.Forms.TextBox();
+            this.txtb_E_C_GrossRevenue = new System.Windows.Forms.TextBox();
+            this.txtb_E_C_Limit = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cb_E_C_Prospect = new System.Windows.Forms.ComboBox();
+            this.cb_E_C_Creditworthy = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_Edit_Customer = new System.Windows.Forms.Button();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.notificationsPanel.SuspendLayout();
@@ -99,6 +117,8 @@
             this.appointmentsPanel.SuspendLayout();
             this.tcp_Customers.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tcp_Edit_Customer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -482,6 +502,7 @@
             this.tcp_Main.Controls.Add(this.tcp_AddInvoice);
             this.tcp_Main.Controls.Add(this.tcp_Appointments);
             this.tcp_Main.Controls.Add(this.tcp_Customers);
+            this.tcp_Main.Controls.Add(this.tcp_Edit_Customer);
             this.tcp_Main.Location = new System.Drawing.Point(142, 1);
             this.tcp_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tcp_Main.Name = "tcp_Main";
@@ -721,6 +742,183 @@
             this.btn_ShowAllCustomers.UseVisualStyleBackColor = true;
             this.btn_ShowAllCustomers.Click += new System.EventHandler(this.btn_ShowAllCustomers_Click);
             // 
+            // tcp_Edit_Customer
+            // 
+            this.tcp_Edit_Customer.Controls.Add(this.btn_Edit_Customer);
+            this.tcp_Edit_Customer.Controls.Add(this.cb_E_C_Prospect);
+            this.tcp_Edit_Customer.Controls.Add(this.cb_E_C_Creditworthy);
+            this.tcp_Edit_Customer.Controls.Add(this.label7);
+            this.tcp_Edit_Customer.Controls.Add(this.label5);
+            this.tcp_Edit_Customer.Controls.Add(this.txtb_E_C_Limit);
+            this.tcp_Edit_Customer.Controls.Add(this.label10);
+            this.tcp_Edit_Customer.Controls.Add(this.txtb_E_C_GrossRevenue);
+            this.tcp_Edit_Customer.Controls.Add(this.txtb_E_C_Discount);
+            this.tcp_Edit_Customer.Controls.Add(this.txtb_E_C_Credit_Balance);
+            this.tcp_Edit_Customer.Controls.Add(this.txtb_E_C_IBAN);
+            this.tcp_Edit_Customer.Controls.Add(this.lbl_E_C_Customer);
+            this.tcp_Edit_Customer.Controls.Add(this.label8);
+            this.tcp_Edit_Customer.Controls.Add(this.label6);
+            this.tcp_Edit_Customer.Controls.Add(this.label21);
+            this.tcp_Edit_Customer.Controls.Add(this.label222);
+            this.tcp_Edit_Customer.Controls.Add(this.pictureBox2);
+            this.tcp_Edit_Customer.Location = new System.Drawing.Point(4, 22);
+            this.tcp_Edit_Customer.Name = "tcp_Edit_Customer";
+            this.tcp_Edit_Customer.Padding = new System.Windows.Forms.Padding(3);
+            this.tcp_Edit_Customer.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Edit_Customer.TabIndex = 5;
+            this.tcp_Edit_Customer.Text = "Edit Customer";
+            this.tcp_Edit_Customer.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(511, 78);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label222
+            // 
+            this.label222.AutoSize = true;
+            this.label222.Location = new System.Drawing.Point(23, 169);
+            this.label222.Name = "label222";
+            this.label222.Size = new System.Drawing.Size(35, 13);
+            this.label222.TabIndex = 29;
+            this.label222.Text = "IBAN:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(384, 169);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(79, 13);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Credit Balance:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(384, 209);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Discount:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(384, 250);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Gross Revenue:";
+            // 
+            // lbl_E_C_Customer
+            // 
+            this.lbl_E_C_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_E_C_Customer.Location = new System.Drawing.Point(6, 107);
+            this.lbl_E_C_Customer.Name = "lbl_E_C_Customer";
+            this.lbl_E_C_Customer.Size = new System.Drawing.Size(550, 23);
+            this.lbl_E_C_Customer.TabIndex = 35;
+            this.lbl_E_C_Customer.Text = "Customer Data";
+            this.lbl_E_C_Customer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtb_E_C_IBAN
+            // 
+            this.txtb_E_C_IBAN.Location = new System.Drawing.Point(26, 186);
+            this.txtb_E_C_IBAN.Name = "txtb_E_C_IBAN";
+            this.txtb_E_C_IBAN.Size = new System.Drawing.Size(141, 20);
+            this.txtb_E_C_IBAN.TabIndex = 36;
+            // 
+            // txtb_E_C_Credit_Balance
+            // 
+            this.txtb_E_C_Credit_Balance.Location = new System.Drawing.Point(387, 186);
+            this.txtb_E_C_Credit_Balance.Name = "txtb_E_C_Credit_Balance";
+            this.txtb_E_C_Credit_Balance.Size = new System.Drawing.Size(141, 20);
+            this.txtb_E_C_Credit_Balance.TabIndex = 37;
+            // 
+            // txtb_E_C_Discount
+            // 
+            this.txtb_E_C_Discount.Location = new System.Drawing.Point(387, 226);
+            this.txtb_E_C_Discount.Name = "txtb_E_C_Discount";
+            this.txtb_E_C_Discount.Size = new System.Drawing.Size(141, 20);
+            this.txtb_E_C_Discount.TabIndex = 39;
+            // 
+            // txtb_E_C_GrossRevenue
+            // 
+            this.txtb_E_C_GrossRevenue.Location = new System.Drawing.Point(387, 266);
+            this.txtb_E_C_GrossRevenue.Name = "txtb_E_C_GrossRevenue";
+            this.txtb_E_C_GrossRevenue.Size = new System.Drawing.Size(141, 20);
+            this.txtb_E_C_GrossRevenue.TabIndex = 41;
+            // 
+            // txtb_E_C_Limit
+            // 
+            this.txtb_E_C_Limit.Location = new System.Drawing.Point(26, 225);
+            this.txtb_E_C_Limit.Name = "txtb_E_C_Limit";
+            this.txtb_E_C_Limit.Size = new System.Drawing.Size(141, 20);
+            this.txtb_E_C_Limit.TabIndex = 43;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 209);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Limit:";
+            // 
+            // cb_E_C_Prospect
+            // 
+            this.cb_E_C_Prospect.FormattingEnabled = true;
+            this.cb_E_C_Prospect.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cb_E_C_Prospect.Location = new System.Drawing.Point(26, 304);
+            this.cb_E_C_Prospect.Name = "cb_E_C_Prospect";
+            this.cb_E_C_Prospect.Size = new System.Drawing.Size(121, 21);
+            this.cb_E_C_Prospect.TabIndex = 47;
+            // 
+            // cb_E_C_Creditworthy
+            // 
+            this.cb_E_C_Creditworthy.FormattingEnabled = true;
+            this.cb_E_C_Creditworthy.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cb_E_C_Creditworthy.Location = new System.Drawing.Point(26, 264);
+            this.cb_E_C_Creditworthy.Name = "cb_E_C_Creditworthy";
+            this.cb_E_C_Creditworthy.Size = new System.Drawing.Size(121, 21);
+            this.cb_E_C_Creditworthy.TabIndex = 46;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 288);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Prospect:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 248);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Creditworthy:";
+            // 
+            // btn_Edit_Customer
+            // 
+            this.btn_Edit_Customer.Location = new System.Drawing.Point(451, 403);
+            this.btn_Edit_Customer.Name = "btn_Edit_Customer";
+            this.btn_Edit_Customer.Size = new System.Drawing.Size(105, 23);
+            this.btn_Edit_Customer.TabIndex = 48;
+            this.btn_Edit_Customer.Text = "Edit Customer";
+            this.btn_Edit_Customer.UseVisualStyleBackColor = true;
+            this.btn_Edit_Customer.Click += new System.EventHandler(this.EditFinancialDetails);
+            // 
             // frm_Finance_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -748,6 +946,9 @@
             this.tcp_Customers.ResumeLayout(false);
             this.tcp_Customers.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.tcp_Edit_Customer.ResumeLayout(false);
+            this.tcp_Edit_Customer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -812,5 +1013,23 @@
         private System.Windows.Forms.Label lbl_Price;
         private System.Windows.Forms.TextBox txtb_Price;
         private System.Windows.Forms.Button btn_Add_Invoice;
+        private System.Windows.Forms.TabPage tcp_Edit_Customer;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbl_E_C_Customer;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label222;
+        private System.Windows.Forms.TextBox txtb_E_C_Limit;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtb_E_C_GrossRevenue;
+        private System.Windows.Forms.TextBox txtb_E_C_Discount;
+        private System.Windows.Forms.TextBox txtb_E_C_Credit_Balance;
+        private System.Windows.Forms.TextBox txtb_E_C_IBAN;
+        private System.Windows.Forms.Button btn_Edit_Customer;
+        private System.Windows.Forms.ComboBox cb_E_C_Prospect;
+        private System.Windows.Forms.ComboBox cb_E_C_Creditworthy;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
     }
 }

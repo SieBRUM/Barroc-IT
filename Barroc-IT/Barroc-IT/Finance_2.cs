@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -215,6 +216,7 @@ namespace Barroc_IT
                 customerInfoPanel[i].Dock = DockStyle.Top;
                 panel1.Controls.Add(customerInfoPanel[i]);
                 customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
+                customerInfoPanel[i].btn_editCustomer.Click += new EventHandler(this.EditCustomer);
             }
             dbh.CloseConnection();
         }
@@ -279,5 +281,71 @@ namespace Barroc_IT
             dbh.CloseConnection();
         }
 
+        private void EditCustomer(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+            Button button = (Button)sender;
+            DataTable dt = dbh.GetCustomer(button.AccessibleName);
+            dbh.CloseConnection();
+
+            lbl_E_C_Customer.Text = dt.Rows[0]["customer_details"].ToString();
+            txtb_E_C_IBAN.Text = dt.Rows[0]["iban"].ToString();
+            txtb_E_C_Limit.Text = dt.Rows[0]["customer_limit"].ToString();
+            txtb_E_C_GrossRevenue.Text = dt.Rows[0]["gross_revenue"].ToString();
+            txtb_E_C_Credit_Balance.Text = dt.Rows[0]["credit_balance"].ToString();
+            txtb_E_C_Discount.Text = dt.Rows[0]["discount"].ToString();
+            cb_E_C_Creditworthy.SelectedIndex = int.Parse(dt.Rows[0]["creditworthy"].ToString());
+            cb_E_C_Prospect.SelectedIndex = int.Parse(dt.Rows[0]["prospect"].ToString());
+            tcp_Main.SelectedIndex = 5;
+        }
+
+        public static bool ValidateBankAccount(string bankAccount)
+        {
+            bankAccount = bankAccount.ToUpper(); //IN ORDER TO COPE WITH THE REGEX BELOW
+            if (String.IsNullOrEmpty(bankAccount))
+                return false;
+            else if (System.Text.RegularExpressions.Regex.IsMatch(bankAccount, "^[A-Z0-9]"))
+            {
+                bankAccount = bankAccount.Replace(" ", String.Empty);
+                string bank =
+                bankAccount.Substring(4, bankAccount.Length - 4) + bankAccount.Substring(0, 4);
+                int asciiShift = 55;
+                StringBuilder sb = new StringBuilder();
+                foreach (char c in bank)
+                {
+                    int v;
+                    if (Char.IsLetter(c)) v = c - asciiShift;
+                    else v = int.Parse(c.ToString());
+                    sb.Append(v);
+                }
+                string checkSumString = sb.ToString();
+                int checksum = int.Parse(checkSumString.Substring(0, 1));
+                for (int i = 1; i < checkSumString.Length; i++)
+                {
+                    int v = int.Parse(checkSumString.Substring(i, 1));
+                    checksum *= 10;
+                    checksum += v;
+                    checksum %= 97;
+                }
+                return checksum == 1;
+            }
+            else
+                return false;
+        }
+
+        private void EditFinancialDetails(object sender, EventArgs e)
+        {
+            dbh.OpenConnection();
+        //    if (!ValidateBankAccount(txtb_E_C_IBAN.Text))
+        //    {
+        //        //MessageBox.Show("Not a correct IBAN!");
+        //    }
+            //else
+            //{
+               dbh.EditCustomerFinancial("18","12","12","12","12","1","12","1");
+            //}
+
+               dbh.CloseConnection();
+        } 
     }
 }
