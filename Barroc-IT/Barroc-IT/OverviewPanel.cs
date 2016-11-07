@@ -19,7 +19,15 @@ namespace Barroc_IT
             lbl_Notification_ID.Text = dt.Rows[rowNr]["notification_id"].ToString();
             lbl_Notification_Info_Data.Text = dt.Rows[rowNr]["notification_info"].ToString();
             lbl_Notification_Type.Text = dt.Rows[rowNr]["notification_type"].ToString();
-            lbl_Notification_Added.Text = ((DateTime.Today) - Convert.ToDateTime(dt.Rows[rowNr]["notification_date"])).TotalDays + " days ago";
+
+            if ((((DateTime.Today) - Convert.ToDateTime(dt.Rows[rowNr]["notification_date"])).TotalDays) == 0)
+            {
+                lbl_Notification_Added.Text = "Today";
+            }
+            else
+            {
+                lbl_Notification_Added.Text = ((DateTime.Today) - Convert.ToDateTime(dt.Rows[rowNr]["notification_date"])).TotalDays + " days ago";
+            }
         }
 
         private void OpenMoreInfo(object sender, EventArgs e)

@@ -17,8 +17,9 @@ namespace Barroc_IT
         enum creditworthy
         {
             No = 0,
-            Not_Checked = 1,
-            Yes = 1
+            Yes = 1,
+            Not_checked = 2
+            
         }
 
         public CustomerPanel(int rowNr, DataTable dt)

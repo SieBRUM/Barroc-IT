@@ -175,7 +175,7 @@
             this.lbl_Customer_Gross_Revenue.AccessibleName = "Control";
             this.lbl_Customer_Gross_Revenue.AutoSize = true;
             this.lbl_Customer_Gross_Revenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Gross_Revenue.Location = new System.Drawing.Point(454, 104);
+            this.lbl_Customer_Gross_Revenue.Location = new System.Drawing.Point(376, 104);
             this.lbl_Customer_Gross_Revenue.Name = "lbl_Customer_Gross_Revenue";
             this.lbl_Customer_Gross_Revenue.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Gross_Revenue.TabIndex = 80;
@@ -184,7 +184,7 @@
             // lbl_Gross_Revenue
             // 
             this.lbl_Gross_Revenue.AutoSize = true;
-            this.lbl_Gross_Revenue.Location = new System.Drawing.Point(338, 104);
+            this.lbl_Gross_Revenue.Location = new System.Drawing.Point(292, 104);
             this.lbl_Gross_Revenue.Name = "lbl_Gross_Revenue";
             this.lbl_Gross_Revenue.Size = new System.Drawing.Size(79, 13);
             this.lbl_Gross_Revenue.TabIndex = 79;
@@ -195,7 +195,7 @@
             this.lbl_Customer_Limit.AccessibleName = "Control";
             this.lbl_Customer_Limit.AutoSize = true;
             this.lbl_Customer_Limit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Limit.Location = new System.Drawing.Point(454, 87);
+            this.lbl_Customer_Limit.Location = new System.Drawing.Point(376, 87);
             this.lbl_Customer_Limit.Name = "lbl_Customer_Limit";
             this.lbl_Customer_Limit.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Limit.TabIndex = 78;
@@ -204,7 +204,7 @@
             // lbl_Limit
             // 
             this.lbl_Limit.AutoSize = true;
-            this.lbl_Limit.Location = new System.Drawing.Point(338, 87);
+            this.lbl_Limit.Location = new System.Drawing.Point(292, 87);
             this.lbl_Limit.Name = "lbl_Limit";
             this.lbl_Limit.Size = new System.Drawing.Size(31, 13);
             this.lbl_Limit.TabIndex = 77;
@@ -215,7 +215,7 @@
             this.lbl_Customer_Iban.AccessibleName = "Control";
             this.lbl_Customer_Iban.AutoSize = true;
             this.lbl_Customer_Iban.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Iban.Location = new System.Drawing.Point(454, 70);
+            this.lbl_Customer_Iban.Location = new System.Drawing.Point(376, 70);
             this.lbl_Customer_Iban.Name = "lbl_Customer_Iban";
             this.lbl_Customer_Iban.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Iban.TabIndex = 76;
@@ -224,7 +224,7 @@
             // lbl_Iban
             // 
             this.lbl_Iban.AutoSize = true;
-            this.lbl_Iban.Location = new System.Drawing.Point(338, 70);
+            this.lbl_Iban.Location = new System.Drawing.Point(292, 70);
             this.lbl_Iban.Name = "lbl_Iban";
             this.lbl_Iban.Size = new System.Drawing.Size(35, 13);
             this.lbl_Iban.TabIndex = 75;
@@ -235,7 +235,7 @@
             this.lbl_Customer_Last_Contact.AccessibleName = "Control";
             this.lbl_Customer_Last_Contact.AutoSize = true;
             this.lbl_Customer_Last_Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Last_Contact.Location = new System.Drawing.Point(128, 255);
+            this.lbl_Customer_Last_Contact.Location = new System.Drawing.Point(128, 240);
             this.lbl_Customer_Last_Contact.Name = "lbl_Customer_Last_Contact";
             this.lbl_Customer_Last_Contact.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Last_Contact.TabIndex = 74;
@@ -244,7 +244,7 @@
             // lbl_Last_Contact
             // 
             this.lbl_Last_Contact.AutoSize = true;
-            this.lbl_Last_Contact.Location = new System.Drawing.Point(12, 255);
+            this.lbl_Last_Contact.Location = new System.Drawing.Point(12, 240);
             this.lbl_Last_Contact.Name = "lbl_Last_Contact";
             this.lbl_Last_Contact.Size = new System.Drawing.Size(69, 13);
             this.lbl_Last_Contact.TabIndex = 73;
@@ -255,7 +255,7 @@
             this.lbl_Customer_Last_Action.AccessibleName = "Control";
             this.lbl_Customer_Last_Action.AutoSize = true;
             this.lbl_Customer_Last_Action.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Last_Action.Location = new System.Drawing.Point(128, 272);
+            this.lbl_Customer_Last_Action.Location = new System.Drawing.Point(128, 257);
             this.lbl_Customer_Last_Action.Name = "lbl_Customer_Last_Action";
             this.lbl_Customer_Last_Action.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Last_Action.TabIndex = 72;
@@ -264,7 +264,7 @@
             // lbl_Last_Action
             // 
             this.lbl_Last_Action.AutoSize = true;
-            this.lbl_Last_Action.Location = new System.Drawing.Point(12, 272);
+            this.lbl_Last_Action.Location = new System.Drawing.Point(12, 257);
             this.lbl_Last_Action.Name = "lbl_Last_Action";
             this.lbl_Last_Action.Size = new System.Drawing.Size(62, 13);
             this.lbl_Last_Action.TabIndex = 71;
@@ -275,7 +275,7 @@
             this.lbl_Customer_Next_Contact.AccessibleName = "Control";
             this.lbl_Customer_Next_Contact.AutoSize = true;
             this.lbl_Customer_Next_Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Next_Contact.Location = new System.Drawing.Point(128, 289);
+            this.lbl_Customer_Next_Contact.Location = new System.Drawing.Point(128, 274);
             this.lbl_Customer_Next_Contact.Name = "lbl_Customer_Next_Contact";
             this.lbl_Customer_Next_Contact.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Next_Contact.TabIndex = 70;
@@ -284,7 +284,7 @@
             // lbl_Next_Contact
             // 
             this.lbl_Next_Contact.AutoSize = true;
-            this.lbl_Next_Contact.Location = new System.Drawing.Point(12, 289);
+            this.lbl_Next_Contact.Location = new System.Drawing.Point(12, 274);
             this.lbl_Next_Contact.Name = "lbl_Next_Contact";
             this.lbl_Next_Contact.Size = new System.Drawing.Size(71, 13);
             this.lbl_Next_Contact.TabIndex = 69;
@@ -295,7 +295,7 @@
             this.lbl_Customer_Next_Action.AccessibleName = "Control";
             this.lbl_Customer_Next_Action.AutoSize = true;
             this.lbl_Customer_Next_Action.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Next_Action.Location = new System.Drawing.Point(128, 306);
+            this.lbl_Customer_Next_Action.Location = new System.Drawing.Point(128, 291);
             this.lbl_Customer_Next_Action.Name = "lbl_Customer_Next_Action";
             this.lbl_Customer_Next_Action.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Next_Action.TabIndex = 68;
@@ -304,7 +304,7 @@
             // lbl_Next_Action
             // 
             this.lbl_Next_Action.AutoSize = true;
-            this.lbl_Next_Action.Location = new System.Drawing.Point(12, 306);
+            this.lbl_Next_Action.Location = new System.Drawing.Point(12, 291);
             this.lbl_Next_Action.Name = "lbl_Next_Action";
             this.lbl_Next_Action.Size = new System.Drawing.Size(64, 13);
             this.lbl_Next_Action.TabIndex = 67;
@@ -315,7 +315,7 @@
             this.lbl_Customer_Discount.AccessibleName = "Control";
             this.lbl_Customer_Discount.AutoSize = true;
             this.lbl_Customer_Discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Discount.Location = new System.Drawing.Point(454, 53);
+            this.lbl_Customer_Discount.Location = new System.Drawing.Point(376, 53);
             this.lbl_Customer_Discount.Name = "lbl_Customer_Discount";
             this.lbl_Customer_Discount.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Discount.TabIndex = 66;
@@ -324,7 +324,7 @@
             // lbl_Discount
             // 
             this.lbl_Discount.AutoSize = true;
-            this.lbl_Discount.Location = new System.Drawing.Point(338, 53);
+            this.lbl_Discount.Location = new System.Drawing.Point(292, 53);
             this.lbl_Discount.Name = "lbl_Discount";
             this.lbl_Discount.Size = new System.Drawing.Size(52, 13);
             this.lbl_Discount.TabIndex = 65;
@@ -335,7 +335,7 @@
             this.lbl_Customer_Creditworthy.AccessibleName = "Control";
             this.lbl_Customer_Creditworthy.AutoSize = true;
             this.lbl_Customer_Creditworthy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Creditworthy.Location = new System.Drawing.Point(454, 36);
+            this.lbl_Customer_Creditworthy.Location = new System.Drawing.Point(376, 36);
             this.lbl_Customer_Creditworthy.Name = "lbl_Customer_Creditworthy";
             this.lbl_Customer_Creditworthy.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Creditworthy.TabIndex = 64;
@@ -344,7 +344,7 @@
             // lbl_Creditworthy
             // 
             this.lbl_Creditworthy.AutoSize = true;
-            this.lbl_Creditworthy.Location = new System.Drawing.Point(338, 36);
+            this.lbl_Creditworthy.Location = new System.Drawing.Point(292, 36);
             this.lbl_Creditworthy.Name = "lbl_Creditworthy";
             this.lbl_Creditworthy.Size = new System.Drawing.Size(68, 13);
             this.lbl_Creditworthy.TabIndex = 63;
@@ -355,7 +355,7 @@
             this.lbl_Customer_Credit_Balance.AccessibleName = "Control";
             this.lbl_Customer_Credit_Balance.AutoSize = true;
             this.lbl_Customer_Credit_Balance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_Credit_Balance.Location = new System.Drawing.Point(454, 19);
+            this.lbl_Customer_Credit_Balance.Location = new System.Drawing.Point(376, 19);
             this.lbl_Customer_Credit_Balance.Name = "lbl_Customer_Credit_Balance";
             this.lbl_Customer_Credit_Balance.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_Credit_Balance.TabIndex = 62;
@@ -364,7 +364,7 @@
             // lbl_Credit_Balance
             // 
             this.lbl_Credit_Balance.AutoSize = true;
-            this.lbl_Credit_Balance.Location = new System.Drawing.Point(338, 19);
+            this.lbl_Credit_Balance.Location = new System.Drawing.Point(292, 19);
             this.lbl_Credit_Balance.Name = "lbl_Credit_Balance";
             this.lbl_Credit_Balance.Size = new System.Drawing.Size(78, 13);
             this.lbl_Credit_Balance.TabIndex = 61;

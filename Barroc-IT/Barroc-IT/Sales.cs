@@ -104,7 +104,7 @@ namespace Barroc_IT
             {
                 if (a is TextBox)
                 {
-                    if (a.AccessibleName != "OptionalLocation" || a.AccessibleName != "VeryOptional")
+                    if (a.AccessibleName != "OptionalLocation" && a.AccessibleName != "VeryOptional")
                     {
                         if (a.Text == "")
                         {
@@ -149,7 +149,8 @@ namespace Barroc_IT
                 else
                     MessageBox.Show("An error occcured while adding a customer.");
 
-                dbh.AddNotification(txtb_customer_firstname.Text, "Creditworthy check", "Finance");
+                dbh.AddNotification(txtb_customer_firstname.Text, "Creditworthy check", "Finance", " needs to be checked on creditworthyness.");
+                dbh.AddNotification(txtb_customer_firstname.Text, "Add financial details", "Finance", " needs his financial details to be added");
                 dbh.CloseConnection();
             }
         }
@@ -226,7 +227,7 @@ namespace Barroc_IT
             {
                 if (a is TextBox)
                 {
-                    if (a.AccessibleName != "OptionalLocation" || a.AccessibleName != "VeryOptional")
+                    if (a.AccessibleName != "OptionalLocation" && a.AccessibleName != "VeryOptional")
                     {
                         if (a.Text == "")
                         {
@@ -250,6 +251,10 @@ namespace Barroc_IT
             else if (!check)
             {
                 MessageBox.Show("Not all fields are filled in.");
+            }
+            else if (optional != 0 && optional != 4)
+            {
+                MessageBox.Show("All address details have to be filled in!");
             }
             else if (dtpCustomerNextContact.Value < DateTime.Now)
             {

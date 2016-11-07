@@ -186,7 +186,7 @@ namespace Barroc_IT
             return dt;
         }
 
-        public bool AddNotification(string c_Name, string notification_type, string department)
+        public bool AddNotification(string c_Name, string notification_type, string department, string notification_info)
         {
             bool done;
             using (MySqlCommand cmd = new MySqlCommand(@"
@@ -196,7 +196,7 @@ namespace Barroc_IT
             {
                 cmd.Parameters.AddWithValue("notification_type", notification_type);
                 cmd.Parameters.AddWithValue("notification_date", DateTime.Today);
-                cmd.Parameters.AddWithValue("notification_info", "Customer " + c_Name + " needs to be checked on creditworthyness");
+                cmd.Parameters.AddWithValue("notification_info", "Customer " + c_Name + notification_info);
 
                 try
                 {
@@ -513,7 +513,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, 'limit', gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit as customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
                     FROM 
                         tbl_customers
                     WHERE
@@ -542,7 +542,7 @@ namespace Barroc_IT
                 dt.Columns.Add("creditworthy", typeof(string));
                 dt.Columns.Add("discount", typeof(string));
                 dt.Columns.Add("iban", typeof(string));
-                dt.Columns.Add("limit", typeof(string));
+                dt.Columns.Add("customer_limit", typeof(string));
                 dt.Columns.Add("gross_revenue", typeof(string));
                 dt.Columns.Add("customer_name", typeof(string));
                 dt.Columns.Add("address", typeof(string));
@@ -557,7 +557,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, 'limit', gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit AS customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
                     FROM 
                         tbl_customers
                     WHERE 
@@ -588,7 +588,7 @@ namespace Barroc_IT
                 dt.Columns.Add("creditworthy", typeof(string));
                 dt.Columns.Add("discount", typeof(string));
                 dt.Columns.Add("iban", typeof(string));
-                dt.Columns.Add("limit", typeof(string));
+                dt.Columns.Add("customer_limit", typeof(string));
                 dt.Columns.Add("gross_revenue", typeof(string));
                 dt.Columns.Add("customer_name", typeof(string));
                 dt.Columns.Add("address", typeof(string));
