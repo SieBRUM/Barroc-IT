@@ -16,9 +16,9 @@ namespace Barroc_IT
         {
             InitializeComponent();
             dbh = new DatabaseHandler();
-            ShowCustomers();
-            ShowAppointments();
-            ShowInvoices();
+            //ShowCustomers();
+            //ShowAppointments();
+            //ShowInvoices();
             HideFilters(true, false, false, false);
         }
 
@@ -39,7 +39,7 @@ namespace Barroc_IT
                     break;
                 case "mnitem_Invoices":
                     tc_Main.SelectedIndex = 2;
-                    HideFilters(false, false, true,false);
+                    HideFilters(false, false, true, false);
                     break;
                 case "mnitem_Customers":
                     tc_Main.SelectedIndex = 3;
@@ -156,11 +156,21 @@ namespace Barroc_IT
 
         private void ShowCustomers()
         {
+            customersPanel.Controls.Clear();
+
             dbh.OpenConnection();
             DataTable dt = dbh.GetCustomers();
             int amount = dt.Rows.Count;
             if (!showallCustomers && amount > 5)
+            {
                 amount = 5;
+
+                Button showAllCustomersButton = new Button();
+                showAllCustomersButton.Text = "Show all customers";
+                showAllCustomersButton.Dock = DockStyle.Bottom;
+                showAllCustomersButton.Click += new System.EventHandler(this.ShowAllCustomers);
+                customersPanel.Controls.Add(showAllCustomersButton);
+            }
 
             CustomerPanel[] customerInfoPanel = new CustomerPanel[amount];
 
@@ -169,7 +179,7 @@ namespace Barroc_IT
                 customerInfoPanel[i] = new CustomerPanel(i, dt);
                 customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 customerInfoPanel[i].Dock = DockStyle.Top;
-                panel1.Controls.Add(customerInfoPanel[i]);
+                customersPanel.Controls.Add(customerInfoPanel[i]);
                 customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                 customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
             }
@@ -288,7 +298,7 @@ namespace Barroc_IT
             tc_Main.SelectedIndex = 4;
         }
 
-        private void btn_showallAppointments_Click(object sender, EventArgs e)
+        private void ShowAllAppointments(object sender, EventArgs e)
         {
             showallAppointments = true;
             appointmentsPanel.Controls.Clear();
@@ -297,11 +307,22 @@ namespace Barroc_IT
 
         private void ShowAppointments()
         {
+            appointmentsPanel.Controls.Clear();
+
             dbh.OpenConnection();
             DataTable dt = dbh.GetAppointments();
             int amount = dt.Rows.Count;
             if (!showallAppointments && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllAppointments = new Button();
+                btn_showAllAppointments.Text = "Show all appointments";
+                btn_showAllAppointments.Dock = DockStyle.Bottom;
+                btn_showAllAppointments.Click += new System.EventHandler(this.ShowAllAppointments);
+                appointmentsPanel.Controls.Add(btn_showAllAppointments);
+                dbh.CloseConnection();
+            }
 
             AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
 
@@ -314,24 +335,34 @@ namespace Barroc_IT
                 appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
                 appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
             }
-            dbh.CloseConnection();
         }
 
-        private void btn_ShowAllCustomers_Click(object sender, EventArgs e)
+        private void ShowAllCustomers(object sender, EventArgs e)
         {
             showallCustomers = true;
-            panel1.Controls.Clear();
+            customersPanel.Controls.Clear();
             ShowCustomers();
         }
 
         private void ShowInvoices()
         {
+            invoicesPanel.Controls.Clear();
+
             dbh = new DatabaseHandler();
             dbh.OpenConnection();
             DataTable dt = dbh.GetInvoices();
             int amount = dt.Rows.Count;
             if (!showallInvoices && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllInvoices = new Button();
+                btn_showAllInvoices.Text = "Show all invoices";
+                btn_showAllInvoices.Dock = DockStyle.Bottom;
+                btn_showAllInvoices.Click += new System.EventHandler(this.ShowAllAppointments);
+                appointmentsPanel.Controls.Add(btn_showAllInvoices);
+                dbh.CloseConnection();
+            }
 
             InvoicePanel[] invoiceInfoPanel = new InvoicePanel[amount];
 
@@ -346,7 +377,7 @@ namespace Barroc_IT
             dbh.CloseConnection();
         }
 
-        private void btn_ShowAllInvoices_Click(object sender, EventArgs e)
+        private void ShowAllInvoices(object sender, EventArgs e)
         {
             showallInvoices = true;
             invoicesPanel.Controls.Clear();
@@ -359,7 +390,7 @@ namespace Barroc_IT
             if (e.KeyCode == Keys.Return)
             {
                 dbh.OpenConnection();
-                panel1.Controls.Clear();
+                customersPanel.Controls.Clear();
                 DataTable dt = dbh.FilterCustomers(filter, "first_name", "last_name");
                 int amount = dt.Rows.Count;
                 if (!showallCustomers && amount > 5)
@@ -372,7 +403,7 @@ namespace Barroc_IT
                     customerInfoPanel[i] = new CustomerPanel(i, dt);
                     customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                     customerInfoPanel[i].Dock = DockStyle.Top;
-                    panel1.Controls.Add(customerInfoPanel[i]);
+                    customersPanel.Controls.Add(customerInfoPanel[i]);
                     customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                     customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
                 }
@@ -386,7 +417,7 @@ namespace Barroc_IT
             if (e.KeyCode == Keys.Return)
             {
                 dbh.OpenConnection();
-                panel1.Controls.Clear();
+                customersPanel.Controls.Clear();
                 DataTable dt = dbh.FilterCustomers(filter, "company_name");
                 int amount = dt.Rows.Count;
                 if (!showallCustomers && amount > 5)
@@ -399,7 +430,7 @@ namespace Barroc_IT
                     customerInfoPanel[i] = new CustomerPanel(i, dt);
                     customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                     customerInfoPanel[i].Dock = DockStyle.Top;
-                    panel1.Controls.Add(customerInfoPanel[i]);
+                    customersPanel.Controls.Add(customerInfoPanel[i]);
                     customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                     customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
                 }
@@ -413,7 +444,7 @@ namespace Barroc_IT
             if (e.KeyCode == Keys.Return)
             {
                 dbh.OpenConnection();
-                panel1.Controls.Clear();
+                customersPanel.Controls.Clear();
                 DataTable dt = dbh.FilterCustomers(filter, "residence", "residence_2");
                 int amount = dt.Rows.Count;
                 if (!showallCustomers && amount > 5)
@@ -426,7 +457,7 @@ namespace Barroc_IT
                     customerInfoPanel[i] = new CustomerPanel(i, dt);
                     customerInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                     customerInfoPanel[i].Dock = DockStyle.Top;
-                    panel1.Controls.Add(customerInfoPanel[i]);
+                    customersPanel.Controls.Add(customerInfoPanel[i]);
                     customerInfoPanel[i].btn_editCustomer.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                     customerInfoPanel[i].btn_editCustomer.Click += new System.EventHandler(this.FillEditCustomer);
                 }
@@ -457,6 +488,54 @@ namespace Barroc_IT
 
         private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tc_Main.SelectedIndex == 1)
+            {
+                try
+                {
+                    showallAppointments = false;
+                    ShowAppointments();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+            if (tc_Main.SelectedIndex == 2)
+            {
+                try
+                {
+                    showallInvoices = false;
+                    ShowInvoices();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+            if (tc_Main.SelectedIndex == 3)
+            {
+                try
+                {
+                    showallCustomers = false;
+                    ShowCustomers();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
             if (tc_Main.SelectedIndex == 7)
             {
                 try

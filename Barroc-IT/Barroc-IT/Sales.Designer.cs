@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tcp_Customer = new System.Windows.Forms.TabPage();
             this.btn_Add_Customer = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.customersPanel = new System.Windows.Forms.Panel();
             this.btn_ShowAllCustomers = new System.Windows.Forms.Button();
             this.tcp_AddCustomer = new System.Windows.Forms.TabPage();
             this.dtp_customer_lastcontact = new System.Windows.Forms.DateTimePicker();
@@ -119,6 +119,7 @@
             this.lblCustomerFirstName = new System.Windows.Forms.Label();
             this.tc_Main = new System.Windows.Forms.TabControl();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
+            this.btn_GoTo_Add_Appointment = new System.Windows.Forms.Button();
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.tcp_Invoices = new System.Windows.Forms.TabPage();
@@ -196,10 +197,9 @@
             this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_GoTo_Add_Appointment = new System.Windows.Forms.Button();
             this.tcp_Overview.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.customersPanel.SuspendLayout();
             this.tcp_AddCustomer.SuspendLayout();
             this.tcp_EditCustomer.SuspendLayout();
             this.tc_Main.SuspendLayout();
@@ -247,7 +247,7 @@
             // 
             this.tcp_Customer.AutoScroll = true;
             this.tcp_Customer.Controls.Add(this.btn_Add_Customer);
-            this.tcp_Customer.Controls.Add(this.panel1);
+            this.tcp_Customer.Controls.Add(this.customersPanel);
             this.tcp_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Customer.Name = "tcp_Customer";
             this.tcp_Customer.Padding = new System.Windows.Forms.Padding(3);
@@ -266,17 +266,17 @@
             this.btn_Add_Customer.UseVisualStyleBackColor = true;
             this.btn_Add_Customer.Click += new System.EventHandler(this.btn_Add_Customer_Click);
             // 
-            // panel1
+            // customersPanel
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_ShowAllCustomers);
-            this.panel1.Location = new System.Drawing.Point(4, 35);
-            this.panel1.MinimumSize = new System.Drawing.Size(540, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 25);
-            this.panel1.TabIndex = 6;
+            this.customersPanel.AutoSize = true;
+            this.customersPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.customersPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customersPanel.Controls.Add(this.btn_ShowAllCustomers);
+            this.customersPanel.Location = new System.Drawing.Point(4, 35);
+            this.customersPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.customersPanel.Name = "customersPanel";
+            this.customersPanel.Size = new System.Drawing.Size(540, 25);
+            this.customersPanel.TabIndex = 6;
             // 
             // btn_ShowAllCustomers
             // 
@@ -287,7 +287,7 @@
             this.btn_ShowAllCustomers.TabIndex = 0;
             this.btn_ShowAllCustomers.Text = "Show All";
             this.btn_ShowAllCustomers.UseVisualStyleBackColor = true;
-            this.btn_ShowAllCustomers.Click += new System.EventHandler(this.btn_ShowAllCustomers_Click);
+            this.btn_ShowAllCustomers.Click += new System.EventHandler(this.ShowAllCustomers);
             // 
             // tcp_AddCustomer
             // 
@@ -1116,6 +1116,16 @@
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
             // 
+            // btn_GoTo_Add_Appointment
+            // 
+            this.btn_GoTo_Add_Appointment.Location = new System.Drawing.Point(3, 6);
+            this.btn_GoTo_Add_Appointment.Name = "btn_GoTo_Add_Appointment";
+            this.btn_GoTo_Add_Appointment.Size = new System.Drawing.Size(34, 23);
+            this.btn_GoTo_Add_Appointment.TabIndex = 8;
+            this.btn_GoTo_Add_Appointment.Text = "Add";
+            this.btn_GoTo_Add_Appointment.UseVisualStyleBackColor = true;
+            this.btn_GoTo_Add_Appointment.Click += new System.EventHandler(this.btn_GoTo_Add_Appointment_Click);
+            // 
             // appointmentsPanel
             // 
             this.appointmentsPanel.AutoSize = true;
@@ -1137,7 +1147,7 @@
             this.btn_showallAppointments.TabIndex = 0;
             this.btn_showallAppointments.Text = "Show All";
             this.btn_showallAppointments.UseVisualStyleBackColor = true;
-            this.btn_showallAppointments.Click += new System.EventHandler(this.btn_showallAppointments_Click);
+            this.btn_showallAppointments.Click += new System.EventHandler(this.ShowAllAppointments);
             // 
             // tcp_Invoices
             // 
@@ -1170,7 +1180,7 @@
             this.btn_ShowAllInvoices.TabIndex = 0;
             this.btn_ShowAllInvoices.Text = "Show All";
             this.btn_ShowAllInvoices.UseVisualStyleBackColor = true;
-            this.btn_ShowAllInvoices.Click += new System.EventHandler(this.btn_ShowAllInvoices_Click);
+            this.btn_ShowAllInvoices.Click += new System.EventHandler(this.ShowAllInvoices);
             // 
             // tcp_Edit_Appointment
             // 
@@ -1882,16 +1892,6 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // btn_GoTo_Add_Appointment
-            // 
-            this.btn_GoTo_Add_Appointment.Location = new System.Drawing.Point(6, 3);
-            this.btn_GoTo_Add_Appointment.Name = "btn_GoTo_Add_Appointment";
-            this.btn_GoTo_Add_Appointment.Size = new System.Drawing.Size(34, 23);
-            this.btn_GoTo_Add_Appointment.TabIndex = 8;
-            this.btn_GoTo_Add_Appointment.Text = "Add";
-            this.btn_GoTo_Add_Appointment.UseVisualStyleBackColor = true;
-            this.btn_GoTo_Add_Appointment.Click += new System.EventHandler(this.btn_GoTo_Add_Appointment_Click);
-            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1907,7 +1907,7 @@
             this.tcp_Overview.PerformLayout();
             this.tcp_Customer.ResumeLayout(false);
             this.tcp_Customer.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.customersPanel.ResumeLayout(false);
             this.tcp_AddCustomer.ResumeLayout(false);
             this.tcp_AddCustomer.PerformLayout();
             this.tcp_EditCustomer.ResumeLayout(false);
@@ -1999,7 +1999,7 @@
         private System.Windows.Forms.TextBox txtb_customer_last_action;
         private System.Windows.Forms.DateTimePicker dtp_customer_nextcontact;
         private System.Windows.Forms.DateTimePicker dtp_customer_lastcontact;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel customersPanel;
         private System.Windows.Forms.Button btn_ShowAllCustomers;
         private System.Windows.Forms.TabPage tcp_EditCustomer;
         private System.Windows.Forms.DateTimePicker dtpCustomerLastContact;
