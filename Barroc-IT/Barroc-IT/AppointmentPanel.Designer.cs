@@ -237,7 +237,7 @@
             // 
             this.lbl_hasSummary.AutoSize = true;
             this.lbl_hasSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hasSummary.Location = new System.Drawing.Point(184, 17);
+            this.lbl_hasSummary.Location = new System.Drawing.Point(261, 17);
             this.lbl_hasSummary.Name = "lbl_hasSummary";
             this.lbl_hasSummary.Size = new System.Drawing.Size(81, 13);
             this.lbl_hasSummary.TabIndex = 0;

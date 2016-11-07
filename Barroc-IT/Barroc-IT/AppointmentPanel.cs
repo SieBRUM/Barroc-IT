@@ -20,7 +20,7 @@ namespace Barroc_IT
             lbl_Appointment_Made_Data.Text = dt.Rows[rowNr]["appointment_made"].ToString();
             lbl_Appointment_Time_Data.Text = dt.Rows[rowNr]["appointment_datetime"].ToString();
             rtb_Summary.Text = dt.Rows[rowNr]["appointment_summary"].ToString();
-            lbl_CustomerName.Text = dt.Rows[rowNr]["appointment_customer_id"].ToString();
+            lbl_CustomerName.Text = dt.Rows[rowNr]["appointment_customer_id"].ToString() + ": " + dt.Rows[rowNr]["customer_name"].ToString();
             lbl_Customer_Company_Name_Data.Text = dt.Rows[rowNr]["company_name"].ToString();
             lbl_Customer_Residence_Data.Text = dt.Rows[rowNr]["customer_residence"].ToString();
             lbl_Customer_Address_Data.Text = dt.Rows[rowNr]["customer_address"].ToString();

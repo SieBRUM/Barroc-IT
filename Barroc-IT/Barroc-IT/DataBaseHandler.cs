@@ -681,7 +681,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_id,appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_id,appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
                     
                     FROM
                         tbl_appointments
@@ -712,6 +712,7 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_zip_code", typeof(string));
                 dt.Columns.Add("customer_phone_number", typeof(string));
                 dt.Columns.Add("customer_email", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
                 dt.Load(reader);
             }
             return dt;
@@ -956,7 +957,7 @@ namespace Barroc_IT
                 cmd.Parameters.AddWithValue("appointment_streetname", a_Streetname);
                 cmd.Parameters.AddWithValue("appointment_housenumber", a_Housenumber);
                 cmd.Parameters.AddWithValue("appointment_zipcode", a_Zipcode);
-                cmd.Parameters.AddWithValue("appointment_made", DateTime.Now);
+                cmd.Parameters.AddWithValue("appointment_made", DateTime.Now.Date);
                 cmd.Parameters.AddWithValue("appointment_summary", a_Summary);  
                 try
                 {
