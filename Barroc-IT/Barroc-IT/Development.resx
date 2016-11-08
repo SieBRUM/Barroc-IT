@@ -5749,6 +5749,45 @@
         uGrTh6Fv829b/m4WvHJ7mB3aWnFRRc8q/wBv6tR6v//Z
 </value>
   </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>
+By opening the application, you will come into the login screen. Make sure all fields are filled in with the correct login information(case sensitive). By activating “Remember me”, the username will be saved. Click “Login” to login to the application. </value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>
+If you would like to look up one or more projects, you click on “Projects”. Here you will be able to see the five most recently added projects. By clicking on “Show all” all projects will be shown. If you would like to see a specific project, you can use the filter. The filters are shows under the “Projects” text. You are able to filter on Project Name, Project ID and Customer name.
+</value>
+  </data>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>
+If you would like to add a new project, click on “Projects”. Then click on the “Add” button on the upper left. You can choose the customer for which this projects is for. When all fields are filled in click on “Add Project”. You will get a notification when the project is successfully saved.
+</value>
+  </data>
+  <data name="richTextBox6.Text" xml:space="preserve">
+    <value>
+If you would like to look up one or more appointments, you click on “Appointments”. Here you will be able to see the five most recently added appointments. By clicking on “Show all” all appointments will be shown. If you would like to see a specific appointment, you can use the filter. The filters are shows under the “Appointments” text. You are able to filter on Customer Name, Company name, Residence, Summary and Date.
+</value>
+  </data>
+  <data name="richTextBox8.Text" xml:space="preserve">
+    <value>
+Als u de projecten wilt zien dan klikt u op “Projects”. U ziet dan de 5 meest recent aangemaakte projecten. Als u op “Show All” klikt dan worden alle projecten weergegeven. Als u bepaalde projecten wilt zien dan kunt u de filters gebruiken. De filters worden weergegeven onder het kopje “Projects”. U kunt filteren op “Project Name” project naam, “Project ID” project id, “Customer Name” klantnaam.
+</value>
+  </data>
+  <data name="richTextBox9.Text" xml:space="preserve">
+    <value>
+Als u een nieuw project wilt toevoegen dan klikt u op “Projects”. Klik dan op het knopje “Add” links bovenin. U kunt de klant kiezen waar het project voor gemaakt wordt. Als alle velden zijn ingevuld klikt u op “Add Project”. U krijgt een melding als het project succesvol is opgeslagen.
+</value>
+  </data>
+  <data name="richTextBox10.Text" xml:space="preserve">
+    <value>
+Als u een bestaand project wilt bewerken dan klikt u op “Projects”. Zoek het desbetreffende project en klik die open. Klik dan op de knop “Edit Project”. U ziet dan dat de project gegevens al ingevuld staan. Als u alle velden heeft ingevuld dan klikt u op “Edit Project”. U krijgt een melding als de afspraak succesvol is bewerkt.
+</value>
+  </data>
+  <data name="richTextBox11.Text" xml:space="preserve">
+    <value>
+Als u de nieuwe afspraken wilt zien dan klikt u op “Appointments”. U ziet dan de 5 meest recent gemaakte afspraken. Als u op “Show All” klikt dan worden alle afspraken weergegeven. Als u bepaalde afspraken wilt zien dan kunt u de filter gebruiken. De filters worden weergegeven onder het kopje “Appointments”. U kunt filteren op “Customer Name” klantnaam, “Company Name” bedrijfsnaam, “Residence” plaatsnaam, “Summary” wel of geen samenvatting, “Date” datum.
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>53</value>
   </metadata>

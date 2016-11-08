@@ -375,6 +375,11 @@ namespace Barroc_IT
             appointmentsPanel.Controls.Clear();
             showallAppointments = true;
             ShowAppointments();
+        }
+
+        private void mnitem_Help_Click(object sender, EventArgs e)
+        {
+            tcp_Main.SelectedIndex = 6;
         } 
     }
 }
