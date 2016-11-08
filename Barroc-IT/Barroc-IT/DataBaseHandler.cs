@@ -349,13 +349,22 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit AS customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+                        tbl_customers.customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit AS customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2, COUNT(tbl_projects.project_id) AS numOfProjects
 
                     FROM
                         tbl_customers
 
+                    LEFT JOIN
+                        tbl_projects
+
+                    ON 
+                        tbl_customers.customer_id = tbl_projects.customer_id
+
+                    GROUP BY
+                        tbl_customers.customer_id
+
                     ORDER BY
-                        customer_ID DESC", this.GetConnection()))
+                        tbl_customers.customer_id ASC", this.GetConnection()))
             {
 
                 MySqlDataReader reader;
@@ -384,6 +393,7 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_name", typeof(string));
                 dt.Columns.Add("address", typeof(string));
                 dt.Columns.Add("address_2", typeof(string));
+                dt.Columns.Add("numOfProjects", typeof(string));
                 dt.Load(reader);
             }
             return dt;
@@ -506,6 +516,55 @@ namespace Barroc_IT
                 }
                 return success;
             }
+        }
+
+        public DataTable FilterNotifications(string filter, string colName)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        notification_id, notification_type, notification_date, notification_info
+                    FROM
+                        tbl_notification
+                    WHERE 
+                        " + colName + " = @filter", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", filter);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("notification_id", typeof(string));
+                dt.Columns.Add("notification_type", typeof(string));
+                dt.Columns.Add("notification_date", typeof(string));
+                dt.Columns.Add("notification_info", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable FilterNotificationsBetweenDate(string filter, string filter2, string colName)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        notification_id, notification_type, notification_date, notification_info
+                    FROM
+                        tbl_notification
+                    WHERE 
+                        " + colName + "BETWEEN @filter AND @filter2", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", filter);
+                cmd.Parameters.AddWithValue("filter2", filter2);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("notification_id", typeof(string));
+                dt.Columns.Add("notification_type", typeof(string));
+                dt.Columns.Add("notification_date", typeof(string));
+                dt.Columns.Add("notification_info", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
         }
 
         public DataTable FilterCustomers(string filter, string colName)

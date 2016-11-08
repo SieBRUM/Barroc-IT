@@ -23,15 +23,15 @@ namespace Barroc_IT
             ShowNotifications();
             tcp_Main.SelectedIndex = 0;
 
-            ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
-            ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator();
+            //ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
+            //ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator();
             HideFilters(true,false,false);
 
-            for (int i = 0; i < arrayControl.Length; i++)
-            {
-                mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
-                mnfltr_Appointments_Date.DropDownItems.Add(arrayControl1[i]);
-            }
+            //for (int i = 0; i < arrayControl.Length; i++)
+            //{
+            //    mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
+            //    mnfltr_Appointments_Date.DropDownItems.Add(arrayControl1[i]);
+            //}
         }
 
         private void MenuHandler(object sender, EventArgs e)

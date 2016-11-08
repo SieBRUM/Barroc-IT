@@ -452,7 +452,7 @@
             // 
             // lbl_Customer_NumofProjects
             // 
-            this.lbl_Customer_NumofProjects.AccessibleName = "Control";
+            this.lbl_Customer_NumofProjects.AccessibleName = "";
             this.lbl_Customer_NumofProjects.AutoSize = true;
             this.lbl_Customer_NumofProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer_NumofProjects.Location = new System.Drawing.Point(128, 206);

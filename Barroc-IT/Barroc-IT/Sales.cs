@@ -21,7 +21,80 @@ namespace Barroc_IT
             //ShowAppointments();
             //ShowInvoices();
             ShowNotifications();
+
+            ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator(this);
+            ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator(this);
             HideFilters(true, false, false, false);
+
+            for (int i = 0; i < arrayControl.Length; i++)
+            {
+                mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
+                mnfltr_Appointments_date.DropDownItems.Add(arrayControl1[i]);
+            }
+        }
+
+        public void SetDateFromLabel(object sender, EventArgs e)
+        {
+            DateTimePicker dtp = (DateTimePicker)sender;
+            lbl_Date_From.Text = DateHandler.GetDateWithMinus(dtp).ToString();
+        }
+
+        public void SetDateTillLabel(object sender, EventArgs e)
+        {
+            DateTimePicker dtp = (DateTimePicker)sender;
+            lbl_Date_Till.Text = DateHandler.GetDateWithMinus(dtp).ToString();
+        }
+
+        public void SearchNotificationOnDate(object sender, EventArgs e)
+        {
+            string fromDate = lbl_Date_From.Text;
+            string tillDate = lbl_Date_Till.Text;
+
+            dbh.OpenConnection();
+            notificationsPanel.Controls.Clear();
+            DataTable dt = dbh.FilterNotificationsBetweenDate(fromDate, tillDate, "notification_date");
+            int amount = dt.Rows.Count;
+            if (!showallNotifications && amount > 5)
+                amount = 5;
+            MessageBox.Show(amount.ToString() + dt.Rows.Count.ToString());
+            OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+            for (int i = 0; i < overviewInfoPanel.Length; i++)
+            {
+                overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                overviewInfoPanel[i].Dock = DockStyle.Top;
+                overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+            }
+            dbh.CloseConnection();
+        }
+
+
+        private void tscmb_Overview_Department_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filter = tscmb_Overview_Department.Text;
+
+            dbh.OpenConnection();
+            notificationsPanel.Controls.Clear();
+            DataTable dt = dbh.FilterNotifications(filter, "notification_department");
+            int amount = dt.Rows.Count;
+            if (!showallNotifications && amount > 5)
+                amount = 5;
+            MessageBox.Show(amount.ToString() + dt.Rows.Count.ToString());
+            OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+            for (int i = 0; i < overviewInfoPanel.Length; i++)
+            {
+                overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                overviewInfoPanel[i].Dock = DockStyle.Top;
+                overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+            }
+            dbh.CloseConnection();
         }
 
         private void MenuHandler(object sender, EventArgs e)
