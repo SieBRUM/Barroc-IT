@@ -24,6 +24,15 @@ namespace Barroc_IT
             ShowAppointments();
             ShowCustomers();
             ShowNotifications();
+
+            ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator(this);
+            ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator(this);
+
+            for (int i = 0; i < arrayControl.Length; i++)
+            {
+                mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
+                mnfltr_Appointments_Date.DropDownItems.Add(arrayControl1[i]);
+            }
         }
 
         private void MenuHandler(object sender, EventArgs e)

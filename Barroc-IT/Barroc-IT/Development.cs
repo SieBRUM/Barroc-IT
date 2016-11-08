@@ -18,20 +18,20 @@ namespace Barroc_IT
             dbh = new DatabaseHandler();
             cbox_Project_Status.SelectedIndex = 0;
             cbox_Maintenance_Contract.SelectedIndex = 0;
-            ShowProjects();
+            //ShowProjects();
             ShowAppointments();
             ShowNotifications();
             tcp_Main.SelectedIndex = 0;
 
-            //ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator();
-            //ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator();
+            ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator(this);
+            ToolStripControlHost[] arrayControl1 = MenuItems.DTPGenerator(this);
             HideFilters(true,false,false);
 
-            //for (int i = 0; i < arrayControl.Length; i++)
-            //{
-            //    mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
-            //    mnfltr_Appointments_Date.DropDownItems.Add(arrayControl1[i]);
-            //}
+            for (int i = 0; i < arrayControl.Length; i++)
+            {
+                mnfltr_Overview_Date.DropDownItems.Add(arrayControl[i]);
+                mnfltr_Appointments_Date.DropDownItems.Add(arrayControl1[i]);
+            }
         }
 
         private void MenuHandler(object sender, EventArgs e)
@@ -137,6 +137,23 @@ namespace Barroc_IT
 
         private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tcp_Main.SelectedIndex == 1)
+            {
+                try
+                {
+                    showallProjects = false;
+                    ShowProjects();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+
             if (tcp_Main.SelectedIndex == 4)
             {
                 try
@@ -184,6 +201,7 @@ namespace Barroc_IT
         {
             dbh.OpenConnection();
 
+            panel1.Controls.Clear();
             DataTable dt = dbh.GetProjects();
             int amount = dt.Rows.Count;
             if (!showallProjects && amount > 5)
@@ -203,7 +221,6 @@ namespace Barroc_IT
                 panel1.Controls.Add(projectInfoPanel[i]);
             }
             dbh.CloseConnection();
-            tcp_Main.SelectedIndex = 1;
         }
 
         private void FillEditProjectItems(object sender, EventArgs e)
@@ -389,14 +406,15 @@ namespace Barroc_IT
             }
         }
 
+
         private void SearchProjectOnC_Name(object sender, KeyEventArgs e)
         {
-            string filter = tstxtb_Projects_PID.Text;
+            string filter = tstxtb_Projects_CuName.Text;
             if (e.KeyCode == Keys.Return)
             {
                 dbh.OpenConnection();
                 panel1.Controls.Clear();
-                DataTable dt = dbh.FilterProjects(filter, "tbl_customers.first_name");
+                DataTable dt = dbh.FilterProjects(filter, "tbl_customers.first_name", "tbl_customers.last_name");
                 int amount = dt.Rows.Count;
                 if (!showallProjects && dt.Rows.Count > 5)
                     amount = 5;
@@ -416,6 +434,96 @@ namespace Barroc_IT
                 }
                 dbh.CloseConnection();
                 tcp_Main.SelectedIndex = 1;
+            }
+        }
+
+        private void SearchAppointmentOnCu_Name(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Appointments_CuName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointments(filter, "tbl_customers.first_name", "tbl_customers.last_name");
+                int amount = dt.Rows.Count;
+                if (!showallAppointments && amount > 5)
+                    amount = 5;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.Dispose();
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchAppointmentOnCo_Name(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Appointments_CoName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointments(filter, "tbl_customers.company_name");
+                int amount = dt.Rows.Count;
+                if (!showallAppointments && amount > 5)
+                    amount = 5;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.Dispose();
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchAppointmentOnResidence(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Appointments_Residence.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointments(filter, "tbl_customers.residence");
+                int amount = dt.Rows.Count;
+                if (!showallAppointments && amount > 5)
+                    amount = 5;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.Dispose();
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchNotificationOnHasSummary(object sender, EventArgs e)
+        {
+            if (tscb_Appointment_HasSummary.Text == "Yes")
+            {
+                
+            }
+            else
+            {
+
             }
         }
 

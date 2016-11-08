@@ -45,6 +45,7 @@ namespace Barroc_IT
             lbl_Date_Till.Text = DateHandler.GetDateWithMinus(dtp).ToString();
         }
 
+
         public void SearchNotificationOnDate(object sender, EventArgs e)
         {
             string fromDate = lbl_Date_From.Text;
@@ -464,10 +465,15 @@ namespace Barroc_IT
             ShowInvoices();
         }
 
+        private void SearchInvoiceOnCu_Name(object sender, KeyEventArgs e)
+        {
+
+        }
+
         private void SearchCustomerOnCu_Name(object sender, KeyEventArgs e)
         {
             string filter = tstxtb_Customers_CuName.Text;
-            if (e.KeyCode == Keys.Return)
+            if (e.KeyCode == Keys.F5)
             {
                 dbh.OpenConnection();
                 customersPanel.Controls.Clear();
@@ -525,7 +531,7 @@ namespace Barroc_IT
             {
                 dbh.OpenConnection();
                 customersPanel.Controls.Clear();
-                DataTable dt = dbh.FilterCustomers(filter, "residence", "residence_2");
+                DataTable dt = dbh.FilterCustomers(filter, "tbl_customers.residence", "tbl_customers.residence_2");
                 int amount = dt.Rows.Count;
                 if (!showallCustomers && amount > 5)
                     amount = 5;

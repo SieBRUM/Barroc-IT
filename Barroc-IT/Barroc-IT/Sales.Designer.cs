@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Sales));
             this.tcp_Overview = new System.Windows.Forms.TabPage();
+            this.lbl_Date_Till = new System.Windows.Forms.Label();
+            this.lbl_Date_From = new System.Windows.Forms.Label();
             this.notificationsPanel = new System.Windows.Forms.Panel();
             this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -181,7 +183,7 @@
             this.mnfltr_Appointments_date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Invoices = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Invoices_CuName = new System.Windows.Forms.ToolStripMenuItem();
-            this.tstxtb_Appointments_CuName = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Invoices_CuName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Invoices_CoName = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Appointments_CoName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Invoices_Paid = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,8 +200,6 @@
             this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Date_Till = new System.Windows.Forms.Label();
-            this.lbl_Date_From = new System.Windows.Forms.Label();
             this.tcp_Overview.SuspendLayout();
             this.notificationsPanel.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
@@ -232,6 +232,24 @@
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Date_Till
+            // 
+            this.lbl_Date_Till.AutoSize = true;
+            this.lbl_Date_Till.Location = new System.Drawing.Point(213, 12);
+            this.lbl_Date_Till.Name = "lbl_Date_Till";
+            this.lbl_Date_Till.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Date_Till.TabIndex = 12;
+            this.lbl_Date_Till.Text = "label2";
+            // 
+            // lbl_Date_From
+            // 
+            this.lbl_Date_From.AutoSize = true;
+            this.lbl_Date_From.Location = new System.Drawing.Point(101, 12);
+            this.lbl_Date_From.Name = "lbl_Date_From";
+            this.lbl_Date_From.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Date_From.TabIndex = 11;
+            this.lbl_Date_From.Text = "label1";
             // 
             // notificationsPanel
             // 
@@ -272,7 +290,7 @@
             this.tcp_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Customer.Name = "tcp_Customer";
             this.tcp_Customer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Customer.Size = new System.Drawing.Size(566, 461);
+            this.tcp_Customer.Size = new System.Drawing.Size(566, 438);
             this.tcp_Customer.TabIndex = 1;
             this.tcp_Customer.Text = "Customer";
             this.tcp_Customer.UseVisualStyleBackColor = true;
@@ -354,7 +372,7 @@
             this.tcp_AddCustomer.Location = new System.Drawing.Point(4, 22);
             this.tcp_AddCustomer.Name = "tcp_AddCustomer";
             this.tcp_AddCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_AddCustomer.Size = new System.Drawing.Size(566, 461);
+            this.tcp_AddCustomer.Size = new System.Drawing.Size(566, 438);
             this.tcp_AddCustomer.TabIndex = 2;
             this.tcp_AddCustomer.Text = "addCustomer";
             this.tcp_AddCustomer.UseVisualStyleBackColor = true;
@@ -744,7 +762,7 @@
             this.tcp_EditCustomer.Location = new System.Drawing.Point(4, 22);
             this.tcp_EditCustomer.Name = "tcp_EditCustomer";
             this.tcp_EditCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_EditCustomer.Size = new System.Drawing.Size(566, 461);
+            this.tcp_EditCustomer.Size = new System.Drawing.Size(566, 438);
             this.tcp_EditCustomer.TabIndex = 3;
             this.tcp_EditCustomer.Text = "editCustomer";
             this.tcp_EditCustomer.UseVisualStyleBackColor = true;
@@ -1174,7 +1192,7 @@
             this.tcp_Invoices.Controls.Add(this.invoicesPanel);
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
-            this.tcp_Invoices.Size = new System.Drawing.Size(566, 461);
+            this.tcp_Invoices.Size = new System.Drawing.Size(566, 438);
             this.tcp_Invoices.TabIndex = 5;
             this.tcp_Invoices.Text = "Invoices";
             this.tcp_Invoices.UseVisualStyleBackColor = true;
@@ -1224,7 +1242,7 @@
             this.tcp_Edit_Appointment.Location = new System.Drawing.Point(4, 22);
             this.tcp_Edit_Appointment.Name = "tcp_Edit_Appointment";
             this.tcp_Edit_Appointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Edit_Appointment.Size = new System.Drawing.Size(566, 461);
+            this.tcp_Edit_Appointment.Size = new System.Drawing.Size(566, 438);
             this.tcp_Edit_Appointment.TabIndex = 6;
             this.tcp_Edit_Appointment.Text = "Edit Appointment";
             this.tcp_Edit_Appointment.UseVisualStyleBackColor = true;
@@ -1400,7 +1418,7 @@
             this.tcp_Add_Appointment.Location = new System.Drawing.Point(4, 22);
             this.tcp_Add_Appointment.Name = "tcp_Add_Appointment";
             this.tcp_Add_Appointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Add_Appointment.Size = new System.Drawing.Size(566, 461);
+            this.tcp_Add_Appointment.Size = new System.Drawing.Size(566, 438);
             this.tcp_Add_Appointment.TabIndex = 7;
             this.tcp_Add_Appointment.Text = "Add Appointment";
             this.tcp_Add_Appointment.UseVisualStyleBackColor = true;
@@ -1762,7 +1780,7 @@
             // mnfltr_Invoices_CuName
             // 
             this.mnfltr_Invoices_CuName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstxtb_Appointments_CuName});
+            this.tstxtb_Invoices_CuName});
             this.mnfltr_Invoices_CuName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Invoices_CuName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Invoices_CuName.Name = "mnfltr_Invoices_CuName";
@@ -1770,10 +1788,11 @@
             this.mnfltr_Invoices_CuName.Text = "Customer Name";
             this.mnfltr_Invoices_CuName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tstxtb_Appointments_CuName
+            // tstxtb_Invoices_CuName
             // 
-            this.tstxtb_Appointments_CuName.Name = "tstxtb_Appointments_CuName";
-            this.tstxtb_Appointments_CuName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Invoices_CuName.Name = "tstxtb_Invoices_CuName";
+            this.tstxtb_Invoices_CuName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Invoices_CuName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchCustomerOnCu_Name);
             // 
             // mnfltr_Invoices_CoName
             // 
@@ -1913,24 +1932,6 @@
             this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
-            // lbl_Date_Till
-            // 
-            this.lbl_Date_Till.AutoSize = true;
-            this.lbl_Date_Till.Location = new System.Drawing.Point(213, 12);
-            this.lbl_Date_Till.Name = "lbl_Date_Till";
-            this.lbl_Date_Till.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Date_Till.TabIndex = 12;
-            this.lbl_Date_Till.Text = "label2";
-            // 
-            // lbl_Date_From
-            // 
-            this.lbl_Date_From.AutoSize = true;
-            this.lbl_Date_From.Location = new System.Drawing.Point(101, 12);
-            this.lbl_Date_From.Name = "lbl_Date_From";
-            this.lbl_Date_From.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Date_From.TabIndex = 11;
-            this.lbl_Date_From.Text = "label1";
-            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1993,7 +1994,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Invoices_CoName;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Invoices_Paid;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Invoices_Number;
-        private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CuName;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Invoices_CuName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.TabPage tcp_Overview;
         private System.Windows.Forms.Label label3;

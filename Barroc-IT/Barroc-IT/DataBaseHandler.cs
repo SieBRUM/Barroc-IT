@@ -313,17 +313,14 @@ namespace Barroc_IT
                         tbl_invoices
                     INNER JOIN
                         tbl_projects
-
                     ON
                         tbl_invoices.project_id = tbl_projects.project_id
-
                     INNER JOIN
                         tbl_customers
-
                     ON
                         tbl_projects.customer_id = tbl_customers.customer_id
-
-                    ORDER BY invoice_id DESC", this.GetConnection()))
+                    ORDER BY
+                        invoice_id DESC", this.GetConnection()))
             {
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
@@ -572,10 +569,16 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit as customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+                        tbl_customers.customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit as customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2, Count(tbl_projects.project_id) AS numOfProjects
                     FROM 
                         tbl_customers
-                    WHERE
+                    LEFT JOIN
+                        tbl_projects
+                    ON
+                        tbl_customers.customer_id = tbl_projects.customer_id
+                    GROUP BY
+                        tbl_customers.customer_id
+                    HAVING
                         " + colName + " LIKE @filter ", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
@@ -606,6 +609,7 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_name", typeof(string));
                 dt.Columns.Add("address", typeof(string));
                 dt.Columns.Add("address_2", typeof(string));
+                dt.Columns.Add("numOfProjects", typeof(string));
                 dt.Load(reader);
             }
             return dt;
@@ -616,13 +620,17 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        customer_id, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit AS customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2
+                        tbl_customers.customer_id, first_name, last_name, company_name, zip_code, zip_code_2, residence, residence_2, phone_number, phone_number_2, fax, email, prospect, last_contact, last_action, next_contact, next_action, credit_balance, creditworthy, discount, iban, tbl_customers.limit AS customer_limit, gross_revenue, CONCAT (first_name, ' ', last_name) AS customer_name, CONCAT (street_name, ' ', house_number) AS address, CONCAT (street_name_2, ' ', house_number_2) AS address_2, Count(tbl_projects.project_id) AS numOfProjects
                     FROM 
                         tbl_customers
-                    WHERE 
-                        " + colName + @" LIKE @filter
-                    OR
-                        " + colName_2 + " LIKE @filter", this.GetConnection()))
+                    LEFT JOIN
+                        tbl_projects
+                    ON
+                        tbl_customers.customer_id = tbl_projects.customer_id
+                    GROUP BY
+                        tbl_customers.customer_id
+                    HAVING 
+                        " + colName + " LIKE @filter OR " + colName_2 + " LIKE @filter", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
 
@@ -652,6 +660,93 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_name", typeof(string));
                 dt.Columns.Add("address", typeof(string));
                 dt.Columns.Add("address_2", typeof(string));
+                dt.Columns.Add("numOfProjects", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable FilterInvoices(string filter, string colName)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, ledger_account_number, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (first_name, ' ', last_name) AS customer_name
+                    FROM
+                        tbl_invoices
+                    INNER JOIN
+                        tbl_projects
+                    ON
+                        tbl_invoices.project_id = tbl_projects.project_id
+                    INNER JOIN
+                        tbl_customers
+                    ON
+                        tbl_projects.customer_id = tbl_customers.customer_id
+                    WHERE
+                        " + colName + @" LIKE @filter
+                    ORDER BY
+                        invoice_id DESC", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", filter);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("customer_id");
+                dt.Columns.Add("invoice_id");
+                dt.Columns.Add("status");
+                dt.Columns.Add("total_price");
+                dt.Columns.Add("company_name");
+                dt.Columns.Add("contact_person");
+                dt.Columns.Add("ledger_account_number");
+                dt.Columns.Add("IBAN");
+                dt.Columns.Add("VAT");
+                dt.Columns.Add("discount");
+                dt.Columns.Add("project_id");
+                dt.Columns.Add("customer_name");
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable FilterInvoices(string filter, string colName, string colName_2)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.first_name, tbl_customers.last_name, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, ledger_account_number, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
+                    FROM
+                        tbl_invoices
+                    INNER JOIN
+                        tbl_projects
+                    ON
+                        tbl_invoices.project_id = tbl_projects.project_id
+                    INNER JOIN
+                        tbl_customers
+                    ON
+                        tbl_projects.customer_id = tbl_customers.customer_id
+                    WHERE
+                        " + colName + @" LIKE @filter
+                    OR
+                        " + colName_2 + @" LIKE @filter
+                    ORDER BY
+                        invoice_id DESC", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", filter);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("customer_id");
+                dt.Columns.Add("invoice_id");
+                dt.Columns.Add("status");
+                dt.Columns.Add("total_price");
+                dt.Columns.Add("company_name");
+                dt.Columns.Add("contact_person");
+                dt.Columns.Add("ledger_account_number");
+                dt.Columns.Add("IBAN");
+                dt.Columns.Add("VAT");
+                dt.Columns.Add("discount");
+                dt.Columns.Add("project_id");
+                dt.Columns.Add("customer_name");
                 dt.Load(reader);
             }
             return dt;
@@ -694,12 +789,49 @@ namespace Barroc_IT
             return dt;
         }
 
+        public DataTable FilterProjects(string filter, string colName, string colName_2)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        project_id, project_name, project_status, maintenance_contract, operating_system, hardware, software, amount_invoice, deadline_date, contact_person, tbl_projects.customer_id, tbl_customers.company_name AS company_name, tbl_customers.first_name, tbl_customers.last_name, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
+                    FROM
+                        tbl_projects
+                    INNER JOIN
+                        tbl_customers
+                    ON 
+                        tbl_projects.customer_id = tbl_customers.customer_id
+                    WHERE
+                        " + colName + " LIKE @filter OR " + colName_2 + " LIKE @filter", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("project_id", typeof(string));
+                dt.Columns.Add("project_name", typeof(string));
+                dt.Columns.Add("project_status", typeof(string));
+                dt.Columns.Add("maintenance_contact", typeof(string));
+                dt.Columns.Add("operating_system", typeof(string));
+                dt.Columns.Add("hardware", typeof(string));
+                dt.Columns.Add("software", typeof(string));
+                dt.Columns.Add("amount_invoice", typeof(string));
+                dt.Columns.Add("deadline_date", typeof(string));
+                dt.Columns.Add("contact_person", typeof(string));
+                dt.Columns.Add("customer_id", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
         public DataTable FilterAppointments(string filter, string colName)
         {
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence, CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
                     
                     FROM
                         tbl_appointments
@@ -730,6 +862,49 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_zip_code", typeof(string));
                 dt.Columns.Add("customer_phone_number", typeof(string));
                 dt.Columns.Add("customer_email", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable FilterAppointments(string filter, string colName, string colName_2)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                    
+                    FROM
+                        tbl_appointments
+
+                    INNER JOIN
+                        tbl_customers
+
+                    ON
+                        tbl_appointments.customer_id = tbl_customers.customer_id
+
+                    Where
+                        " + colName + " LIKE @filter OR " + colName_2 + " LIKE @filter", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_datetime", typeof(string));
+                dt.Columns.Add("appointment_address", typeof(string));
+                dt.Columns.Add("appointment_housenumber", typeof(string));
+                dt.Columns.Add("appointment_zipcode", typeof(string));
+                dt.Columns.Add("appointment_made", typeof(string));
+                dt.Columns.Add("appointment_summary", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("customer_residence", typeof(string));
+                dt.Columns.Add("customer_address", typeof(string));
+                dt.Columns.Add("customer_zip_code", typeof(string));
+                dt.Columns.Add("customer_phone_number", typeof(string));
+                dt.Columns.Add("customer_email", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
                 dt.Load(reader);
             }
             return dt;
