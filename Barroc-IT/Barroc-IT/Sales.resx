@@ -3873,6 +3873,83 @@
   <metadata name="mstrp_Menu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>
+If you would like to check your notifications, click on “Overview”. Here you will see the 5 most recent notifications. By clicking on “Show all” all the notifications will be shown. If you would like to see specific notifications, you can use the filter. The filters are shown under the “Overview” text. You can filter on Department, Type and Date.
+</value>
+  </data>
+  <data name="richTextBox6.Text" xml:space="preserve">
+    <value>
+If you would like to look up one or more appointments, you click on “Appointments”. Here you will be able to see the five most recently added appointments. By clicking on “Show all” all appointments will be shown. If you would like to see a specific appointment, you can use the filter. The filters are shows under the “Appointments” text. You are able to filter on Customer Name, Company name, Residence, Summary and Date.
+</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>
+If you would like to make a new appointment, click on “Appointments”. Then you click on the “Add” button on the upper left. You can choose the customer you want to make the appointment for and whether the appointment is on the address of the customer. You can also fill in another address. When all the fields are filled in, click “Add Appointment”. You will get a notification when the appointment is successfully saved.
+</value>
+  </data>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>
+If you would like to edit an appointment, click on “Appointments”. Look for the appointment you want to edit and click open. Click on the button “Edit Appointment”. You see that the appointment data is already filled in. When all field are filled in, click on “Edit Appointment”. You will get a notification when the appointment is successfully edited.
+</value>
+  </data>
+  <data name="richTextBox4.Text" xml:space="preserve">
+    <value>
+If you would like to check the invoices of the customers, click on “Invoices”.  You will see the 5 most recent invoices. By clicking on “Show All”, all the invoices will be shown. If you would like to see a specific invoice you can use the filters. The filters are shown under “Invoices”. You can filter on “Customer Name”, “Company Name”, “Paid/Not Paid”, “Invoice Number”.
+</value>
+  </data>
+  <data name="richTextBox5.Text" xml:space="preserve">
+    <value>
+If you would like to check the customer data, click on “Customers”. You will see the 5 most recent customers added. By clicking on “Show All”, all the customers are shown. If you would like to see a specific customer you can use the filters. The filters are shown under “Customers”. You can filter on “Customer Name”, “Company Name”, “Residence”, “Unpaid Invoice”.
+
+</value>
+  </data>
+  <data name="richTextBox7.Text" xml:space="preserve">
+    <value>
+If you would like to add a new customer, click on “Customers”. Then you click on the “Add” button on the upper left. The necessary fields are marked with an asterisk (*). When all the fields are filed in, click on “Add Customer”. You will get a notification when the customer is successfully added.
+</value>
+  </data>
+  <data name="richTextBox8.Text" xml:space="preserve">
+    <value>
+If you would like to edit a customer, click on “Customers”. Look for the customer you want to edit and click open. You see that the customer data is already filled in. When all fields are filled in click on “Edit Customer”. You will get a notification when the customer is successfully edited.
+</value>
+  </data>
+  <data name="richTextBox9.Text" xml:space="preserve">
+    <value>
+Als u de nieuwe meldingen wilt zien dan klikt u op “Overview”. U ziet dan de 5 nieuwste meldingen. Als u op “Show All” klikt dan worden alle meldingen weergegeven. Als u bepaalde meldingen wilt zien dan kunt u de filter gebruiken. De filters worden weergegeven onder het kopje “Overview”. U kunt filteren op “Department” afdeling, “Type” type melding, “Date” datum.
+</value>
+  </data>
+  <data name="richTextBox10.Text" xml:space="preserve">
+    <value>
+Als u de nieuwe afspraken wilt zien dan klikt u op “Appointments”. U ziet dan de 5 meest recent gemaakte afspraken. Als u op “Show All” klikt dan worden alle afspraken weergegeven. Als u bepaalde afspraken wilt zien dan kunt u de filter gebruiken. De filters worden weergegeven onder het kopje “Appointments”. U kunt filteren op “Customer Name” klantnaam, “Company Name” bedrijfsnaam, “Residence” plaatsnaam, “Summary” wel of geen samenvatting, “Date” datum.
+
+</value>
+  </data>
+  <data name="richTextBox11.Text" xml:space="preserve">
+    <value>
+Als u een gemaakte afspraak wilt bewerken dan klikt u op “Appointments”. Daarna zoekt u de desbetreffende afspraak en klikt u die open. Klik dan op de knop “Edit Appointment”. U ziet dan de afspraak gegevens al ingevuld staan. Als u alle velden heeft ingevuld dan klikt u op “Edit Appointment”. U krijgt een melding als de afspraak succesvol is bewerkt.
+</value>
+  </data>
+  <data name="richTextBox12.Text" xml:space="preserve">
+    <value>
+Als u de facturen van de klanten wilt bekijken dan klikt u op “Invoices”. U ziet dan de meest recent aangemaakte facturen. Als u op “Show All” klikt dan worden alle facturen weergegeven. Als u bepaalde facturen wilt zien dan kunt u de filter gebruiken. De filters worden weergegeven onder het kopje “Invoices” u kunt filteren op “Customer Name” klantnaam, “Company Name” bedrijfsnaam, “Paid/Not Paid” betaald of niet betaald, “Invoice Number” factuur nummer.
+</value>
+  </data>
+  <data name="richTextBox13.Text" xml:space="preserve">
+    <value>
+U kunt de klantgegevens bekijken als u klikt op “Customers”. U ziet dan de 5 nieuwste klanten die zijn toegevoegd. Als u op “Show All” klikt worden alle klanten weergegeven. Als u bepaalde klanten wilt zien dan kunt u de filters gebruiken. De filters worden weergegeven onder het kopje “Customers”. U kunt filteren op “Customer Name” klantnaam, “Company Name” bedrijfsnaam, “Residence” plaatsnaam, “Unpaid Invoice” onbetaalde factuur.
+</value>
+  </data>
+  <data name="richTextBox14.Text" xml:space="preserve">
+    <value>
+Als u een nieuwe klant wilt toevoegen dan klikt u op “Customers”. Klik dan op het knopje “Add” links bovenin. De verplichte velden zijn aangegeven met een asterisk (*). Als alle gegevens zijn ingevuld dan klikt u op “Add Customer”. U krijgt dan een melding als de klant succesvol is toegevoegd.
+</value>
+  </data>
+  <data name="richTextBox15.Text" xml:space="preserve">
+    <value>
+Als u een bestaande klant wilt bewerken dan klikt u op “Customers”. Daarna zoekt u de desbetreffende klant en klikt u die open. Klik dan op de knop “Edit Customer”. U ziet dat de klantgegevens al ingevuld staan. Als u alle velden heeft ingevuld dan klikt u op “Edit Customer”. U krijgt een melding als de afspraak succesvol in bewerkt.
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>45</value>
   </metadata>

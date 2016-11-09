@@ -53,13 +53,13 @@ namespace Barroc_IT
             lbl_Customer_Creditworthy.Text = ((creditworthy)creditworthy).ToString();
             lbl_Customer_Discount.Text = dt.Rows[rowNr]["discount"].ToString() + "%";
             lbl_Customer_Iban.Text = dt.Rows[rowNr]["iban"].ToString();
-            lbl_Customer_Limit.Text = "\u20AC " + dt.Rows[rowNr]["customer_limit"].ToString();
-            lbl_Customer_Gross_Revenue.Text = "\u20AC " + dt.Rows[rowNr]["gross_revenue"].ToString();
+            lbl_Customer_Limit.Text = "\u20AC" + dt.Rows[rowNr]["customer_limit"].ToString();
+            lbl_Customer_Gross_Revenue.Text = "\u20AC" + dt.Rows[rowNr]["gross_revenue"].ToString();
             lbl_Customer_NumofProjects.Text = dt.Rows[rowNr]["numOfProjects"].ToString();
 
             foreach (Control control in panel2.Controls)
             {
-                if (control.AccessibleName == "Control" && (control.Text == "" || control.Text == "0"))
+                if (control.AccessibleName == "Control" && (control.Text == "" || control.Text == "0" || control.Text == "\u20AC" + "0" || control.Text == " "))
                 {
                     control.Text = "N/A";
                 }

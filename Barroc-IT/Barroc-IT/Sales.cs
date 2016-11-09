@@ -755,5 +755,10 @@ namespace Barroc_IT
             showallNotifications = true;
             ShowNotifications();
         }
+
+        private void mnitem_Help_Click(object sender, EventArgs e)
+        {
+            tc_Main.SelectedIndex = 8;
+        }
     }
 }
