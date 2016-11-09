@@ -67,7 +67,6 @@ namespace Barroc_IT
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.tcp_Help = new System.Windows.Forms.TabPage();
             this.label47 = new System.Windows.Forms.Label();
             this.richTextBox12 = new System.Windows.Forms.RichTextBox();
@@ -583,7 +582,6 @@ namespace Barroc_IT
             // 
             this.tcp_Appointments.AutoScroll = true;
             this.tcp_Appointments.Controls.Add(this.appointmentsPanel);
-            this.tcp_Appointments.Controls.Add(this.label6);
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
@@ -614,15 +612,6 @@ namespace Barroc_IT
             this.btn_showallAppointments.Text = "Show All";
             this.btn_showallAppointments.UseVisualStyleBackColor = true;
             this.btn_showallAppointments.Click += new System.EventHandler(this.btn_showallAppointments_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 498);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Appointments";
             // 
             // tcp_Help
             // 
@@ -1850,7 +1839,6 @@ namespace Barroc_IT
         private TabPage tcp_Projects;
         private TabPage tcp_Appointments;
         private TabPage tcp_Help;
-        private Label label6;
         private TabPage tcp_Add_Project;
         private Button btn_Add_Project;
         private Label lbl_Customer_Id;

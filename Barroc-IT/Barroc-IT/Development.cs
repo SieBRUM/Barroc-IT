@@ -105,7 +105,7 @@ namespace Barroc_IT
         private void AddProject(object sender, EventArgs e)
         {
             int result;
-            if (txtb_Amount_Invoices.Text == "" || txtb_Contact_Person.Text == "" || txtb_Operating_System.Text == "" || txtb_Project_Name.Text == "" || txtb_Software.Text == "" || txtb_Hardware.Text == "" || int.TryParse(txtb_Edit_Project_AOI.Text, out result))
+            if (txtb_Amount_Invoices.Text == "" || txtb_Contact_Person.Text == "" || txtb_Operating_System.Text == "" || txtb_Project_Name.Text == "" || txtb_Software.Text == "" || txtb_Hardware.Text == "" || int.TryParse(txtb_Amount_Invoices.Text, out result))
             {
                 MessageBox.Show("Please make sure all the fields are filled in correctly.");
             }

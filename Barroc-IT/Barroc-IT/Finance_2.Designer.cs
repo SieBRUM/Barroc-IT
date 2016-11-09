@@ -59,6 +59,7 @@
             this.mnfltr_Customers_CoName = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Customers_Residence = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Customers_UnpaidInvoice = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Help = new System.Windows.Forms.ToolStripMenuItem();
             this.tcp_Overview = new System.Windows.Forms.TabPage();
             this.notificationsPanel = new System.Windows.Forms.Panel();
@@ -84,7 +85,7 @@
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
             this.tcp_Customers = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.customerPanel = new System.Windows.Forms.Panel();
             this.btn_ShowAllCustomers = new System.Windows.Forms.Button();
             this.tcp_Edit_Customer = new System.Windows.Forms.TabPage();
             this.lbl_E_C_Customer_ID = new System.Windows.Forms.Label();
@@ -106,35 +107,38 @@
             this.label222 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tcp_Help = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.richTextBox12 = new System.Windows.Forms.RichTextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.richTextBox10 = new System.Windows.Forms.RichTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.richTextBox10 = new System.Windows.Forms.RichTextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.richTextBox12 = new System.Windows.Forms.RichTextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
-            this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
+            this.tstxtb_Customers_CuName = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Customer_CoName = new System.Windows.Forms.ToolStripTextBox();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Overview.SuspendLayout();
             this.notificationsPanel.SuspendLayout();
@@ -146,10 +150,11 @@
             this.tcp_Appointments.SuspendLayout();
             this.appointmentsPanel.SuspendLayout();
             this.tcp_Customers.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.customerPanel.SuspendLayout();
             this.tcp_Edit_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tcp_Help.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstrp_Menu
@@ -425,6 +430,8 @@
             // 
             // mnfltr_Customers_CuName
             // 
+            this.mnfltr_Customers_CuName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tstxtb_Customers_CuName});
             this.mnfltr_Customers_CuName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Customers_CuName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Customers_CuName.Name = "mnfltr_Customers_CuName";
@@ -434,6 +441,8 @@
             // 
             // mnfltr_Customers_CoName
             // 
+            this.mnfltr_Customers_CoName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tstxtb_Customer_CoName});
             this.mnfltr_Customers_CoName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Customers_CoName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Customers_CoName.Name = "mnfltr_Customers_CoName";
@@ -459,6 +468,16 @@
             this.mnfltr_Customers_UnpaidInvoice.Size = new System.Drawing.Size(124, 19);
             this.mnfltr_Customers_UnpaidInvoice.Text = "Unpaid invoice";
             this.mnfltr_Customers_UnpaidInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // mnitem_Logout
+            // 
+            this.mnitem_Logout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mnitem_Logout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnitem_Logout.Name = "mnitem_Logout";
+            this.mnitem_Logout.Size = new System.Drawing.Size(135, 25);
+            this.mnitem_Logout.Text = "Logout";
+            this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
             // 
             // mnitem_Help
             // 
@@ -528,11 +547,12 @@
             this.tcp_Main.Controls.Add(this.tcp_Customers);
             this.tcp_Main.Controls.Add(this.tcp_Edit_Customer);
             this.tcp_Main.Controls.Add(this.tcp_Help);
-            this.tcp_Main.Location = new System.Drawing.Point(142, -21);
+            this.tcp_Main.Controls.Add(this.tabPage1);
+            this.tcp_Main.Location = new System.Drawing.Point(142, 1);
             this.tcp_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tcp_Main.Name = "tcp_Main";
             this.tcp_Main.SelectedIndex = 0;
-            this.tcp_Main.Size = new System.Drawing.Size(574, 486);
+            this.tcp_Main.Size = new System.Drawing.Size(574, 464);
             this.tcp_Main.TabIndex = 4;
             this.tcp_Main.TabStop = false;
             this.tcp_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
@@ -544,7 +564,7 @@
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
             this.tcp_Invoices.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Invoices.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Invoices.Size = new System.Drawing.Size(566, 460);
             this.tcp_Invoices.TabIndex = 1;
             this.tcp_Invoices.Text = "Invoices";
             this.tcp_Invoices.UseVisualStyleBackColor = true;
@@ -597,7 +617,7 @@
             this.tcp_AddInvoice.Location = new System.Drawing.Point(4, 22);
             this.tcp_AddInvoice.Name = "tcp_AddInvoice";
             this.tcp_AddInvoice.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_AddInvoice.Size = new System.Drawing.Size(566, 438);
+            this.tcp_AddInvoice.Size = new System.Drawing.Size(566, 460);
             this.tcp_AddInvoice.TabIndex = 2;
             this.tcp_AddInvoice.Text = "Add Invoice";
             this.tcp_AddInvoice.UseVisualStyleBackColor = true;
@@ -706,7 +726,7 @@
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Appointments.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Appointments.Size = new System.Drawing.Size(566, 460);
             this.tcp_Appointments.TabIndex = 3;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
@@ -737,7 +757,7 @@
             // tcp_Customers
             // 
             this.tcp_Customers.AutoScroll = true;
-            this.tcp_Customers.Controls.Add(this.panel1);
+            this.tcp_Customers.Controls.Add(this.customerPanel);
             this.tcp_Customers.Location = new System.Drawing.Point(4, 22);
             this.tcp_Customers.Name = "tcp_Customers";
             this.tcp_Customers.Size = new System.Drawing.Size(566, 438);
@@ -745,17 +765,17 @@
             this.tcp_Customers.Text = "Customers";
             this.tcp_Customers.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // customerPanel
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_ShowAllCustomers);
-            this.panel1.Location = new System.Drawing.Point(4, 35);
-            this.panel1.MinimumSize = new System.Drawing.Size(540, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 25);
-            this.panel1.TabIndex = 7;
+            this.customerPanel.AutoSize = true;
+            this.customerPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.customerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customerPanel.Controls.Add(this.btn_ShowAllCustomers);
+            this.customerPanel.Location = new System.Drawing.Point(4, 35);
+            this.customerPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.customerPanel.Name = "customerPanel";
+            this.customerPanel.Size = new System.Drawing.Size(540, 25);
+            this.customerPanel.TabIndex = 7;
             // 
             // btn_ShowAllCustomers
             // 
@@ -791,7 +811,7 @@
             this.tcp_Edit_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Edit_Customer.Name = "tcp_Edit_Customer";
             this.tcp_Edit_Customer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Edit_Customer.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Edit_Customer.Size = new System.Drawing.Size(566, 460);
             this.tcp_Edit_Customer.TabIndex = 5;
             this.tcp_Edit_Customer.Text = "Edit Customer";
             this.tcp_Edit_Customer.UseVisualStyleBackColor = true;
@@ -995,6 +1015,292 @@
             this.tcp_Help.Text = "Help";
             this.tcp_Help.UseVisualStyleBackColor = true;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(5, 1319);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(260, 16);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "Hoe bewerk ik een bestaande klant?";
+            // 
+            // richTextBox13
+            // 
+            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox13.Location = new System.Drawing.Point(6, 1319);
+            this.richTextBox13.Name = "richTextBox13";
+            this.richTextBox13.ReadOnly = true;
+            this.richTextBox13.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox13.Size = new System.Drawing.Size(537, 87);
+            this.richTextBox13.TabIndex = 34;
+            this.richTextBox13.Text = resources.GetString("richTextBox13.Text");
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(4, 1211);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(235, 16);
+            this.label20.TabIndex = 33;
+            this.label20.Text = "Hoe bekijk ik de klantgegevens?";
+            // 
+            // richTextBox12
+            // 
+            this.richTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox12.Location = new System.Drawing.Point(5, 1211);
+            this.richTextBox12.Name = "richTextBox12";
+            this.richTextBox12.ReadOnly = true;
+            this.richTextBox12.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox12.Size = new System.Drawing.Size(537, 99);
+            this.richTextBox12.TabIndex = 32;
+            this.richTextBox12.Text = resources.GetString("richTextBox12.Text");
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(5, 1120);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(258, 16);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Hoe voeg ik een nieuwe factuur toe?";
+            // 
+            // richTextBox11
+            // 
+            this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox11.Location = new System.Drawing.Point(6, 1120);
+            this.richTextBox11.Name = "richTextBox11";
+            this.richTextBox11.ReadOnly = true;
+            this.richTextBox11.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox11.Size = new System.Drawing.Size(537, 84);
+            this.richTextBox11.TabIndex = 30;
+            this.richTextBox11.Text = resources.GetString("richTextBox11.Text");
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(5, 1001);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(187, 16);
+            this.label18.TabIndex = 29;
+            this.label18.Text = "Hoe check ik de facturen?";
+            // 
+            // richTextBox10
+            // 
+            this.richTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox10.Location = new System.Drawing.Point(6, 1001);
+            this.richTextBox10.Name = "richTextBox10";
+            this.richTextBox10.ReadOnly = true;
+            this.richTextBox10.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox10.Size = new System.Drawing.Size(537, 113);
+            this.richTextBox10.TabIndex = 28;
+            this.richTextBox10.Text = resources.GetString("richTextBox10.Text");
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(5, 904);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(283, 16);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "Hoe bewerk ik een gemaakte afspraak?";
+            // 
+            // richTextBox9
+            // 
+            this.richTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox9.Location = new System.Drawing.Point(6, 904);
+            this.richTextBox9.Name = "richTextBox9";
+            this.richTextBox9.ReadOnly = true;
+            this.richTextBox9.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox9.Size = new System.Drawing.Size(537, 87);
+            this.richTextBox9.TabIndex = 26;
+            this.richTextBox9.Text = resources.GetString("richTextBox9.Text");
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(5, 781);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(201, 16);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Hoe check ik de afspraken?";
+            // 
+            // richTextBox8
+            // 
+            this.richTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox8.Location = new System.Drawing.Point(6, 781);
+            this.richTextBox8.Name = "richTextBox8";
+            this.richTextBox8.ReadOnly = true;
+            this.richTextBox8.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox8.Size = new System.Drawing.Size(537, 114);
+            this.richTextBox8.TabIndex = 24;
+            this.richTextBox8.Text = resources.GetString("richTextBox8.Text");
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(4, 673);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(204, 16);
+            this.label15.TabIndex = 23;
+            this.label15.Text = "Hoe check ik de meldingen?";
+            // 
+            // richTextBox7
+            // 
+            this.richTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox7.Location = new System.Drawing.Point(5, 673);
+            this.richTextBox7.Name = "richTextBox7";
+            this.richTextBox7.ReadOnly = true;
+            this.richTextBox7.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox7.Size = new System.Drawing.Size(537, 99);
+            this.richTextBox7.TabIndex = 22;
+            this.richTextBox7.Text = resources.GetString("richTextBox7.Text");
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(-7, 633);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(215, 39);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Nederlands:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(5, 549);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(186, 16);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "How do I edit a customer?";
+            // 
+            // richTextBox6
+            // 
+            this.richTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox6.Location = new System.Drawing.Point(6, 549);
+            this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.ReadOnly = true;
+            this.richTextBox6.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox6.Size = new System.Drawing.Size(537, 85);
+            this.richTextBox6.TabIndex = 19;
+            this.richTextBox6.Text = resources.GetString("richTextBox6.Text");
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 442);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(248, 16);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "How do I check the customer data?\r\n";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox5.Location = new System.Drawing.Point(7, 442);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.ReadOnly = true;
+            this.richTextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox5.Size = new System.Drawing.Size(537, 100);
+            this.richTextBox5.TabIndex = 17;
+            this.richTextBox5.Text = resources.GetString("richTextBox5.Text");
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(5, 348);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(205, 16);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "How do I add a new invoice?";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox4.Location = new System.Drawing.Point(6, 348);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox4.Size = new System.Drawing.Size(537, 87);
+            this.richTextBox4.TabIndex = 15;
+            this.richTextBox4.Text = resources.GetString("richTextBox4.Text");
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(4, 243);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(208, 16);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "How do I check the invoices?";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox3.Location = new System.Drawing.Point(6, 243);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox3.Size = new System.Drawing.Size(537, 99);
+            this.richTextBox3.TabIndex = 13;
+            this.richTextBox3.Text = resources.GetString("richTextBox3.Text");
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(243, 16);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "How do I check the appointments?\r\n";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Location = new System.Drawing.Point(5, 138);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox2.Size = new System.Drawing.Size(537, 99);
+            this.richTextBox2.TabIndex = 11;
+            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1028,301 +1334,36 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "English:";
             // 
-            // label4
+            // tabPage1
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(243, 16);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "How do I check the appointments?\r\n";
+            this.tabPage1.Controls.Add(this.richTextBox14);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(566, 438);
+            this.tabPage1.TabIndex = 7;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // richTextBox14
             // 
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(5, 138);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox2.Size = new System.Drawing.Size(537, 99);
-            this.richTextBox2.TabIndex = 11;
-            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
+            this.richTextBox14.Location = new System.Drawing.Point(207, 155);
+            this.richTextBox14.Name = "richTextBox14";
+            this.richTextBox14.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox14.TabIndex = 0;
+            this.richTextBox14.Text = "LADUHHHHHH";
             // 
-            // label9
+            // tstxtb_Customers_CuName
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 243);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 16);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "How do I check the invoices?";
+            this.tstxtb_Customers_CuName.Name = "tstxtb_Customers_CuName";
+            this.tstxtb_Customers_CuName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customers_CuName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchCustomerOnCuName);
             // 
-            // richTextBox3
+            // tstxtb_Customer_CoName
             // 
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox3.Location = new System.Drawing.Point(6, 243);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox3.Size = new System.Drawing.Size(537, 99);
-            this.richTextBox3.TabIndex = 13;
-            this.richTextBox3.Text = resources.GetString("richTextBox3.Text");
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(5, 348);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(205, 16);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "How do I add a new invoice?";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox4.Location = new System.Drawing.Point(6, 348);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.ReadOnly = true;
-            this.richTextBox4.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox4.Size = new System.Drawing.Size(537, 87);
-            this.richTextBox4.TabIndex = 15;
-            this.richTextBox4.Text = resources.GetString("richTextBox4.Text");
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 442);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(248, 16);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "How do I check the customer data?\r\n";
-            // 
-            // richTextBox5
-            // 
-            this.richTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox5.Location = new System.Drawing.Point(7, 442);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.ReadOnly = true;
-            this.richTextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox5.Size = new System.Drawing.Size(537, 100);
-            this.richTextBox5.TabIndex = 17;
-            this.richTextBox5.Text = resources.GetString("richTextBox5.Text");
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(5, 549);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(186, 16);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "How do I edit a customer?";
-            // 
-            // richTextBox6
-            // 
-            this.richTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox6.Location = new System.Drawing.Point(6, 549);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.ReadOnly = true;
-            this.richTextBox6.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox6.Size = new System.Drawing.Size(537, 85);
-            this.richTextBox6.TabIndex = 19;
-            this.richTextBox6.Text = resources.GetString("richTextBox6.Text");
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(-7, 633);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(215, 39);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Nederlands:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(4, 673);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(204, 16);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "Hoe check ik de meldingen?";
-            // 
-            // richTextBox7
-            // 
-            this.richTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox7.Location = new System.Drawing.Point(5, 673);
-            this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.ReadOnly = true;
-            this.richTextBox7.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox7.Size = new System.Drawing.Size(537, 99);
-            this.richTextBox7.TabIndex = 22;
-            this.richTextBox7.Text = resources.GetString("richTextBox7.Text");
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(5, 781);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(201, 16);
-            this.label16.TabIndex = 25;
-            this.label16.Text = "Hoe check ik de afspraken?";
-            // 
-            // richTextBox8
-            // 
-            this.richTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox8.Location = new System.Drawing.Point(6, 781);
-            this.richTextBox8.Name = "richTextBox8";
-            this.richTextBox8.ReadOnly = true;
-            this.richTextBox8.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox8.Size = new System.Drawing.Size(537, 114);
-            this.richTextBox8.TabIndex = 24;
-            this.richTextBox8.Text = resources.GetString("richTextBox8.Text");
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(5, 904);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(283, 16);
-            this.label17.TabIndex = 27;
-            this.label17.Text = "Hoe bewerk ik een gemaakte afspraak?";
-            // 
-            // richTextBox9
-            // 
-            this.richTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox9.Location = new System.Drawing.Point(6, 904);
-            this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.ReadOnly = true;
-            this.richTextBox9.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox9.Size = new System.Drawing.Size(537, 87);
-            this.richTextBox9.TabIndex = 26;
-            this.richTextBox9.Text = resources.GetString("richTextBox9.Text");
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(5, 1001);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(187, 16);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "Hoe check ik de facturen?";
-            // 
-            // richTextBox10
-            // 
-            this.richTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox10.Location = new System.Drawing.Point(6, 1001);
-            this.richTextBox10.Name = "richTextBox10";
-            this.richTextBox10.ReadOnly = true;
-            this.richTextBox10.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox10.Size = new System.Drawing.Size(537, 113);
-            this.richTextBox10.TabIndex = 28;
-            this.richTextBox10.Text = resources.GetString("richTextBox10.Text");
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(5, 1120);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(258, 16);
-            this.label19.TabIndex = 31;
-            this.label19.Text = "Hoe voeg ik een nieuwe factuur toe?";
-            // 
-            // richTextBox11
-            // 
-            this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox11.Location = new System.Drawing.Point(6, 1120);
-            this.richTextBox11.Name = "richTextBox11";
-            this.richTextBox11.ReadOnly = true;
-            this.richTextBox11.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox11.Size = new System.Drawing.Size(537, 84);
-            this.richTextBox11.TabIndex = 30;
-            this.richTextBox11.Text = resources.GetString("richTextBox11.Text");
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(4, 1211);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(235, 16);
-            this.label20.TabIndex = 33;
-            this.label20.Text = "Hoe bekijk ik de klantgegevens?";
-            // 
-            // richTextBox12
-            // 
-            this.richTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox12.Location = new System.Drawing.Point(5, 1211);
-            this.richTextBox12.Name = "richTextBox12";
-            this.richTextBox12.ReadOnly = true;
-            this.richTextBox12.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox12.Size = new System.Drawing.Size(537, 99);
-            this.richTextBox12.TabIndex = 32;
-            this.richTextBox12.Text = resources.GetString("richTextBox12.Text");
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(5, 1319);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(260, 16);
-            this.label22.TabIndex = 35;
-            this.label22.Text = "Hoe bewerk ik een bestaande klant?";
-            // 
-            // richTextBox13
-            // 
-            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox13.Location = new System.Drawing.Point(6, 1319);
-            this.richTextBox13.Name = "richTextBox13";
-            this.richTextBox13.ReadOnly = true;
-            this.richTextBox13.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox13.Size = new System.Drawing.Size(537, 87);
-            this.richTextBox13.TabIndex = 34;
-            this.richTextBox13.Text = resources.GetString("richTextBox13.Text");
-            // 
-            // mnitem_Logout
-            // 
-            this.mnitem_Logout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.mnitem_Logout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnitem_Logout.Name = "mnitem_Logout";
-            this.mnitem_Logout.Size = new System.Drawing.Size(135, 25);
-            this.mnitem_Logout.Text = "Logout";
-            this.mnitem_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mnitem_Logout.Click += new System.EventHandler(this.mnitem_Logout_Click);
+            this.tstxtb_Customer_CoName.Name = "tstxtb_Customer_CoName";
+            this.tstxtb_Customer_CoName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Customer_CoName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchCustomerOnCoName);
             // 
             // frm_Finance_2
             // 
@@ -1350,12 +1391,13 @@
             this.appointmentsPanel.ResumeLayout(false);
             this.tcp_Customers.ResumeLayout(false);
             this.tcp_Customers.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.customerPanel.ResumeLayout(false);
             this.tcp_Edit_Customer.ResumeLayout(false);
             this.tcp_Edit_Customer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tcp_Help.ResumeLayout(false);
             this.tcp_Help.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1405,7 +1447,7 @@
         private System.Windows.Forms.Panel appointmentsPanel;
         private System.Windows.Forms.Button btn_showallAppointments;
         private System.Windows.Forms.TabPage tcp_Customers;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel customerPanel;
         private System.Windows.Forms.Button btn_ShowAllCustomers;
         private System.Windows.Forms.Panel notificationsPanel;
         private System.Windows.Forms.Button btn_Show_All_Notifications;
@@ -1468,5 +1510,9 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.RichTextBox richTextBox13;
         private System.Windows.Forms.ToolStripMenuItem mnitem_Logout;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.RichTextBox richTextBox14;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Customers_CuName;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Customer_CoName;
     }
 }
