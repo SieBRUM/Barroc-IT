@@ -8,7 +8,7 @@ namespace Barroc_IT
     {
         bool opened = false;
 
-        enum prospect
+        enum prospectStatus
         {
             No = 0,
             Yes = 1
@@ -29,6 +29,7 @@ namespace Barroc_IT
 
             
             int creditworthy = Convert.ToInt16(dt.Rows[rowNr]["creditworthy"]);
+            int prospect = Convert.ToInt16(dt.Rows[rowNr]["prospect"]);
 
             lbl_Customer_ID.Text = dt.Rows[rowNr]["customer_id"].ToString();
             lbl_Customer_Name.Text = dt.Rows[rowNr]["customer_name"].ToString();
@@ -48,6 +49,7 @@ namespace Barroc_IT
             lbl_Customer_Next_Contact.Text = dt.Rows[rowNr]["next_contact"].ToString();
             lbl_Customer_Next_Action.Text = dt.Rows[rowNr]["next_action"].ToString();
             lbl_Customer_Credit_Balance.Text = "\u20AC" + dt.Rows[rowNr]["credit_balance"].ToString();
+            lbl_Customer_Prospect.Text = ((prospectStatus)prospect).ToString();
             lbl_Customer_Creditworthy.Text = ((creditworthy)creditworthy).ToString();
             lbl_Customer_Discount.Text = dt.Rows[rowNr]["discount"].ToString() + "%";
             lbl_Customer_Iban.Text = dt.Rows[rowNr]["iban"].ToString();
