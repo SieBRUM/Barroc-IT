@@ -333,7 +333,7 @@ namespace Barroc_IT
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
-            switch (MessageBox.Show(this, "Are you sure you want to exit? Any unsaved changes will be lost.", "Closing", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "Are you sure you want to exit? Any unsaved changes will be lost.", "Barroc-IT - Software for real - Development", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 case DialogResult.No:
                     e.Cancel = true;
@@ -510,6 +510,100 @@ namespace Barroc_IT
                     appointmentInfoPanel[i].Dock = DockStyle.Top;
                     appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
                     appointmentInfoPanel[i].btn_Edit.Dispose();
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchNotificationOnDepartment(object sender, EventArgs e)
+        {
+            if (tscmb_Overview_Department.Text == "All")
+            {
+                dbh.OpenConnection();
+                notificationsPanel.Controls.Clear();
+                DataTable dt = dbh.GetNotifications();
+                int amount = dt.Rows.Count;
+                if (!showallNotifications && amount > 5)
+                    amount = 5;
+
+                OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+                for (int i = 0; i < overviewInfoPanel.Length; i++)
+                {
+                    overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                    overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    overviewInfoPanel[i].Dock = DockStyle.Top;
+                    overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                    overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                    notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+            }
+            else
+            {
+                string filter = tscmb_Overview_Department.Text;
+                dbh.OpenConnection();
+                notificationsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterNotifications(filter, "notification_department");
+                int amount = dt.Rows.Count;
+
+                OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+                for (int i = 0; i < overviewInfoPanel.Length; i++)
+                {
+                    overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                    overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    overviewInfoPanel[i].Dock = DockStyle.Top;
+                    overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                    overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                    notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchNotificationOnType(object sender, EventArgs e)
+        {
+            if (tscmb_Overview_Type.Text == "All")
+            {
+                dbh.OpenConnection();
+                notificationsPanel.Controls.Clear();
+                DataTable dt = dbh.GetNotifications();
+                int amount = dt.Rows.Count;
+                if (!showallNotifications && amount > 5)
+                    amount = 5;
+
+                OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+                for (int i = 0; i < overviewInfoPanel.Length; i++)
+                {
+                    overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                    overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    overviewInfoPanel[i].Dock = DockStyle.Top;
+                    overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                    overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                    notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+            }
+            else
+            {
+                string filter = tscmb_Overview_Type.Text;
+                dbh.OpenConnection();
+                notificationsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterNotifications(filter, "notification_type");
+                int amount = dt.Rows.Count;
+
+                OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+                for (int i = 0; i < overviewInfoPanel.Length; i++)
+                {
+                    overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                    overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    overviewInfoPanel[i].Dock = DockStyle.Top;
+                    overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                    overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                    notificationsPanel.Controls.Add(overviewInfoPanel[i]);
                 }
                 dbh.CloseConnection();
             }

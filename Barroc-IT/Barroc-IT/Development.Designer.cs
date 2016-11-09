@@ -255,6 +255,7 @@ namespace Barroc_IT
             this.tscmb_Overview_Department.Name = "tscmb_Overview_Department";
             this.tscmb_Overview_Department.Size = new System.Drawing.Size(121, 23);
             this.tscmb_Overview_Department.Text = "All";
+            this.tscmb_Overview_Department.SelectedIndexChanged += new System.EventHandler(this.SearchNotificationOnDepartment);
             // 
             // mnfltr_Overview_Type
             // 
@@ -272,12 +273,14 @@ namespace Barroc_IT
             // 
             this.tscmb_Overview_Type.Items.AddRange(new object[] {
             "All",
-            "Type1",
-            "Type2",
-            "Type3"});
+            "Add financial details",
+            "Creditworthy check",
+            "Unpaid invoice",
+            "Halt project"});
             this.tscmb_Overview_Type.Name = "tscmb_Overview_Type";
             this.tscmb_Overview_Type.Size = new System.Drawing.Size(121, 23);
             this.tscmb_Overview_Type.Text = "All";
+            this.tscmb_Overview_Type.SelectedIndexChanged += new System.EventHandler(this.SearchNotificationOnType);
             // 
             // mnfltr_Overview_Date
             // 
