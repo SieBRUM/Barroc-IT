@@ -683,9 +683,7 @@ namespace Barroc_IT
                     ON
                         tbl_projects.customer_id = tbl_customers.customer_id
                     WHERE
-                        " + colName + @" LIKE @filter
-                    ORDER BY
-                        invoice_id DESC", this.GetConnection()))
+                        " + colName + " LIKE @filter ORDER BY invoice_id DESC", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("filter", filter);
 

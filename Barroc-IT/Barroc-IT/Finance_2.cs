@@ -101,7 +101,6 @@ namespace Barroc_IT
             mnfltr_Invoices_CuName.Visible = Invoices;
             mnfltr_Invoices_CoName.Visible = Invoices;
             mnfltr_Invoices_Paid.Visible = Invoices;
-            mnfltr_Invoices_InvoiceID.Visible = Invoices;
 
             mnfltr_Customers_CuName.Visible = Customers;
             mnfltr_Customers_CoName.Visible = Customers;
@@ -446,6 +445,60 @@ namespace Barroc_IT
                 }
                 dbh.CloseConnection();
             }
-        } 
+        }
+ 
+        private void SearchInvoiceOnCuName(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Invoices_CuName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                invoicesPanel.Controls.Clear();
+                DataTable dt = dbh.FilterInvoices(filter, "tbl_customers.first_name", "tbl_customers.last_name");
+                int amount = dt.Rows.Count;
+                if (!showAllInvoices && amount > 5)
+                    amount = 5;
+
+                InvoicePanel[] invoiceInfoPanel = new InvoicePanel[amount];
+
+                for (int i = 0; i < invoiceInfoPanel.Length; i++)
+                {
+                    invoiceInfoPanel[i] = new InvoicePanel(i, dt);
+                    invoiceInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    invoiceInfoPanel[i].Dock = DockStyle.Top;
+                    invoiceInfoPanel[i].btn_Paid.AccessibleName = dt.Rows[i]["invoice_id"].ToString();
+                    invoiceInfoPanel[i].btn_Paid.Click += new EventHandler(this.PayInvoice);
+                    invoicesPanel.Controls.Add(invoiceInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchInvoiceOnCoName(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Invoices_CoName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                invoicesPanel.Controls.Clear();
+                DataTable dt = dbh.FilterInvoices(filter, "tbl_customers.company_name");
+                int amount = dt.Rows.Count;
+                if (!showAllInvoices && amount > 5)
+                    amount = 5;
+
+                InvoicePanel[] invoiceInfoPanel = new InvoicePanel[amount];
+
+                for (int i = 0; i < invoiceInfoPanel.Length; i++)
+                {
+                    invoiceInfoPanel[i] = new InvoicePanel(i, dt);
+                    invoiceInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    invoiceInfoPanel[i].Dock = DockStyle.Top;
+                    invoiceInfoPanel[i].btn_Paid.AccessibleName = dt.Rows[i]["invoice_id"].ToString();
+                    invoiceInfoPanel[i].btn_Paid.Click += new EventHandler(this.PayInvoice);
+                    invoicesPanel.Controls.Add(invoiceInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+            }
+        }
     }
 }
