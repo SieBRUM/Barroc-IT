@@ -250,7 +250,13 @@ namespace Barroc_IT
 
         private void ShowProjects()
         {
-            dbh.OpenConnection();
+            try
+            {
+                dbh.OpenConnection();
+            }
+            catch (Exception ex)
+            { 
+            }
 
             projectsPanel.Controls.Clear();
             DataTable dt = dbh.GetProjects();
@@ -340,8 +346,9 @@ namespace Barroc_IT
                 }
             }
 
-            tcp_Main.SelectedIndex = 7;
             dbh.CloseConnection();
+            tcp_Main.SelectedIndex = 6;
+
         }
 
         private void btn_Project_Show_All_Click(object sender, EventArgs e)
@@ -741,7 +748,7 @@ namespace Barroc_IT
 
         private void SearchNotificationOnHasSummary(object sender, EventArgs e)
         {
-
+            // WORK IN PROGRESS
         }
 
         private void ShowNotifications()

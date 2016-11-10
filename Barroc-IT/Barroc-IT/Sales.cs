@@ -473,7 +473,6 @@ namespace Barroc_IT
                 btn_showAllAppointments.Dock = DockStyle.Bottom;
                 btn_showAllAppointments.Click += new System.EventHandler(this.ShowAllAppointments);
                 appointmentsPanel.Controls.Add(btn_showAllAppointments);
-                dbh.CloseConnection();
             }
 
             AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
@@ -487,6 +486,7 @@ namespace Barroc_IT
                 appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
                 appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
             }
+            dbh.CloseConnection();
         }
 
         private void ShowAllCustomers(object sender, EventArgs e)
