@@ -15,16 +15,16 @@ namespace Barroc_IT
         bool showAllCustomers = false;
         bool showallNotifications = false;
 
-        DatabaseHandler dbh;
+        DatabaseHandler dbh = new DatabaseHandler();
 
         public frm_Finance_2()
         {
             InitializeComponent();
             cbox_Project_Status.SelectedIndex = 0;
             HideFilters(true, false, false, false);
-            ShowInvoices();
-            ShowAppointments();
-            ShowCustomers();
+            //ShowInvoices();
+            //ShowAppointments();
+            //ShowCustomers();
             ShowNotifications();
 
             ToolStripControlHost[] arrayControl = MenuItems.DTPGenerator(this);
@@ -111,6 +111,40 @@ namespace Barroc_IT
 
         private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tcp_Main.SelectedIndex == 0)
+            {
+                try
+                {
+                    showallNotifications = false;
+                    ShowNotifications();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+
+            if(tcp_Main.SelectedIndex == 1)
+            {
+                try
+                {
+                    showAllInvoices = false;
+                    ShowInvoices();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+
             if (tcp_Main.SelectedIndex == 2)
             {
                 try
@@ -131,16 +165,61 @@ namespace Barroc_IT
                     dbh.CloseConnection();
                 }
             }
+
+            if (tcp_Main.SelectedIndex == 3)
+            {
+                try
+                {
+                    showallAppointments = false;
+                    ShowAppointments();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+
+            if(tcp_Main.SelectedIndex == 4)
+            {
+                try
+                {
+                    showAllCustomers = false;
+                    ShowCustomers();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
         }
 
         private void ShowInvoices()
         {
             dbh = new DatabaseHandler();
             dbh.OpenConnection();
+            invoicesPanel.Controls.Clear();
             DataTable dt = dbh.GetInvoices();
             int amount = dt.Rows.Count;
             if (!showAllInvoices && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllInvoices = new Button();
+                btn_showAllInvoices.Text = "Show all invoices";
+                btn_showAllInvoices.Dock = DockStyle.Bottom;
+                btn_showAllInvoices.Click += new System.EventHandler(this.ShowAllInvoices);
+                invoicesPanel.Controls.Add(btn_showAllInvoices);
+                dbh.CloseConnection();
+
+            }
 
             InvoicePanel[] invoiceInfoPanel = new InvoicePanel[amount];
 
@@ -154,6 +233,13 @@ namespace Barroc_IT
                 invoicesPanel.Controls.Add(invoiceInfoPanel[i]);
             }
             dbh.CloseConnection();
+        }
+
+        private void ShowAllInvoices(object sender, EventArgs e)
+        {
+            showAllInvoices = true;
+            invoicesPanel.Controls.Clear();
+            ShowInvoices();
         }
 
         private void PayInvoice(object sender, EventArgs e)
@@ -192,9 +278,19 @@ namespace Barroc_IT
         {
             dbh.OpenConnection();
             DataTable dt = dbh.GetAppointments();
+            appointmentsPanel.Controls.Clear();
             int amount = dt.Rows.Count;
             if (!showallAppointments && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllAppointments = new Button();
+                btn_showAllAppointments.Text = "Show all appointments";
+                btn_showAllAppointments.Dock = DockStyle.Bottom;
+                btn_showAllAppointments.Click += new System.EventHandler(this.ShowAllAppointments);
+                appointmentsPanel.Controls.Add(btn_showAllAppointments);
+
+            }
 
             AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
 
@@ -209,13 +305,29 @@ namespace Barroc_IT
             dbh.CloseConnection();
         }
 
+        private void ShowAllAppointments(object sender, EventArgs e)
+        {
+            showallAppointments = true;
+            appointmentsPanel.Controls.Clear();
+            ShowAppointments();
+        }
+
         private void ShowCustomers()
         {
             dbh.OpenConnection();
             DataTable dt = dbh.GetCustomers();
+            customerPanel.Controls.Clear();
             int amount = dt.Rows.Count;
             if (!showAllCustomers && amount > 5)
+            {
                 amount = 5;
+
+                Button showAllCustomersButton = new Button();
+                showAllCustomersButton.Text = "Show all customers";
+                showAllCustomersButton.Dock = DockStyle.Bottom;
+                showAllCustomersButton.Click += new System.EventHandler(this.ShowAllCustomers);
+                customerPanel.Controls.Add(showAllCustomersButton);
+            }
 
             CustomerPanel[] customerInfoPanel = new CustomerPanel[amount];
 
@@ -229,16 +341,32 @@ namespace Barroc_IT
                 customerInfoPanel[i].btn_editCustomer.Click += new EventHandler(this.EditCustomer);
             }
             dbh.CloseConnection();
-
         }
+        private void ShowAllCustomers(object sender, EventArgs e)
+        {
+            showAllCustomers = true;
+            customerPanel.Controls.Clear();
+            ShowCustomers();
+        }
+
 
         private void ShowNotifications()
         {
             dbh.OpenConnection();
             DataTable dt = dbh.GetNotifications();
+            notificationsPanel.Controls.Clear();
             int amount = dt.Rows.Count;
             if (!showallNotifications && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllNotifications = new Button();
+                btn_showAllNotifications.Text = "Show all projects";
+                btn_showAllNotifications.Dock = DockStyle.Bottom;
+                btn_showAllNotifications.Click += new System.EventHandler(this.ShowAllNotifications);
+                notificationsPanel.Controls.Add(btn_showAllNotifications);
+                dbh.CloseConnection();
+            }
 
             OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
 
@@ -252,6 +380,13 @@ namespace Barroc_IT
                 notificationsPanel.Controls.Add(overviewInfoPanel[i]);
             }
             dbh.CloseConnection();
+        }
+
+        private void ShowAllNotifications(object sender, EventArgs e)
+        {
+            showallNotifications = true;
+            notificationsPanel.Controls.Clear();
+            ShowNotifications();
         }
 
         private void ResolveNotification(object sender, EventArgs e)

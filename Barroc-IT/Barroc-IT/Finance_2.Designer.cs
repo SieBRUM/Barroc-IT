@@ -901,6 +901,7 @@
             // 
             // cb_E_C_Prospect
             // 
+            this.cb_E_C_Prospect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_E_C_Prospect.FormattingEnabled = true;
             this.cb_E_C_Prospect.Items.AddRange(new object[] {
             "No",
@@ -912,6 +913,7 @@
             // 
             // cb_E_C_Creditworthy
             // 
+            this.cb_E_C_Creditworthy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_E_C_Creditworthy.FormattingEnabled = true;
             this.cb_E_C_Creditworthy.Items.AddRange(new object[] {
             "No",
@@ -956,6 +958,7 @@
             // txtb_E_C_Discount
             // 
             this.txtb_E_C_Discount.Location = new System.Drawing.Point(387, 226);
+            this.txtb_E_C_Discount.MaxLength = 2;
             this.txtb_E_C_Discount.Name = "txtb_E_C_Discount";
             this.txtb_E_C_Discount.Size = new System.Drawing.Size(141, 20);
             this.txtb_E_C_Discount.TabIndex = 39;
@@ -1227,6 +1230,7 @@
             // 
             // tcp_Invoices
             // 
+            this.tcp_Invoices.AutoScroll = true;
             this.tcp_Invoices.Controls.Add(this.btn_GoTo_Add_Invoice);
             this.tcp_Invoices.Controls.Add(this.invoicesPanel);
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
@@ -1278,7 +1282,7 @@
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Overview.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 460);
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
@@ -1324,11 +1328,11 @@
             this.tcp_Main.Controls.Add(this.tcp_Customers);
             this.tcp_Main.Controls.Add(this.tcp_Edit_Customer);
             this.tcp_Main.Controls.Add(this.tcp_Help);
-            this.tcp_Main.Location = new System.Drawing.Point(142, 1);
+            this.tcp_Main.Location = new System.Drawing.Point(142, -21);
             this.tcp_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tcp_Main.Name = "tcp_Main";
             this.tcp_Main.SelectedIndex = 0;
-            this.tcp_Main.Size = new System.Drawing.Size(574, 464);
+            this.tcp_Main.Size = new System.Drawing.Size(574, 486);
             this.tcp_Main.TabIndex = 4;
             this.tcp_Main.TabStop = false;
             this.tcp_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);

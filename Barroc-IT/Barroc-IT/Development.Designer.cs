@@ -484,11 +484,11 @@ namespace Barroc_IT
             this.tcp_Main.Controls.Add(this.tcp_Add_Project);
             this.tcp_Main.Controls.Add(this.tcp_Edit_Project);
             this.tcp_Main.Controls.Add(this.tcp_Show_Customer);
-            this.tcp_Main.Location = new System.Drawing.Point(142, 0);
+            this.tcp_Main.Location = new System.Drawing.Point(142, -22);
             this.tcp_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tcp_Main.Name = "tcp_Main";
             this.tcp_Main.SelectedIndex = 0;
-            this.tcp_Main.Size = new System.Drawing.Size(574, 450);
+            this.tcp_Main.Size = new System.Drawing.Size(574, 472);
             this.tcp_Main.TabIndex = 1;
             this.tcp_Main.TabStop = false;
             this.tcp_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
@@ -500,7 +500,7 @@ namespace Barroc_IT
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Overview.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 446);
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
