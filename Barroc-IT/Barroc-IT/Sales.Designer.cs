@@ -80,8 +80,6 @@
             this.txtb_customer_firstname = new System.Windows.Forms.TextBox();
             this.lbl_Customer_firstname = new System.Windows.Forms.Label();
             this.tcp_EditCustomer = new System.Windows.Forms.TabPage();
-            this.lblCustomer_LastName = new System.Windows.Forms.Label();
-            this.lblCustomer_FirstName = new System.Windows.Forms.Label();
             this.lblCustomerId = new System.Windows.Forms.Label();
             this.lblCustomerNameCustomer = new System.Windows.Forms.Label();
             this.dtpCustomerLastContact = new System.Windows.Forms.DateTimePicker();
@@ -122,6 +120,8 @@
             this.lblCustomerFirstName = new System.Windows.Forms.Label();
             this.tc_Main = new System.Windows.Forms.TabControl();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
+            this.lbl_Appointment_DateTill = new System.Windows.Forms.Label();
+            this.lbl_Appointment_DateFrom = new System.Windows.Forms.Label();
             this.btn_GoTo_Add_Appointment = new System.Windows.Forms.Button();
             this.appointmentsPanel = new System.Windows.Forms.Panel();
             this.btn_showallAppointments = new System.Windows.Forms.Button();
@@ -234,8 +234,6 @@
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Help = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Appointment_DateTill = new System.Windows.Forms.Label();
-            this.lbl_Appointment_DateFrom = new System.Windows.Forms.Label();
             this.tcp_Overview.SuspendLayout();
             this.notificationsPanel.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
@@ -288,6 +286,7 @@
             this.lbl_Date_From.Size = new System.Drawing.Size(35, 13);
             this.lbl_Date_From.TabIndex = 11;
             this.lbl_Date_From.Text = "label1";
+            this.lbl_Date_From.Visible = false;
             // 
             // notificationsPanel
             // 
@@ -328,7 +327,7 @@
             this.tcp_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Customer.Name = "tcp_Customer";
             this.tcp_Customer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Customer.Size = new System.Drawing.Size(566, 460);
+            this.tcp_Customer.Size = new System.Drawing.Size(566, 430);
             this.tcp_Customer.TabIndex = 1;
             this.tcp_Customer.Text = "Customer";
             this.tcp_Customer.UseVisualStyleBackColor = true;
@@ -410,7 +409,7 @@
             this.tcp_AddCustomer.Location = new System.Drawing.Point(4, 22);
             this.tcp_AddCustomer.Name = "tcp_AddCustomer";
             this.tcp_AddCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_AddCustomer.Size = new System.Drawing.Size(566, 460);
+            this.tcp_AddCustomer.Size = new System.Drawing.Size(566, 430);
             this.tcp_AddCustomer.TabIndex = 2;
             this.tcp_AddCustomer.Text = "addCustomer";
             this.tcp_AddCustomer.UseVisualStyleBackColor = true;
@@ -757,8 +756,6 @@
             // tcp_EditCustomer
             // 
             this.tcp_EditCustomer.AccessibleName = "OptionalLocation";
-            this.tcp_EditCustomer.Controls.Add(this.lblCustomer_LastName);
-            this.tcp_EditCustomer.Controls.Add(this.lblCustomer_FirstName);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerId);
             this.tcp_EditCustomer.Controls.Add(this.lblCustomerNameCustomer);
             this.tcp_EditCustomer.Controls.Add(this.dtpCustomerLastContact);
@@ -800,30 +797,10 @@
             this.tcp_EditCustomer.Location = new System.Drawing.Point(4, 22);
             this.tcp_EditCustomer.Name = "tcp_EditCustomer";
             this.tcp_EditCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_EditCustomer.Size = new System.Drawing.Size(566, 460);
+            this.tcp_EditCustomer.Size = new System.Drawing.Size(566, 430);
             this.tcp_EditCustomer.TabIndex = 3;
             this.tcp_EditCustomer.Text = "editCustomer";
             this.tcp_EditCustomer.UseVisualStyleBackColor = true;
-            // 
-            // lblCustomer_LastName
-            // 
-            this.lblCustomer_LastName.AutoSize = true;
-            this.lblCustomer_LastName.Location = new System.Drawing.Point(496, 36);
-            this.lblCustomer_LastName.Name = "lblCustomer_LastName";
-            this.lblCustomer_LastName.Size = new System.Drawing.Size(52, 13);
-            this.lblCustomer_LastName.TabIndex = 92;
-            this.lblCustomer_LastName.Text = "last name";
-            this.lblCustomer_LastName.Visible = false;
-            // 
-            // lblCustomer_FirstName
-            // 
-            this.lblCustomer_FirstName.AutoSize = true;
-            this.lblCustomer_FirstName.Location = new System.Drawing.Point(496, 23);
-            this.lblCustomer_FirstName.Name = "lblCustomer_FirstName";
-            this.lblCustomer_FirstName.Size = new System.Drawing.Size(52, 13);
-            this.lblCustomer_FirstName.TabIndex = 91;
-            this.lblCustomer_FirstName.Text = "first name";
-            this.lblCustomer_FirstName.Visible = false;
             // 
             // lblCustomerId
             // 
@@ -1195,6 +1172,26 @@
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
             // 
+            // lbl_Appointment_DateTill
+            // 
+            this.lbl_Appointment_DateTill.AutoSize = true;
+            this.lbl_Appointment_DateTill.Location = new System.Drawing.Point(216, 11);
+            this.lbl_Appointment_DateTill.Name = "lbl_Appointment_DateTill";
+            this.lbl_Appointment_DateTill.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Appointment_DateTill.TabIndex = 14;
+            this.lbl_Appointment_DateTill.Text = "label2";
+            this.lbl_Appointment_DateTill.Visible = false;
+            // 
+            // lbl_Appointment_DateFrom
+            // 
+            this.lbl_Appointment_DateFrom.AutoSize = true;
+            this.lbl_Appointment_DateFrom.Location = new System.Drawing.Point(104, 11);
+            this.lbl_Appointment_DateFrom.Name = "lbl_Appointment_DateFrom";
+            this.lbl_Appointment_DateFrom.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Appointment_DateFrom.TabIndex = 13;
+            this.lbl_Appointment_DateFrom.Text = "label1";
+            this.lbl_Appointment_DateFrom.Visible = false;
+            // 
             // btn_GoTo_Add_Appointment
             // 
             this.btn_GoTo_Add_Appointment.Location = new System.Drawing.Point(3, 6);
@@ -1233,7 +1230,7 @@
             this.tcp_Invoices.Controls.Add(this.invoicesPanel);
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
-            this.tcp_Invoices.Size = new System.Drawing.Size(566, 460);
+            this.tcp_Invoices.Size = new System.Drawing.Size(566, 430);
             this.tcp_Invoices.TabIndex = 5;
             this.tcp_Invoices.Text = "Invoices";
             this.tcp_Invoices.UseVisualStyleBackColor = true;
@@ -1283,7 +1280,7 @@
             this.tcp_Edit_Appointment.Location = new System.Drawing.Point(4, 22);
             this.tcp_Edit_Appointment.Name = "tcp_Edit_Appointment";
             this.tcp_Edit_Appointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Edit_Appointment.Size = new System.Drawing.Size(566, 460);
+            this.tcp_Edit_Appointment.Size = new System.Drawing.Size(566, 430);
             this.tcp_Edit_Appointment.TabIndex = 6;
             this.tcp_Edit_Appointment.Text = "Edit Appointment";
             this.tcp_Edit_Appointment.UseVisualStyleBackColor = true;
@@ -1420,7 +1417,7 @@
             // 
             // dtp_E_Appointment_Date
             // 
-            this.dtp_E_Appointment_Date.CustomFormat = "MM-dd-yyyy hh:mm";
+            this.dtp_E_Appointment_Date.CustomFormat = "MM-dd-yyyy HH:mm";
             this.dtp_E_Appointment_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_E_Appointment_Date.Location = new System.Drawing.Point(14, 308);
             this.dtp_E_Appointment_Date.MinDate = new System.DateTime(2016, 11, 3, 0, 0, 0, 0);
@@ -1459,7 +1456,7 @@
             this.tcp_Add_Appointment.Location = new System.Drawing.Point(4, 22);
             this.tcp_Add_Appointment.Name = "tcp_Add_Appointment";
             this.tcp_Add_Appointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Add_Appointment.Size = new System.Drawing.Size(566, 460);
+            this.tcp_Add_Appointment.Size = new System.Drawing.Size(566, 430);
             this.tcp_Add_Appointment.TabIndex = 7;
             this.tcp_Add_Appointment.Text = "Add Appointment";
             this.tcp_Add_Appointment.UseVisualStyleBackColor = true;
@@ -1588,7 +1585,7 @@
             // 
             // dtp_A_Appointment
             // 
-            this.dtp_A_Appointment.CustomFormat = "MM-dd-yyyy hh:mm";
+            this.dtp_A_Appointment.CustomFormat = "MM-dd-yyyy HH:mm";
             this.dtp_A_Appointment.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_A_Appointment.Location = new System.Drawing.Point(14, 308);
             this.dtp_A_Appointment.MinDate = new System.DateTime(2016, 11, 2, 0, 0, 0, 0);
@@ -1655,7 +1652,7 @@
             this.tcp_Help.Location = new System.Drawing.Point(4, 22);
             this.tcp_Help.Name = "tcp_Help";
             this.tcp_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Help.Size = new System.Drawing.Size(566, 460);
+            this.tcp_Help.Size = new System.Drawing.Size(566, 430);
             this.tcp_Help.TabIndex = 8;
             this.tcp_Help.Text = "Help";
             this.tcp_Help.UseVisualStyleBackColor = true;
@@ -2403,24 +2400,6 @@
             this.mnitem_Help.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Help.Click += new System.EventHandler(this.mnitem_Help_Click);
             // 
-            // lbl_Appointment_DateTill
-            // 
-            this.lbl_Appointment_DateTill.AutoSize = true;
-            this.lbl_Appointment_DateTill.Location = new System.Drawing.Point(216, 11);
-            this.lbl_Appointment_DateTill.Name = "lbl_Appointment_DateTill";
-            this.lbl_Appointment_DateTill.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Appointment_DateTill.TabIndex = 14;
-            this.lbl_Appointment_DateTill.Text = "label2";
-            // 
-            // lbl_Appointment_DateFrom
-            // 
-            this.lbl_Appointment_DateFrom.AutoSize = true;
-            this.lbl_Appointment_DateFrom.Location = new System.Drawing.Point(104, 11);
-            this.lbl_Appointment_DateFrom.Name = "lbl_Appointment_DateFrom";
-            this.lbl_Appointment_DateFrom.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Appointment_DateFrom.TabIndex = 13;
-            this.lbl_Appointment_DateFrom.Text = "label1";
-            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2574,8 +2553,6 @@
         private System.Windows.Forms.TabControl tc_Main;
         private System.Windows.Forms.Label lblCustomerNameCustomer;
         private System.Windows.Forms.Label lblCustomerId;
-        private System.Windows.Forms.Label lblCustomer_LastName;
-        private System.Windows.Forms.Label lblCustomer_FirstName;
         private System.Windows.Forms.ToolStripMenuItem mnitem_Customers;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Appointments_Summary;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Customers_CuName;

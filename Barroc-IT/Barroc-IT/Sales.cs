@@ -35,7 +35,7 @@ namespace Barroc_IT
 
         public void SetDateFromLabel(object sender, EventArgs e)
         {
-            if(tc_Main.SelectedIndex == 0)
+            if (tc_Main.SelectedIndex == 0)
             {
                 DateTimePicker dtp = (DateTimePicker)sender;
                 lbl_Date_From.Text = DateHandler.GetDateWithMinus(dtp).ToString();
@@ -356,8 +356,6 @@ namespace Barroc_IT
             txtbCustomerNextAction.Text = dt.Rows[0]["next_action"].ToString();
             lblCustomerNameCustomer.Text = dt.Rows[0]["customer_name"].ToString();
             lblCustomerId.Text = dt.Rows[0]["customer_id"].ToString();
-            lblCustomer_FirstName.Text = dt.Rows[0]["first_name"].ToString();
-            lblCustomer_LastName.Text = dt.Rows[0]["last_name"].ToString();
 
             tc_Main.SelectedIndex = 5;
             dbh.CloseConnection();
@@ -407,8 +405,12 @@ namespace Barroc_IT
             }
             else
             {
+
+                string nextContact = DateHandler.GetDate(dtpCustomerNextContact);
+                string lastContact = DateHandler.GetDate(dtpCustomerLastContact);
                 dbh.OpenConnection();
-                if (dbh.EditCustomer(lblCustomerId.Text, lblCustomer_FirstName.Text, lblCustomer_LastName.Text, txtbCustomerCompanyName.Text, txtbCustomerMail.Text, txtbCustomerFax.Text, txtbCustomerStreetName1.Text, txtbCustomerHousenumber1.Text, txtbCustomerResidence1.Text, txtbCustomerZipcode1.Text, txtbCustomerPhonenumber1.Text))
+
+                if (dbh.EditCustomer(lblCustomerId.Text, txtbCustomerCompanyName.Text, txtbCustomerMail.Text, txtbCustomerFax.Text, txtbCustomerStreetName1.Text, txtbCustomerHousenumber1.Text, txtbCustomerResidence1.Text, txtbCustomerZipcode1.Text, txtbCustomerPhonenumber1.Text, txtbCustomerStreetName2.Text, txtbCustomerHousenumber2.Text, txtbCustomerResidence2.Text, txtbCustomerZipcode2.Text, txtbCustomerPhonenumber2.Text, txtbCustomerLastAction.Text, txtbCustomerNextAction.Text, lastContact, nextContact))
                 {
                     MessageBox.Show("Succesfully edited customer!");
                 }
@@ -536,7 +538,7 @@ namespace Barroc_IT
 
         private void SearchInvoiceOnCu_Name(object sender, KeyEventArgs e)
         {
-
+            //WORK IN PROGRESS
         }
 
         private void SearchCustomerOnCu_Name(object sender, KeyEventArgs e)

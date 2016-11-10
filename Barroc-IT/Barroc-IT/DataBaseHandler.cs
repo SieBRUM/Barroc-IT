@@ -446,7 +446,7 @@ namespace Barroc_IT
             return dt;
         }
 
-        public bool EditCustomer(string c_id, string c_firstName, string c_lastName, string c_companyName, string c_mail, string c_fax, string c_streetName1, string c_houseNumber1, string c_residence1, string c_zipCode1, string c_phoneNumber1)
+        public bool EditCustomer(string c_id, string c_companyName, string c_mail, string c_fax, string c_streetName1, string c_houseNumber1, string c_residence1, string c_zipCode1, string c_phoneNumber1, string c_streetname2, string c_housenumber2, string c_residence2,string c_zipcode2, string c_phonenumber2, string c_lastaction, string c_nextaction, string c_lastactiondate, string c_nextactiondate)
         {
             bool success = false;
 
@@ -454,13 +454,11 @@ namespace Barroc_IT
                     UPDATE
                         tbl_customers
                     SET
-                        first_name = @firstName, last_name = @lastName, company_name = @company_name, email = @email, fax = @fax, street_name = @street_name, house_number = @house_number, residence = @residence, zip_code = @zip_code, phone_number = @phone_number
+                        company_name = @company_name, email = @email, fax = @fax, street_name = @street_name, house_number = @house_number, residence = @residence, zip_code = @zip_code, phone_number = @phone_number, street_name_2 = @street_name_2, house_number_2 = @house_number_2, residence_2 = @residence2, zip_code_2 = @zip_code_2, phone_number_2 = @phone_number_2, last_contact = @last_contact, last_action = @last_action, next_contact = @next_contact, next_action = @next_action
                     WHERE
                         customer_id = @customer_id",this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("customer_id", c_id);
-                cmd.Parameters.AddWithValue("firstName", c_firstName);
-                cmd.Parameters.AddWithValue("lastName", c_lastName);
                 cmd.Parameters.AddWithValue("company_name", c_companyName);
                 cmd.Parameters.AddWithValue("email", c_mail);
                 cmd.Parameters.AddWithValue("fax", c_fax);
@@ -469,6 +467,15 @@ namespace Barroc_IT
                 cmd.Parameters.AddWithValue("residence", c_residence1);
                 cmd.Parameters.AddWithValue("zip_code", c_zipCode1);
                 cmd.Parameters.AddWithValue("phone_number", c_phoneNumber1);
+                cmd.Parameters.AddWithValue("phone_number_2", c_phonenumber2);
+                cmd.Parameters.AddWithValue("street_name_2", c_streetname2);
+                cmd.Parameters.AddWithValue("house_number_2", c_housenumber2);
+                cmd.Parameters.AddWithValue("residence2", c_residence2);
+                cmd.Parameters.AddWithValue("zip_code_2", c_zipcode2);
+                cmd.Parameters.AddWithValue("last_contact", c_lastactiondate);
+                cmd.Parameters.AddWithValue("last_action", c_lastaction);
+                cmd.Parameters.AddWithValue("next_contact", c_nextactiondate);
+                cmd.Parameters.AddWithValue("next_action", c_nextaction);
                 try
                 {
                     success = (Int64)cmd.ExecuteNonQuery() > 0;
