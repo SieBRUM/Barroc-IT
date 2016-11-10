@@ -263,7 +263,7 @@
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Overview.Size = new System.Drawing.Size(566, 461);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 438);
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
@@ -327,7 +327,7 @@
             this.tcp_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Customer.Name = "tcp_Customer";
             this.tcp_Customer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Customer.Size = new System.Drawing.Size(566, 430);
+            this.tcp_Customer.Size = new System.Drawing.Size(566, 461);
             this.tcp_Customer.TabIndex = 1;
             this.tcp_Customer.Text = "Customer";
             this.tcp_Customer.UseVisualStyleBackColor = true;
@@ -409,7 +409,7 @@
             this.tcp_AddCustomer.Location = new System.Drawing.Point(4, 22);
             this.tcp_AddCustomer.Name = "tcp_AddCustomer";
             this.tcp_AddCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_AddCustomer.Size = new System.Drawing.Size(566, 430);
+            this.tcp_AddCustomer.Size = new System.Drawing.Size(566, 438);
             this.tcp_AddCustomer.TabIndex = 2;
             this.tcp_AddCustomer.Text = "addCustomer";
             this.tcp_AddCustomer.UseVisualStyleBackColor = true;
@@ -420,6 +420,7 @@
             this.dtp_customer_lastcontact.Name = "dtp_customer_lastcontact";
             this.dtp_customer_lastcontact.Size = new System.Drawing.Size(173, 20);
             this.dtp_customer_lastcontact.TabIndex = 16;
+            this.dtp_customer_lastcontact.Value = new System.DateTime(2016, 11, 10, 0, 0, 0, 0);
             // 
             // dtp_customer_nextcontact
             // 
@@ -427,7 +428,7 @@
             this.dtp_customer_nextcontact.Name = "dtp_customer_nextcontact";
             this.dtp_customer_nextcontact.Size = new System.Drawing.Size(173, 20);
             this.dtp_customer_nextcontact.TabIndex = 18;
-            this.dtp_customer_nextcontact.Value = new System.DateTime(2016, 10, 19, 12, 3, 13, 0);
+            this.dtp_customer_nextcontact.Value = new System.DateTime(2016, 11, 10, 0, 0, 0, 0);
             // 
             // btn_Customer_Add
             // 
@@ -797,7 +798,7 @@
             this.tcp_EditCustomer.Location = new System.Drawing.Point(4, 22);
             this.tcp_EditCustomer.Name = "tcp_EditCustomer";
             this.tcp_EditCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_EditCustomer.Size = new System.Drawing.Size(566, 430);
+            this.tcp_EditCustomer.Size = new System.Drawing.Size(566, 461);
             this.tcp_EditCustomer.TabIndex = 3;
             this.tcp_EditCustomer.Text = "editCustomer";
             this.tcp_EditCustomer.UseVisualStyleBackColor = true;
@@ -1149,11 +1150,11 @@
             this.tc_Main.Controls.Add(this.tcp_Edit_Appointment);
             this.tc_Main.Controls.Add(this.tcp_Add_Appointment);
             this.tc_Main.Controls.Add(this.tcp_Help);
-            this.tc_Main.Location = new System.Drawing.Point(142, -22);
+            this.tc_Main.Location = new System.Drawing.Point(142, 1);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
             this.tc_Main.SelectedIndex = 0;
-            this.tc_Main.Size = new System.Drawing.Size(574, 487);
+            this.tc_Main.Size = new System.Drawing.Size(574, 464);
             this.tc_Main.TabIndex = 0;
             this.tc_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
@@ -1167,7 +1168,7 @@
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Appointments.Size = new System.Drawing.Size(566, 430);
+            this.tcp_Appointments.Size = new System.Drawing.Size(566, 461);
             this.tcp_Appointments.TabIndex = 4;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
@@ -1230,7 +1231,7 @@
             this.tcp_Invoices.Controls.Add(this.invoicesPanel);
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
-            this.tcp_Invoices.Size = new System.Drawing.Size(566, 430);
+            this.tcp_Invoices.Size = new System.Drawing.Size(566, 461);
             this.tcp_Invoices.TabIndex = 5;
             this.tcp_Invoices.Text = "Invoices";
             this.tcp_Invoices.UseVisualStyleBackColor = true;
@@ -1280,7 +1281,7 @@
             this.tcp_Edit_Appointment.Location = new System.Drawing.Point(4, 22);
             this.tcp_Edit_Appointment.Name = "tcp_Edit_Appointment";
             this.tcp_Edit_Appointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Edit_Appointment.Size = new System.Drawing.Size(566, 430);
+            this.tcp_Edit_Appointment.Size = new System.Drawing.Size(566, 438);
             this.tcp_Edit_Appointment.TabIndex = 6;
             this.tcp_Edit_Appointment.Text = "Edit Appointment";
             this.tcp_Edit_Appointment.UseVisualStyleBackColor = true;
@@ -1456,7 +1457,7 @@
             this.tcp_Add_Appointment.Location = new System.Drawing.Point(4, 22);
             this.tcp_Add_Appointment.Name = "tcp_Add_Appointment";
             this.tcp_Add_Appointment.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Add_Appointment.Size = new System.Drawing.Size(566, 430);
+            this.tcp_Add_Appointment.Size = new System.Drawing.Size(566, 461);
             this.tcp_Add_Appointment.TabIndex = 7;
             this.tcp_Add_Appointment.Text = "Add Appointment";
             this.tcp_Add_Appointment.UseVisualStyleBackColor = true;
@@ -1652,7 +1653,7 @@
             this.tcp_Help.Location = new System.Drawing.Point(4, 22);
             this.tcp_Help.Name = "tcp_Help";
             this.tcp_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Help.Size = new System.Drawing.Size(566, 430);
+            this.tcp_Help.Size = new System.Drawing.Size(566, 461);
             this.tcp_Help.TabIndex = 8;
             this.tcp_Help.Text = "Help";
             this.tcp_Help.UseVisualStyleBackColor = true;

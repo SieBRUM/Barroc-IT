@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Barroc_IT
@@ -285,6 +286,26 @@ namespace Barroc_IT
             {
                 MessageBox.Show("Date of next contact cannot be in the past.");
             }
+            else if (txtb_customer_email.Text.Contains("@") == false)
+            {
+                MessageBox.Show("Your email is invalid");
+            }
+            else if (txtb_customer_phonenumber_1.Text.Length < 10)
+            {
+                MessageBox.Show("Your phone number is invalid");
+            }
+            else if (txtb_customer_phonenumber_2.Text != "" && txtb_customer_phonenumber_2.Text.Length < 10)
+            {
+                MessageBox.Show("Your 2nd phone number is invalid");
+            }
+            else if (!Regex.IsMatch(txtb_customer_zipcode_1.Text, @"^[1-9][0-9]{3}\s?[a-zA-Z]{2}$"))
+            {
+                MessageBox.Show("Invalid zipcode");
+            }
+            else if (txtb_customer_zipcode_2.Text != "" && !Regex.IsMatch(txtb_customer_zipcode_1.Text, @"^[1-9][0-9]{3}\s?[a-zA-Z]{2}$"))
+            {
+                MessageBox.Show("Invalid 2nd zipcode");
+            }
             else
             {
                 dbh.OpenConnection();
@@ -402,6 +423,18 @@ namespace Barroc_IT
             else if (dtpCustomerNextContact.Value < DateTime.Now)
             {
                 MessageBox.Show("Next action date cannot be in the past!");
+            }
+            else if (txtb_customer_email.Text.Contains("@") == false)
+            {
+                MessageBox.Show("Your email is invalid");
+            }
+            else if (txtbCustomerPhonenumber1.Text.Length < 10)
+            {
+                MessageBox.Show("Your phone number is invalid");
+            }
+            else if (txtbCustomerPhonenumber2.Text != "" && txtbCustomerPhonenumber2.Text.Length < 10)
+            {
+                MessageBox.Show("Your 2nd phone number is invalid");
             }
             else
             {
@@ -632,6 +665,10 @@ namespace Barroc_IT
             {
                 MessageBox.Show("Date cannot be in the past!");
             }
+            else if (!Regex.IsMatch(txtb_A_Appointment_Zipcode.Text, @"^[1-9][0-9]{3}\s?[a-zA-Z]{2}$"))
+            {
+                MessageBox.Show("Invalid zipcode");
+            }
             else
             {
                 dbh.OpenConnection();
@@ -715,7 +752,7 @@ namespace Barroc_IT
                 try
                 {
                     dbh.OpenConnection();
-                    DataTable dt = dbh.GetCustomerCB();
+                    DataTable dt = dbh.GetCustomerAppointment();
                     cb_Appointment_Select_Customer.ValueMember = "customer_id";
                     cb_Appointment_Select_Customer.DisplayMember = "full_name";
 

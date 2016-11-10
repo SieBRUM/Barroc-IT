@@ -32,8 +32,6 @@
             this.btn_Paid = new System.Windows.Forms.Button();
             this.lbl_Customer_Discount = new System.Windows.Forms.Label();
             this.lbl_Discount = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.lbl_Customer_IBAN = new System.Windows.Forms.Label();
             this.lbl_IBAN = new System.Windows.Forms.Label();
             this.lbl_Project_ProjectID = new System.Windows.Forms.Label();
@@ -59,8 +57,6 @@
             this.panel2.Controls.Add(this.btn_Paid);
             this.panel2.Controls.Add(this.lbl_Customer_Discount);
             this.panel2.Controls.Add(this.lbl_Discount);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.lbl_Customer_IBAN);
             this.panel2.Controls.Add(this.lbl_IBAN);
             this.panel2.Controls.Add(this.lbl_Project_ProjectID);
@@ -106,30 +102,11 @@
             this.lbl_Discount.TabIndex = 51;
             this.lbl_Discount.Text = "Discount percentage:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(146, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 13);
-            this.label9.TabIndex = 50;
-            this.label9.Text = "Placeholder";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 13);
-            this.label10.TabIndex = 49;
-            this.label10.Text = "Ledger account number:";
-            // 
             // lbl_Customer_IBAN
             // 
             this.lbl_Customer_IBAN.AutoSize = true;
             this.lbl_Customer_IBAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer_IBAN.Location = new System.Drawing.Point(146, 70);
+            this.lbl_Customer_IBAN.Location = new System.Drawing.Point(146, 53);
             this.lbl_Customer_IBAN.Name = "lbl_Customer_IBAN";
             this.lbl_Customer_IBAN.Size = new System.Drawing.Size(74, 13);
             this.lbl_Customer_IBAN.TabIndex = 48;
@@ -138,7 +115,7 @@
             // lbl_IBAN
             // 
             this.lbl_IBAN.AutoSize = true;
-            this.lbl_IBAN.Location = new System.Drawing.Point(12, 70);
+            this.lbl_IBAN.Location = new System.Drawing.Point(12, 53);
             this.lbl_IBAN.Name = "lbl_IBAN";
             this.lbl_IBAN.Size = new System.Drawing.Size(35, 13);
             this.lbl_IBAN.TabIndex = 47;
@@ -310,8 +287,6 @@
         private System.Windows.Forms.Label lbl_CompanyName;
         private System.Windows.Forms.Label lbl_Customer_Discount;
         private System.Windows.Forms.Label lbl_Discount;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lbl_Customer_IBAN;
         private System.Windows.Forms.Label lbl_IBAN;
         private System.Windows.Forms.Label lbl_Project_ProjectID;

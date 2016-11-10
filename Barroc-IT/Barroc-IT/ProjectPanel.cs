@@ -22,6 +22,12 @@ namespace Barroc_IT
             No = 1
         };
 
+        enum LedgerAccountNumber
+        {
+            Small_Project = 0,
+            Big_Project = 1
+        };
+
         public ProjectPanel(int rowNr, DataTable dt)
         {
             InitializeComponent();
@@ -29,6 +35,7 @@ namespace Barroc_IT
 
             int projectStatus = Convert.ToInt16(dt.Rows[rowNr]["project_status"]);
             int maintenance_contract = Convert.ToInt16(dt.Rows[rowNr]["maintenance_contract"]);
+            int ledger_account_number = Convert.ToInt16(dt.Rows[rowNr]["ledger_account_number"]);
 
             foreach (string s in dt.Rows[rowNr]["software"].ToString().Split(','))
             {
@@ -44,6 +51,7 @@ namespace Barroc_IT
             lbl_Operating_System.Text = dt.Rows[rowNr]["operating_system"].ToString();
             lbl_Hardware.Text = dt.Rows[rowNr]["hardware"].ToString();
             lbl_Amount_Invoices.Text = dt.Rows[rowNr]["amount_invoice"].ToString();
+            lbl_Project_Ledger_Account_Number_Data.Text = ((LedgerAccountNumber)ledger_account_number).ToString();
 
             lbl_Customer_Name.Text = dt.Rows[rowNr]["customer_name"].ToString();
             lbl_Company_Name.Text = dt.Rows[rowNr]["company_name"].ToString();
