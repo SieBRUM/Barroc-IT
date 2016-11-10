@@ -52,7 +52,7 @@ namespace Barroc_IT
             this.mnfltr_Appointments_Residence = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Appointments_Residence = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Appointments_Summary = new System.Windows.Forms.ToolStripMenuItem();
-            this.tscb_Appointment_HasSummary = new System.Windows.Forms.ToolStripComboBox();
+            this.tscmb_Appointments_Summary = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Help = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +61,7 @@ namespace Barroc_IT
             this.notificationsPanel = new System.Windows.Forms.Panel();
             this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.tcp_Projects = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.projectsPanel = new System.Windows.Forms.Panel();
             this.btn_Project_Show_All = new System.Windows.Forms.Button();
             this.btn_Add_Project = new System.Windows.Forms.Button();
             this.tcp_Appointments = new System.Windows.Forms.TabPage();
@@ -141,8 +141,6 @@ namespace Barroc_IT
             this.txtb_Edit_Project_AOI = new System.Windows.Forms.TextBox();
             this.txtb_Edit_Project_P_Name = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tcp_Loading = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
             this.tcp_Show_Customer = new System.Windows.Forms.TabPage();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -176,7 +174,7 @@ namespace Barroc_IT
             this.tcp_Overview.SuspendLayout();
             this.notificationsPanel.SuspendLayout();
             this.tcp_Projects.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.projectsPanel.SuspendLayout();
             this.tcp_Appointments.SuspendLayout();
             this.appointmentsPanel.SuspendLayout();
             this.tcp_Help.SuspendLayout();
@@ -184,7 +182,6 @@ namespace Barroc_IT
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tcp_Edit_Project.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tcp_Loading.SuspendLayout();
             this.tcp_Show_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -422,7 +419,7 @@ namespace Barroc_IT
             // mnfltr_Appointments_Summary
             // 
             this.mnfltr_Appointments_Summary.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tscb_Appointment_HasSummary});
+            this.tscmb_Appointments_Summary});
             this.mnfltr_Appointments_Summary.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Appointments_Summary.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Appointments_Summary.Name = "mnfltr_Appointments_Summary";
@@ -430,16 +427,16 @@ namespace Barroc_IT
             this.mnfltr_Appointments_Summary.Text = "Summary";
             this.mnfltr_Appointments_Summary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tscb_Appointment_HasSummary
+            // tscmb_Appointments_Summary
             // 
-            this.tscb_Appointment_HasSummary.Items.AddRange(new object[] {
+            this.tscmb_Appointments_Summary.Items.AddRange(new object[] {
             "All",
-            "Yes",
-            "No"});
-            this.tscb_Appointment_HasSummary.Name = "tscb_Appointment_HasSummary";
-            this.tscb_Appointment_HasSummary.Size = new System.Drawing.Size(121, 23);
-            this.tscb_Appointment_HasSummary.Text = "All";
-            this.tscb_Appointment_HasSummary.SelectedIndexChanged += new System.EventHandler(this.SearchNotificationOnHasSummary);
+            "Has summary",
+            "Has no summary"});
+            this.tscmb_Appointments_Summary.Name = "tscmb_Appointments_Summary";
+            this.tscmb_Appointments_Summary.Size = new System.Drawing.Size(121, 23);
+            this.tscmb_Appointments_Summary.Text = "All";
+            this.tscmb_Appointments_Summary.SelectedIndexChanged += new System.EventHandler(this.SearchAppointmentsOnSummary);
             // 
             // mnfltr_Appointments_Date
             // 
@@ -486,7 +483,6 @@ namespace Barroc_IT
             this.tcp_Main.Controls.Add(this.tcp_Help);
             this.tcp_Main.Controls.Add(this.tcp_Add_Project);
             this.tcp_Main.Controls.Add(this.tcp_Edit_Project);
-            this.tcp_Main.Controls.Add(this.tcp_Loading);
             this.tcp_Main.Controls.Add(this.tcp_Show_Customer);
             this.tcp_Main.Location = new System.Drawing.Point(142, 0);
             this.tcp_Main.Margin = new System.Windows.Forms.Padding(0);
@@ -535,7 +531,7 @@ namespace Barroc_IT
             // tcp_Projects
             // 
             this.tcp_Projects.AutoScroll = true;
-            this.tcp_Projects.Controls.Add(this.panel1);
+            this.tcp_Projects.Controls.Add(this.projectsPanel);
             this.tcp_Projects.Controls.Add(this.btn_Add_Project);
             this.tcp_Projects.Location = new System.Drawing.Point(4, 22);
             this.tcp_Projects.Name = "tcp_Projects";
@@ -545,17 +541,17 @@ namespace Barroc_IT
             this.tcp_Projects.Text = "Projects";
             this.tcp_Projects.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // projectsPanel
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_Project_Show_All);
-            this.panel1.Location = new System.Drawing.Point(4, 35);
-            this.panel1.MinimumSize = new System.Drawing.Size(540, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 25);
-            this.panel1.TabIndex = 5;
+            this.projectsPanel.AutoSize = true;
+            this.projectsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.projectsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.projectsPanel.Controls.Add(this.btn_Project_Show_All);
+            this.projectsPanel.Location = new System.Drawing.Point(4, 35);
+            this.projectsPanel.MinimumSize = new System.Drawing.Size(540, 2);
+            this.projectsPanel.Name = "projectsPanel";
+            this.projectsPanel.Size = new System.Drawing.Size(540, 25);
+            this.projectsPanel.TabIndex = 5;
             // 
             // btn_Project_Show_All
             // 
@@ -1439,26 +1435,6 @@ namespace Barroc_IT
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
             // 
-            // tcp_Loading
-            // 
-            this.tcp_Loading.Controls.Add(this.label25);
-            this.tcp_Loading.Location = new System.Drawing.Point(4, 22);
-            this.tcp_Loading.Name = "tcp_Loading";
-            this.tcp_Loading.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Loading.Size = new System.Drawing.Size(566, 424);
-            this.tcp_Loading.TabIndex = 6;
-            this.tcp_Loading.Text = "Loading";
-            this.tcp_Loading.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(211, 177);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(113, 13);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Loading, please wait...";
-            // 
             // tcp_Show_Customer
             // 
             this.tcp_Show_Customer.Controls.Add(this.pictureBox3);
@@ -1785,7 +1761,7 @@ namespace Barroc_IT
             this.notificationsPanel.ResumeLayout(false);
             this.tcp_Projects.ResumeLayout(false);
             this.tcp_Projects.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.projectsPanel.ResumeLayout(false);
             this.tcp_Appointments.ResumeLayout(false);
             this.tcp_Appointments.PerformLayout();
             this.appointmentsPanel.ResumeLayout(false);
@@ -1797,8 +1773,6 @@ namespace Barroc_IT
             this.tcp_Edit_Project.ResumeLayout(false);
             this.tcp_Edit_Project.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tcp_Loading.ResumeLayout(false);
-            this.tcp_Loading.PerformLayout();
             this.tcp_Show_Customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1833,7 +1807,7 @@ namespace Barroc_IT
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CuName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_Residence;
-        private System.Windows.Forms.ToolStripComboBox tscb_Appointment_HasSummary;
+        private System.Windows.Forms.ToolStripComboBox tscmb_Appointments_Summary;
         private TabControl tcp_Main;
         private TabPage tcp_Overview;
         private TabPage tcp_Projects;
@@ -1863,7 +1837,7 @@ namespace Barroc_IT
         private PictureBox pictureBox1;
         private TextBox txtb_Hardware;
         private Label label4;
-        private Panel panel1;
+        private Panel projectsPanel;
         private Button btn_Project_Show_All;
         private TabPage tcp_Edit_Project;
         private TextBox txtb_Edit_Project_Hardware;
@@ -1889,8 +1863,6 @@ namespace Barroc_IT
         private Label lbl_Edit_Project_C_ID;
         private Label lbl_Edit_Project_C_P;
         private Label lbl_Edit_Project_P_Id;
-        private TabPage tcp_Loading;
-        private Label label25;
         private TabPage tcp_Show_Customer;
         private Label label28;
         private Label label26;

@@ -18,7 +18,7 @@ namespace Barroc_IT
             Label lbl_From = new Label() { Text = "From:", Width = 140 };
             Label lbl_Till = new Label() { Text = "Till:", Width = 140 };
             Button btn = new Button() { Text = "Search"};
-            btn.Click += new System.EventHandler(form.SearchNotificationOnDate);
+            btn.Click += new System.EventHandler(form.Search);
             dtp_From.Value = DateTime.Now.Date;
             dtp_Till.Value = DateTime.Now.Date;
 
@@ -27,7 +27,6 @@ namespace Barroc_IT
             ToolStripControlHost tsch_From = new ToolStripControlHost(dtp_From);
             ToolStripControlHost tsch_Till = new ToolStripControlHost(dtp_Till);
             ToolStripControlHost tsch_btn = new ToolStripControlHost(btn);
-
 
             ToolStripControlHost[] arrayControl = new ToolStripControlHost[5];
             arrayControl[0] = new ToolStripControlHost(lbl_From);

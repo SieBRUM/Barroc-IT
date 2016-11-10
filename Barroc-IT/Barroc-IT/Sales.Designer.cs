@@ -206,19 +206,19 @@
             this.mnfltr_Overview_Date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Appointments = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Appointments_CuName = new System.Windows.Forms.ToolStripMenuItem();
-            this.tstxtb_Projects_PName = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Appointments_CuName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Appontments_CoName = new System.Windows.Forms.ToolStripMenuItem();
-            this.tstxtb_Projects_PID = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Appointments_CoName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Apointments_Residence = new System.Windows.Forms.ToolStripMenuItem();
-            this.tstxtb_Projects_CuName = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Appointments_Residence = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Appointments_Summary = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.tscmb_Appointments_Summary = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Appointments_date = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Invoices = new System.Windows.Forms.ToolStripMenuItem();
             this.mnfltr_Invoices_CuName = new System.Windows.Forms.ToolStripMenuItem();
             this.tstxtb_Invoices_CuName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Invoices_CoName = new System.Windows.Forms.ToolStripMenuItem();
-            this.tstxtb_Appointments_CoName = new System.Windows.Forms.ToolStripTextBox();
+            this.tstxtb_Aments_CoName = new System.Windows.Forms.ToolStripTextBox();
             this.mnfltr_Invoices_Paid = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
             this.mnfltr_Invoices_Number = new System.Windows.Forms.ToolStripMenuItem();
@@ -234,6 +234,8 @@
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.mnitem_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnitem_Help = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_Appointment_DateTill = new System.Windows.Forms.Label();
+            this.lbl_Appointment_DateFrom = new System.Windows.Forms.Label();
             this.tcp_Overview.SuspendLayout();
             this.notificationsPanel.SuspendLayout();
             this.tcp_Customer.SuspendLayout();
@@ -263,7 +265,7 @@
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Overview.Size = new System.Drawing.Size(566, 460);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 430);
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
@@ -286,7 +288,6 @@
             this.lbl_Date_From.Size = new System.Drawing.Size(35, 13);
             this.lbl_Date_From.TabIndex = 11;
             this.lbl_Date_From.Text = "label1";
-            this.lbl_Date_From.Visible = false;
             // 
             // notificationsPanel
             // 
@@ -1171,23 +1172,25 @@
             this.tc_Main.Controls.Add(this.tcp_Edit_Appointment);
             this.tc_Main.Controls.Add(this.tcp_Add_Appointment);
             this.tc_Main.Controls.Add(this.tcp_Help);
-            this.tc_Main.Location = new System.Drawing.Point(142, -21);
+            this.tc_Main.Location = new System.Drawing.Point(142, 9);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
             this.tc_Main.SelectedIndex = 0;
-            this.tc_Main.Size = new System.Drawing.Size(574, 486);
+            this.tc_Main.Size = new System.Drawing.Size(574, 456);
             this.tc_Main.TabIndex = 0;
             this.tc_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
             // tcp_Appointments
             // 
             this.tcp_Appointments.AutoScroll = true;
+            this.tcp_Appointments.Controls.Add(this.lbl_Appointment_DateTill);
+            this.tcp_Appointments.Controls.Add(this.lbl_Appointment_DateFrom);
             this.tcp_Appointments.Controls.Add(this.btn_GoTo_Add_Appointment);
             this.tcp_Appointments.Controls.Add(this.appointmentsPanel);
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Appointments.Size = new System.Drawing.Size(566, 460);
+            this.tcp_Appointments.Size = new System.Drawing.Size(566, 430);
             this.tcp_Appointments.TabIndex = 4;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
@@ -2085,7 +2088,7 @@
             this.tscmb_Overview_Department.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tscmb_Overview_Department.Items.AddRange(new object[] {
             "All",
-            "Developement",
+            "Development",
             "Finance",
             "Sales"});
             this.tscmb_Overview_Department.Name = "tscmb_Overview_Department";
@@ -2109,12 +2112,14 @@
             // 
             this.tscmb_Overview_Type.Items.AddRange(new object[] {
             "All",
-            "Type1",
-            "Type2",
-            "Type3"});
+            "Creditworthy check",
+            "Add financial details",
+            "Invoice not paid",
+            "Halt project"});
             this.tscmb_Overview_Type.Name = "tscmb_Overview_Type";
             this.tscmb_Overview_Type.Size = new System.Drawing.Size(121, 23);
             this.tscmb_Overview_Type.Text = "All";
+            this.tscmb_Overview_Type.SelectedIndexChanged += new System.EventHandler(this.SearchNotificationOnType);
             // 
             // mnfltr_Overview_Date
             // 
@@ -2139,7 +2144,7 @@
             // mnfltr_Appointments_CuName
             // 
             this.mnfltr_Appointments_CuName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstxtb_Projects_PName});
+            this.tstxtb_Appointments_CuName});
             this.mnfltr_Appointments_CuName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Appointments_CuName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnfltr_Appointments_CuName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
@@ -2148,15 +2153,16 @@
             this.mnfltr_Appointments_CuName.Text = "Customer Name";
             this.mnfltr_Appointments_CuName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tstxtb_Projects_PName
+            // tstxtb_Appointments_CuName
             // 
-            this.tstxtb_Projects_PName.Name = "tstxtb_Projects_PName";
-            this.tstxtb_Projects_PName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Appointments_CuName.Name = "tstxtb_Appointments_CuName";
+            this.tstxtb_Appointments_CuName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Appointments_CuName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchAppointmentOnCu_Name);
             // 
             // mnfltr_Appontments_CoName
             // 
             this.mnfltr_Appontments_CoName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstxtb_Projects_PID});
+            this.tstxtb_Appointments_CoName});
             this.mnfltr_Appontments_CoName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Appontments_CoName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnfltr_Appontments_CoName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
@@ -2165,15 +2171,16 @@
             this.mnfltr_Appontments_CoName.Text = "Company Name";
             this.mnfltr_Appontments_CoName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tstxtb_Projects_PID
+            // tstxtb_Appointments_CoName
             // 
-            this.tstxtb_Projects_PID.Name = "tstxtb_Projects_PID";
-            this.tstxtb_Projects_PID.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Appointments_CoName.Name = "tstxtb_Appointments_CoName";
+            this.tstxtb_Appointments_CoName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Appointments_CoName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchAppointmentOnCo_Name);
             // 
             // mnfltr_Apointments_Residence
             // 
             this.mnfltr_Apointments_Residence.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstxtb_Projects_CuName});
+            this.tstxtb_Appointments_Residence});
             this.mnfltr_Apointments_Residence.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Apointments_Residence.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnfltr_Apointments_Residence.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
@@ -2182,15 +2189,16 @@
             this.mnfltr_Apointments_Residence.Text = "Residence";
             this.mnfltr_Apointments_Residence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tstxtb_Projects_CuName
+            // tstxtb_Appointments_Residence
             // 
-            this.tstxtb_Projects_CuName.Name = "tstxtb_Projects_CuName";
-            this.tstxtb_Projects_CuName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Appointments_Residence.Name = "tstxtb_Appointments_Residence";
+            this.tstxtb_Appointments_Residence.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Appointments_Residence.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchAppointmentOnResidence);
             // 
             // mnfltr_Appointments_Summary
             // 
             this.mnfltr_Appointments_Summary.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox1});
+            this.tscmb_Appointments_Summary});
             this.mnfltr_Appointments_Summary.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Appointments_Summary.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mnfltr_Appointments_Summary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2200,10 +2208,16 @@
             this.mnfltr_Appointments_Summary.Text = "Summary";
             this.mnfltr_Appointments_Summary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolStripComboBox1
+            // tscmb_Appointments_Summary
             // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.tscmb_Appointments_Summary.Items.AddRange(new object[] {
+            "All",
+            "Has summary",
+            "Has no summary"});
+            this.tscmb_Appointments_Summary.Name = "tscmb_Appointments_Summary";
+            this.tscmb_Appointments_Summary.Size = new System.Drawing.Size(121, 23);
+            this.tscmb_Appointments_Summary.Text = "All";
+            this.tscmb_Appointments_Summary.SelectedIndexChanged += new System.EventHandler(this.SearchAppointmentsOnSummary);
             // 
             // mnfltr_Appointments_date
             // 
@@ -2244,7 +2258,7 @@
             // mnfltr_Invoices_CoName
             // 
             this.mnfltr_Invoices_CoName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstxtb_Appointments_CoName});
+            this.tstxtb_Aments_CoName});
             this.mnfltr_Invoices_CoName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnfltr_Invoices_CoName.Margin = new System.Windows.Forms.Padding(10, 1, 1, 0);
             this.mnfltr_Invoices_CoName.Name = "mnfltr_Invoices_CoName";
@@ -2252,10 +2266,10 @@
             this.mnfltr_Invoices_CoName.Text = "Company Name";
             this.mnfltr_Invoices_CoName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tstxtb_Appointments_CoName
+            // tstxtb_Aments_CoName
             // 
-            this.tstxtb_Appointments_CoName.Name = "tstxtb_Appointments_CoName";
-            this.tstxtb_Appointments_CoName.Size = new System.Drawing.Size(100, 23);
+            this.tstxtb_Aments_CoName.Name = "tstxtb_Aments_CoName";
+            this.tstxtb_Aments_CoName.Size = new System.Drawing.Size(100, 23);
             // 
             // mnfltr_Invoices_Paid
             // 
@@ -2389,6 +2403,24 @@
             this.mnitem_Help.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mnitem_Help.Click += new System.EventHandler(this.mnitem_Help_Click);
             // 
+            // lbl_Appointment_DateTill
+            // 
+            this.lbl_Appointment_DateTill.AutoSize = true;
+            this.lbl_Appointment_DateTill.Location = new System.Drawing.Point(216, 11);
+            this.lbl_Appointment_DateTill.Name = "lbl_Appointment_DateTill";
+            this.lbl_Appointment_DateTill.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Appointment_DateTill.TabIndex = 14;
+            this.lbl_Appointment_DateTill.Text = "label2";
+            // 
+            // lbl_Appointment_DateFrom
+            // 
+            this.lbl_Appointment_DateFrom.AutoSize = true;
+            this.lbl_Appointment_DateFrom.Location = new System.Drawing.Point(104, 11);
+            this.lbl_Appointment_DateFrom.Name = "lbl_Appointment_DateFrom";
+            this.lbl_Appointment_DateFrom.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Appointment_DateFrom.TabIndex = 13;
+            this.lbl_Appointment_DateFrom.Text = "label1";
+            // 
             // frm_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2446,9 +2478,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Appontments_CoName;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Appointments_CuName;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Apointments_Residence;
-        private System.Windows.Forms.ToolStripTextBox tstxtb_Projects_PName;
-        private System.Windows.Forms.ToolStripTextBox tstxtb_Projects_PID;
-        private System.Windows.Forms.ToolStripTextBox tstxtb_Projects_CuName;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CuName;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_Residence;
         private System.Windows.Forms.ToolStripComboBox tscmb_Overview_Department;
         private System.Windows.Forms.ToolStripComboBox tscmb_Overview_Type;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Invoices_CuName;
@@ -2456,7 +2488,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Invoices_Paid;
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Invoices_Number;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Invoices_CuName;
-        private System.Windows.Forms.ToolStripTextBox tstxtb_Appointments_CoName;
+        private System.Windows.Forms.ToolStripTextBox tstxtb_Aments_CoName;
         private System.Windows.Forms.TabPage tcp_Overview;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tcp_Customer;
@@ -2553,7 +2585,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnfltr_Customers_UnpaidInvoice;
         private System.Windows.Forms.TabPage tcp_Appointments;
         private System.Windows.Forms.TabPage tcp_Invoices;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Customers_CoName;
         private System.Windows.Forms.ToolStripTextBox tstxtb_Customers_Residence;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
@@ -2640,6 +2671,9 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.RichTextBox richTextBox15;
         private System.Windows.Forms.ToolStripMenuItem mnitem_Logout;
+        public System.Windows.Forms.ToolStripComboBox tscmb_Appointments_Summary;
+        public System.Windows.Forms.Label lbl_Appointment_DateTill;
+        public System.Windows.Forms.Label lbl_Appointment_DateFrom;
 
     }
 }

@@ -548,7 +548,7 @@ namespace Barroc_IT
                     FROM
                         tbl_notification
                     WHERE 
-                        " + colName + "BETWEEN @filter AND @filter2", this.GetConnection()))
+                        " + colName + "> @filter &&" + colName + " < @filter2", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("filter", filter);
                 cmd.Parameters.AddWithValue("filter2", filter2);
@@ -723,13 +723,9 @@ namespace Barroc_IT
                     ON
                         tbl_projects.customer_id = tbl_customers.customer_id
                     WHERE
-                        " + colName + @" LIKE @filter
-                    OR
-                        " + colName_2 + @" LIKE @filter
-                    ORDER BY
-                        invoice_id DESC", this.GetConnection()))
+                        " + colName + " LIKE @filter OR " + colName_2 + " LIKE @filter", this.GetConnection()))
             {
-                cmd.Parameters.AddWithValue("filter", filter);
+                cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
 
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
@@ -829,7 +825,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
                     
                     FROM
                         tbl_appointments
@@ -840,7 +836,7 @@ namespace Barroc_IT
                     ON
                         tbl_appointments.customer_id = tbl_customers.customer_id
 
-                    Where
+                    WHERE
                         " + colName + " LIKE @filter ", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
@@ -848,6 +844,7 @@ namespace Barroc_IT
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
                 dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_id", typeof(string));
                 dt.Columns.Add("appointment_datetime", typeof(string));
                 dt.Columns.Add("appointment_address", typeof(string));
                 dt.Columns.Add("appointment_housenumber", typeof(string));
@@ -871,7 +868,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_appointments.customer_id AS appointment_customer_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
                     
                     FROM
                         tbl_appointments
@@ -882,7 +879,7 @@ namespace Barroc_IT
                     ON
                         tbl_appointments.customer_id = tbl_customers.customer_id
 
-                    Where
+                    WHERE
                         " + colName + " LIKE @filter OR " + colName_2 + " LIKE @filter", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("filter", "%" + filter + "%");
@@ -890,6 +887,134 @@ namespace Barroc_IT
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
                 dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_id", typeof(string));
+                dt.Columns.Add("appointment_datetime", typeof(string));
+                dt.Columns.Add("appointment_address", typeof(string));
+                dt.Columns.Add("appointment_housenumber", typeof(string));
+                dt.Columns.Add("appointment_zipcode", typeof(string));
+                dt.Columns.Add("appointment_made", typeof(string));
+                dt.Columns.Add("appointment_summary", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("customer_residence", typeof(string));
+                dt.Columns.Add("customer_address", typeof(string));
+                dt.Columns.Add("customer_zip_code", typeof(string));
+                dt.Columns.Add("customer_phone_number", typeof(string));
+                dt.Columns.Add("customer_email", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable FilterAppointmentsHasSummary()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                    
+                    FROM
+                        tbl_appointments
+
+                    INNER JOIN
+                        tbl_customers
+
+                    ON
+                        tbl_appointments.customer_id = tbl_customers.customer_id
+
+                    WHERE
+                        appointment_summary != ''", this.GetConnection()))
+            {
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_id", typeof(string));
+                dt.Columns.Add("appointment_datetime", typeof(string));
+                dt.Columns.Add("appointment_address", typeof(string));
+                dt.Columns.Add("appointment_housenumber", typeof(string));
+                dt.Columns.Add("appointment_zipcode", typeof(string));
+                dt.Columns.Add("appointment_made", typeof(string));
+                dt.Columns.Add("appointment_summary", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("customer_residence", typeof(string));
+                dt.Columns.Add("customer_address", typeof(string));
+                dt.Columns.Add("customer_zip_code", typeof(string));
+                dt.Columns.Add("customer_phone_number", typeof(string));
+                dt.Columns.Add("customer_email", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable FilterAppointmentsHasNoSummary()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                    
+                    FROM
+                        tbl_appointments
+
+                    INNER JOIN
+                        tbl_customers
+
+                    ON
+                        tbl_appointments.customer_id = tbl_customers.customer_id
+
+                    WHERE
+                        appointment_summary = ''", this.GetConnection()))
+            {
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_id", typeof(string));
+                dt.Columns.Add("appointment_datetime", typeof(string));
+                dt.Columns.Add("appointment_address", typeof(string));
+                dt.Columns.Add("appointment_housenumber", typeof(string));
+                dt.Columns.Add("appointment_zipcode", typeof(string));
+                dt.Columns.Add("appointment_made", typeof(string));
+                dt.Columns.Add("appointment_summary", typeof(string));
+                dt.Columns.Add("company_name", typeof(string));
+                dt.Columns.Add("customer_residence", typeof(string));
+                dt.Columns.Add("customer_address", typeof(string));
+                dt.Columns.Add("customer_zip_code", typeof(string));
+                dt.Columns.Add("customer_phone_number", typeof(string));
+                dt.Columns.Add("customer_email", typeof(string));
+                dt.Columns.Add("customer_name", typeof(string));
+                dt.Load(reader);
+            }
+            return dt;
+        }
+
+        public DataTable FilterAppointmentsBetweenDate(string filter, string filter2, string colName)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand cmd = new MySqlCommand(@"
+                    SELECT
+                        tbl_appointments.customer_id AS appointment_customer_id, appointment_id, appointment_datetime, appointment_residence, appointment_zipcode, appointment_made, appointment_summary, CONCAT (appointment_streetname, ' ', appointment_housenumber) AS appointment_address, tbl_customers.company_name as company_name, tbl_customers.residence AS customer_residence,CONCAT(tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name ,CONCAT (tbl_customers.street_name, ' ', tbl_customers.house_number) AS customer_address, tbl_customers.zip_code AS customer_zip_code, tbl_customers.phone_number AS customer_phone_number, tbl_customers.email AS customer_email
+                    
+                    FROM
+                        tbl_appointments
+
+                    INNER JOIN
+                        tbl_customers
+
+                    ON
+                        tbl_appointments.customer_id = tbl_customers.customer_id
+
+                    WHERE
+                        appointment_datetime < 30-11-2016 09:34:50", this.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("filter", filter);
+                cmd.Parameters.AddWithValue("filter2", filter2);
+
+                MySqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                dt.Columns.Add("appointment_customer_id", typeof(string));
+                dt.Columns.Add("appointment_id", typeof(string));
                 dt.Columns.Add("appointment_datetime", typeof(string));
                 dt.Columns.Add("appointment_address", typeof(string));
                 dt.Columns.Add("appointment_housenumber", typeof(string));

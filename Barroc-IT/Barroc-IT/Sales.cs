@@ -35,16 +35,40 @@ namespace Barroc_IT
 
         public void SetDateFromLabel(object sender, EventArgs e)
         {
-            DateTimePicker dtp = (DateTimePicker)sender;
-            lbl_Date_From.Text = DateHandler.GetDateWithMinus(dtp).ToString();
+            if(tc_Main.SelectedIndex == 0)
+            {
+                DateTimePicker dtp = (DateTimePicker)sender;
+                lbl_Date_From.Text = DateHandler.GetDateWithMinus(dtp).ToString();
+
+            }
+            else
+            {
+                DateTimePicker dtp = (DateTimePicker)sender;
+                lbl_Appointment_DateFrom.Text = dtp.Value.ToString();
+            }
         }
 
         public void SetDateTillLabel(object sender, EventArgs e)
         {
-            DateTimePicker dtp = (DateTimePicker)sender;
-            lbl_Date_Till.Text = DateHandler.GetDateWithMinus(dtp).ToString();
+            if (tc_Main.SelectedIndex == 0)
+            {
+                DateTimePicker dtp = (DateTimePicker)sender;
+                lbl_Date_Till.Text = DateHandler.GetDateWithMinus(dtp).ToString();
+            }
+            else
+            {
+                DateTimePicker dtp = (DateTimePicker)sender;
+                lbl_Appointment_DateTill.Text = dtp.Value.ToString();
+            }
         }
 
+        public void Search(object sender, EventArgs e)
+        {
+            if (tc_Main.SelectedIndex == 0)
+                SearchNotificationOnDate(sender, e);
+            else
+                SearchAppointmentOnDate(sender, e);
+        }
 
         public void SearchNotificationOnDate(object sender, EventArgs e)
         {
@@ -57,7 +81,6 @@ namespace Barroc_IT
             int amount = dt.Rows.Count;
             if (!showallNotifications && amount > 5)
                 amount = 5;
-            MessageBox.Show(amount.ToString() + dt.Rows.Count.ToString());
             OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
 
             for (int i = 0; i < overviewInfoPanel.Length; i++)
@@ -72,6 +95,50 @@ namespace Barroc_IT
             dbh.CloseConnection();
         }
 
+        private void SearchNotificationOnType(object sender, EventArgs e)
+        {
+            if (tscmb_Overview_Type.Text == "All")
+            {
+                dbh.OpenConnection();
+                notificationsPanel.Controls.Clear();
+                DataTable dt = dbh.GetNotifications();
+                int amount = dt.Rows.Count;
+
+                OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+                for (int i = 0; i < overviewInfoPanel.Length; i++)
+                {
+                    overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                    overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    overviewInfoPanel[i].Dock = DockStyle.Top;
+                    overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                    overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                    notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+            }
+            else
+            {
+                string filter = tscmb_Overview_Type.Text;
+                dbh.OpenConnection();
+                notificationsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterNotifications(filter, "notification_type");
+                int amount = dt.Rows.Count;
+
+                OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
+
+                for (int i = 0; i < overviewInfoPanel.Length; i++)
+                {
+                    overviewInfoPanel[i] = new OverviewPanel(i, dt);
+                    overviewInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    overviewInfoPanel[i].Dock = DockStyle.Top;
+                    overviewInfoPanel[i].btn_Resolved.AccessibleName = dt.Rows[i]["notification_ID"].ToString();
+                    overviewInfoPanel[i].btn_Resolved.Click += new System.EventHandler(this.ResolveNotification);
+                    notificationsPanel.Controls.Add(overviewInfoPanel[i]);
+                }
+                dbh.CloseConnection();
+            }
+        }
 
         private void tscmb_Overview_Department_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -110,6 +177,8 @@ namespace Barroc_IT
                     HideFilters(true, false, false, false);
                     break;
                 case "mnitem_Appointments":
+                    lbl_Appointment_DateTill.Text = DateTime.Today.ToString();
+                    lbl_Appointment_DateFrom.Text = DateTime.Today.ToString();
                     tc_Main.SelectedIndex = 1;
                     HideFilters(false, true, false, false);
                     break;
@@ -341,11 +410,11 @@ namespace Barroc_IT
                 dbh.OpenConnection();
                 if (dbh.EditCustomer(lblCustomerId.Text, lblCustomer_FirstName.Text, lblCustomer_LastName.Text, txtbCustomerCompanyName.Text, txtbCustomerMail.Text, txtbCustomerFax.Text, txtbCustomerStreetName1.Text, txtbCustomerHousenumber1.Text, txtbCustomerResidence1.Text, txtbCustomerZipcode1.Text, txtbCustomerPhonenumber1.Text))
                 {
-                    MessageBox.Show("Succesfully added customer!");
+                    MessageBox.Show("Succesfully edited customer!");
                 }
                 else
                 {
-                    MessageBox.Show("An error occcured while adding a project.");
+                    MessageBox.Show("An error occcured while editing a customer!");
                 }
                 dbh.CloseConnection();
             }
@@ -759,6 +828,176 @@ namespace Barroc_IT
         private void mnitem_Help_Click(object sender, EventArgs e)
         {
             tc_Main.SelectedIndex = 8;
+        }
+
+        private void SearchAppointmentOnCu_Name(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Appointments_CuName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointments(filter, "tbl_customers.first_name", "tbl_customers.last_name");
+                int amount = dt.Rows.Count;
+                if (!showallAppointments && amount > 5)
+                    amount = 5;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchAppointmentOnCo_Name(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Appointments_CoName.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointments(filter, "tbl_customers.company_name");
+                int amount = dt.Rows.Count;
+                if (!showallAppointments && amount > 5)
+                    amount = 5;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchAppointmentOnResidence(object sender, KeyEventArgs e)
+        {
+            string filter = tstxtb_Appointments_Residence.Text;
+            if (e.KeyCode == Keys.Return)
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointments(filter, "tbl_customers.residence");
+                int amount = dt.Rows.Count;
+                if (!showallAppointments && amount > 5)
+                    amount = 5;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchAppointmentsOnSummary(object sender, EventArgs e)
+        {
+            if (tscmb_Appointments_Summary.Text == "All")
+            {
+                appointmentsPanel.Controls.Clear();
+
+                dbh.OpenConnection();
+                DataTable dt = dbh.GetAppointments();
+                int amount = dt.Rows.Count;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+                }
+                dbh.CloseConnection();
+            }
+            else if (tscmb_Appointments_Summary.Text == "Has summary")
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointmentsHasSummary();
+                int amount = dt.Rows.Count;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+                }
+                dbh.CloseConnection();
+            }
+            else
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointmentsHasNoSummary();
+                int amount = dt.Rows.Count;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchAppointmentOnDate(object sender, EventArgs e)
+        {
+            string fromDate = lbl_Appointment_DateFrom.Text;
+            string tillDate = lbl_Appointment_DateTill.Text;
+
+            dbh.OpenConnection();
+            appointmentsPanel.Controls.Clear();
+            DataTable dt = dbh.FilterAppointmentsBetweenDate(fromDate, tillDate, "appointment_datetime");
+            int amount = dt.Rows.Count;
+
+            AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+            for (int i = 0; i < appointmentInfoPanel.Length; i++)
+            {
+                appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                appointmentInfoPanel[i].Dock = DockStyle.Top;
+                appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                appointmentInfoPanel[i].btn_Edit.Click += new System.EventHandler(this.FillEditAppointmentItems);
+            }
+            dbh.CloseConnection();
         }
     }
 }

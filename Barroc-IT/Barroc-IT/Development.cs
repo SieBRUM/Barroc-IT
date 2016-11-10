@@ -137,12 +137,45 @@ namespace Barroc_IT
 
         private void tc_Main_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tcp_Main.SelectedIndex == 0)
+            {
+                try
+                {
+                    showallNotifications = false;
+                    ShowNotifications();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
             if (tcp_Main.SelectedIndex == 1)
             {
                 try
                 {
                     showallProjects = false;
                     ShowProjects();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured: \n" + ex);
+                }
+                finally
+                {
+                    dbh.CloseConnection();
+                }
+            }
+
+            if (tcp_Main.SelectedIndex == 2)
+            {
+                try
+                {
+                    showallAppointments = false;
+                    ShowAppointments();
                 }
                 catch (Exception ex)
                 {
@@ -180,9 +213,20 @@ namespace Barroc_IT
         {
             dbh.OpenConnection();
             DataTable dt = dbh.GetAppointments();
+            appointmentsPanel.Controls.Clear();
             int amount = dt.Rows.Count;
             if (!showallAppointments && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllAppointments = new Button();
+                btn_showAllAppointments.Text = "Show all appointments";
+                btn_showAllAppointments.Dock = DockStyle.Bottom;
+                btn_showAllAppointments.Click += new System.EventHandler(this.ShowAllAppointments);
+                appointmentsPanel.Controls.Add(btn_showAllAppointments);
+                dbh.CloseConnection();
+
+            }
 
             AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
 
@@ -197,15 +241,31 @@ namespace Barroc_IT
             dbh.CloseConnection();
         }
 
+        private void ShowAllAppointments(object sender, EventArgs e)
+        {
+            showallAppointments = true;
+            appointmentsPanel.Controls.Clear();
+            ShowAppointments();
+        }
+
         private void ShowProjects()
         {
             dbh.OpenConnection();
 
-            panel1.Controls.Clear();
+            projectsPanel.Controls.Clear();
             DataTable dt = dbh.GetProjects();
             int amount = dt.Rows.Count;
             if (!showallProjects && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllProjects = new Button();
+                btn_showAllProjects.Text = "Show all projects";
+                btn_showAllProjects.Dock = DockStyle.Bottom;
+                btn_showAllProjects.Click += new System.EventHandler(this.showAllProjects);
+                projectsPanel.Controls.Add(btn_showAllProjects);
+                dbh.CloseConnection();
+            }
 
             ProjectPanel[] projectInfoPanel = new ProjectPanel[amount];
 
@@ -218,7 +278,7 @@ namespace Barroc_IT
                 projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
                 projectInfoPanel[i].lbl_Customer_Name.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                 projectInfoPanel[i].lbl_Customer_Name.Click += new System.EventHandler(this.FillCustomerData);
-                panel1.Controls.Add(projectInfoPanel[i]);
+                projectsPanel.Controls.Add(projectInfoPanel[i]);
             }
             dbh.CloseConnection();
         }
@@ -244,6 +304,13 @@ namespace Barroc_IT
 
             dbh.CloseConnection();
             tcp_Main.SelectedIndex = 5;
+        }
+
+        private void showAllProjects(object sender, EventArgs e)
+        {
+            showallProjects = true;
+            projectsPanel.Controls.Clear();
+            ShowProjects();
         }
 
         private void FillCustomerData(object sender, EventArgs e)
@@ -282,7 +349,7 @@ namespace Barroc_IT
             tcp_Main.SelectedIndex = 6;
 
             showallProjects = true;
-            panel1.Controls.Clear();
+            projectsPanel.Controls.Clear();
             ShowProjects();
         }
 
@@ -352,7 +419,7 @@ namespace Barroc_IT
             if (e.KeyCode == Keys.Return)
             {
                 dbh.OpenConnection();
-                panel1.Controls.Clear();
+                projectsPanel.Controls.Clear();
                 DataTable dt = dbh.FilterProjects(filter, "project_name");
                 int amount = dt.Rows.Count;
                 if (!showallProjects && amount > 5)
@@ -369,7 +436,7 @@ namespace Barroc_IT
                     projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
                     projectInfoPanel[i].lbl_Customer_Name.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                     projectInfoPanel[i].lbl_Customer_Name.Click += new System.EventHandler(this.FillCustomerData);
-                    panel1.Controls.Add(projectInfoPanel[i]);
+                    projectsPanel.Controls.Add(projectInfoPanel[i]);
                 }
                 dbh.CloseConnection();
                 tcp_Main.SelectedIndex = 1;
@@ -382,7 +449,7 @@ namespace Barroc_IT
             if (e.KeyCode == Keys.Return)
             {
                 dbh.OpenConnection();
-                panel1.Controls.Clear();
+                projectsPanel.Controls.Clear();
                 DataTable dt = dbh.FilterProjects(filter, "project_id");
                 int amount = dt.Rows.Count;
                 if (!showallProjects && amount > 5)
@@ -399,7 +466,7 @@ namespace Barroc_IT
                     projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
                     projectInfoPanel[i].lbl_Customer_Name.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                     projectInfoPanel[i].lbl_Customer_Name.Click += new System.EventHandler(this.FillCustomerData);
-                    panel1.Controls.Add(projectInfoPanel[i]);
+                    projectsPanel.Controls.Add(projectInfoPanel[i]);
                 }
                 dbh.CloseConnection();
                 tcp_Main.SelectedIndex = 1;
@@ -413,11 +480,9 @@ namespace Barroc_IT
             if (e.KeyCode == Keys.Return)
             {
                 dbh.OpenConnection();
-                panel1.Controls.Clear();
+                projectsPanel.Controls.Clear();
                 DataTable dt = dbh.FilterProjects(filter, "tbl_customers.first_name", "tbl_customers.last_name");
                 int amount = dt.Rows.Count;
-                if (!showallProjects && dt.Rows.Count > 5)
-                    amount = 5;
 
                 ProjectPanel[] projectInfoPanel = new ProjectPanel[amount];
 
@@ -430,7 +495,7 @@ namespace Barroc_IT
                     projectInfoPanel[i].btn_Edit.AccessibleName = projectInfoPanel[i].lbl_Project_Id.Text;
                     projectInfoPanel[i].lbl_Customer_Name.AccessibleName = dt.Rows[i]["customer_id"].ToString();
                     projectInfoPanel[i].lbl_Customer_Name.Click += new System.EventHandler(this.FillCustomerData);
-                    panel1.Controls.Add(projectInfoPanel[i]);
+                    projectsPanel.Controls.Add(projectInfoPanel[i]);
                 }
                 dbh.CloseConnection();
                 tcp_Main.SelectedIndex = 1;
@@ -509,6 +574,71 @@ namespace Barroc_IT
                     appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
                     appointmentInfoPanel[i].Dock = DockStyle.Top;
                     appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.Dispose();
+                }
+                dbh.CloseConnection();
+            }
+        }
+
+        private void SearchAppointmentsOnSummary(object sender, EventArgs e)
+        {
+            if (tscmb_Appointments_Summary.Text == "All")
+            {
+                appointmentsPanel.Controls.Clear();
+
+                dbh.OpenConnection();
+                DataTable dt = dbh.GetAppointments();
+                int amount = dt.Rows.Count;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Dispose();
+                }
+                dbh.CloseConnection();
+            }
+            else if (tscmb_Appointments_Summary.Text == "Has summary")
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointmentsHasSummary();
+                int amount = dt.Rows.Count;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
+                    appointmentInfoPanel[i].btn_Edit.Dispose();
+                }
+                dbh.CloseConnection();
+            }
+            else
+            {
+                dbh.OpenConnection();
+                appointmentsPanel.Controls.Clear();
+                DataTable dt = dbh.FilterAppointmentsHasNoSummary();
+                int amount = dt.Rows.Count;
+
+                AppointmentPanel[] appointmentInfoPanel = new AppointmentPanel[amount];
+
+                for (int i = 0; i < appointmentInfoPanel.Length; i++)
+                {
+                    appointmentInfoPanel[i] = new AppointmentPanel(i, dt);
+                    appointmentInfoPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                    appointmentInfoPanel[i].Dock = DockStyle.Top;
+                    appointmentsPanel.Controls.Add(appointmentInfoPanel[i]);
+                    appointmentInfoPanel[i].btn_Edit.AccessibleName = dt.Rows[i]["appointment_id"].ToString();
                     appointmentInfoPanel[i].btn_Edit.Dispose();
                 }
                 dbh.CloseConnection();
@@ -611,23 +741,26 @@ namespace Barroc_IT
 
         private void SearchNotificationOnHasSummary(object sender, EventArgs e)
         {
-            if (tscb_Appointment_HasSummary.Text == "Yes")
-            {
-                
-            }
-            else
-            {
 
-            }
         }
 
         private void ShowNotifications()
         {
             dbh.OpenConnection();
             DataTable dt = dbh.GetNotifications();
+            notificationsPanel.Controls.Clear();
             int amount = dt.Rows.Count;
             if (!showallNotifications && amount > 5)
+            {
                 amount = 5;
+
+                Button btn_showAllNotifications = new Button();
+                btn_showAllNotifications.Text = "Show all projects";
+                btn_showAllNotifications.Dock = DockStyle.Bottom;
+                btn_showAllNotifications.Click += new System.EventHandler(this.ShowAllNotifications);
+                notificationsPanel.Controls.Add(btn_showAllNotifications);
+                dbh.CloseConnection();
+            }
 
             OverviewPanel[] overviewInfoPanel = new OverviewPanel[amount];
 
@@ -641,6 +774,13 @@ namespace Barroc_IT
                 notificationsPanel.Controls.Add(overviewInfoPanel[i]);
             }
             dbh.CloseConnection();
+        }
+
+        private void ShowAllNotifications(object sender, EventArgs e)
+        {
+            showallNotifications = true;
+            notificationsPanel.Controls.Clear();
+            ShowNotifications();
         }
 
         private void ResolveNotification(object sender, EventArgs e)
