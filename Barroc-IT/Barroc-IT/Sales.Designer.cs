@@ -263,7 +263,7 @@
             this.tcp_Overview.Location = new System.Drawing.Point(4, 22);
             this.tcp_Overview.Name = "tcp_Overview";
             this.tcp_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Overview.Size = new System.Drawing.Size(566, 430);
+            this.tcp_Overview.Size = new System.Drawing.Size(566, 461);
             this.tcp_Overview.TabIndex = 0;
             this.tcp_Overview.Text = "Overview";
             this.tcp_Overview.UseVisualStyleBackColor = true;
@@ -1149,11 +1149,11 @@
             this.tc_Main.Controls.Add(this.tcp_Edit_Appointment);
             this.tc_Main.Controls.Add(this.tcp_Add_Appointment);
             this.tc_Main.Controls.Add(this.tcp_Help);
-            this.tc_Main.Location = new System.Drawing.Point(142, 9);
+            this.tc_Main.Location = new System.Drawing.Point(142, -22);
             this.tc_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tc_Main.Name = "tc_Main";
             this.tc_Main.SelectedIndex = 0;
-            this.tc_Main.Size = new System.Drawing.Size(574, 456);
+            this.tc_Main.Size = new System.Drawing.Size(574, 487);
             this.tc_Main.TabIndex = 0;
             this.tc_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
             // 
