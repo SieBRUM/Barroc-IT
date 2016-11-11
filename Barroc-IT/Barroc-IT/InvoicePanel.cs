@@ -27,7 +27,7 @@ namespace Barroc_IT
 
             lbl_Customer_Name.Text = dt.Rows[rowNr]["customer_id"].ToString() + ": " + dt.Rows[rowNr]["customer_name"].ToString();
             lbl_Invoice_ID.Text = dt.Rows[rowNr]["invoice_id"].ToString();
-            lbl_Price.Text = "\u20AC " + dt.Rows[rowNr]["total_price"].ToString();
+            lbl_Price.Text = "\u20AC " + dt.Rows[rowNr]["Price"].ToString();
             lbl_Customer_CompanyName.Text = dt.Rows[rowNr]["company_name"].ToString();
             lbl_Customer_Contact_Person.Text = dt.Rows[rowNr]["contact_person"].ToString();
             lbl_Customer_IBAN.Text = dt.Rows[rowNr]["IBAN"].ToString();

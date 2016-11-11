@@ -185,19 +185,25 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        project_id, CONCAT(project_id,':', project_name, ' ', tbl_customers.first_name, ' ', tbl_customers.last_name) AS project_and_name
+                        tbl_projects.project_id, CONCAT(tbl_projects.project_id,':', project_name, ' ', tbl_customers.first_name, ' ', tbl_customers.last_name) AS project_and_name, COUNT(invoice_id) AS amountOfInvoices, tbl_projects.amount_invoice AS amount_invoice
                     FROM 
                         tbl_projects
-                    INNER JOIN
+                    LEFT JOIN
                         tbl_customers
                     ON
                         tbl_projects.customer_id = tbl_customers.customer_id
-                    ORDER BY
-                        project_id",this.GetConnection()))
+                    LEFT JOIN
+                        tbl_invoices
+                    ON 
+                        tbl_invoices.project_id = tbl_projects.project_id
+                    GROUP BY
+                        tbl_projects.project_id
+                    HAVING
+                        amount_invoice > amountOfInvoices", this.GetConnection()))
             {
                 MySqlDataReader reader;
                 reader = cmd.ExecuteReader();
-                dt.Columns.Add("project_id", typeof(string));
+                dt.Columns.Add("tbl_projects.project_id", typeof(string));
                 dt.Columns.Add("project_and_name", typeof(string));
                 dt.Load(reader);
             }
@@ -270,18 +276,43 @@ namespace Barroc_IT
             return done;
         }
 
-        public bool AddInvoice(string p_ID, string i_VAT, int i_Status, string i_TotalPrice)
+        public bool AddInvoice(string p_ID, string i_VAT, int i_Status, string i_Date)
         {
             bool done;
+            double invoice_price;
+
+            DataTable calculateDT = new DataTable();
+
+            using (MySqlCommand calculateCMD = new MySqlCommand(@"
+                    SELECT 
+                        Price, amount_invoice, project_id
+                    FROM
+                        tbl_projects
+                    WHERE
+                        project_id = @project_id",this.GetConnection()))
+            {
+                calculateCMD.Parameters.AddWithValue("project_id", p_ID);
+
+                MySqlDataReader reader;
+                reader = calculateCMD.ExecuteReader();
+
+                calculateDT.Columns.Add("Price", typeof(string));
+                calculateDT.Columns.Add("amount_invoice", typeof(string));
+                calculateDT.Load(reader);
+            }
+
+            invoice_price = Convert.ToDouble((Convert.ToInt32(calculateDT.Rows[0]["Price"].ToString()) / (Convert.ToInt32(calculateDT.Rows[0]["amount_invoice"].ToString()))));
+
             using (MySqlCommand cmd = new MySqlCommand(@"
                     INSERT INTO
-                        tbl_invoices(project_id, VAT, status, total_price)
-                    VALUES (@project_id, @VAT, @status, @total_price)",this.GetConnection()))
+                        tbl_invoices(project_id, VAT, status, Payment_Date, Price)
+                    VALUES (@project_id, @VAT, @status, @Payment_Date, @Price)", this.GetConnection()))
             {
                 cmd.Parameters.AddWithValue("project_id", p_ID);
                 cmd.Parameters.AddWithValue("VAT", i_VAT);
                 cmd.Parameters.AddWithValue("status", i_Status);
-                cmd.Parameters.AddWithValue("total_price", i_TotalPrice);
+                cmd.Parameters.AddWithValue("Payment_Date", i_Date);
+                cmd.Parameters.AddWithValue("Price", invoice_price);
                 try
                 {
                     done = (Int64)cmd.ExecuteNonQuery() > 0;
@@ -326,7 +357,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (first_name, ' ', last_name) AS customer_name
+                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, tbl_invoices.Price AS Price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (first_name, ' ', last_name) AS customer_name
                     FROM
                         tbl_invoices
                     INNER JOIN
@@ -345,7 +376,7 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_id");
                 dt.Columns.Add("invoice_id");
                 dt.Columns.Add("status");
-                dt.Columns.Add("total_price");
+                dt.Columns.Add("Price");
                 dt.Columns.Add("company_name");
                 dt.Columns.Add("contact_person");
                 dt.Columns.Add("IBAN");
@@ -694,7 +725,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (first_name, ' ', last_name) AS customer_name
+                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, Price, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (first_name, ' ', last_name) AS customer_name
                     FROM
                         tbl_invoices
                     INNER JOIN
@@ -715,7 +746,7 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_id");
                 dt.Columns.Add("invoice_id");
                 dt.Columns.Add("status");
-                dt.Columns.Add("total_price");
+                dt.Columns.Add("Price");
                 dt.Columns.Add("company_name");
                 dt.Columns.Add("contact_person");
                 dt.Columns.Add("IBAN");
@@ -733,7 +764,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT
-                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, total_price, tbl_customers.first_name, tbl_customers.last_name, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
+                        tbl_customers.customer_id AS customer_id, invoice_id, tbl_invoices.status AS status, Price, tbl_customers.first_name, tbl_customers.last_name, tbl_customers.company_name AS company_name, tbl_projects.contact_person AS contact_person, tbl_customers.iban AS IBAN, VAT, tbl_customers.discount AS discount, tbl_invoices.project_id AS project_id, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
                     FROM
                         tbl_invoices
                     INNER JOIN
@@ -754,7 +785,7 @@ namespace Barroc_IT
                 dt.Columns.Add("customer_id");
                 dt.Columns.Add("invoice_id");
                 dt.Columns.Add("status");
-                dt.Columns.Add("total_price");
+                dt.Columns.Add("Price");
                 dt.Columns.Add("company_name");
                 dt.Columns.Add("contact_person");
                 dt.Columns.Add("IBAN");
@@ -1159,7 +1190,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT 
-                        project_id, project_name, project_status, maintenance_contract, operating_system, hardware, software, amount_invoice, deadline_date, contact_person, ledger_account_number, tbl_projects.customer_id, tbl_customers.company_name AS company_name, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
+                        project_id, project_name, project_status, maintenance_contract, operating_system, hardware, software, amount_invoice, deadline_date, contact_person, ledger_account_number, price, tbl_projects.customer_id, tbl_customers.company_name AS company_name, CONCAT (tbl_customers.first_name, ' ', tbl_customers.last_name) AS customer_name
                     FROM 
                         tbl_projects
                     INNER JOIN 
@@ -1183,6 +1214,7 @@ namespace Barroc_IT
                 dt.Columns.Add("deadline_date", typeof(string));
                 dt.Columns.Add("contact_person", typeof(string));
                 dt.Columns.Add("ledger_account_number", typeof(string));
+                dt.Columns.Add("price", typeof(string));
                 dt.Columns.Add("customer_id", typeof(string));
                 dt.Columns.Add("company_name", typeof(string));
                 dt.Columns.Add("customer_name", typeof(string));
@@ -1196,7 +1228,7 @@ namespace Barroc_IT
             DataTable dt = new DataTable();
             using (MySqlCommand cmd = new MySqlCommand(@"
                     SELECT 
-                        project_id, project_name, project_status, maintenance_contract, operating_system, hardware, software, amount_invoice, deadline_date, contact_person, ledger_account_number, tbl_projects.customer_id, tbl_customers.company_name AS company_name, CONCAT (tbl_customers.customer_id,':', tbl_customers.first_name, ' ', tbl_customers.last_name, ',', tbl_customers.zip_code) AS full_name 
+                        project_id, project_name, project_status, maintenance_contract, operating_system, hardware, software, price, amount_invoice, deadline_date, contact_person, ledger_account_number, tbl_projects.customer_id, tbl_customers.company_name AS company_name, CONCAT (tbl_customers.customer_id,':', tbl_customers.first_name, ' ', tbl_customers.last_name, ',', tbl_customers.zip_code) AS full_name 
                     FROM 
                         tbl_projects
                     INNER JOIN 
@@ -1218,6 +1250,7 @@ namespace Barroc_IT
                 dt.Columns.Add("operating_system", typeof(string));
                 dt.Columns.Add("hardware", typeof(string));
                 dt.Columns.Add("software", typeof(string));
+                dt.Columns.Add("price", typeof(string));
                 dt.Columns.Add("amount_invoice", typeof(string));
                 dt.Columns.Add("deadline_date", typeof(string));
                 dt.Columns.Add("contact_person", typeof(string));

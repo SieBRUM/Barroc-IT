@@ -536,7 +536,7 @@ namespace Barroc_IT
             this.tcp_Projects.Location = new System.Drawing.Point(4, 22);
             this.tcp_Projects.Name = "tcp_Projects";
             this.tcp_Projects.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Projects.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Projects.Size = new System.Drawing.Size(566, 443);
             this.tcp_Projects.TabIndex = 1;
             this.tcp_Projects.Text = "Projects";
             this.tcp_Projects.UseVisualStyleBackColor = true;
@@ -581,7 +581,7 @@ namespace Barroc_IT
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Appointments.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Appointments.Size = new System.Drawing.Size(566, 443);
             this.tcp_Appointments.TabIndex = 2;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
@@ -641,7 +641,7 @@ namespace Barroc_IT
             this.tcp_Help.Location = new System.Drawing.Point(4, 22);
             this.tcp_Help.Name = "tcp_Help";
             this.tcp_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Help.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Help.Size = new System.Drawing.Size(566, 443);
             this.tcp_Help.TabIndex = 3;
             this.tcp_Help.Text = "Help";
             this.tcp_Help.UseVisualStyleBackColor = true;
@@ -975,7 +975,7 @@ namespace Barroc_IT
             this.tcp_Add_Project.Location = new System.Drawing.Point(4, 22);
             this.tcp_Add_Project.Name = "tcp_Add_Project";
             this.tcp_Add_Project.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Add_Project.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Add_Project.Size = new System.Drawing.Size(566, 443);
             this.tcp_Add_Project.TabIndex = 4;
             this.tcp_Add_Project.Text = "Add Project";
             this.tcp_Add_Project.UseVisualStyleBackColor = true;
@@ -1216,7 +1216,7 @@ namespace Barroc_IT
             this.tcp_Edit_Project.Location = new System.Drawing.Point(4, 22);
             this.tcp_Edit_Project.Name = "tcp_Edit_Project";
             this.tcp_Edit_Project.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Edit_Project.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Edit_Project.Size = new System.Drawing.Size(566, 443);
             this.tcp_Edit_Project.TabIndex = 5;
             this.tcp_Edit_Project.Text = "Edit Project";
             this.tcp_Edit_Project.UseVisualStyleBackColor = true;
@@ -1442,7 +1442,7 @@ namespace Barroc_IT
             this.tcp_Show_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Show_Customer.Name = "tcp_Show_Customer";
             this.tcp_Show_Customer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Show_Customer.Size = new System.Drawing.Size(566, 424);
+            this.tcp_Show_Customer.Size = new System.Drawing.Size(566, 443);
             this.tcp_Show_Customer.TabIndex = 7;
             this.tcp_Show_Customer.Text = "Customer";
             this.tcp_Show_Customer.UseVisualStyleBackColor = true;

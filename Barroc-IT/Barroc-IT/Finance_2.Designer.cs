@@ -119,7 +119,6 @@
             this.tcp_AddInvoice = new System.Windows.Forms.TabPage();
             this.btn_Add_Invoice = new System.Windows.Forms.Button();
             this.lbl_Price = new System.Windows.Forms.Label();
-            this.txtb_Price = new System.Windows.Forms.TextBox();
             this.txtb_VAT = new System.Windows.Forms.TextBox();
             this.cbox_Project_Status = new System.Windows.Forms.ComboBox();
             this.lbl_Invoice_Status = new System.Windows.Forms.Label();
@@ -136,6 +135,7 @@
             this.btn_Show_All_Notifications = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tcp_Main = new System.Windows.Forms.TabControl();
+            this.dtp_Payment_Deadline = new System.Windows.Forms.DateTimePicker();
             this.mstrp_Menu.SuspendLayout();
             this.tcp_Help.SuspendLayout();
             this.tcp_Edit_Customer.SuspendLayout();
@@ -527,7 +527,7 @@
             this.tcp_Help.Location = new System.Drawing.Point(4, 22);
             this.tcp_Help.Name = "tcp_Help";
             this.tcp_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Help.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Help.Size = new System.Drawing.Size(566, 460);
             this.tcp_Help.TabIndex = 6;
             this.tcp_Help.Text = "Help";
             this.tcp_Help.UseVisualStyleBackColor = true;
@@ -874,7 +874,7 @@
             this.tcp_Edit_Customer.Location = new System.Drawing.Point(4, 22);
             this.tcp_Edit_Customer.Name = "tcp_Edit_Customer";
             this.tcp_Edit_Customer.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Edit_Customer.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Edit_Customer.Size = new System.Drawing.Size(566, 460);
             this.tcp_Edit_Customer.TabIndex = 5;
             this.tcp_Edit_Customer.Text = "Edit Customer";
             this.tcp_Edit_Customer.UseVisualStyleBackColor = true;
@@ -1048,7 +1048,7 @@
             this.tcp_Customers.Controls.Add(this.customerPanel);
             this.tcp_Customers.Location = new System.Drawing.Point(4, 22);
             this.tcp_Customers.Name = "tcp_Customers";
-            this.tcp_Customers.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Customers.Size = new System.Drawing.Size(566, 460);
             this.tcp_Customers.TabIndex = 4;
             this.tcp_Customers.Text = "Customers";
             this.tcp_Customers.UseVisualStyleBackColor = true;
@@ -1083,7 +1083,7 @@
             this.tcp_Appointments.Location = new System.Drawing.Point(4, 22);
             this.tcp_Appointments.Name = "tcp_Appointments";
             this.tcp_Appointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Appointments.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Appointments.Size = new System.Drawing.Size(566, 460);
             this.tcp_Appointments.TabIndex = 3;
             this.tcp_Appointments.Text = "Appointments";
             this.tcp_Appointments.UseVisualStyleBackColor = true;
@@ -1113,9 +1113,9 @@
             // 
             // tcp_AddInvoice
             // 
+            this.tcp_AddInvoice.Controls.Add(this.dtp_Payment_Deadline);
             this.tcp_AddInvoice.Controls.Add(this.btn_Add_Invoice);
             this.tcp_AddInvoice.Controls.Add(this.lbl_Price);
-            this.tcp_AddInvoice.Controls.Add(this.txtb_Price);
             this.tcp_AddInvoice.Controls.Add(this.txtb_VAT);
             this.tcp_AddInvoice.Controls.Add(this.cbox_Project_Status);
             this.tcp_AddInvoice.Controls.Add(this.lbl_Invoice_Status);
@@ -1126,14 +1126,14 @@
             this.tcp_AddInvoice.Location = new System.Drawing.Point(4, 22);
             this.tcp_AddInvoice.Name = "tcp_AddInvoice";
             this.tcp_AddInvoice.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_AddInvoice.Size = new System.Drawing.Size(566, 438);
+            this.tcp_AddInvoice.Size = new System.Drawing.Size(566, 460);
             this.tcp_AddInvoice.TabIndex = 2;
             this.tcp_AddInvoice.Text = "Add Invoice";
             this.tcp_AddInvoice.UseVisualStyleBackColor = true;
             // 
             // btn_Add_Invoice
             // 
-            this.btn_Add_Invoice.Location = new System.Drawing.Point(485, 403);
+            this.btn_Add_Invoice.Location = new System.Drawing.Point(481, 425);
             this.btn_Add_Invoice.Name = "btn_Add_Invoice";
             this.btn_Add_Invoice.Size = new System.Drawing.Size(75, 23);
             this.btn_Add_Invoice.TabIndex = 34;
@@ -1146,16 +1146,9 @@
             this.lbl_Price.AutoSize = true;
             this.lbl_Price.Location = new System.Drawing.Point(316, 225);
             this.lbl_Price.Name = "lbl_Price";
-            this.lbl_Price.Size = new System.Drawing.Size(31, 13);
+            this.lbl_Price.Size = new System.Drawing.Size(94, 13);
             this.lbl_Price.TabIndex = 33;
-            this.lbl_Price.Text = "Price";
-            // 
-            // txtb_Price
-            // 
-            this.txtb_Price.Location = new System.Drawing.Point(319, 241);
-            this.txtb_Price.Name = "txtb_Price";
-            this.txtb_Price.Size = new System.Drawing.Size(100, 20);
-            this.txtb_Price.TabIndex = 32;
+            this.lbl_Price.Text = "Payment deadline:";
             // 
             // txtb_VAT
             // 
@@ -1236,7 +1229,7 @@
             this.tcp_Invoices.Location = new System.Drawing.Point(4, 22);
             this.tcp_Invoices.Name = "tcp_Invoices";
             this.tcp_Invoices.Padding = new System.Windows.Forms.Padding(3);
-            this.tcp_Invoices.Size = new System.Drawing.Size(566, 438);
+            this.tcp_Invoices.Size = new System.Drawing.Size(566, 460);
             this.tcp_Invoices.TabIndex = 1;
             this.tcp_Invoices.Text = "Invoices";
             this.tcp_Invoices.UseVisualStyleBackColor = true;
@@ -1336,6 +1329,15 @@
             this.tcp_Main.TabIndex = 4;
             this.tcp_Main.TabStop = false;
             this.tcp_Main.SelectedIndexChanged += new System.EventHandler(this.tc_Main_SelectedIndexChanged);
+            // 
+            // dtp_Payment_Deadline
+            // 
+            this.dtp_Payment_Deadline.CustomFormat = "yyyy/MM/dd";
+            this.dtp_Payment_Deadline.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Payment_Deadline.Location = new System.Drawing.Point(319, 242);
+            this.dtp_Payment_Deadline.Name = "dtp_Payment_Deadline";
+            this.dtp_Payment_Deadline.Size = new System.Drawing.Size(100, 20);
+            this.dtp_Payment_Deadline.TabIndex = 35;
             // 
             // frm_Finance_2
             // 
@@ -1465,7 +1467,6 @@
         private System.Windows.Forms.TabPage tcp_AddInvoice;
         private System.Windows.Forms.Button btn_Add_Invoice;
         private System.Windows.Forms.Label lbl_Price;
-        private System.Windows.Forms.TextBox txtb_Price;
         private System.Windows.Forms.TextBox txtb_VAT;
         private System.Windows.Forms.ComboBox cbox_Project_Status;
         private System.Windows.Forms.Label lbl_Invoice_Status;
@@ -1482,5 +1483,6 @@
         private System.Windows.Forms.Button btn_Show_All_Notifications;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabControl tcp_Main;
+        private System.Windows.Forms.DateTimePicker dtp_Payment_Deadline;
     }
 }

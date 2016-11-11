@@ -255,7 +255,8 @@ namespace Barroc_IT
                 dbh.OpenConnection();
             }
             catch (Exception ex)
-            { 
+            {
+                MessageBox.Show("An error occured: \n\n" + ex);
             }
 
             projectsPanel.Controls.Clear();

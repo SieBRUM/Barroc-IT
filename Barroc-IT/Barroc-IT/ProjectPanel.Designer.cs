@@ -33,6 +33,8 @@
             this.lbl_Project_Id = new System.Windows.Forms.Label();
             this.lbl_Project_Name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_Project_Ledger_Account_Number_Data = new System.Windows.Forms.Label();
+            this.lbl_Project_Ledger_Account_Number = new System.Windows.Forms.Label();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.lbl_Deadline = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,8 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbl_Project_Ledger_Account_Number_Data = new System.Windows.Forms.Label();
-            this.lbl_Project_Ledger_Account_Number = new System.Windows.Forms.Label();
+            this.lbl_Total_Price = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +113,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.Controls.Add(this.lbl_Total_Price);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.lbl_Project_Ledger_Account_Number_Data);
             this.panel2.Controls.Add(this.lbl_Project_Ledger_Account_Number);
             this.panel2.Controls.Add(this.btn_Edit);
@@ -135,12 +139,31 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(538, 221);
+            this.panel2.Size = new System.Drawing.Size(538, 240);
             this.panel2.TabIndex = 1;
+            // 
+            // lbl_Project_Ledger_Account_Number_Data
+            // 
+            this.lbl_Project_Ledger_Account_Number_Data.AutoSize = true;
+            this.lbl_Project_Ledger_Account_Number_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Project_Ledger_Account_Number_Data.Location = new System.Drawing.Point(184, 131);
+            this.lbl_Project_Ledger_Account_Number_Data.Name = "lbl_Project_Ledger_Account_Number_Data";
+            this.lbl_Project_Ledger_Account_Number_Data.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Project_Ledger_Account_Number_Data.TabIndex = 23;
+            this.lbl_Project_Ledger_Account_Number_Data.Text = "Placeholder";
+            // 
+            // lbl_Project_Ledger_Account_Number
+            // 
+            this.lbl_Project_Ledger_Account_Number.AutoSize = true;
+            this.lbl_Project_Ledger_Account_Number.Location = new System.Drawing.Point(12, 131);
+            this.lbl_Project_Ledger_Account_Number.Name = "lbl_Project_Ledger_Account_Number";
+            this.lbl_Project_Ledger_Account_Number.Size = new System.Drawing.Size(123, 13);
+            this.lbl_Project_Ledger_Account_Number.TabIndex = 22;
+            this.lbl_Project_Ledger_Account_Number.Text = "Ledger account number:";
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(410, 192);
+            this.btn_Edit.Location = new System.Drawing.Point(410, 214);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(122, 23);
             this.btn_Edit.TabIndex = 21;
@@ -259,7 +282,7 @@
             this.rtb_Software.Location = new System.Drawing.Point(410, 28);
             this.rtb_Software.Name = "rtb_Software";
             this.rtb_Software.ReadOnly = true;
-            this.rtb_Software.Size = new System.Drawing.Size(122, 156);
+            this.rtb_Software.Size = new System.Drawing.Size(122, 180);
             this.rtb_Software.TabIndex = 9;
             this.rtb_Software.Text = "";
             // 
@@ -317,24 +340,24 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Company name:";
             // 
-            // lbl_Project_Ledger_Account_Number_Data
+            // lbl_Total_Price
             // 
-            this.lbl_Project_Ledger_Account_Number_Data.AutoSize = true;
-            this.lbl_Project_Ledger_Account_Number_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Project_Ledger_Account_Number_Data.Location = new System.Drawing.Point(184, 131);
-            this.lbl_Project_Ledger_Account_Number_Data.Name = "lbl_Project_Ledger_Account_Number_Data";
-            this.lbl_Project_Ledger_Account_Number_Data.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Project_Ledger_Account_Number_Data.TabIndex = 23;
-            this.lbl_Project_Ledger_Account_Number_Data.Text = "Placeholder";
+            this.lbl_Total_Price.AutoSize = true;
+            this.lbl_Total_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Total_Price.Location = new System.Drawing.Point(184, 214);
+            this.lbl_Total_Price.Name = "lbl_Total_Price";
+            this.lbl_Total_Price.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Total_Price.TabIndex = 25;
+            this.lbl_Total_Price.Text = "Placeholder";
             // 
-            // lbl_Project_Ledger_Account_Number
+            // label11
             // 
-            this.lbl_Project_Ledger_Account_Number.AutoSize = true;
-            this.lbl_Project_Ledger_Account_Number.Location = new System.Drawing.Point(12, 131);
-            this.lbl_Project_Ledger_Account_Number.Name = "lbl_Project_Ledger_Account_Number";
-            this.lbl_Project_Ledger_Account_Number.Size = new System.Drawing.Size(123, 13);
-            this.lbl_Project_Ledger_Account_Number.TabIndex = 22;
-            this.lbl_Project_Ledger_Account_Number.Text = "Ledger account number:";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 214);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Total Price:";
             // 
             // ProjectPanel
             // 
@@ -346,7 +369,7 @@
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(538, 0);
             this.Name = "ProjectPanel";
-            this.Size = new System.Drawing.Size(538, 267);
+            this.Size = new System.Drawing.Size(538, 286);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -383,5 +406,7 @@
         public System.Windows.Forms.Label lbl_Customer_Name;
         private System.Windows.Forms.Label lbl_Project_Ledger_Account_Number_Data;
         private System.Windows.Forms.Label lbl_Project_Ledger_Account_Number;
+        private System.Windows.Forms.Label lbl_Total_Price;
+        private System.Windows.Forms.Label label11;
     }
 }

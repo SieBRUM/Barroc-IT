@@ -418,11 +418,23 @@ namespace Barroc_IT
 
         private void btn_Add_Invoice_Click(object sender, EventArgs e)
         {
-
-            dbh.OpenConnection();
-            dbh.AddInvoice(cb_Select_Project.SelectedValue.ToString(), txtb_VAT.Text, cbox_Project_Status.SelectedIndex, txtb_Price.Text);
-            MessageBox.Show("Added invoice");
-            dbh.CloseConnection();
+            if(dtp_Payment_Deadline.Value < DateTime.Now)
+            {
+                MessageBox.Show("Date cannot be in the past!");
+            }
+            else if(txtb_VAT.Text == "")
+            {
+                MessageBox.Show("VAT must be filled in.");
+            }
+            else
+            {
+                dbh.OpenConnection();
+                dbh.AddInvoice(cb_Select_Project.SelectedValue.ToString(), txtb_VAT.Text, cbox_Project_Status.SelectedIndex, dtp_Payment_Deadline.Value.ToString());
+                txtb_VAT.Clear();
+                MessageBox.Show("Added invoice");
+                dbh.CloseConnection();
+                tcp_Main.SelectedIndex = 2;
+            }
         }
 
         private void EditCustomer(object sender, EventArgs e)

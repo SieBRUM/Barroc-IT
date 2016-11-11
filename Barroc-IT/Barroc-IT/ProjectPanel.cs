@@ -55,6 +55,7 @@ namespace Barroc_IT
 
             lbl_Customer_Name.Text = dt.Rows[rowNr]["customer_name"].ToString();
             lbl_Company_Name.Text = dt.Rows[rowNr]["company_name"].ToString();
+            lbl_Total_Price.Text = "\u20AC " + dt.Rows[rowNr]["price"].ToString();
         }
 
         private void OpenMoreInfo(object sender, EventArgs e)
