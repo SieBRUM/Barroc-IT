@@ -58,12 +58,6 @@
       <DependentUpon>CustomerPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="DateHandler.cs" />
-    <Compile Include="Finance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Finance.Designer.cs">
-      <DependentUpon>Finance.cs</DependentUpon>
-    </Compile>
     <Compile Include="Finance_2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +109,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPanel.resx">
       <DependentUpon>CustomerPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Finance.resx">
-      <DependentUpon>Finance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finance_2.resx">
       <DependentUpon>Finance_2.cs</DependentUpon>
@@ -176,16 +167,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Barroc-IT.Datalayer\Barroc-IT.Datalayer.csproj">
-      <Project>{7a645a69-5e91-43ab-9ae0-538cc2bab6a3}</Project>
-      <Name>Barroc-IT.Datalayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Barroc-IT.Models\Barroc-IT.Models.csproj">
-      <Project>{06a28c6c-51c8-4c43-86d8-83b619766986}</Project>
-      <Name>Barroc-IT.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
